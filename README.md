@@ -1,10 +1,10 @@
-# The European Cultural Events
+# The European Cultural Festival
 
 This is an event that showcase variety of cultures around the world. This can be done in a way where people show their cultures by means of clothing, dancing, food, etc. This event is done annually and lasts for one week.
 
 # About the Team
 
-This Team is called the DevelopPro. We are responsible for building a website and several software applications to ensure that the event become a success. 
+This Team is called the DevelopPro. We are responsible for building a website and several software applications to ensure that the event will become a success. 
 
 <p align="ProP/ProP_Group10/logo.JPG"></p>
 
