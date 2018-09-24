@@ -1,0 +1,10 @@
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\bin\Debug\Reservation.exe.config
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\bin\Debug\Reservation.exe
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\bin\Debug\Reservation.pdb
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\obj\Debug\Reservation.csprojResolveAssemblyReference.cache
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\obj\Debug\Reservation.Form1.resources
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\obj\Debug\Reservation.Properties.Resources.resources
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\obj\Debug\Reservation.csproj.GenerateResource.Cache
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\obj\Debug\Reservation.csproj.CoreCompileInputs.cache
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\obj\Debug\Reservation.exe
+C:\Users\Gebruiker\source\repos\Reservation\Reservation\obj\Debug\Reservation.pdb
