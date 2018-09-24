@@ -1,0 +1,10 @@
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\bin\Debug\Check-InOutApp.exe.config
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\bin\Debug\Check-InOutApp.exe
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\bin\Debug\Check-InOutApp.pdb
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check-InOutApp.csprojAssemblyReference.cache
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check_InOutApp.Form1.resources
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check_InOutApp.Properties.Resources.resources
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check-InOutApp.csproj.GenerateResource.cache
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check-InOutApp.csproj.CoreCompileInputs.cache
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check-InOutApp.exe
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check-InOutApp.pdb
