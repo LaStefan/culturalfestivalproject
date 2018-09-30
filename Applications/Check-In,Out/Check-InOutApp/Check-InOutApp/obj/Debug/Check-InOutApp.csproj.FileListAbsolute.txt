@@ -8,3 +8,5 @@ C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-
 C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check-InOutApp.csproj.CoreCompileInputs.cache
 C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check-InOutApp.exe
 C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check-InOutApp.pdb
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out\Check-InOutApp\Check-InOutApp\obj\Debug\Check-InOutApp.csproj.CopyComplete

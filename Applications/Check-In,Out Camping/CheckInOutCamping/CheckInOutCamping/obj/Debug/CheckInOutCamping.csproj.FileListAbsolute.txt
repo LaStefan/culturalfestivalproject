@@ -1,0 +1,12 @@
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\bin\Debug\CheckInOutCamping.exe.config
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\bin\Debug\CheckInOutCamping.exe
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\bin\Debug\CheckInOutCamping.pdb
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\obj\Debug\CheckInOutCamping.csprojAssemblyReference.cache
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\obj\Debug\CheckInOutCamping.Form1.resources
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\obj\Debug\CheckInOutCamping.Properties.Resources.resources
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\obj\Debug\CheckInOutCamping.csproj.GenerateResource.cache
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\obj\Debug\CheckInOutCamping.csproj.CoreCompileInputs.cache
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\obj\Debug\CheckInOutCamping.csproj.CopyComplete
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\obj\Debug\CheckInOutCamping.exe
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\obj\Debug\CheckInOutCamping.pdb

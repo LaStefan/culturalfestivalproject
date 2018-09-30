@@ -8,3 +8,5 @@ C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\ATM\AT
 C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\ATM\ATM\obj\Debug\ATM.csproj.CoreCompileInputs.cache
 C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\ATM\ATM\obj\Debug\ATM.exe
 C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\ATM\ATM\obj\Debug\ATM.pdb
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\ATM\ATM\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\Stefan Lazarevic\Desktop\Fakultet\ProP\ProP_Group10\Applications\ATM\ATM\obj\Debug\ATM.csproj.CopyComplete
