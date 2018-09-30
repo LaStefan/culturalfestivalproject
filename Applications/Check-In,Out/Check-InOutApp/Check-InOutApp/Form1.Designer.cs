@@ -29,67 +29,79 @@
         private void InitializeComponent()
         {
             this.lbPersons = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnIN = new System.Windows.Forms.Button();
             this.btnOut = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnCode = new System.Windows.Forms.Button();
+            this.tbCode = new System.Windows.Forms.TextBox();
+            this.pbQr = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQr)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPersons
             // 
             this.lbPersons.FormattingEnabled = true;
-            this.lbPersons.Location = new System.Drawing.Point(172, 12);
+            this.lbPersons.Location = new System.Drawing.Point(330, 45);
             this.lbPersons.Name = "lbPersons";
-            this.lbPersons.Size = new System.Drawing.Size(179, 329);
+            this.lbPersons.Size = new System.Drawing.Size(179, 147);
             this.lbPersons.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(29, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 20);
-            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(384, 48);
+            this.textBox2.Location = new System.Drawing.Point(277, 278);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 20);
+            this.textBox2.Size = new System.Drawing.Size(250, 20);
             this.textBox2.TabIndex = 2;
             // 
             // btnIN
             // 
             this.btnIN.BackColor = System.Drawing.Color.Red;
             this.btnIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIN.Location = new System.Drawing.Point(29, 290);
+            this.btnIN.Location = new System.Drawing.Point(277, 304);
             this.btnIN.Name = "btnIN";
             this.btnIN.Size = new System.Drawing.Size(122, 37);
             this.btnIN.TabIndex = 3;
             this.btnIN.Text = "Check-IN";
             this.btnIN.UseVisualStyleBackColor = false;
+            this.btnIN.Click += new System.EventHandler(this.btnIN_Click);
             // 
             // btnOut
             // 
             this.btnOut.BackColor = System.Drawing.Color.Blue;
             this.btnOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOut.Location = new System.Drawing.Point(384, 290);
+            this.btnOut.Location = new System.Drawing.Point(405, 304);
             this.btnOut.Name = "btnOut";
             this.btnOut.Size = new System.Drawing.Size(122, 37);
             this.btnOut.TabIndex = 4;
             this.btnOut.Text = "Check-OUT";
             this.btnOut.UseVisualStyleBackColor = false;
             // 
-            // btnSearch
+            // btnCode
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(384, 88);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(122, 34);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "SearchForPerson";
-            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnCode.Location = new System.Drawing.Point(78, 304);
+            this.btnCode.Name = "btnCode";
+            this.btnCode.Size = new System.Drawing.Size(155, 27);
+            this.btnCode.TabIndex = 7;
+            this.btnCode.Text = "GenerateCode";
+            this.btnCode.UseVisualStyleBackColor = true;
+            this.btnCode.Click += new System.EventHandler(this.btnCode_Click);
+            // 
+            // tbCode
+            // 
+            this.tbCode.Location = new System.Drawing.Point(50, 278);
+            this.tbCode.Name = "tbCode";
+            this.tbCode.Size = new System.Drawing.Size(202, 20);
+            this.tbCode.TabIndex = 8;
+            // 
+            // pbQr
+            // 
+            this.pbQr.BackColor = System.Drawing.SystemColors.Window;
+            this.pbQr.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbQr.Location = new System.Drawing.Point(55, 35);
+            this.pbQr.Name = "pbQr";
+            this.pbQr.Size = new System.Drawing.Size(197, 192);
+            this.pbQr.TabIndex = 9;
+            this.pbQr.TabStop = false;
             // 
             // Form1
             // 
@@ -97,14 +109,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(539, 353);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.pbQr);
+            this.Controls.Add(this.tbCode);
+            this.Controls.Add(this.btnCode);
             this.Controls.Add(this.btnOut);
             this.Controls.Add(this.btnIN);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbPersons);
             this.Name = "Form1";
             this.Text = "Check-IN/OUT Scanner";
+            ((System.ComponentModel.ISupportInitialize)(this.pbQr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,11 +127,12 @@
         #endregion
 
         private System.Windows.Forms.ListBox lbPersons;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnIN;
         private System.Windows.Forms.Button btnOut;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnCode;
+        private System.Windows.Forms.TextBox tbCode;
+        private System.Windows.Forms.PictureBox pbQr;
     }
 }
 

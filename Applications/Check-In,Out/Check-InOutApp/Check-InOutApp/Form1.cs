@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Zen.Barcode;
 namespace Check_InOutApp
 {
     public partial class Form1 : Form
@@ -15,6 +15,17 @@ namespace Check_InOutApp
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnIN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCode_Click(object sender, EventArgs e)
+        {
+            CodeQrBarcodeDraw qr = new CodeQrBarcodeDraw();
+            pbQr.Image = qr.Draw(tbCode.Text, 100);
         }
     }
 }

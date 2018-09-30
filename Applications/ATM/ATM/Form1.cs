@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zen.Barcode;
 
 namespace ATM
 {
@@ -20,6 +21,12 @@ namespace ATM
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCode_Click(object sender, EventArgs e)
+        {
+            CodeQrBarcodeDraw qr = new CodeQrBarcodeDraw();
+            pbQr.Image = qr.Draw(tbCode.Text, 100);
         }
     }
 }
