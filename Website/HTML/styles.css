@@ -1,0 +1,180 @@
+/* From here starts CSS for top bar */
+#TopBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 0%;
+}
+
+#line1{
+    margin-top: 5%
+}
+
+#logo{
+    margin-right: 2.5%
+}
+
+#line2{
+
+    margin-top: 5%
+}
+/* Here ends CSS for top bar */
+
+
+/* From here starts CSS for navigation bar */
+#NavBar{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-left: 33%;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+    font-family: "Arial";
+    
+}
+
+#NavBar a{
+    float:left;
+    display: block;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 50px;
+    text-decoration: none;
+}
+
+#NavBar a:hover:not(.active){
+    background-color:#99B2B2 ;
+    color: black;
+}
+
+button{
+    color: white;
+    padding: 15px 20px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+/* Here ends CSS for navigation bar */
+
+
+/* From here starts CSS for About Page */
+#About{
+    background-color: #000;
+    width: 100%;
+    height: 1000px;
+    float: left;
+}
+.AboutPage > div {
+  background-color: #000;
+ flex-direction: row;
+}
+
+.aboutFestival {
+    width: 250px;
+    float: left;
+    margin: 10px;
+    margin-left: 160px;
+    height: 198px;
+   }
+ 
+#FestivalSlide{
+   margin-top: 50%;
+}
+
+#BuyTicket{
+    margin-right: 20%;
+    margin-left: 36%;
+    margin-top: -1%;
+    background-color: #99B2B2;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    height: 14%;
+    border-radius: 50%;
+    cursor: pointer;
+    text-transform: uppercase; 
+  }
+ 
+/* Here ends CSS for About Page*/
+
+
+/* From here starts CSS for Tickets */
+#Ticket{
+    background-color: #000;
+    width: 100%;
+    height: 1000px;
+    float: left;
+}
+#text{
+    margin-top: 5%;
+    color: #fff;
+    text-align: center;
+    border-bottom-style:solid;
+    font-family: "Lucida Console"; 
+    font-size: 15px;
+    border-bottom-color: #fff;
+    margin-left: 30%;
+    width: 40%;
+}
+
+.ticketType {
+    width: 250px;
+    float: left;
+    margin: 95px;
+    height: 198px;
+   }
+ 
+#TicketImage {
+    width: 350px;
+}
+
+#GetTicket {
+    margin-top: -60%;
+    margin-left:45%;
+    width: 200px;
+    background-color: transparent;
+    border: 5px solid #fff;
+    color: white;
+    font: bold 15px/30px sans-serif;
+    cursor: pointer;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+/* Here ends CSS for Tickets*/
+
+
+/* From here starts CSS for Account */
+#Account{
+    background-color: #000;
+    width: 100%;
+    height: 1000px;
+    float: left;
+}
+/* Here ends CSS for Account*/
+
+
+
+/* From here starts CSS for Cart */
+/* Here ends CSS for Cart*/
+
+/* Here ends CSS for Footer*/
+#footer{
+    background: #99B2B2;
+    position: relative;
+    height: 100px;
+    margin-top: -100px;
+    clear: both;
+ }
+/* Here ends CSS for Footer*/
+
+
+
+
