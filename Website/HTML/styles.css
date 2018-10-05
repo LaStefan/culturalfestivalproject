@@ -167,12 +167,14 @@ button:hover{
 
 /* Here ends CSS for Footer*/
 #footer{
-    background: #99B2B2;
+    background-color: #99B2B2;
+    color: #fff;
     position: relative;
-    height: 100px;
-    margin-top: -100px;
+    height: 35px;
+    margin-top: 200px;
     clear: both;
  }
+
 /* Here ends CSS for Footer*/
 
 
