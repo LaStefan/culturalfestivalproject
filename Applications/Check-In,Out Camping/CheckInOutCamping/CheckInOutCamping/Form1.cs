@@ -24,8 +24,7 @@ namespace CheckInOutCamping
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            CodeQrBarcodeDraw qr = new CodeQrBarcodeDraw();
-            pbQr.Image = qr.Draw(tbCode.Text, 100);
+            
         }
     }
 }

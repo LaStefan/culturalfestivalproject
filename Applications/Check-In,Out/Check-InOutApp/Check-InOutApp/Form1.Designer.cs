@@ -28,36 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbPersons = new System.Windows.Forms.ListBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnIN = new System.Windows.Forms.Button();
             this.btnOut = new System.Windows.Forms.Button();
-            this.btnCode = new System.Windows.Forms.Button();
-            this.tbCode = new System.Windows.Forms.TextBox();
-            this.pbQr = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbQr)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbShow = new System.Windows.Forms.ListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lbPersons
-            // 
-            this.lbPersons.FormattingEnabled = true;
-            this.lbPersons.Location = new System.Drawing.Point(330, 45);
-            this.lbPersons.Name = "lbPersons";
-            this.lbPersons.Size = new System.Drawing.Size(179, 147);
-            this.lbPersons.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(277, 278);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 20);
-            this.textBox2.TabIndex = 2;
             // 
             // btnIN
             // 
-            this.btnIN.BackColor = System.Drawing.Color.Red;
+            this.btnIN.BackColor = System.Drawing.Color.Silver;
             this.btnIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIN.Location = new System.Drawing.Point(277, 304);
+            this.btnIN.Location = new System.Drawing.Point(344, 336);
             this.btnIN.Name = "btnIN";
             this.btnIN.Size = new System.Drawing.Size(122, 37);
             this.btnIN.TabIndex = 3;
@@ -67,72 +54,96 @@
             // 
             // btnOut
             // 
-            this.btnOut.BackColor = System.Drawing.Color.Blue;
+            this.btnOut.BackColor = System.Drawing.Color.Silver;
             this.btnOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOut.Location = new System.Drawing.Point(405, 304);
+            this.btnOut.Location = new System.Drawing.Point(528, 336);
             this.btnOut.Name = "btnOut";
             this.btnOut.Size = new System.Drawing.Size(122, 37);
             this.btnOut.TabIndex = 4;
             this.btnOut.Text = "Check-OUT";
             this.btnOut.UseVisualStyleBackColor = false;
             // 
-            // btnCode
+            // label1
             // 
-            this.btnCode.Location = new System.Drawing.Point(78, 304);
-            this.btnCode.Name = "btnCode";
-            this.btnCode.Size = new System.Drawing.Size(155, 27);
-            this.btnCode.TabIndex = 7;
-            this.btnCode.Text = "GenerateCode";
-            this.btnCode.UseVisualStyleBackColor = true;
-            this.btnCode.Click += new System.EventHandler(this.btnCode_Click);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "RFID";
             // 
-            // tbCode
+            // lbShow
             // 
-            this.tbCode.Location = new System.Drawing.Point(50, 278);
-            this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(202, 20);
-            this.tbCode.TabIndex = 8;
+            this.lbShow.FormattingEnabled = true;
+            this.lbShow.Location = new System.Drawing.Point(41, 93);
+            this.lbShow.Name = "lbShow";
+            this.lbShow.Size = new System.Drawing.Size(232, 290);
+            this.lbShow.TabIndex = 7;
             // 
-            // pbQr
+            // pictureBox1
             // 
-            this.pbQr.BackColor = System.Drawing.SystemColors.Window;
-            this.pbQr.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbQr.Location = new System.Drawing.Point(55, 35);
-            this.pbQr.Name = "pbQr";
-            this.pbQr.Size = new System.Drawing.Size(197, 192);
-            this.pbQr.TabIndex = 9;
-            this.pbQr.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(324, 59);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(342, 271);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(693, 43);
+            this.panel1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(145, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(366, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Check-IN And Check-OUT Application";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(539, 353);
-            this.Controls.Add(this.pbQr);
-            this.Controls.Add(this.tbCode);
-            this.Controls.Add(this.btnCode);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(693, 395);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbShow);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOut);
             this.Controls.Add(this.btnIN);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.lbPersons);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check-IN/OUT Scanner";
-            ((System.ComponentModel.ISupportInitialize)(this.pbQr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbPersons;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnIN;
         private System.Windows.Forms.Button btnOut;
-        private System.Windows.Forms.Button btnCode;
-        private System.Windows.Forms.TextBox tbCode;
-        private System.Windows.Forms.PictureBox pbQr;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lbShow;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

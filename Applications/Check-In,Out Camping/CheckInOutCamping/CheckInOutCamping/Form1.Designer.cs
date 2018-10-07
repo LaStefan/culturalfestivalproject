@@ -28,63 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbQr = new System.Windows.Forms.PictureBox();
-            this.btnGenerate = new System.Windows.Forms.Button();
-            this.tbCode = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lbShow = new System.Windows.Forms.ListBox();
-            this.tbInput = new System.Windows.Forms.TextBox();
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbQr)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbQr
-            // 
-            this.pbQr.BackColor = System.Drawing.SystemColors.Window;
-            this.pbQr.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbQr.Location = new System.Drawing.Point(50, 33);
-            this.pbQr.Name = "pbQr";
-            this.pbQr.Size = new System.Drawing.Size(214, 200);
-            this.pbQr.TabIndex = 0;
-            this.pbQr.TabStop = false;
-            // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Location = new System.Drawing.Point(81, 288);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(147, 23);
-            this.btnGenerate.TabIndex = 1;
-            this.btnGenerate.Text = "GenerateCode";
-            this.btnGenerate.UseVisualStyleBackColor = true;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // tbCode
-            // 
-            this.tbCode.Location = new System.Drawing.Point(66, 252);
-            this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(183, 20);
-            this.tbCode.TabIndex = 2;
             // 
             // lbShow
             // 
             this.lbShow.FormattingEnabled = true;
-            this.lbShow.Location = new System.Drawing.Point(360, 51);
+            this.lbShow.Location = new System.Drawing.Point(29, 107);
             this.lbShow.Name = "lbShow";
-            this.lbShow.Size = new System.Drawing.Size(198, 160);
+            this.lbShow.Size = new System.Drawing.Size(280, 277);
             this.lbShow.TabIndex = 3;
-            // 
-            // tbInput
-            // 
-            this.tbInput.Location = new System.Drawing.Point(375, 252);
-            this.tbInput.Name = "tbInput";
-            this.tbInput.Size = new System.Drawing.Size(162, 20);
-            this.tbInput.TabIndex = 4;
             // 
             // btnCheckIn
             // 
-            this.btnCheckIn.BackColor = System.Drawing.Color.Red;
+            this.btnCheckIn.BackColor = System.Drawing.Color.Silver;
             this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.Location = new System.Drawing.Point(338, 288);
+            this.btnCheckIn.Location = new System.Drawing.Point(337, 325);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(107, 44);
             this.btnCheckIn.TabIndex = 5;
@@ -93,46 +61,87 @@
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.Blue;
+            this.btnCheckOut.BackColor = System.Drawing.Color.Silver;
             this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.Location = new System.Drawing.Point(468, 288);
+            this.btnCheckOut.Location = new System.Drawing.Point(497, 325);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(104, 44);
             this.btnCheckOut.TabIndex = 6;
             this.btnCheckOut.Text = "Check-OUT";
             this.btnCheckOut.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(668, 43);
+            this.panel1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(172, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(302, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Check-IN Check-OUT Camping";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(381, 84);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 217);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(40, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 18);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "RFID";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(603, 343);
+            this.ClientSize = new System.Drawing.Size(668, 406);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnCheckIn);
-            this.Controls.Add(this.tbInput);
             this.Controls.Add(this.lbShow);
-            this.Controls.Add(this.tbCode);
-            this.Controls.Add(this.btnGenerate);
-            this.Controls.Add(this.pbQr);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check-IN/OUT Camping App";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbQr)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pbQr;
-        private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.TextBox tbCode;
         private System.Windows.Forms.ListBox lbShow;
-        private System.Windows.Forms.TextBox tbInput;
         private System.Windows.Forms.Button btnCheckIn;
         private System.Windows.Forms.Button btnCheckOut;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
