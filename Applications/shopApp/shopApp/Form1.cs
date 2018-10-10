@@ -17,6 +17,9 @@ namespace shopApp
             InitializeComponent();
             sideBar.Height = btnHome.Height;
             sideBar.Top = btnHome.Top;
+            panelDrinks.Visible = false;
+            panelFood.Visible = false;
+            panelPay.Visible = false;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -25,35 +28,50 @@ namespace shopApp
             sideBar.Top = btnHome.Top;
             panelFood.Visible = false;
             panelDrinks.Visible = false;
-            panelPayment.Visible = false;
+            panelPay.Visible = false;
+            
         }
 
         private void btnFood_Click(object sender, EventArgs e)
         {
             sideBar.Height = btnFood.Height;
             sideBar.Top = btnFood.Top;
-            panelFood.Visible = true;
             panelDrinks.Visible = false;
-            panelPayment.Visible = false;
+            panelPay.Visible = false;
+            panelFood.Visible = true;
+           
+            panelFood.Dock = DockStyle.Fill;
         }
 
         private void btnDrinks_Click(object sender, EventArgs e)
         {
             sideBar.Height = btnDrinks.Height;
             sideBar.Top = btnDrinks.Top;
-            panelFood.Visible = false;
+            panelFood.Visible = true;
+            panelPay.Visible = false;
             panelDrinks.Visible = true;
-            panelPayment.Visible = false;
+            panelDrinks.Dock = DockStyle.Fill;
+            
+            
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
             sideBar.Height = btnPay.Height;
             sideBar.Top = btnPay.Top;
-            panelDrinks.Visible = false;
-            panelPayment.Visible = true;
-            panelFood.Visible = false;
+            panelFood.Visible = true;
+            panelDrinks.Visible = true;
+            panelPay.Visible = true;
+            panelPay.Dock = DockStyle.Fill;
+            
            
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
     }
 }
