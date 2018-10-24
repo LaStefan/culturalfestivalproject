@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnFood = new System.Windows.Forms.Button();
@@ -36,6 +37,8 @@
             this.sideBar = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,15 +46,19 @@
             this.panelFood = new System.Windows.Forms.Panel();
             this.panelDrinks = new System.Windows.Forms.Panel();
             this.panelPay = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelTotal = new System.Windows.Forms.Label();
+            this.productDataGV = new System.Windows.Forms.DataGridView();
+            this.productID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnADD = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lbRFID = new System.Windows.Forms.Label();
-            this.lbShow = new System.Windows.Forms.ListBox();
             this.picWhiskey = new System.Windows.Forms.PictureBox();
             this.picKoffiee = new System.Windows.Forms.PictureBox();
             this.picCoctail = new System.Windows.Forms.PictureBox();
@@ -82,7 +89,7 @@
             this.picFrite = new System.Windows.Forms.PictureBox();
             this.picBalls = new System.Windows.Forms.PictureBox();
             this.picHam = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,7 +97,7 @@
             this.panelFood.SuspendLayout();
             this.panelDrinks.SuspendLayout();
             this.panelPay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWhiskey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKoffiee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCoctail)).BeginInit();
@@ -204,12 +211,35 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(107, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(783, 34);
             this.panel2.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(759, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(18, 22);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "x";
+            this.toolTip1.SetToolTip(this.btnClose, "Close");
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(127, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(534, 25);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "The European Cultural Event Food Shop Application";
             // 
             // pictureBox1
             // 
@@ -270,10 +300,11 @@
             this.panelFood.Controls.Add(this.picFrite);
             this.panelFood.Controls.Add(this.picBalls);
             this.panelFood.Controls.Add(this.picHam);
-            this.panelFood.Location = new System.Drawing.Point(122, 40);
+            this.panelFood.Location = new System.Drawing.Point(110, 40);
             this.panelFood.Name = "panelFood";
             this.panelFood.Size = new System.Drawing.Size(768, 427);
             this.panelFood.TabIndex = 9;
+            this.panelFood.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFood_Paint);
             // 
             // panelDrinks
             // 
@@ -293,33 +324,85 @@
             this.panelDrinks.Controls.Add(this.picCola);
             this.panelDrinks.Controls.Add(this.picBeer);
             this.panelDrinks.Controls.Add(this.picApple);
-            this.panelDrinks.Location = new System.Drawing.Point(16, 12);
+            this.panelDrinks.Location = new System.Drawing.Point(3, 3);
             this.panelDrinks.Name = "panelDrinks";
             this.panelDrinks.Size = new System.Drawing.Size(767, 421);
             this.panelDrinks.TabIndex = 15;
             // 
             // panelPay
             // 
+            this.panelPay.Controls.Add(this.productDataGV);
+            this.panelPay.Controls.Add(this.textBox1);
+            this.panelPay.Controls.Add(this.labelTotal);
             this.panelPay.Controls.Add(this.btnPayment);
             this.panelPay.Controls.Add(this.btnClear);
             this.panelPay.Controls.Add(this.btnExit);
             this.panelPay.Controls.Add(this.btnADD);
             this.panelPay.Controls.Add(this.btnRemove);
-            this.panelPay.Controls.Add(this.label3);
-            this.panelPay.Controls.Add(this.numericUpDown1);
             this.panelPay.Controls.Add(this.lbRFID);
-            this.panelPay.Controls.Add(this.lbShow);
-            this.panelPay.Location = new System.Drawing.Point(16, 16);
+            this.panelPay.Location = new System.Drawing.Point(6, 3);
             this.panelPay.Name = "panelPay";
-            this.panelPay.Size = new System.Drawing.Size(736, 399);
-            this.panelPay.TabIndex = 30;
+            this.panelPay.Size = new System.Drawing.Size(758, 399);
+            this.panelPay.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(504, 322);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(216, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(424, 322);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(74, 20);
+            this.labelTotal.TabIndex = 10;
+            this.labelTotal.Text = "Total: € ";
+            // 
+            // productDataGV
+            // 
+            this.productDataGV.BackgroundColor = System.Drawing.Color.White;
+            this.productDataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productDataGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productID,
+            this.productName,
+            this.productQty,
+            this.productPrice});
+            this.productDataGV.Location = new System.Drawing.Point(162, 46);
+            this.productDataGV.Name = "productDataGV";
+            this.productDataGV.Size = new System.Drawing.Size(558, 270);
+            this.productDataGV.TabIndex = 9;
+            // 
+            // productID
+            // 
+            this.productID.HeaderText = "Prod ID";
+            this.productID.Name = "productID";
+            // 
+            // productName
+            // 
+            this.productName.HeaderText = "Name";
+            this.productName.Name = "productName";
+            this.productName.Width = 210;
+            // 
+            // productQty
+            // 
+            this.productQty.HeaderText = "Quantity";
+            this.productQty.Name = "productQty";
+            // 
+            // productPrice
+            // 
+            this.productPrice.HeaderText = "Price";
+            this.productPrice.Name = "productPrice";
             // 
             // btnPayment
             // 
             this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(655, 364);
+            this.btnPayment.Location = new System.Drawing.Point(633, 357);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Size = new System.Drawing.Size(87, 35);
             this.btnPayment.TabIndex = 8;
@@ -331,7 +414,7 @@
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(530, 364);
+            this.btnClear.Location = new System.Drawing.Point(162, 357);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(84, 35);
             this.btnClear.TabIndex = 7;
@@ -343,7 +426,7 @@
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(402, 364);
+            this.btnExit.Location = new System.Drawing.Point(23, 357);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(83, 35);
             this.btnExit.TabIndex = 6;
@@ -356,9 +439,9 @@
             this.btnADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADD.Location = new System.Drawing.Point(247, 75);
+            this.btnADD.Location = new System.Drawing.Point(20, 46);
             this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(102, 25);
+            this.btnADD.Size = new System.Drawing.Size(102, 56);
             this.btnADD.TabIndex = 5;
             this.btnADD.Text = "add\r\n\r\n";
             this.btnADD.UseVisualStyleBackColor = false;
@@ -368,47 +451,22 @@
             this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(247, 114);
+            this.btnRemove.Location = new System.Drawing.Point(20, 130);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(102, 25);
+            this.btnRemove.Size = new System.Drawing.Size(102, 63);
             this.btnRemove.TabIndex = 4;
             this.btnRemove.Text = "remove\r\n";
             this.btnRemove.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(164, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Quantity:\r\n";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(240, 19);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(74, 20);
-            this.numericUpDown1.TabIndex = 2;
             // 
             // lbRFID
             // 
             this.lbRFID.AutoSize = true;
             this.lbRFID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRFID.Location = new System.Drawing.Point(28, 213);
+            this.lbRFID.Location = new System.Drawing.Point(30, 14);
             this.lbRFID.Name = "lbRFID";
-            this.lbRFID.Size = new System.Drawing.Size(43, 16);
+            this.lbRFID.Size = new System.Drawing.Size(51, 16);
             this.lbRFID.TabIndex = 1;
-            this.lbRFID.Text = "RFID";
-            // 
-            // lbShow
-            // 
-            this.lbShow.FormattingEnabled = true;
-            this.lbShow.Location = new System.Drawing.Point(355, 19);
-            this.lbShow.Name = "lbShow";
-            this.lbShow.Size = new System.Drawing.Size(407, 329);
-            this.lbShow.TabIndex = 0;
+            this.lbRFID.Text = "RFID: ";
             // 
             // picWhiskey
             // 
@@ -419,6 +477,8 @@
             this.picWhiskey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWhiskey.TabIndex = 29;
             this.picWhiskey.TabStop = false;
+            this.toolTip1.SetToolTip(this.picWhiskey, "Whisky");
+            this.picWhiskey.Click += new System.EventHandler(this.picWhiskey_Click);
             // 
             // picKoffiee
             // 
@@ -429,6 +489,8 @@
             this.picKoffiee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKoffiee.TabIndex = 28;
             this.picKoffiee.TabStop = false;
+            this.toolTip1.SetToolTip(this.picKoffiee, "Koffie");
+            this.picKoffiee.Click += new System.EventHandler(this.picKoffiee_Click);
             // 
             // picCoctail
             // 
@@ -439,6 +501,8 @@
             this.picCoctail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCoctail.TabIndex = 27;
             this.picCoctail.TabStop = false;
+            this.toolTip1.SetToolTip(this.picCoctail, "Coctail");
+            this.picCoctail.Click += new System.EventHandler(this.picCoctail_Click);
             // 
             // picWhiteWine
             // 
@@ -449,6 +513,7 @@
             this.picWhiteWine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWhiteWine.TabIndex = 26;
             this.picWhiteWine.TabStop = false;
+            this.toolTip1.SetToolTip(this.picWhiteWine, "White wine");
             // 
             // picTea
             // 
@@ -459,6 +524,8 @@
             this.picTea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTea.TabIndex = 25;
             this.picTea.TabStop = false;
+            this.toolTip1.SetToolTip(this.picTea, "Tea");
+            this.picTea.Click += new System.EventHandler(this.picTea_Click);
             // 
             // picRedWine
             // 
@@ -469,6 +536,8 @@
             this.picRedWine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRedWine.TabIndex = 24;
             this.picRedWine.TabStop = false;
+            this.toolTip1.SetToolTip(this.picRedWine, "Red wine");
+            this.picRedWine.Click += new System.EventHandler(this.picRedWine_Click);
             // 
             // picWater
             // 
@@ -479,6 +548,8 @@
             this.picWater.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWater.TabIndex = 23;
             this.picWater.TabStop = false;
+            this.toolTip1.SetToolTip(this.picWater, "Water");
+            this.picWater.Click += new System.EventHandler(this.picWater_Click);
             // 
             // picSprite
             // 
@@ -489,6 +560,8 @@
             this.picSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSprite.TabIndex = 22;
             this.picSprite.TabStop = false;
+            this.toolTip1.SetToolTip(this.picSprite, "Sprite");
+            this.picSprite.Click += new System.EventHandler(this.picSprite_Click);
             // 
             // picRadler
             // 
@@ -499,6 +572,8 @@
             this.picRadler.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRadler.TabIndex = 21;
             this.picRadler.TabStop = false;
+            this.toolTip1.SetToolTip(this.picRadler, "Radler");
+            this.picRadler.Click += new System.EventHandler(this.picRadler_Click);
             // 
             // picOrange
             // 
@@ -509,6 +584,8 @@
             this.picOrange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picOrange.TabIndex = 20;
             this.picOrange.TabStop = false;
+            this.toolTip1.SetToolTip(this.picOrange, "Orange Juice");
+            this.picOrange.Click += new System.EventHandler(this.picOrange_Click);
             // 
             // picRedBull
             // 
@@ -519,6 +596,8 @@
             this.picRedBull.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRedBull.TabIndex = 19;
             this.picRedBull.TabStop = false;
+            this.toolTip1.SetToolTip(this.picRedBull, "Redbull");
+            this.picRedBull.Click += new System.EventHandler(this.picRedBull_Click);
             // 
             // picFanta
             // 
@@ -529,6 +608,8 @@
             this.picFanta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFanta.TabIndex = 18;
             this.picFanta.TabStop = false;
+            this.toolTip1.SetToolTip(this.picFanta, "Fanta");
+            this.picFanta.Click += new System.EventHandler(this.picFanta_Click);
             // 
             // picCola
             // 
@@ -539,6 +620,8 @@
             this.picCola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCola.TabIndex = 17;
             this.picCola.TabStop = false;
+            this.toolTip1.SetToolTip(this.picCola, "Cola");
+            this.picCola.Click += new System.EventHandler(this.picCola_Click);
             // 
             // picBeer
             // 
@@ -549,6 +632,8 @@
             this.picBeer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBeer.TabIndex = 16;
             this.picBeer.TabStop = false;
+            this.toolTip1.SetToolTip(this.picBeer, "Beer");
+            this.picBeer.Click += new System.EventHandler(this.picBeer_Click);
             // 
             // picApple
             // 
@@ -559,6 +644,8 @@
             this.picApple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picApple.TabIndex = 15;
             this.picApple.TabStop = false;
+            this.toolTip1.SetToolTip(this.picApple, "AppleJuice");
+            this.picApple.Click += new System.EventHandler(this.picApple_Click);
             // 
             // picLamb
             // 
@@ -569,6 +656,8 @@
             this.picLamb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLamb.TabIndex = 14;
             this.picLamb.TabStop = false;
+            this.toolTip1.SetToolTip(this.picLamb, "Lamb");
+            this.picLamb.Click += new System.EventHandler(this.picLamb_Click);
             // 
             // picDurum
             // 
@@ -579,6 +668,8 @@
             this.picDurum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDurum.TabIndex = 13;
             this.picDurum.TabStop = false;
+            this.toolTip1.SetToolTip(this.picDurum, "Durum");
+            this.picDurum.Click += new System.EventHandler(this.picDurum_Click);
             // 
             // picWings
             // 
@@ -589,6 +680,8 @@
             this.picWings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWings.TabIndex = 12;
             this.picWings.TabStop = false;
+            this.toolTip1.SetToolTip(this.picWings, "Chicken Wings");
+            this.picWings.Click += new System.EventHandler(this.picWings_Click);
             // 
             // picKremen
             // 
@@ -599,6 +692,8 @@
             this.picKremen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKremen.TabIndex = 11;
             this.picKremen.TabStop = false;
+            this.toolTip1.SetToolTip(this.picKremen, "Kremen");
+            this.picKremen.Click += new System.EventHandler(this.picKremen_Click);
             // 
             // picPancakes
             // 
@@ -609,6 +704,8 @@
             this.picPancakes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPancakes.TabIndex = 10;
             this.picPancakes.TabStop = false;
+            this.toolTip1.SetToolTip(this.picPancakes, "Pancakes");
+            this.picPancakes.Click += new System.EventHandler(this.picPancakes_Click);
             // 
             // picKaas
             // 
@@ -619,6 +716,8 @@
             this.picKaas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKaas.TabIndex = 9;
             this.picKaas.TabStop = false;
+            this.toolTip1.SetToolTip(this.picKaas, "Kaas");
+            this.picKaas.Click += new System.EventHandler(this.picKaas_Click);
             // 
             // picFish
             // 
@@ -629,6 +728,7 @@
             this.picFish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFish.TabIndex = 8;
             this.picFish.TabStop = false;
+            this.toolTip1.SetToolTip(this.picFish, "Fish");
             // 
             // picFruit
             // 
@@ -639,6 +739,8 @@
             this.picFruit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFruit.TabIndex = 7;
             this.picFruit.TabStop = false;
+            this.toolTip1.SetToolTip(this.picFruit, "Fruit");
+            this.picFruit.Click += new System.EventHandler(this.picFruit_Click);
             // 
             // picPizza
             // 
@@ -649,6 +751,8 @@
             this.picPizza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPizza.TabIndex = 6;
             this.picPizza.TabStop = false;
+            this.toolTip1.SetToolTip(this.picPizza, "Pizza");
+            this.picPizza.Click += new System.EventHandler(this.picPizza_Click);
             // 
             // picRice
             // 
@@ -659,6 +763,8 @@
             this.picRice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRice.TabIndex = 5;
             this.picRice.TabStop = false;
+            this.toolTip1.SetToolTip(this.picRice, "Rice");
+            this.picRice.Click += new System.EventHandler(this.picRice_Click);
             // 
             // picSalad
             // 
@@ -669,6 +775,8 @@
             this.picSalad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSalad.TabIndex = 4;
             this.picSalad.TabStop = false;
+            this.toolTip1.SetToolTip(this.picSalad, "Salad");
+            this.picSalad.Click += new System.EventHandler(this.picSalad_Click);
             // 
             // picWaffle
             // 
@@ -679,6 +787,8 @@
             this.picWaffle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWaffle.TabIndex = 3;
             this.picWaffle.TabStop = false;
+            this.toolTip1.SetToolTip(this.picWaffle, "Waffles");
+            this.picWaffle.Click += new System.EventHandler(this.picWaffle_Click);
             // 
             // picFrite
             // 
@@ -689,6 +799,8 @@
             this.picFrite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFrite.TabIndex = 2;
             this.picFrite.TabStop = false;
+            this.toolTip1.SetToolTip(this.picFrite, "Friet");
+            this.picFrite.Click += new System.EventHandler(this.picFrite_Click_1);
             // 
             // picBalls
             // 
@@ -699,6 +811,8 @@
             this.picBalls.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBalls.TabIndex = 1;
             this.picBalls.TabStop = false;
+            this.toolTip1.SetToolTip(this.picBalls, "Balls");
+            this.picBalls.Click += new System.EventHandler(this.picBalls_Click);
             // 
             // picHam
             // 
@@ -709,16 +823,8 @@
             this.picHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picHam.TabIndex = 0;
             this.picHam.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(127, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(534, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "The European Cultural Event Food Shop Application";
+            this.toolTip1.SetToolTip(this.picHam, "Burgers");
+            this.picHam.Click += new System.EventHandler(this.picHam_Click);
             // 
             // Form1
             // 
@@ -746,7 +852,7 @@
             this.panelDrinks.ResumeLayout(false);
             this.panelPay.ResumeLayout(false);
             this.panelPay.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWhiskey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKoffiee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCoctail)).EndInit();
@@ -824,20 +930,26 @@
         private System.Windows.Forms.PictureBox picOrange;
         private System.Windows.Forms.PictureBox picRedBull;
         private System.Windows.Forms.PictureBox picFanta;
-        private System.Windows.Forms.PictureBox picCola;
         private System.Windows.Forms.PictureBox picBeer;
         private System.Windows.Forms.PictureBox picApple;
         private System.Windows.Forms.Panel panelPay;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label lbRFID;
-        private System.Windows.Forms.ListBox lbShow;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelTotal;
+        private System.Windows.Forms.DataGridView productDataGV;
+        private System.Windows.Forms.Button btnADD;
+        private System.Windows.Forms.PictureBox picCola;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productPrice;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

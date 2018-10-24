@@ -2,9 +2,11 @@ C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\bin\De
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\bin\Debug\shopApp.exe
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\bin\Debug\shopApp.pdb
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\obj\Debug\shopApp.csprojResolveAssemblyReference.cache
-C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\obj\Debug\shopApp.Form1.resources
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\obj\Debug\shopApp.Properties.Resources.resources
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\obj\Debug\shopApp.csproj.GenerateResource.Cache
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\obj\Debug\shopApp.csproj.CoreCompileInputs.cache
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\obj\Debug\shopApp.exe
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\obj\Debug\shopApp.pdb
+C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\bin\Debug\MySql.Data.dll
+C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\obj\Debug\shopApp.productForm.resources
+C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\shopApp\shopApp\obj\Debug\shopApp.Form1.resources
