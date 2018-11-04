@@ -175,6 +175,12 @@ button:hover{
     clear: both;
  }
 
+.popup {
+    display: none;
+}
+
+
+
 /* Here ends CSS for Footer*/
 
 
