@@ -1,5 +1,7 @@
 var divName = document.getElementsByClassName('popup')[0];
 var hidden = true;
+var cursorX;
+var cursorY;
 
 function showUp() {
     if(hidden == true) {
@@ -10,4 +12,19 @@ function showUp() {
     else { 
         console.log("444")
     }
+}
+
+function printMousePos() {
+    document.onmousemove = function(e){
+    cursorX = e.pageX;
+    cursorY = e.pageY;
+}
+}
+
+function selectSpot() {
+    var spot = document.getElementsByClassName('select');
+    printMousePos();
+    spot.css('position', 'absolute');
+    spot.css('top', cursorY); //or wherever you want it
+    spot.css('left', cursorX);
 }
