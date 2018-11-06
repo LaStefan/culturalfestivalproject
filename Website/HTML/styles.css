@@ -1,8 +1,8 @@
 /* From here starts CSS for Coming Soon Page */
 
 #ComingSoon{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/festivalimg8.jpeg);
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/festivalimg9.jpg);
+   
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/festivalimg7.jpg);
     height: 100%;
     background-position: center;
     font-size: 30px;
@@ -127,7 +127,7 @@ button:hover{
 #About{
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(images/festivalimg7.jpg);
     width: 100%;
-    height: 1000px;
+    height: 650px;
     float: left;
 }
 .AboutPage > div {
@@ -145,7 +145,7 @@ button:hover{
  
 #FestivalSlide{
    margin-top: 50%;
-
+   
 }
 
 #BuyTicket{
@@ -164,6 +164,38 @@ button:hover{
     cursor: pointer;
     text-transform: uppercase; 
   }
+
+#Information {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.infoEvent{
+    width: 400px;
+    float: left;
+    margin: 10px;
+    margin-left: 15px;
+    height: 250px;
+    display: block;
+    background-color: #99B2B2;
+    padding: 10px;
+    font: bold 15px/30px serif;
+    text-align: center;
+    cursor: pointer;
+}
+
+#textEvent {
+    margin-top: 5%;
+    color: #000;
+    text-align: center;
+    border-bottom-style:solid;
+    font-family: "Lucida Console"; 
+    font-size: 15px;
+    border-bottom-color: #fff;
+    margin-left: 30%;
+    width: 40%;
+}
  /* Here ends CSS for About Page*/
 
 
@@ -184,6 +216,8 @@ button:hover{
     border-bottom-color: #fff;
     margin-left: 30%;
     width: 40%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .ticketType {

@@ -1,61 +1,42 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link href="styles.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bree+Serif|Indie+Flower|Josefin+Sans|Patrick+Hand|Permanent+Marker|Shadows+Into+Light|Sofia|Ubuntu" rel="stylesheet">
+    </head>   
+    <body>
+    <div id="ComingSoon">
+        
+    <div id="ComingText">  
+      <h1> COMING SOON</h1>
     
-    <div id="TopBar">
-       <div id="line1">
-     <img src="images/line.jpg" alt="line" width="630" height="70"/>
-       </div>
-        
-       <div id="logo">
-        <a href="Index.html">           
-     <img src="images/logo.jpg" alt="logo" width="200"/>
-        </a>    
-       </div>
-        
-        <div id="line2">
-     <img src="images/line2.jpg" alt="line" width="630" height="70"/>
-        </div>
+    <hr>
+       <p id="launch"></p>
+      <br>
+        <a href="About.html"><button type="submit" id="AboutEvent">About the event</button></a>
+        </div>    
+                       
     </div>
-
-    <div id="NavBar">
-            <li><a href="Index.html">ABOUT</a></li>
-            <li><a href="Tickets.html">TICKETS</a></li>
-            <li><a href="Account.html">ACCOUNT</a></li>
-    </div>
-</head>     
-
-<body>
-    <section>
-    <div id="About">
-     <div class="aboutFestival">
- <figure>
-     <img src="images/festival.jpg" alt="festival" width="400" id="FestivalImage" />
-  </figure>
- </div>
-        
- <div class="aboutFestival">
-  <figure>
-      <img name="slide" width="600" id="FestivalSlide" />
-  </figure>
- </div>
-        
-<a href="Tickets.html">          
-    <button id="BuyTicket">buy tickets</button></a>        
-   </div>
- </section>
-    
- <footer id="footer">
-    <p>© CULTURAL FESTIVAL 2018. All rights reserved. Made by DevelopPro.</p>        
-          
-</footer>    
-    
-    
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="slider.js"></script>     
- </body>
-</html>
+      </body>
+    <script>
+     
+        var countDownDate = new Date("March 18, 2019 00:00:00").getTime();
+        var x = setInterval(function(){
+             
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            
+            var days =Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("launch").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            
+                if(distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("launch").innerHTML = "EXPIRED";
+                }
+        }, 1000);
          
-         
+    </script>
+ </html>
