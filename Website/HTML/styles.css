@@ -1,3 +1,57 @@
+/* From here starts CSS for Coming Soon Page */
+
+#ComingSoon{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/festivalimg8.jpeg);
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/festivalimg9.jpg);
+    height: 100%;
+    background-position: center;
+    font-size: 30px;
+    letter-spacing: 15px;
+    background-size: cover;
+}
+
+#ComingText{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Sofia', cursive;
+    text-align: center;
+}
+
+#AboutEvent {
+    width: 200px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Playfair Display', serif;
+    cursor: pointer;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    
+}
+.hr{
+    margin 30px auto;
+    border: 1.5px solid #fff;
+ }
+
+#launch{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+/* Here ends CSS for Coming Soon Page*/
+
 /* From here starts CSS for top bar */
 #TopBar{
     display: flex;
@@ -108,8 +162,7 @@ button:hover{
     cursor: pointer;
     text-transform: uppercase; 
   }
- 
-/* Here ends CSS for About Page*/
+ /* Here ends CSS for About Page*/
 
 
 /* From here starts CSS for Tickets */
@@ -155,6 +208,113 @@ button:hover{
     cursor: pointer;
     text-transform: uppercase;
   }
+
+.popup {
+    display: none;
+    width: 100%;
+    background-color: black;    
+    text-align: center;
+}
+
+.popup > img {
+    margin: 0 auto;
+}
+
+.select {
+    width: 10px;
+    height: 10px;
+    border: 1px solid red;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.map {
+    margin: 0 auto;
+    width: 75%;
+    height: 800px;
+    border: 1px solid blue;
+    background-image: url(images/campsite_map.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.left {
+    width: 150px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 560px;
+    margin-top: 120px;
+}
+
+.left > button {
+    border-radius: 50%;
+    background: green;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.right {
+    width: 150px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+}
+
+
+.right > button {
+    border-radius: 50%;
+    background: green;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+
+.left > button:nth-child(2) {
+    margin-left: 45px;
+    margin-top: -35px;
+}
+
+.left > button:nth-child(3) {
+    margin-left: 45px;
+    margin-top: -25px;
+}
+
+.left > button:nth-child(4) {
+    margin-left: -10px;
+    margin-top: -25px;
+}b  
+
+.left > button:nth-child(5) {
+    margin-left: -15px;
+    margin-top: -45px;
+}
+
+.left > button:nth-child(6) {
+    margin-left: -15px;
+    margin-top: -45px;
+}
+
+
+.left > button:nth-child(7) {
+    margin-left: -15px;
+    margin-top: -45px;
+}
+
+.left > button:nth-child(8) {
+    margin-left: -10px;
+    margin-top: 240px;
+}
 /* Here ends CSS for Tickets*/
 
 
@@ -332,7 +492,6 @@ input:focus{
   text-align: right;
   margin-bottom:10px;
 }
-
 /* Here ends CSS for Account*/
 
 
@@ -344,121 +503,15 @@ input:focus{
 #footer{
     background-color: #99B2B2;
     color: #fff;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 80%;
+    padding: 10px;
     position: relative;
     height: 35px;
     clear: both;
+    
  }
-
-.popup {
-    display: none;
-    width: 100%;
-    background-color: black;    
-    text-align: center;
-}
-
-.popup > img {
-    margin: 0 auto;
-}
-
-.select {
-    width: 10px;
-    height: 10px;
-    border: 1px solid red;
-    border-radius: 50%;
-    background-color: red;
-}
-
-.map {
-    margin: 0 auto;
-    width: 75%;
-    height: 800px;
-    border: 1px solid blue;
-    background-image: url(images/campsite_map.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.left {
-    width: 150px;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    margin-left: 560px;
-    margin-top: 120px;
-}
-
-.left > button {
-    border-radius: 50%;
-    background: green;
-    width: 15px;
-    height: 15px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-.right {
-    width: 150px;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 120px;
-}
-
-
-.right > button {
-    border-radius: 50%;
-    background: green;
-    width: 15px;
-    height: 15px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-
-.left > button:nth-child(2) {
-    margin-left: 45px;
-    margin-top: -35px;
-}
-
-.left > button:nth-child(3) {
-    margin-left: 45px;
-    margin-top: -25px;
-}
-
-.left > button:nth-child(4) {
-    margin-left: -10px;
-    margin-top: -25px;
-}b  
-
-.left > button:nth-child(5) {
-    margin-left: -15px;
-    margin-top: -45px;
-}
-
-.left > button:nth-child(6) {
-    margin-left: -15px;
-    margin-top: -45px;
-}
-
-
-.left > button:nth-child(7) {
-    margin-left: -15px;
-    margin-top: -45px;
-}
-
-.left > button:nth-child(8) {
-    margin-left: -10px;
-    margin-top: 240px;
-}
-
-
-
-
 /* Here ends CSS for Footer*/
 
 
