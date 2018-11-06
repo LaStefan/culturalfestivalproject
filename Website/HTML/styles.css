@@ -125,7 +125,7 @@ button:hover{
 
 /* From here starts CSS for About Page */
 #About{
-    background-color: #000;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(images/festivalimg7.jpg);
     width: 100%;
     height: 1000px;
     float: left;
@@ -169,7 +169,7 @@ button:hover{
 
 /* From here starts CSS for Tickets */
 #Ticket{
-    background-color: #000;
+    background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(images/festivalimg7.jpg);
     width: 100%;
     height: 1000px;
     float: left;
@@ -322,7 +322,7 @@ button:hover{
 
 /* From here starts CSS for Account */
 #Account{
-    background: url(images/festivalimg7.jpg);
+    background-image:     linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(images/festivalimg7.jpg);
     opacity:0.8;
     width: 100%;
     height: 1000px;
@@ -338,7 +338,7 @@ button:hover{
 a {
   text-decoration: none;
   color: #fff;
-  transition: .5s ease;
+  transition: .1s ease;
 }
 a:hover {
   color: #99B2B2;
@@ -349,12 +349,12 @@ a:hover {
   max-width: 600px;
   margin: 40px auto;
   border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  box-shadow: 0 4px 10px 4px;
   transition: .5s ease;
 }
 
 .form:hover {
-	box-shadow: 0px 0px 40px 16px rgba(18,18,18,1.00);
+	box-shadow: 0px 0px 40px 16px rgba(153,178,178);
 	}
 
 .tab-group {
