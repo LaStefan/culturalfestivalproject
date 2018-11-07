@@ -25,6 +25,6 @@ function selectSpot() {
     var spot = document.getElementsByClassName('select');
     printMousePos();
     spot.css('position', 'absolute');
-    spot.css('top', cursorY); //or wherever you want it
+    spot.css('top', cursorY);
     spot.css('left', cursorX);
 }
