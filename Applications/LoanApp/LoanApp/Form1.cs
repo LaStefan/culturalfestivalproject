@@ -53,5 +53,25 @@ namespace LoanApp
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pbPhone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnADD_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbRFID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -25,8 +25,12 @@ namespace ATM
 
         private void btnCode_Click(object sender, EventArgs e)
         {
-            CodeQrBarcodeDraw qr = new CodeQrBarcodeDraw();
-            pbQr.Image = qr.Draw(tbCode.Text, 100);
+            
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

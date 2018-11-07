@@ -24,7 +24,11 @@ namespace CheckInOutCamping
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

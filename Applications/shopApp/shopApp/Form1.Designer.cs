@@ -46,17 +46,16 @@
             this.panelFood = new System.Windows.Forms.Panel();
             this.panelDrinks = new System.Windows.Forms.Panel();
             this.panelPay = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelTotal = new System.Windows.Forms.Label();
             this.productDataGV = new System.Windows.Forms.DataGridView();
             this.productID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelTotal = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnADD = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.lbRFID = new System.Windows.Forms.Label();
             this.picWhiskey = new System.Windows.Forms.PictureBox();
@@ -337,30 +336,12 @@
             this.panelPay.Controls.Add(this.btnPayment);
             this.panelPay.Controls.Add(this.btnClear);
             this.panelPay.Controls.Add(this.btnExit);
-            this.panelPay.Controls.Add(this.btnADD);
             this.panelPay.Controls.Add(this.btnRemove);
             this.panelPay.Controls.Add(this.lbRFID);
             this.panelPay.Location = new System.Drawing.Point(6, 3);
             this.panelPay.Name = "panelPay";
             this.panelPay.Size = new System.Drawing.Size(758, 399);
             this.panelPay.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(504, 322);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 20);
-            this.textBox1.TabIndex = 11;
-            // 
-            // labelTotal
-            // 
-            this.labelTotal.AutoSize = true;
-            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(424, 322);
-            this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(74, 20);
-            this.labelTotal.TabIndex = 10;
-            this.labelTotal.Text = "Total: € ";
             // 
             // productDataGV
             // 
@@ -371,7 +352,7 @@
             this.productName,
             this.productQty,
             this.productPrice});
-            this.productDataGV.Location = new System.Drawing.Point(162, 46);
+            this.productDataGV.Location = new System.Drawing.Point(102, 36);
             this.productDataGV.Name = "productDataGV";
             this.productDataGV.Size = new System.Drawing.Size(558, 270);
             this.productDataGV.TabIndex = 9;
@@ -396,6 +377,23 @@
             // 
             this.productPrice.HeaderText = "Price";
             this.productPrice.Name = "productPrice";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(504, 322);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(216, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(424, 322);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(74, 20);
+            this.labelTotal.TabIndex = 10;
+            this.labelTotal.Text = "Total: € ";
             // 
             // btnPayment
             // 
@@ -434,26 +432,14 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnADD
-            // 
-            this.btnADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADD.Location = new System.Drawing.Point(20, 46);
-            this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(102, 56);
-            this.btnADD.TabIndex = 5;
-            this.btnADD.Text = "add\r\n\r\n";
-            this.btnADD.UseVisualStyleBackColor = false;
-            // 
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(20, 130);
+            this.btnRemove.Location = new System.Drawing.Point(307, 357);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(102, 63);
+            this.btnRemove.Size = new System.Drawing.Size(102, 35);
             this.btnRemove.TabIndex = 4;
             this.btnRemove.Text = "remove\r\n";
             this.btnRemove.UseVisualStyleBackColor = false;
@@ -942,7 +928,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.DataGridView productDataGV;
-        private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.PictureBox picCola;
         private System.Windows.Forms.DataGridViewTextBoxColumn productID;
         private System.Windows.Forms.DataGridViewTextBoxColumn productName;

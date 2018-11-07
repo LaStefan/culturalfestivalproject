@@ -22,6 +22,9 @@ namespace Check_InOutApp
 
         }
 
-       
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

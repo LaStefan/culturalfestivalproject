@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\Product.cs" />
-    <Compile Include="DbConnect.cs" />
+    <Compile Include="classes\DbConnect.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

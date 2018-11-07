@@ -21,3 +21,4 @@ C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\LoanApp\LoanApp\obj\De
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\LoanApp\LoanApp\obj\Debug\LoanApp.csproj.CoreCompileInputs.cache
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\LoanApp\LoanApp\obj\Debug\LoanApp.exe
 C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\LoanApp\LoanApp\obj\Debug\LoanApp.pdb
+C:\Users\Gebruiker\Desktop\ProP\ProP_Group10\Applications\LoanApp\LoanApp\obj\Debug\LoanApp.LoanForm.resources
