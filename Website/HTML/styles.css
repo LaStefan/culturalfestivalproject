@@ -32,7 +32,7 @@
     width: 200px;
     background-color: transparent;
     border: 2px solid #fff;
-    color: white;
+    color: #fff;
     font-family: 'Open Sans Condensed', sans-serif;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
@@ -155,8 +155,10 @@ button:hover{
     margin-top: -1%;
     background-color: #6e9987;
     border: none;
-    color: white;
+    color: #fff;
     font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     display: inline-block;
     font-size: 16px;
@@ -167,17 +169,34 @@ button:hover{
   }
 
 #Information {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+.info {
+    text-align: justify;
+    color:aliceblue;
+}
+
+.contact {
+    text-align: center;
+    color:aliceblue;
+}
+
+.program {
+    text-align: center;
+    color:aliceblue;
+}
+
 .infoEvent{
     width: 400px;
     float: left;
     margin: 10px;
     margin-left: 15px;
-    height: 250px;
+    height: 270px;
     display: block;
     background-color: #6e9987;
     padding: 10px;
@@ -189,9 +208,11 @@ button:hover{
     color: #fff;
     text-align: center;
     border-bottom-style:solid;
-    font-family: "Lucida Console"; 
+    color: rgba(255,255,255,0.7);
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif; 
     font-size: 15px;
-    border-bottom-color: #fff;
+    border-bottom-color: rgba(255,255,255,0.7);
     margin-left: 30%;
     width: 40%;
 }
@@ -210,7 +231,8 @@ button:hover{
     color: #fff;
     text-align: center;
     border-bottom-style:solid;
-    font-family: "Lucida Console"; 
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     border-bottom-color: #fff;
     margin-left: 30%;
@@ -237,7 +259,9 @@ button:hover{
     background-color: transparent;
     border: 5px solid #fff;
     color: white;
-    font: bold 15px/30px sans-serif;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     text-align: center;
     cursor: pointer;
@@ -383,6 +407,7 @@ button:hover{
     width: 100%;
     height: 1000px;
     float: left;
+ 
 }
 
 *{
@@ -429,6 +454,8 @@ a:hover {
   padding: 15px;
   background: #000;
   color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   float: left;
   width: 50%;
@@ -460,10 +487,12 @@ label {
   position: absolute;
   transform: translateY(6px);
   left: 13px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: rgba(255,255,255,0.7);
   transition: all 0.25s ease;
   pointer-events: none;
-  font-size: 22px;
+  font-size: 15px;
 }
 label .req {
   margin: 2px;
@@ -485,17 +514,20 @@ label.highlight {
 }
 
 input {
-  font-size: 22px;
+  font-size: 18px;
   display: block;
   width: 100%;
   height: 100%;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding: 5px 10px;
   background: none;
   background-image: none;
   border: 2px solid  #6e9987;
-  color: #000;
   border-radius: 0;
   transition: border-color 0.5s ease, box-shadow 0.5s ease;
+  
 
 }
 input:focus{
@@ -529,7 +561,9 @@ input:focus{
   border-radius: 0;
   padding: 15px 0;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: .1em;
   background: #6e9987;
@@ -562,7 +596,8 @@ input:focus{
     background-color: #99B2B2;
     color: #fff;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 80%;
     padding: 10px;
     position: relative;
