@@ -153,7 +153,7 @@ button:hover{
     margin-right: 20%;
     margin-left: 36%;
     margin-top: -1%;
-    background-color: #99B2B2;
+    background-color: #6e9987;
     border: none;
     color: white;
     font-weight: bold;
@@ -179,7 +179,7 @@ button:hover{
     margin-left: 15px;
     height: 250px;
     display: block;
-    background-color: #99B2B2;
+    background-color: #6e9987;
     padding: 10px;
     text-align: center;
 }
@@ -367,6 +367,10 @@ button:hover{
 
 .right > button:nth-child(3) {
     margin-left: -180px;
+    margin-top: 80px;
+}
+
+#legend {
     margin-top: 80px;
 }
 /* Here ends CSS for Tickets*/
