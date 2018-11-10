@@ -268,6 +268,34 @@ button:hover{
     text-transform: uppercase;
   }
 
+.messageBox {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+
+.messageBox > .all > .choise {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.messageBox > .all > .choise > button {
+    width: 35%;
+    border: 5px solid white;
+    background-color: transparent;
+}
+
+.messageBox > .all {
+    width: 30%;
+    background-color: #6e9987;
+    margin: 0 auto;
+}
+
+
 .popup {
     display: none;
     width: 100%;
@@ -761,6 +789,7 @@ td.checkout {
     clear: both;
     
  }
+
 /* Here ends CSS for Footer*/
 
 

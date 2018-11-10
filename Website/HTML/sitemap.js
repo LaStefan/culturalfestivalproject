@@ -1,30 +1,25 @@
 var divName = document.getElementsByClassName('popup')[0];
+var message = document.getElementsByClassName('messageBox')[0];
 var hidden = true;
-var cursorX;
-var cursorY;
+var hiddenMessage = true;
 
 function showUp() {
     if(hidden == true) {
         divName.style.display = 'block';
-        hidden = false;
         divName.scrollIntoView(false);
-    }
-    else { 
-        console.log("444")
+        message.style.display = 'none';
     }
 }
 
-function printMousePos() {
-    document.onmousemove = function(e){
-    cursorX = e.pageX;
-    cursorY = e.pageY;
-}
+function showMessage() {
+    divName.style.display = 'none';
+    if(hiddenMessage == true) {
+        message.style.display = 'block';
+        message.scrollIntoView(false);
+    }
 }
 
-function selectSpot() {
-    var spot = document.getElementsByClassName('select');
-    printMousePos();
-    spot.css('position', 'absolute');
-    spot.css('top', cursorY);
-    spot.css('left', cursorX);
+function Cancel() {
+    divName.style.display = 'none';
+    message.style.display = 'none';
 }

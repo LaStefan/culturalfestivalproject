@@ -36,24 +36,33 @@
         </div>
      <div class="ticketType">
  <figure><img src="images/TwoDaysTicket.jpg" alt="onedayticket" id="TicketImage" />
-  <button type="submit" id="GetTicket">get a ticket</button>   
+  <button type="submit" id="GetTicket" onclick="Cancel()">get a ticket</button>   
  </figure>
  </div>
         
  <div class="ticketType">
  <figure><img src="images/OneDayTicket.jpg" alt="twodaysticket" id="TicketImage" />
-  <button type="submit" id="GetTicket" onclick="showUp()">get a ticket</button>     
+  <button type="submit" id="GetTicket" onclick="showMessage()">get a ticket</button>     
  </figure>
  </div>
         
  <div class="ticketType">
  <figure><img src="images/FullPackage.jpg" alt="fullpackage" id="TicketImage" />
-   <button type="submit" id="GetTicket"  onclick="showUp()">get a ticket</button>    
+   <button type="submit" id="GetTicket"  onclick="showMessage()">get a ticket</button>    
 </figure>
  </div>
    
    </div>
         
+<div class="messageBox">
+    <div class="all">
+    <h1>Do you want to reserve a camping spot?</h1>
+    <div class="choise">
+    <button onclick="showUp()">Yes</button>
+    <button onclick="Cancel()">No</button>
+        </div>
+    </div>
+</div>
  <div class="popup">
      <div class="map">
          <div class="left">
