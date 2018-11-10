@@ -1,8 +1,10 @@
 /* From here starts CSS for Coming Soon Page */
 
 .payment {
-    color: white;
-      padding: 40px;
+    box-shadow: 0 4px 10px 4px black;
+  transition: .5s ease;
+ color: white;
+ padding: 40px;
   max-width: 600px;
   margin: 40px auto;
   border-radius: 4px;
@@ -10,8 +12,7 @@
     flex-direction: column;
     justify-content: space-around;
     border-radius: 4px;
-  box-shadow: 0 4px 10px 4px;
-  transition: .5s ease;
+  
 }
 
 .payment:hover {
