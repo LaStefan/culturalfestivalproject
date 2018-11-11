@@ -1,118 +1,5 @@
 /* From here starts CSS for Coming Soon Page */
-
-.payment {
-    box-shadow: 0 4px 10px 4px black;
-  transition: .5s ease;
- color: white;
- padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border-radius: 4px;
-        display: none;
-
-   
-}
-
-.payment:hover {
-	box-shadow: 0px 0px 40px 16px rgba(153,178,178);
-	}
-
-.payment > .header {
-    height: 10%;
-    font-size: 13px;
-    font-weight: bold;
-    text-align: center;
-    margin: 0;
-}
-
-.payment > .header > h1 {
-    margin: 0;
-}
-
-
-.payment > .details {
-    height: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.payment > .proccess {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.payment > .proccess > button {
-  border: 0;
-  outline: none;
-  width: 40%;
-  border-radius: 0;
-  padding: 15px 0;
-  font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  background: #6e9987;
-  color: #ffffff;
-  transition: all 0.5s ease;
-}
-
-.payment > .proccess > button:hover, .button:focus {
-  background: #99B2B2;;
-}
-
-
-.payment > .details > .leftDetails {
-    margin: 0;
-}
-
-.payment > .details > .leftDetails > p {
-    margin-top: 20px;
-}
-
-.payment > .details > .rightDetails {
-    padding: 10px;
-}
-
-.payment > .details > .rightDetails > .selection {
-    width: 150px;
-    background-color: transparent;
-    border: 2px solid #6e9987;
-    
-}
-
-.payment > .details > .rightDetails >  .selection > select {
-    width: 100%;
-    background-color: transparent;
-    color: rgba(255,255,255,0.7);
-}
-
-.payment > .details > .rightDetails > input {
-    width: 250px;
-    height: 30px;
-    font-size: 15px;
-    margin-top: 15px;
-    
-}
-
-.payment > .proccess {
-    height: 20%;
-}
-
-.payment > div {
-    width: 100%;
-}
-
-
-
 #ComingSoon{
-   
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/festivalimg7.jpg);
     height: 100%;
     background-position: center;
@@ -169,7 +56,6 @@
     flex-direction: row;
     justify-content: space-around;
     margin-top: 0%;
-
 }
 
 #line1{
@@ -203,8 +89,8 @@ section {
     padding: 0;
     overflow: hidden;
     background-color: #fff;
-    font-family: "Arial";
-    
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #NavBar a{
@@ -241,9 +127,10 @@ button:hover{
     height: 650px;
     float: left;
 }
+
 .AboutPage > div {
   background-color: #000;
- flex-direction: row;
+  flex-direction: row;
 }
 
 .aboutFestival {
@@ -253,11 +140,10 @@ button:hover{
     margin-left: 190px;
     margin-top: 30px;
     height: 198px;
-   }
+}
  
 #FestivalSlide{
    margin-top: 30%;
-   
 }
 
 #BuyTicket{
@@ -553,7 +439,6 @@ button:hover{
     width: 100%;
     height: 1000px;
     float: left;
- 
 }
 
 *{
@@ -673,9 +558,8 @@ input {
   border: 2px solid  #6e9987;
   border-radius: 0;
   transition: border-color 0.5s ease, box-shadow 0.5s ease;
-  
-
 }
+
 input:focus{
   outline: 0;
   border-color: #99B2B2; 
@@ -704,9 +588,9 @@ input:focus{
 .button {
   border: 0;
   outline: none;
+  width: 40%;
   border-radius: 0;
   padding: 15px 0;
-  font-size: 2rem;
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Montserrat', sans-serif;
@@ -714,7 +598,7 @@ input:focus{
   letter-spacing: .1em;
   background: #6e9987;
   color: #ffffff;
-
+  transition: all 0.5s ease;
 }
 .button:hover, .button:focus {
   background: #99B2B2;;
@@ -729,6 +613,126 @@ input:focus{
   margin-top: -20px;
   text-align: right;
   margin-bottom:10px;
+}
+
+/* PAYMENT METHOD */
+.payment {
+  box-shadow: 0 4px 10px 4px black;
+  transition: .5s ease;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 4px;
+}
+
+.paymentMain {
+    display: none;
+
+}
+
+.payment:hover {
+	box-shadow: 0px 0px 40px 16px rgba(153,178,178);
+	}
+
+.payment > .header {
+    height: 10%;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.payment > .header > h1 {
+    margin: 0;
+}
+
+
+.payment > .details {
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.payment > .proccess {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.payment > .proccess > button {
+  border: 0;
+  outline: none;
+  width: 40%;
+  border-radius: 0;
+  padding: 15px 0;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #6e9987;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.payment > .proccess > button:hover, .button:focus {
+  background: #99B2B2;;
+}
+
+
+.payment > .details > .leftDetails {
+    margin: 0;
+}
+
+.payment > .details > .leftDetails > p {
+    padding: 14px;
+}
+
+.payment > .details > .rightDetails {
+    padding: 10px;
+}
+
+.payment > .details > .rightDetails > .selection {
+    width: 150px;
+    background-color: transparent;
+    border: 2px solid #6e9987;
+    
+}
+
+.payment > .details > .rightDetails >  .selection > select {
+    width: 100%;
+    background-color: transparent;
+    color: rgba(255,255,255,0.7);
+}
+
+.payment > .details > .rightDetails >  .selection > select > option {
+    background-color: black;
+}
+
+.payment > .details > .rightDetails > input {
+    width: 250px;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 15px;
+    
+}
+
+.payment > .proccess {
+    height: 20%;
+}
+
+.payment > div {
+    width: 100%;
 }
 /* Here ends CSS for Account*/
 

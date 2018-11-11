@@ -51,14 +51,14 @@
               <label>
                 First Name<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off" />
+              <input class="fnInput" type="text" required autocomplete="off" />
             </div>
         
             <div class="field-wrap">
               <label>
                 Last Name<span class="req">*</span>
               </label>
-              <input type="text"required autocomplete="off"/>
+              <input class="lnInput" type="text"required autocomplete="off"/>
             </div>
           </div>
 
@@ -66,17 +66,17 @@
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input class="emailInput" type="email"required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Set a password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input  class="passwordInput" type="password" required autocomplete="off"/>
           </div>
                    
-                    <button class="button button-block" onclick="switchPanel()">Sign Up</button>
+                    <button class="button button-block" onclick="switchPanels()" type="button">Continue to payment method</button>
                              
                 
                 </form>
@@ -111,6 +111,7 @@
             </div>
    
           </div>
+            <div class="paymentMain">
             <div class="payment">
                 <div class="header">
                     <h1>
@@ -142,6 +143,7 @@
                     <button>Place Order</button>
                 </div>
             
+            </div>
             </div>
 </div>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
