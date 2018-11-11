@@ -98,7 +98,7 @@ namespace shopApp
         private void picHam_Click(object sender, EventArgs e)
         {
             currentItem = new Product(1, "Hamburger", 2.50, 0, null);
-            ShowProductForm(picHam, "Hamburger", 4565);
+            ShowProductForm(picHam, "Hamburger", 0.05);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

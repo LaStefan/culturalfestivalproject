@@ -18,7 +18,7 @@ namespace shopApp
             InitializeComponent();
             picShow.Image = pb.Image;
             lbName.Text = name;
-            lbPrice.Text = price.ToString();
+            lbPrice.Text = price.ToString("0.00");
             ItemIsAdded = false;
         }
 
