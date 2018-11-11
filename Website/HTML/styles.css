@@ -12,7 +12,9 @@
     flex-direction: column;
     justify-content: space-around;
     border-radius: 4px;
-  
+        display: none;
+
+   
 }
 
 .payment:hover {
@@ -712,7 +714,7 @@ input:focus{
   letter-spacing: .1em;
   background: #6e9987;
   color: #ffffff;
-  transition: all 0.5s ease;
+
 }
 .button:hover, .button:focus {
   background: #99B2B2;;
