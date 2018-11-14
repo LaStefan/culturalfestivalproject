@@ -17,14 +17,7 @@ namespace shopApp.classes
             get { return price; }
             set
             {
-                if (price > 0)
-                {
-                    price = value;
-                }
-                else
-                {
-                    price = 0;
-                }
+                price = value;
             }
         }
 
