@@ -25,3 +25,7 @@ This project meets the following requirements
 * An application that changes the balance of the visitors based on the ATM log files.
 * An application for the client that shows the event overview.
 * A database supporting all the applications and the website.
+
+#PhP MyAdmin database connection
+username: dbi401148
+password: 123456789
