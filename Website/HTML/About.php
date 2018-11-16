@@ -10,7 +10,7 @@
        </div>
         
        <div id="logo">
-        <a href="About.html">           
+        <a href="About.php">
      <img src="images/logo.jpg" alt="logo" width="200"/>
         </a>    
        </div>
@@ -21,9 +21,9 @@
     </div>
 
     <div id="NavBar">
-            <li><a href="About.html">ABOUT</a></li>
-            <li><a href="Tickets.html">TICKETS</a></li>
-            <li><a href="Account.html">ACCOUNT</a></li>
+            <li><a href="About.php">ABOUT</a></li>
+            <li><a href="Tickets.php">TICKETS</a></li>
+            <li><a href="Account.php">ACCOUNT</a></li>
     </div>
     <title>About</title>
 </head>     
@@ -43,7 +43,7 @@
   </figure>
  </div>
         
-<a href="Tickets.html">          
+<a href="Tickets.php">
     <button id="BuyTicket">buy tickets</button></a>        
    </div>
        <br> 

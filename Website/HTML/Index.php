@@ -14,7 +14,7 @@
     <hr>
        <p id="launch"></p>
       <br>
-        <a href="About.html"><button type="submit" id="AboutEvent">About the event</button></a>
+        <a href="About.php"><button type="submit" id="AboutEvent">About the event</button></a>
         </div>    
                        
     </div>
