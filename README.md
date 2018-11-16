@@ -27,5 +27,5 @@ This project meets the following requirements
 * A database supporting all the applications and the website.
 
 # PhP MyAdmin database connection
-username: dbi401148
-password: 123456789
+ * username: dbi401148
+ * password: 123456789
