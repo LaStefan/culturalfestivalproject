@@ -1,3 +1,79 @@
+<?php
+session_start();
+?>
+
+<?php 
+    $error = " ";
+$host = "studmysql01.fhict.local";
+   $dbname = "dbi401148";
+   $dbusername = "dbi401148";
+   $dbpassword = "123456789";
+
+
+
+if(isset($_POST['signin'])) {
+     $username = $_POST['logname'];
+     $pass = $_POST['logpass'];
+        $conn = new PDO("mysql:host=$host;dbname=dbi401148", $dbfirstname, $dblastname, $dbemail, $dbpassword);
+    $sql = "SELECT * FROM `customer` WHERE firstname = :firstname AND lastname = :lastname AND firstname = :firstname password = :password";
+    $statement = $conn->prepare($sql);
+    $statement->execute([":username" => $username, ":password" => $pass]);
+    $row = $statement->rowCount();
+    
+    if($row == 1) {
+        $_SESSION['email'] = $username;
+        header("location: profile.php");
+    }
+    else {
+        $error = "Wrong username or password. Please try again!";
+    }
+} 
+
+
+if(isset($_POST['sendmail'])) {
+            session_start();
+    $email = $_POST['regMail'];
+     $username = $_POST['regUname'];
+     $pass = $_POST['regPass'];
+    if($username == ""){
+        $error = "Please input username!";
+        
+    }
+    
+    else if($email == ""){
+        $error = "Please input email!";
+        
+    }
+    else if($pass == "") {
+        $error = "Please input password!";
+        
+    }
+    else { 
+        try{
+    $conn = new PDO("mysql:host=$host;dbname=dbi401148", $dbusername, $dbpassword);
+
+          $_SESSION["email"] = $email;
+            $sql = "INSERT INTO `account`(`id`, `username`, `password`, `email`) VALUES (null,:user,:pass,:email)";
+        $statement = $conn->prepare($sql);
+
+        $statement->execute([":user" => $username, ":pass" => $pass, ":email"=>$email]);
+               mail($email, "Registration PComponent", "Thank you for the registration! Your username is: {$username} Your password is: {$pass}");
+    header("location: profile.php");
+             }
+catch(PDOException $e)
+    {
+    die("Connection failed: " . $e->getMessage());
+    } 
+        
+     
+ }
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
