@@ -1,6 +1,6 @@
 /* From here starts CSS for Coming Soon Page */
 #ComingSoon{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/festivalimg7.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/festivalimg7.jpg);
     height: 100%;
     background-position: center;
     font-size: 30px;
@@ -122,7 +122,7 @@ button:hover{
 
 /* From here starts CSS for About Page */
 #About{
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(images/festivalimg7.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(../images/festivalimg7.jpg);
     width: 100%;
     height: 650px;
     float: left;
@@ -218,7 +218,7 @@ button:hover{
 
 /* From here starts CSS for Tickets */
 #Ticket{
-    background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(images/festivalimg7.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(../images/festivalimg7.jpg);
     width: 100%;
     height: 1000px;
     float: left;
@@ -323,7 +323,7 @@ button:hover{
     margin: 0 auto;
     width: 75%;
     height: 800px;
-    background-image: url(images/campsite_map.jpg);
+    background-image: url(../images/campsite_map.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: flex;
@@ -434,7 +434,7 @@ button:hover{
 
 /* From here starts CSS for Account */
 #Account{
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(images/festivalimg7.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(../images/festivalimg7.jpg);
     opacity:0.8;
     width: 100%;
     height: 1000px;
@@ -741,7 +741,7 @@ input:focus{
 /* From here starts CSS for Cart */
 #Cart
 {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(images/festivalimg7.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(../images/festivalimg7.jpg);
     opacity:0.8;
     width: 100%;
     height: 1000px;

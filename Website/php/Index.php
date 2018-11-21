@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link href="styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bree+Serif|Indie+Flower|Josefin+Sans|Patrick+Hand|Permanent+Marker|Shadows+Into+Light|Sofia|Ubuntu" rel="stylesheet">
     
     <title>Coming soon</title>

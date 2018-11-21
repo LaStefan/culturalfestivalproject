@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     
     <div id="TopBar">
@@ -103,7 +103,7 @@ dance steps, languages and many more. Everything from folk art to metal music an
     
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="slider.js"></script>     
+<script src="js/slider.js"></script>
  </body>
 </html>
          

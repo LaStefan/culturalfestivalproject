@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     
     <div id="TopBar">
@@ -94,5 +94,5 @@
         </footer>    
     
     </body>
-    <script src="sitemap.js"></script>
+    <script src="js/sitemap.js"></script>
 </html>

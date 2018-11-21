@@ -4,10 +4,6 @@ session_start();
 
 <?php 
     $error = " ";
-$host = "studmysql01.fhict.local";
-   $dbname = "dbi401148";
-   $dbusername = "dbi401148";
-   $dbpassword = "123456789";
 
 
 
@@ -80,7 +76,7 @@ catch(PDOException $e)
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     
     <div id="TopBar">
        <div id="line1">
@@ -223,8 +219,8 @@ catch(PDOException $e)
             </div>
 </div>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script  src="Account_js.js"></script>
-    <script src="accountSwitch.js"></script>
+<script  src="js/Account_js.js"></script>
+    <script src="js/accountSwitch.js"></script>
     
     <footer id="footer">
         <p>© CULTURAL FESTIVAL 2018. All rights reserved. Made by DevelopPro.</p>  
