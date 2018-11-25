@@ -253,16 +253,14 @@ button:hover{
     margin-top: -60%;
     margin-left:30%;
     width: 200px;
-    background-color: transparent;
     border: 5px solid #fff;
     color: white;
     font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     text-align: center;
-    cursor: pointer;
     text-transform: uppercase;
+    background-color: #054427;
   }
 
 .messageBox {
