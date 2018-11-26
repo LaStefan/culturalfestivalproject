@@ -3,18 +3,18 @@
 <head>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
-    
+
     <div id="TopBar">
        <div id="line1">
      <img src="images/line.jpg" alt="line" width="630" height="70"/>
        </div>
-        
+
        <div id="logo">
         <a href="About.php">
      <img src="images/logo.jpg" alt="logo" width="200"/>
-        </a>    
+        </a>
        </div>
-        
+
         <div id="line2">
      <img src="images/line2.jpg" alt="line" width="630" height="70"/>
         </div>
@@ -26,7 +26,7 @@
             <li><a href="Account.php">ACCOUNT</a></li>
     </div>
     <title>About</title>
-</head>     
+</head>
 
 <body>
     <section>

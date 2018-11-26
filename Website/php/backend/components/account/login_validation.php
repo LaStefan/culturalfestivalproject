@@ -3,12 +3,13 @@
 session_start();
 
 require __DIR__ . '/../db/db.php';
-require __DIR__ . '/account_helper.php';
 
-if (login($_POST['email'], $_POST['password'])){
-//    $_SESSION['loggedIn'] = true;
-//    $_SESSION['userId'] = ;
-}
+login($_POST['email'], $_POST['password']);
+
+
+
+header('Location: ../../../Account.php');
+
 
 function login($email, $password)
 {
@@ -19,12 +20,19 @@ function login($email, $password)
     $result = $stmt->fetchAll();
 
     if (!empty($result)){
-        
+        if ($password == $result[0]['Password']) {
+
+            $_SESSION['customerId'] = $result[0]['CustomerId'];
+            $_SESSION['loggedIn'] = true;
+
+            return true;
+
+        }
     }
-
-    var_dump($result);
-
 
     return false;
 }
+
+
+
 

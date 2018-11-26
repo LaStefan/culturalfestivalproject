@@ -3,6 +3,8 @@
 <head>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+    <script type='text/javascript' src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/checkout.js"></script>
 
     <div id="TopBar">
         <div id="line1">
@@ -34,14 +36,16 @@
 
         <div id="text"><h1>BE PART OF OUR EVENT</h1>
         </div>
+
         <div class="ticketType">
-            <figure><img src="images/TwoDaysTicket.jpg" alt="onedayticket" id="TicketImage"/>
-                <button type="submit" id="GetTicket" onclick="Cancel()">get a ticket</button>
+
+            <figure><img src="images/OneDayTicket.jpg" alt="onedayticket" id="TicketImage"/>
+                <button type="submit" name="oneDayTicket" id="GetTicket" onclick="addToCart(this)">get a ticket</button>
             </figure>
         </div>
 
         <div class="ticketType">
-            <figure><img src="images/OneDayTicket.jpg" alt="twodaysticket" id="TicketImage"/>
+            <figure><img src="images/TwoDaysTicket.jpg" alt="twodaysticket" id="TicketImage"/>
                 <button type="submit" id="GetTicket" onclick="showMessage()">get a ticket</button>
             </figure>
         </div>

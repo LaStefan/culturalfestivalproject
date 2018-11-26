@@ -65,6 +65,7 @@ if (isset($_POST['sendmail'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script type='text/javascript' src="js/jquery-3.3.1.min.js"></script>
 
     <div id="TopBar">
         <div id="line1">
@@ -94,119 +95,131 @@ if (isset($_POST['sendmail'])) {
 
 <body>
 <div id="Account">
-    <div class="form">
 
-        <ul class="tab-group">
-            <li class="tab active"><a href="#signup">Sign Up</a></li>
-            <li class="tab"><a href="#login">Log In</a></li>
-        </ul>
+    <?php if (!empty($_SESSION['loggedIn'])) : ?>
 
-        <div class="tab-content">
-            <div id="signup">
+        <?php require('account/UserProfile.php'); ?>
 
-                <form>
+    <?php else: ?>
 
-                    <div class="top-row">
-                        <div class="field-wrap">
-                            <label>
-                                First Name<span class="req">*</span>
-                            </label>
-                            <input class="fnInput" type="text" required autocomplete="off"/>
+        <div class="form">
+
+            <ul class="tab-group">
+                <li class="tab active"><a href="#signup">Sign Up</a></li>
+                <li class="tab"><a href="#login">Log In</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="signup">
+
+                    <form>
+
+                        <div class="top-row">
+                            <div class="field-wrap">
+                                <label>
+                                    First Name<span class="req">*</span>
+                                </label>
+                                <input class="fnInput" type="text" required autocomplete="off"/>
+                            </div>
+
+                            <div class="field-wrap">
+                                <label>
+                                    Last Name<span class="req">*</span>
+                                </label>
+                                <input class="lnInput" type="text" required autocomplete="off"/>
+                            </div>
                         </div>
 
                         <div class="field-wrap">
                             <label>
-                                Last Name<span class="req">*</span>
+                                Email Address<span class="req">*</span>
                             </label>
-                            <input class="lnInput" type="text" required autocomplete="off"/>
+                            <input class="emailInput" type="email" required autocomplete="off"/>
                         </div>
-                    </div>
 
-                    <div class="field-wrap">
-                        <label>
-                            Email Address<span class="req">*</span>
-                        </label>
-                        <input class="emailInput" type="email" required autocomplete="off"/>
-                    </div>
+                        <div class="field-wrap">
+                            <label>
+                                Set a password<span class="req">*</span>
+                            </label>
+                            <input class="passwordInput" type="password" required autocomplete="off"/>
+                        </div>
 
-                    <div class="field-wrap">
-                        <label>
-                            Set a password<span class="req">*</span>
-                        </label>
-                        <input class="passwordInput" type="password" required autocomplete="off"/>
-                    </div>
-
-                    <button class="button button-block" onclick="switchPanels()" type="button">Continue to payment
-                        method
-                    </button>
+                        <button class="button button-block" onclick="switchPanels()" type="button">Continue to payment
+                            method
+                        </button>
 
 
-                </form>
+                    </form>
 
+                </div>
+
+                <div id="login">
+
+                    <form action="backend/components/account/login_validation.php" method="post">
+
+                        <div class="field-wrap">
+                            <label>
+                                Email <span class="req">*</span>
+                            </label>
+                            <input type="email" name="email" required autocomplete="off"/>
+                        </div>
+
+                        <div class="field-wrap">
+                            <label>
+                                Password<span class="req">*</span>
+                            </label>
+                            <input type="password" name="password" required autocomplete="off"/>
+                        </div>
+
+                        <p class="forget"><a href="#">Forget Password?</a></p>
+
+                        <button class="button button-block">Log In</button>
+
+                    </form>
+
+                </div>
             </div>
 
-            <div id="login">
-
-                <form action="backend/components/account/login_validation.php" method="post">
-
-                    <div class="field-wrap">
-                        <label>
-                            Email <span class="req">*</span>
-                        </label>
-                        <input type="email" name="email" required autocomplete="off"/>
+        </div>
+        <div class="paymentMain">
+            <div class="payment">
+                <div class="header">
+                    <h1>
+                        PAYMENT METHOD
+                    </h1>
+                    <img src="images/Visa.png" width="+275px" height="85px"><br>
+                </div>
+                <div class="details">
+                    <div class="leftDetails">
+                        <p>Credit Card Name</p>
+                        <p>Credit Card Number</p>
+                        <p>Expiration Date</p>
+                        <p>Card Validation Number</p>
                     </div>
-
-                    <div class="field-wrap">
-                        <label>
-                            Password<span class="req">*</span>
-                        </label>
-                        <input type="password" name="password" required autocomplete="off"/>
+                    <div class="rightDetails">
+                        <div class="selection">
+                            <select>
+                                <option value="master">Master Card</option>
+                                <option value="maestro">Maestro</option>
+                                <option value="visa">VISA</option>
+                            </select>
+                        </div>
+                        <input type="text" placeholder="Credit Card Number">
+                        <input type="text" placeholder="MM/YYYY">
+                        <input type="text" placeholder="Card Validation Number">
                     </div>
-
-                    <p class="forget"><a href="#">Forget Password?</a></p>
-
-                    <button class="button button-block">Log In</button>
-
-                </form>
+                </div>
+                <div class="proccess">
+                    <button>Place Order</button>
+                </div>
 
             </div>
         </div>
 
-    </div>
-    <div class="paymentMain">
-        <div class="payment">
-            <div class="header">
-                <h1>
-                    PAYMENT METHOD
-                </h1>
-                <img src="images/Visa.png" width="+275px" height="85px"><br>
-            </div>
-            <div class="details">
-                <div class="leftDetails">
-                    <p>Credit Card Name</p>
-                    <p>Credit Card Number</p>
-                    <p>Expiration Date</p>
-                    <p>Card Validation Number</p>
-                </div>
-                <div class="rightDetails">
-                    <div class="selection">
-                        <select>
-                            <option value="master">Master Card</option>
-                            <option value="maestro">Maestro</option>
-                            <option value="visa">VISA</option>
-                        </select>
-                    </div>
-                    <input type="text" placeholder="Credit Card Number">
-                    <input type="text" placeholder="MM/YYYY">
-                    <input type="text" placeholder="Card Validation Number">
-                </div>
-            </div>
-            <div class="proccess">
-                <button>Place Order</button>
-            </div>
+    <?php endif; ?>
 
-        </div>
-    </div>
+
+
 </div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="js/Account_js.js"></script>
