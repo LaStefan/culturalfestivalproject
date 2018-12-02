@@ -217,12 +217,161 @@ button:hover{
 
 
 /* From here starts CSS for Tickets */
-#Ticket{
-    background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(../images/festivalimg7.jpg);
+#MainForm{
+     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(../images/festivalimg7.jpg);
+    opacity:0.8;
     width: 100%;
     height: 1000px;
+}
+
+*{
+  box-sizing: border-box;
+  margin:0px;
+  padding:0px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  transition: .1s ease;
+}
+
+a:hover {
+  color: #99B2B2;
+}
+
+figure {
+  padding: 40px;
+  max-width: 1100px;
+  height: 88.5%;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px;
+  transition: .5s ease;
+  position: relative;
+}
+
+figure:not(:first-of-type) {
+	display: none;
+}
+
+
+figure:hover {
+	box-shadow: 0px 0px 40px 16px rgba(153,178,178);
+}
+
+/*buttons*/
+.nextMain{
+  border: 0;
+  outline: none;
+  font-size: 10px;
+  border-radius: 10px;
+  float: right;
+  padding: 10px 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #6e9987;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.previousMain {
+  border: 0;
+  outline: none;
+  font-size: 10px;
+  border-radius: 10px;
+  float: left;
+  padding: 10px 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #6e9987;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.nextMain:hover, .previousMain:focus {
+	background: #99B2B2;;
+}
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progress {
+    margin-top: 20px;
+	margin-bottom: 30px;
+	overflow: hidden;
+	counter-reset: step;
+    text-align: center;
+    margin-left: 10%;
+
+}
+#progress li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 12px;
+	width: 15%;
+   	float: left;
+	position: relative;
+}
+#progress li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 60px;
+	line-height: 30px;
+    text-align: center;
+	display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+#progress li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; 
+}
+#progress li:first-child:after {
+	content: none; 
+}
+
+
+#progress li.active:before,  #progress li.active:after{
+	background: #27AE60;
+	color: white;
+}
+
+/*tickets*/
+#TicketOne{
+    width: 30%;
+    margin: 0 1.5%;
+    padding-left: 5px;
     float: left;
 }
+
 #text{
     margin-top: 5%;
     color: #fff;
@@ -237,86 +386,142 @@ button:hover{
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-
-.ticketType {
-    width: 250px;
-    float: left;
-    margin: 95px;
-    height: 198px;
-   }
  
 #TicketImage {
-    width: 350px;
+    width: 300px;
 }
 
 #GetTicket {
-    margin-top: -60%;
-    margin-left:30%;
+    margin-top: -120%;
+    margin-left:15%;
     width: 200px;
-    border: 5px solid #fff;
+    height: 50px;
+    background-color: transparent;
+    border: 5px solid 0px 0px 40px 16px rgba(153,178,178);
     color: white;
     font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     text-align: center;
+    cursor: pointer;
     text-transform: uppercase;
-    background-color: #054427;
-  }
+    margin-bottom: 40px;
+    outline:0;
+}
 
-.messageBox {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.reserveTickets{
     display: none;
 }
 
-.messageBox > .all > .choise {
-    width: 100%;
+.reserveForm {
     display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
+    flex-flow: row;
+    width: 60%;
+    margin: auto;
+    height: 20%;
+	padding: 40px;
+    background: rgba(0, 0, 0, 0.7);
+
 }
 
-.messageBox > .all > .choise > button {
-    width: 35%;
-    border: 2px solid white;
-    font-size: 15px;
-    background-color: transparent;
+.form-group {
+	position: relative;
+	margin-bottom: 30px;
+    outline:0;
 }
 
-.messageBox > .all {
-    width: 30%;
-    background-color: #6e9987;
-    margin: 0 auto;
-     font-family: 'Open Sans', sans-serif;
-    font-family: 'Montserrat', sans-serif;
+.form-control {
+	background-color: rgba(255, 255, 255, 0.2);
+	height: 60px;
+	padding: 0px 25px;
+	border: none;
+	border-radius: 40px;
+	color: #fff;
+	-webkit-box-shadow: 0px 0px 0px 2px transparent;
+	box-shadow: 0px 0px 0px 2px transparent;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+    outline:0;
 }
 
-.messageBox > .all:hover {
-    box-shadow: 0px 0px 40px 16px rgba(153,178,178);
+.form-control:focus {
+	box-shadow: 0px 0px 0px 2px #6e9987;
 }
 
-
-.popup {
-    display: none;
-    width: 100%;
-    background-color: black;    
-    text-align: center;
+.reserveForm input[type="date"].form-control {
+	padding-top: 16px;
+    outline:0;
 }
 
-.popup > img {
-    margin: 0 auto;
+.reserveForm input[type="date"].form-control:invalid {
+	color: rgba(255, 255, 255, 0.5);
+    
 }
 
-.select {
-    width: 10px;
-    height: 10px;
-    border: 1px solid red;
-    border-radius: 50%;
-    background-color: red;
+.reserveForm input[type="date"].form-control+.form-label {
+	opacity: 1;
+	top: 10px;
 }
 
+.reserveForm select.form-control:invalid {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.reserveForm select.form-control option {
+	color: #fff;
+    background: #6e9987;
+    outline:0;
+ }
+
+.reserveForm .form-label {
+	position: absolute;
+	top: 10px;
+	left: 25px;
+	color: #6e9987;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.3px;
+	height: 15px;
+	line-height: 15px;
+	transition: 0.2s all;
+}
+
+.reserveForm .form-group.input-not-empty .form-control {
+	padding-top: 16px;
+}
+
+.reserveForm .form-group.input-not-empty .form-label {
+	opacity: 1;
+	top: 10px;
+}
+
+.continueBtn {
+  border: 0;
+  width: 20%;
+  float: right;
+  border-radius: 40px;
+  padding: 15px 0;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #6e9987;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  outline:0;   
+}
+
+.continueBtn:focus {
+  background: #99B2B2;
+}
+
+/*camping*/
+.campingSite{
+  
+}
 .map {
     margin: 0 auto;
     width: 75%;
@@ -356,7 +561,6 @@ button:hover{
     margin-top: 120px;
 }
 
-
 .right > button {
     border-radius: 50%;
     background: green;
@@ -367,65 +571,413 @@ button:hover{
     flex-direction: column;
 }
 
-
 .left > button:nth-child(2) {
     margin-left: -50px;
     margin-top: 30px;
+    outline:0;
 }
 
 .left > button:nth-child(3) {
     margin-left: -70px;
     margin-top: 20px;
+    outline:0;
 }
 
 .left > button:nth-child(4) {
     margin-left: -80px;
     margin-top: 30px;
+    outline:0;
 } 
 
 .left > button:nth-child(5) {
     margin-left:-130px;
     margin-top: 20px;
+    outline:0;
 }
 
 .left > button:nth-child(6) {
     margin-left: -180px;
     margin-top: 8px;
+    outline:0;
 }
-
 
 .left > button:nth-child(7) {
     margin-left: -150px;
     margin-top: 25px;
+    outline:0;
 }
 
 .left > button:nth-child(8) {
     margin-left: -100px;
     margin-top: 10px;
+    outline:0;
 }
 
 .left > button:nth-child(9) {
     margin-left: -160px;
     margin-top: 20px;
+    outline:0;
 }
 
 .right > button:nth-child(1) {
     margin-left: -150px;
     margin-top: 120px;
+    outline:0;
 }
 
 .right > button:nth-child(2) {
     margin-left: -180px;
     margin-top: 80px;
+    outline:0;
 }
 
 .right > button:nth-child(3) {
     margin-left: -180px;
     margin-top: 80px;
+    outline:0;
 }
 
-#legend {
-    margin-top: 80px;
+
+
+
+/*account*/
+#AccountForm {
+	width: 600px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+    opacity:0.8;
+    box-sizing: border-box;
+    color: #6e9987;
+    font-size: 7px;
+}
+#FormAcc {
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px;
+  transition: .5s ease;
+}
+
+#FormAcc:hover {
+	box-shadow: 0px 0px 40px 16px rgba(153,178,178);
+	}
+#AccountForm fieldset {
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	position: absolute;
+}
+
+fieldset:not(:first-of-type) {
+	display: none;
+}
+#Accountlabel{
+  position: absolute;
+  transform: translateY(6px);
+  left: 13px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.25s ease;
+  pointer-events: none;
+  font-size: 15px;
+}
+#Accountlabel .req {
+  margin: 2px;
+  color: red;
+}
+
+#Accountlabel.active {
+  transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+#Accountlabel.active .req {
+  opacity: 0;
+}
+
+#Accountlabel.highlight {
+  color: #000;
+  margin-top:-10px;
+}
+
+.Accountinput {
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 2px solid  #6e9987;
+  border-radius: 10px;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+  
+
+}
+.Accountinput:focus{
+  outline: 0;
+  border-color: #99B2B2; 
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.top-row > div:last-child {
+  margin: 0;
+}
+
+#nextBt {
+  border: 0;
+  outline: none;
+  font-size: 10px;
+  border-radius: 10px;
+  float: right;
+  padding: 10px 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #6e9987;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+#nextBt:hover, #previousBt:focus {
+ background: #99B2B2;;
+}
+
+#previousBt {
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  font-size: 10px;    
+  float: left;
+  cursor: pointer;
+  padding: 10px 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #6e9987;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.fs-title {
+	font-size: 14px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#progressAcc {
+	margin-bottom: 30px;
+	overflow: hidden;
+	counter-reset: step;
+    margin-left: 30%;
+}
+
+#progressAcc li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 10%;
+	float: left;
+	position: relative;
+}
+
+#progressAcc li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+
+#progressAcc li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; 
+}
+#progressAcc li:first-child:after {
+	content: none; 
+}
+
+#progressAcc li.active:before,  #progressAcc li.active:after{
+	background: @secondary-color;
+	color: white;
+}
+
+#messageBox {
+    background-color: transparent;
+    display: flex;
+    color: aliceblue;
+    display: none;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    width: 25%;
+    text-align: center;
+    height: 20%;
+    margin-top: 20%;
+}
+
+#BtnQuest {
+    width: 80%;
+    margin-left: 15%;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    width: 35%;
+    border: 1px solid white;
+    font-size: 15px;
+    text-align: center;
+    background-color: transparent;
+}
+
+/*payment*/
+.payment {
+    box-shadow: 0 4px 10px 4px black;
+    transition: .5s ease;
+    color: white;
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 4px;
+}
+
+.payment:hover {
+	box-shadow: 0px 0px 40px 16px rgba(153,178,178);
+	}
+
+.payment > .header {
+    height: 10%;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.payment > .header > h1 {
+    margin: 0;
+}
+
+
+.payment > .details {
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.payment > .proccess {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.payment > .proccess > button {
+  border: 0;
+  outline: none;
+  width: 40%;
+  border-radius: 0;
+  padding: 15px 0;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #6e9987;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.payment > .proccess > button:hover, .button:focus {
+  background: #99B2B2;;
+}
+
+
+.payment > .details > .leftDetails {
+    margin: 0;
+}
+
+.payment > .details > .leftDetails > p {
+    padding: 14px;
+}
+
+.payment > .details > .rightDetails {
+    padding: 10px;
+}
+
+.payment > .details > .rightDetails > .selection {
+    width: 150px;
+    background-color: transparent;
+    border: 2px solid #6e9987;
+    outline: 0;
+    border-radius: 6px;
+    
+}
+
+.payment > .details > .rightDetails >  .selection > select {
+    width: 100%;
+    background-color: transparent;
+    color: rgba(255,255,255,0.7);
+}
+
+.payment > .details > .rightDetails >  .selection > select > option {
+    background-color: #6e9987;
+}
+
+.payment > .details > .rightDetails > input {
+    width: 250px;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.payment > .proccess {
+    height: 20%;
+}
+
+.payment > div {
+    width: 100%;
 }
 /* Here ends CSS for Tickets*/
 
@@ -542,7 +1094,7 @@ label.highlight {
   margin-top:-10px;
 }
 
-input {
+inputA {
   font-size: 18px;
   display: block;
   width: 100%;
@@ -558,7 +1110,7 @@ input {
   transition: border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-input:focus{
+inputA:focus{
   outline: 0;
   border-color: #99B2B2; 
 }
