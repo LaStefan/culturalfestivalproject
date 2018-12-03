@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <script type='text/javascript' src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/checkout.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
 
     <div id="TopBar">
         <div id="line1">
@@ -46,6 +47,7 @@
     
     
   <figure>
+        <input type="button" name="next" class="nextMain" value="Next" />
     <div class="ticketsRes">
         <div id="text"><h1>BE PART OF OUR EVENT</h1>
         </div>
@@ -96,8 +98,7 @@
                           </div> 
        
            </div>
-    <input type="button" name="next" class="nextMain" value="Next" />
-  </figure>
+    </figure>
     
     <figure id="messageBox">
        
@@ -109,6 +110,8 @@
     
     
   <figure>
+       <input type="button" name="previous" class="previousMain" value="Previous" />
+    <input type="button" name="next" class="nextMain" value="Next" />
      <div class="campingSite">
         <div id="TicketRe">
              <div class="formRe">
@@ -133,262 +136,82 @@
     </div>
 </div>
      </div>
-    <input type="button" name="previous" class="previousMain" value="Previous" />
-    <input type="button" name="next" class="nextMain" value="Next" />
-  </figure>
+     </figure>
     
     
     
     
   <figure>
-    <div id="TicketRe">
-        <div class="formRe">
-            
-            <H1>CART</H1>
-            
-            
-            
-            
-            
-            
-            </div>
-        </div> 
+       <div class="paypal">
+
+      <div class="paypal__header">
+        <div class="paypal__logo-wrapper">
+          <img src="images/tickets.png" alt="tickets" class="paypal__logo">
+        </div>
+
+        <div class="paypal__header-info">
+          <span class="paypal__date"><p id="date"></p></span>
+        </div>
+      </div>
+
+      <div class="paypal__subheader-wrapper">
+        <div class="paypal__subheader">
+          <h1 class="paypal__username">Hello</h1>
+          <span class="paypal__help-text">You've purchased three (3) tickets for Cultural Festival 2019</span>
+        </div>
+      </div>
+
+      <div class="paypal__cart">
+        <h2 class="paypal__cart-title">Your tickets</h2>
+
+        <ul class="paypal__cart-list">
+          <li class="paypal__cart-item">
+            <span class="paypal__index">1</span>
+            <span class="paypal__item-name">One Day Ticket</span>
+            <span class="paypal__item-price">€59.00</span>
+          </li>
+
+          <li class="paypal__cart-item">
+            <span class="paypal__index">2</span>
+            <span class="paypal__item-name">One Day Ticket</span>
+            <span class="paypal__item-price">€59.00</span>
+          </li>
+
+          <li class="paypal__cart-item">
+            <span class="paypal__index">3</span>
+            <span class="paypal__item-name">One Day Ticket</span>
+            <span class="paypal__item-price">€59.00</span>
+          </li>
+
+          <li class="paypal__cart-item">
+            <span class="paypal__cart-total">Total</span>
+            <span class="paypal__item-price">€177.00</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="paypal__footer">
+        <img src="images/barcode.png" alt="Barcode" class="paypal__barcode" >
+      </div>
+    </div>
+
      <input type="button" name="previous" class="previousMain" value="Previous" />
     <input type="button" name="next" class="nextMain" value="Next" />
   </figure>
     
     
     
-      <figure>
-    <div id="TicketRe">
-        <div class="formRe">
-       <div id="Account">    
-<form id="AccountForm">
-
-	<ul id="progressAcc">
-		<li class="active"></li>
-		<li></li>
-		<li></li>
-<li></li>
-<li></li>
-<li></li>
-	</ul>
-	<fieldset id="FormAcc">
-		<h2 class="fs-title">Create an account</h2>
-		<div class="top-row">
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                First Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                Last Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Email Address<span class="req">*</span>
-            </label>
-            <input class="Accountinput" type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Set a password<span class="req">*</span>
-            </label>
-            <input  class="Accountinput" type="password" required autocomplete="off"/>
-          </div>
-		<input type="button" id="nextBt" name="next" class="next action-button" value="Register next person" />
-	</fieldset>
-    <fieldset id="FromPanel">
-	<fieldset id="FormAcc">
-		<h2 class="fs-title">Person 2</h2>
-		<div class="top-row">
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                First Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                Last Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Email Address<span class="req">*</span>
-            </label>
-            <input class="Accountinput" type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Set a password<span class="req">*</span>
-            </label>
-            <input  class="Accountinput" type="password" required autocomplete="off"/>
-          </div>
-		<input type="button" id="nextBt" name="next" class="next action-button" value="Register next person" />
-		<input type="button" id="previousBt" name="previous" class="previous action-button" value="Previous" />
-	</fieldset>
-	<fieldset id="FormAcc">
-		<h2 class="fs-title">Person 3</h2>
-		<div class="top-row">
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                First Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                Last Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Email Address<span class="req">*</span>
-            </label>
-            <input class="Accountinput" type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Set a password<span class="req">*</span>
-            </label>
-            <input  class="Accountinput" type="password" required autocomplete="off"/>
-          </div>
-		<input type="button" id="nextBt" name="next" class="next action-button" value="Register next person" />
-		<input type="button" id="previousBt" name="previous" class="previous action-button" value="Previous" />
-	</fieldset>
-	<fieldset id="FormAcc">
-		<h2 class="fs-title">Person 4</h2>
-		<div class="top-row">
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                First Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                Last Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Email Address<span class="req">*</span>
-            </label>
-            <input class="Accountinput" type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Set a password<span class="req">*</span>
-            </label>
-            <input  class="Accountinput" type="password" required autocomplete="off"/>
-          </div>
-		<input type="button" id="nextBt" name="next" class="next action-button" value="Register next person" />
-		<input type="button" id="previousBt" name="previous" class="previous action-button" value="Previous" />
-</fieldset>
-	<fieldset id="FormAcc">
-		<h2 class="fs-title">Person 5</h2>
-		<div class="top-row">
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                First Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                Last Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Email Address<span class="req">*</span>
-            </label>
-            <input class="Accountinput" type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Set a password<span class="req">*</span>
-            </label>
-            <input  class="Accountinput" type="password" required autocomplete="off"/>
-          </div>
-		<input type="button" id="nextBt" name="next" class="next action-button" value="Register next person" />
-		<input type="button" id="previousBt" name="previous" class="previous action-button" value="Previous" />
-	</fieldset>
-	<fieldset id="FormAcc">
-		<h2 class="fs-title">Person 6</h2>
-		<div class="top-row">
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                First Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label id="Accountlabel">
-                Last Name<span class="req">*</span>
-              </label>
-              <input class="Accountinput" type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Email Address<span class="req">*</span>
-            </label>
-            <input class="Accountinput" type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label id="Accountlabel">
-              Set a password<span class="req">*</span>
-            </label>
-            <input  class="Accountinput" type="password" required autocomplete="off"/>
-          </div>
-		<input type="button" id="nextBt" name="next" value="Register next person" />
-		<input type="button" id="previousBt" name="previous" class="previous action-button" value="Previous" />
-	</fieldset>
-        </fieldset>
-	</form>
-            </div>
-            </div>
-        </div>
-               <input type="button" name="previous" class="previousMain" value="Previous" />
-              <input type="button" name="next" class="nextMain" value="Next" />
-        
- </figure>
-
  <figure>
- <div id="TicketRe">
+     
+      <input type="button" name="previous" class="previousMain" value="Previous" />
+    <input type="button" name="next" class="nextMain" value="Next" />
+    
+    </figure>
+    
+  <figure>
+        <input type="button" name="previous" class="previousMain" value="Previous" />
+    <input type="button" name="next" class="nextMain" value="Pay and register" />
+        <div id="TicketRe">
         <div class="formRe">
           <div class="paymentMain">
             <div class="payment">
@@ -419,7 +242,7 @@
                     </div>
                 </div>
                 <div class="proccess">
-                    <button>Place Order</button>
+                
                 </div>
             
             </div>
@@ -428,7 +251,7 @@
             
             </div>
         </div>
-    </figure>
+        </figure>
     
     
     </form>
@@ -445,5 +268,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
     <script src="js/PanelsSwitch.js"></script>
     <script src="js/RegisterPeople.js"></script>
-    <script src="js/ReserveTickets.js"></script>    
+    <script src="js/ReserveTickets.js"></script>
+    <script src="js/CurrentDate.js"></script>
 </html>
