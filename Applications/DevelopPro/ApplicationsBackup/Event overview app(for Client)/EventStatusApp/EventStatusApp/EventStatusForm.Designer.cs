@@ -95,6 +95,7 @@
             this.btnVisitor.TabIndex = 4;
             this.btnVisitor.Text = "Visitor Status";
             this.btnVisitor.UseVisualStyleBackColor = false;
+            this.btnVisitor.Click += new System.EventHandler(this.btnVisitor_Click);
             // 
             // btnBalance
             // 
@@ -148,6 +149,7 @@
             this.btnCurrentStatus.TabIndex = 0;
             this.btnCurrentStatus.Text = "CurrentStatusOverall";
             this.btnCurrentStatus.UseVisualStyleBackColor = false;
+            this.btnCurrentStatus.Click += new System.EventHandler(this.btnCurrentStatus_Click);
             // 
             // panel1
             // 

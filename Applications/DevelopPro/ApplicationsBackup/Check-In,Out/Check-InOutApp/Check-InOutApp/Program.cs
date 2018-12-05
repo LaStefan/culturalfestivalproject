@@ -16,7 +16,7 @@ namespace Check_InOutApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CheckInOutForm());
+            Application.Run(new AssignRFIDApp());
         }
     }
 }

@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevelopPro", "DevelopPro\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogApp", "..\ApplicationsBackup\ATM\ATM\LogApp.csproj", "{7EC208F9-15D1-4DA7-8B3E-34CF5A5F779E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check-InOutApp", "..\ApplicationsBackup\Check-In,Out\Check-InOutApp\Check-InOutApp\Check-InOutApp.csproj", "{831BBC32-E469-4A4B-999D-9C806E1A4C4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssignRFIDApp", "..\ApplicationsBackup\Check-In,Out\Check-InOutApp\Check-InOutApp\AssignRFIDApp.csproj", "{831BBC32-E469-4A4B-999D-9C806E1A4C4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckInOutCamping", "..\ApplicationsBackup\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\CheckInOutCamping.csproj", "{261F18EC-7E60-4BAF-8DF2-B149542984A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckInOutApp", "..\ApplicationsBackup\Check-In,Out Camping\CheckInOutCamping\CheckInOutCamping\CheckInOutApp.csproj", "{261F18EC-7E60-4BAF-8DF2-B149542984A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventStatusApp", "..\ApplicationsBackup\Event overview app(for Client)\EventStatusApp\EventStatusApp\EventStatusApp.csproj", "{60219122-B82E-4C03-88AC-48F5590E2CFF}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampReservation", "..\ApplicationsBackup\Reservation\Reservation\CampReservation.csproj", "{04B7B24C-1256-43C1-AA03-C08734187A45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopApplication", "..\ApplicationsBackup\shopApp\shopApp\ShopApplication.csproj", "{707DFB56-C75E-4289-90A3-A524F4598B14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampCheckInOut", "CampCheckInOut\CampCheckInOut.csproj", "{40A23905-380A-47D6-B6F5-11134AB18DDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{707DFB56-C75E-4289-90A3-A524F4598B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{707DFB56-C75E-4289-90A3-A524F4598B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{707DFB56-C75E-4289-90A3-A524F4598B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40A23905-380A-47D6-B6F5-11134AB18DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A23905-380A-47D6-B6F5-11134AB18DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A23905-380A-47D6-B6F5-11134AB18DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A23905-380A-47D6-B6F5-11134AB18DDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

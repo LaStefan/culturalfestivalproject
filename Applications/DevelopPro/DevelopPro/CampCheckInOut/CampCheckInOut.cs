@@ -8,17 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DevelopPro
+namespace CampCheckInOut
 {
-    public partial class LoginForm : Form
+    public partial class CampCheckInOut : Form
     {
-        public LoginForm()
+        public CampCheckInOut()
         {
             InitializeComponent();
         }
-
-       
-
-        
     }
 }
