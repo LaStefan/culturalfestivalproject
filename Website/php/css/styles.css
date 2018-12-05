@@ -298,10 +298,10 @@ figure:hover {
 	background: #99B2B2;;
 }
 /*headings*/
-.accTitle {
+.fs-title {
 	font-size: 15px;
 	text-transform: uppercase;
-	color: #6e9987;
+	color: #2C3E50;
 	margin-bottom: 10px;
 }
 .fs-subtitle {
@@ -365,14 +365,14 @@ figure:hover {
 }
 
 /*tickets*/
-#TicketOne{
+.ticket {
     width: 30%;
     margin: 0 1.5%;
     padding-left: 5px;
     float: left;
 }
 
-#text{
+.headingText{
     color: #fff;
     text-align: center;
     border-bottom-style:solid;
@@ -409,6 +409,10 @@ figure:hover {
     text-transform: uppercase;
     margin-bottom: 40px;
     outline:0;
+}
+
+#addTicketsToCart {
+
 }
 
 .reserveTickets{
@@ -669,7 +673,7 @@ figure:hover {
 #FormAcc:hover {
 	box-shadow: 0px 0px 40px 16px rgba(153,178,178);
 	}
-#AccountForm fieldset {
+fieldset {
 	border: 0 none;
 	border-radius: 3px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -680,7 +684,7 @@ figure:hover {
 	position: absolute;
 }
 
-#AccountForm fieldset:not(:first-of-type) {
+fieldset:not(:first-of-type) {
 	display: none;
 }
 #Accountlabel{
@@ -848,7 +852,6 @@ figure:hover {
 	background: @secondary-color;
 	color: white;
 }
-
 
 #messageBox {
     background-color: transparent;

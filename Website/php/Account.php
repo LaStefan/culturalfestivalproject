@@ -113,6 +113,8 @@ if (isset($_POST['sendmail'])) {
                 <div id="signup">
 
                     <form>
+					
+					<div id="dataDiv" data-test="{first: 16, last:'pizza!'}"
 
                         <div class="top-row">
                             <div class="field-wrap">
