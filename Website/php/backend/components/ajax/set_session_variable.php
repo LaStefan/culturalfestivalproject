@@ -1,6 +1,10 @@
 <?php
+    session_start();
+?>
 
-session_start();
+
+
+<?php
 
 // Set ticket type in session
 if (!empty($_POST)){

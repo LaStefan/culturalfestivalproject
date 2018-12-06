@@ -2,7 +2,6 @@
 
 session_start();
 
-
 if (!empty($_SESSION['tickettype']) &&
     !empty($_SESSION['dateOne']) &&
     !empty($_SESSION['quantity'])){

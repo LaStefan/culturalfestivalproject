@@ -1,17 +1,19 @@
 $( document ).ready(function() {
 
     $("#nextOne").click(function() {
-        console.log('next one is clicked');
+        console.log("test123");
+
+        $.ajax({
+            type:"GET",
+            url:'backend/components/checkout/render_paypal.php',
+            success: function(response) {
+                $(".paypal").replaceWith(response);
+            }
+        });
+
 
     });
 
-    $("#nextTwo").click(function() {
-        console.log('next three is clicked');
-    });
-
-    $("#nextThree").click(function() {
-        console.log('next four is clicked');
-    });
 
     $("#addTicketsToCart").click(function(){
 

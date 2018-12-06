@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -137,6 +137,9 @@
 
         <!-- Panel 4 -->
         <figure>
+
+
+
             <div class="paypal">
                 <div class="paypal__header">
                     <div class="paypal__logo-wrapper">
@@ -152,7 +155,6 @@
                         <span class="paypal__help-text">You've purchased three (3) tickets for Cultural Festival 2019</span>
                     </div>
                 </div>
-
 
                 <div class="paypal__cart">
                     <h2 class="paypal__cart-title">Your tickets</h2>
