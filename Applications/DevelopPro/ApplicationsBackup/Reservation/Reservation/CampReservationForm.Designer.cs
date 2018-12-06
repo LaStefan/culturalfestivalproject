@@ -33,27 +33,28 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn1 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.lbShow = new System.Windows.Forms.ListBox();
-            this.numDays = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.rb1 = new System.Windows.Forms.RadioButton();
+            this.rb5 = new System.Windows.Forms.RadioButton();
+            this.rb2 = new System.Windows.Forms.RadioButton();
+            this.rb10 = new System.Windows.Forms.RadioButton();
+            this.rb7 = new System.Windows.Forms.RadioButton();
+            this.rb12 = new System.Windows.Forms.RadioButton();
+            this.rb8 = new System.Windows.Forms.RadioButton();
+            this.rb4 = new System.Windows.Forms.RadioButton();
+            this.rb3 = new System.Windows.Forms.RadioButton();
+            this.rb11 = new System.Windows.Forms.RadioButton();
+            this.rb6 = new System.Windows.Forms.RadioButton();
+            this.rb9 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDays)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label5
             // 
@@ -87,7 +87,6 @@
             this.label5.Size = new System.Drawing.Size(52, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "RFID";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel1
             // 
@@ -99,200 +98,34 @@
             this.panel1.Size = new System.Drawing.Size(899, 34);
             this.panel1.TabIndex = 12;
             // 
-            // btn1
-            // 
-            this.btn1.BackColor = System.Drawing.Color.Lime;
-            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1.Location = new System.Drawing.Point(765, 125);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(12, 21);
-            this.btn1.TabIndex = 13;
-            this.btn1.Text = "1";
-            this.btn1.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(781, 282);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(12, 21);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "4";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Lime;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(703, 198);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(12, 21);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "2";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Lime;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(735, 225);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(12, 21);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "6";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Lime;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(723, 142);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(12, 21);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "5";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Lime;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(680, 301);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(12, 21);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "7";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Lime;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(781, 225);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(12, 21);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "8";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Lime;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(752, 168);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(12, 21);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "9";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Lime;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(723, 282);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(12, 21);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "3";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Lime;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(680, 244);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 25);
-            this.button9.TabIndex = 22;
-            this.button9.Text = "10";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Lime;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(718, 321);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(29, 21);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "11";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
             // lbShow
             // 
             this.lbShow.FormattingEnabled = true;
             this.lbShow.Location = new System.Drawing.Point(296, 125);
             this.lbShow.Name = "lbShow";
-            this.lbShow.Size = new System.Drawing.Size(283, 264);
+            this.lbShow.Size = new System.Drawing.Size(298, 264);
             this.lbShow.TabIndex = 24;
-            // 
-            // numDays
-            // 
-            this.numDays.Location = new System.Drawing.Point(531, 64);
-            this.numDays.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numDays.Name = "numDays";
-            this.numDays.Size = new System.Drawing.Size(44, 20);
-            this.numDays.TabIndex = 25;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(424, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 15);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Number of nights:";
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.Lime;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(790, 168);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(31, 21);
-            this.button11.TabIndex = 27;
-            this.button11.Text = "12";
-            this.button11.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(293, 52);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(281, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 60);
+            this.label3.Size = new System.Drawing.Size(118, 52);
             this.label3.TabIndex = 28;
             this.label3.Text = "Camping sites:\r\n- for 2 persons, 1-4\r\n- for 4 persons, 5-8\r\n-for 6 persons, 9-12";
             // 
             // btnPay
             // 
-            this.btnPay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.Location = new System.Drawing.Point(296, 395);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(283, 38);
+            this.btnPay.Size = new System.Drawing.Size(298, 38);
             this.btnPay.TabIndex = 29;
             this.btnPay.Text = "Make a reservation";
             this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click_1);
             // 
             // pictureBox2
             // 
@@ -304,41 +137,244 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
-            // Form1
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(407, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Start Date:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(405, 55);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(192, 20);
+            this.dateTimePicker1.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(407, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "End Date:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(405, 94);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(192, 20);
+            this.dateTimePicker2.TabIndex = 34;
+            // 
+            // rb1
+            // 
+            this.rb1.AutoSize = true;
+            this.rb1.BackColor = System.Drawing.Color.Lime;
+            this.rb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb1.Location = new System.Drawing.Point(752, 125);
+            this.rb1.Name = "rb1";
+            this.rb1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rb1.Size = new System.Drawing.Size(32, 17);
+            this.rb1.TabIndex = 35;
+            this.rb1.TabStop = true;
+            this.rb1.Text = "1";
+            this.rb1.UseVisualStyleBackColor = false;
+            // 
+            // rb5
+            // 
+            this.rb5.AutoSize = true;
+            this.rb5.BackColor = System.Drawing.Color.Lime;
+            this.rb5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb5.Location = new System.Drawing.Point(703, 146);
+            this.rb5.Name = "rb5";
+            this.rb5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rb5.Size = new System.Drawing.Size(32, 17);
+            this.rb5.TabIndex = 36;
+            this.rb5.TabStop = true;
+            this.rb5.Text = "5";
+            this.rb5.UseVisualStyleBackColor = false;
+            // 
+            // rb2
+            // 
+            this.rb2.AutoSize = true;
+            this.rb2.BackColor = System.Drawing.Color.Lime;
+            this.rb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb2.Location = new System.Drawing.Point(692, 198);
+            this.rb2.Name = "rb2";
+            this.rb2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rb2.Size = new System.Drawing.Size(32, 17);
+            this.rb2.TabIndex = 37;
+            this.rb2.TabStop = true;
+            this.rb2.Text = "2";
+            this.rb2.UseVisualStyleBackColor = false;
+            // 
+            // rb10
+            // 
+            this.rb10.AutoSize = true;
+            this.rb10.BackColor = System.Drawing.Color.Lime;
+            this.rb10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb10.Location = new System.Drawing.Point(662, 245);
+            this.rb10.Name = "rb10";
+            this.rb10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rb10.Size = new System.Drawing.Size(39, 17);
+            this.rb10.TabIndex = 38;
+            this.rb10.TabStop = true;
+            this.rb10.Text = "10";
+            this.rb10.UseVisualStyleBackColor = false;
+            // 
+            // rb7
+            // 
+            this.rb7.AutoSize = true;
+            this.rb7.BackColor = System.Drawing.Color.Lime;
+            this.rb7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb7.Location = new System.Drawing.Point(662, 309);
+            this.rb7.Name = "rb7";
+            this.rb7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rb7.Size = new System.Drawing.Size(32, 17);
+            this.rb7.TabIndex = 39;
+            this.rb7.TabStop = true;
+            this.rb7.Text = "7";
+            this.rb7.UseVisualStyleBackColor = false;
+            // 
+            // rb12
+            // 
+            this.rb12.AutoSize = true;
+            this.rb12.BackColor = System.Drawing.Color.Lime;
+            this.rb12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb12.Location = new System.Drawing.Point(794, 172);
+            this.rb12.Name = "rb12";
+            this.rb12.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rb12.Size = new System.Drawing.Size(39, 17);
+            this.rb12.TabIndex = 40;
+            this.rb12.TabStop = true;
+            this.rb12.Text = "12";
+            this.rb12.UseVisualStyleBackColor = false;
+            // 
+            // rb8
+            // 
+            this.rb8.AutoSize = true;
+            this.rb8.BackColor = System.Drawing.Color.Lime;
+            this.rb8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb8.Location = new System.Drawing.Point(781, 229);
+            this.rb8.Name = "rb8";
+            this.rb8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rb8.Size = new System.Drawing.Size(32, 17);
+            this.rb8.TabIndex = 41;
+            this.rb8.TabStop = true;
+            this.rb8.Text = "8";
+            this.rb8.UseVisualStyleBackColor = false;
+            // 
+            // rb4
+            // 
+            this.rb4.AutoSize = true;
+            this.rb4.BackColor = System.Drawing.Color.Lime;
+            this.rb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb4.Location = new System.Drawing.Point(774, 282);
+            this.rb4.Name = "rb4";
+            this.rb4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rb4.Size = new System.Drawing.Size(32, 17);
+            this.rb4.TabIndex = 42;
+            this.rb4.TabStop = true;
+            this.rb4.Text = "4";
+            this.rb4.UseVisualStyleBackColor = false;
+            // 
+            // rb3
+            // 
+            this.rb3.AutoSize = true;
+            this.rb3.BackColor = System.Drawing.Color.Lime;
+            this.rb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb3.Location = new System.Drawing.Point(718, 282);
+            this.rb3.Name = "rb3";
+            this.rb3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rb3.Size = new System.Drawing.Size(32, 17);
+            this.rb3.TabIndex = 43;
+            this.rb3.TabStop = true;
+            this.rb3.Text = "3";
+            this.rb3.UseVisualStyleBackColor = false;
+            // 
+            // rb11
+            // 
+            this.rb11.AutoSize = true;
+            this.rb11.BackColor = System.Drawing.Color.Lime;
+            this.rb11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb11.Location = new System.Drawing.Point(725, 329);
+            this.rb11.Name = "rb11";
+            this.rb11.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rb11.Size = new System.Drawing.Size(39, 17);
+            this.rb11.TabIndex = 44;
+            this.rb11.TabStop = true;
+            this.rb11.Text = "11";
+            this.rb11.UseVisualStyleBackColor = false;
+            // 
+            // rb6
+            // 
+            this.rb6.AutoSize = true;
+            this.rb6.BackColor = System.Drawing.Color.Lime;
+            this.rb6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb6.Location = new System.Drawing.Point(736, 229);
+            this.rb6.Name = "rb6";
+            this.rb6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rb6.Size = new System.Drawing.Size(32, 17);
+            this.rb6.TabIndex = 45;
+            this.rb6.TabStop = true;
+            this.rb6.Text = "6";
+            this.rb6.UseVisualStyleBackColor = false;
+            // 
+            // rb9
+            // 
+            this.rb9.AutoSize = true;
+            this.rb9.BackColor = System.Drawing.Color.Lime;
+            this.rb9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb9.Location = new System.Drawing.Point(749, 172);
+            this.rb9.Name = "rb9";
+            this.rb9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rb9.Size = new System.Drawing.Size(32, 17);
+            this.rb9.TabIndex = 46;
+            this.rb9.TabStop = true;
+            this.rb9.Text = "9";
+            this.rb9.UseVisualStyleBackColor = false;
+            // 
+            // CampReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(899, 480);
+            this.Controls.Add(this.rb9);
+            this.Controls.Add(this.rb6);
+            this.Controls.Add(this.rb11);
+            this.Controls.Add(this.rb3);
+            this.Controls.Add(this.rb4);
+            this.Controls.Add(this.rb8);
+            this.Controls.Add(this.rb12);
+            this.Controls.Add(this.rb7);
+            this.Controls.Add(this.rb10);
+            this.Controls.Add(this.rb2);
+            this.Controls.Add(this.rb5);
+            this.Controls.Add(this.rb1);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numDays);
             this.Controls.Add(this.lbShow);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dateTimePicker1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "CampReservationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reservations";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDays)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -351,24 +387,26 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ListBox lbShow;
-        private System.Windows.Forms.NumericUpDown numDays;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.RadioButton rb1;
+        private System.Windows.Forms.RadioButton rb5;
+        private System.Windows.Forms.RadioButton rb2;
+        private System.Windows.Forms.RadioButton rb10;
+        private System.Windows.Forms.RadioButton rb7;
+        private System.Windows.Forms.RadioButton rb12;
+        private System.Windows.Forms.RadioButton rb8;
+        private System.Windows.Forms.RadioButton rb4;
+        private System.Windows.Forms.RadioButton rb3;
+        private System.Windows.Forms.RadioButton rb11;
+        private System.Windows.Forms.RadioButton rb6;
+        private System.Windows.Forms.RadioButton rb9;
     }
 }
 
