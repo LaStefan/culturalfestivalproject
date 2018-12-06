@@ -9,35 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Phidget22;
 using Phidget22.Events;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 using DevelopPro;
 namespace Reservation
 {
     public partial class CampReservationForm : Form
     {
-        //Database database;
+        DatabaseConnector dbConnect;
         List<CampingSite> campingSites;
         List<RadioButton> rbuttons;
         Dictionary<int, RadioButton> dic;
-        private bool reservationCheck = false;
+        //private bool reservationCheck = false;
 
         public CampReservationForm()
         {
             InitializeComponent();
             campingSites = new List<CampingSite>();
-            //database = new Database();
-            campingSites.Add(new CampingSite(1, "2 person", false));
-            campingSites.Add(new CampingSite(2, "2 person", false));
-            campingSites.Add(new CampingSite(3, "2 person", false));
-            campingSites.Add(new CampingSite(4, "2 person", true));
-            campingSites.Add(new CampingSite(5, "4 person", false));
-            campingSites.Add(new CampingSite(6, "4 person", false));
-            campingSites.Add(new CampingSite(7, "4 person", false));
-            campingSites.Add(new CampingSite(8, "4 person", false));
-            campingSites.Add(new CampingSite(9, "6 person", false));
-            campingSites.Add(new CampingSite(10, "6 person", false));
-            campingSites.Add(new CampingSite(11, "6 person", false));
-            campingSites.Add(new CampingSite(12, "6 person", false));
-
+            dbConnect = new DatabaseConnector();
+        
+            campingSites =dbConnect.GetAllCampingSites();
+          
+            //lbShow.Items.Add(campingSites.Count);
             rbuttons = new List<RadioButton>();
 
             rbuttons.Add(rb1);
@@ -87,7 +80,7 @@ namespace Reservation
         {
             foreach (CampingSite c in campingSites)
             {
-                if (c.Status)
+                if (c.Status =="1")
                 {
                     RadioButton b = GetRadioButtonById(c.CampingId);
                     b.BackColor = Color.Red;
@@ -129,35 +122,36 @@ namespace Reservation
 
         private void Reader_Tag(object sender, RFIDTagEventArgs e)
         {
-            lbShow.Items.Add("Welcome " + e.Tag);
+            string c = dbConnect.GetInfo(e.Tag);
+            textBox1.Text = c;
+           
         }
 
         private void Reader_TagLost(object sender, RFIDTagLostEventArgs e)
         {
-            if (reservationCheck)
-            {
-                lbShow.Items.Add("Thanks for your reservation!");
-            }
-            else
-            {
-                lbShow.Items.Add("Reservation cancelled!");
-            }
+            //if (reservationCheck)
+            //{
+            //    lbShow.Items.Add("Thanks for your reservation!");
+            //}
+            //else
+            //{
+            //    lbShow.Items.Add("Reservation cancelled!");
+            //}
         }
 
         private void btnPay_Click_1(object sender, EventArgs e)
         {
-            string stDate = dateTimePicker1.Value.ToLongDateString();
-            string enDate = dateTimePicker2.Value.ToLongDateString();
-
+            string stDate = dateTimePicker1.Value.Year+"-"+dateTimePicker1.Value.Month+"-"+dateTimePicker1.Value.Day;
+            string enDate = dateTimePicker2.Value.Year+"-"+dateTimePicker2.Value.Month+"-"+dateTimePicker2.Value.Day;
             foreach (RadioButton b in rbuttons)
             {
                 if (b.Checked)
                 {
                     int id = GetIdbyRb(b);
                     CampingSite c = GetCampingById(id);
-                    if (c.Status == false)
-                    {
-                        c.Status = true;
+                    if (dbConnect.CheckStatus(id) == false)
+                    {                     
+                        dbConnect.ReserveCamp(id,stDate,enDate);                      
                         b.BackColor = Color.Red;
                         lbShow.Items.Add("You have successfully registered Campingsite " + c.CampingId);
                         lbShow.Items.Add("Camping maximum for " + c.CampingType);
@@ -170,6 +164,6 @@ namespace Reservation
                     }
                 }
             }
-        }
+        }    
     }
 }

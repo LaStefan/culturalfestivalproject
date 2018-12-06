@@ -53,6 +53,7 @@
             this.rb11 = new System.Windows.Forms.RadioButton();
             this.rb6 = new System.Windows.Forms.RadioButton();
             this.rb9 = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -101,6 +102,7 @@
             // lbShow
             // 
             this.lbShow.FormattingEnabled = true;
+            this.lbShow.HorizontalScrollbar = true;
             this.lbShow.Location = new System.Drawing.Point(296, 125);
             this.lbShow.Name = "lbShow";
             this.lbShow.Size = new System.Drawing.Size(298, 264);
@@ -339,12 +341,21 @@
             this.rb9.Text = "9";
             this.rb9.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 268);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(263, 121);
+            this.textBox1.TabIndex = 47;
+            // 
             // CampReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(899, 480);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.rb9);
             this.Controls.Add(this.rb6);
             this.Controls.Add(this.rb11);
@@ -407,6 +418,7 @@
         private System.Windows.Forms.RadioButton rb11;
         private System.Windows.Forms.RadioButton rb6;
         private System.Windows.Forms.RadioButton rb9;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

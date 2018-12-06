@@ -12,7 +12,7 @@ namespace Reservation
         private string campingType;
         private string startDate;
         private string endDate;
-        private bool status;
+        private string status;
 
         public int CampingId
         {
@@ -38,20 +38,20 @@ namespace Reservation
             set { endDate = value; }
         }
 
-        public bool Status
+        public string Status
         {
             get { return status; }
             set { status = value; }
         }
 
-        public CampingSite(int campingId, string campingType, bool status)
+        public CampingSite(int campingId, string campingType, string status)
         {
             this.campingId = campingId;
             this.campingType = campingType;
             this.status = status;
         }
 
-        public CampingSite(int campingId, string campingType, string startDate, string endDate, bool status)
+        public CampingSite(int campingId, string campingType, string startDate, string endDate, string status)
         {
             this.campingId = campingId;
             this.campingType = campingType;
