@@ -673,7 +673,7 @@ figure:hover {
 #FormAcc:hover {
 	box-shadow: 0px 0px 40px 16px rgba(153,178,178);
 	}
-fieldset {
+#AccountForm fieldset {
 	border: 0 none;
 	border-radius: 3px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -684,7 +684,7 @@ fieldset {
 	position: absolute;
 }
 
-fieldset:not(:first-of-type) {
+#AccountForm fieldset:not(:first-of-type) {
 	display: none;
 }
 #Accountlabel{
@@ -731,9 +731,16 @@ fieldset:not(:first-of-type) {
   border: 2px solid  #6e9987;
   border-radius: 10px;
   transition: border-color 0.5s ease, box-shadow 0.5s ease;
-  
+ }
 
+.accTitle {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	color: #6e9987;
+	margin-bottom: 10px;
 }
+
 .Accountinput:focus{
   outline: 0;
   border-color: #99B2B2; 
