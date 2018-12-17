@@ -13,6 +13,7 @@ namespace DevelopPro
     {
         
         private MySqlConnection conn;
+        public MySqlConnection Conn { get; set; }
         
         public Database()
         {
