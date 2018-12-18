@@ -6,8 +6,6 @@ require __DIR__ . '/../db/db.php';
 
 login($_POST['email'], $_POST['password']);
 
-
-
 header('Location: ../../../Account.php');
 
 
@@ -32,7 +30,3 @@ function login($email, $password)
 
     return false;
 }
-
-
-
-

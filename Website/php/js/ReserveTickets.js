@@ -3,41 +3,47 @@ function ShowIt(el) {
     var ticketDiv = $(el).parent();
 
     var tickettype;
+    var ticketPrice;
 
     if (ticketDiv.attr('id') === "TicketOne"){
 
         tickettype = 1;
+        ticketPrice = 59;
+
+        $('.successMessage').hide();
+        $('.reserveTickets').show();
         $('.pick-date-two').hide();
 
     } else if (ticketDiv.attr('id') === "TicketTwo") {
 
         tickettype = 2;
+        ticketPrice = 109;
 
+        $('.successMessage').hide();
+        $('.reserveTickets').show();
         $('.pick-date-two').show();
 
     } else if (ticketDiv.attr('id') === "TicketThree") {
 
         tickettype = 3;
+        ticketPrice = 159;
 
+        $('.successMessage').hide();
+        $('.reserveTickets').show();
         $('.pick-date-two').show();
 
     }
 
     $.ajax({
-        url: 'backend/components/ajax/set_session_variable.php',
+        url: 'backend/components/session/set_session_variable.php',
         method: 'POST',
         dataType: 'json',
-        data: {tickettype: tickettype},
+        data: {
+            tickettype: tickettype,
+            ticketPrice: ticketPrice
+        },
         complete: function (){
-            console.log("complete function");
         }
     });
 
-    var obj = document.getElementsByClassName('reserveTickets')[0];
-    if (obj.style.display == "none") {
-        obj.style.display = "block";
-        obj.scrollIntoView(false);
-    }
-    else
-        obj.style.display = "none";
 };

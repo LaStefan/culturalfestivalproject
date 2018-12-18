@@ -25,8 +25,6 @@ $('#FormAcc').find('.Accountinput').on('keyup blur focus', function (e) {
     }
 });
 
-
-
 var current_fs, next_fs, previous_fs;
 var left, opacity, scale;
 var animating; 

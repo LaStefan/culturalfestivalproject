@@ -2,19 +2,17 @@
 <html>
 <head>
     
-<link rel="stylesheet" href="css/stylesTickets.css">    
+<link rel="stylesheet" href="css/styles.css">    
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> 
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <title>TICKETS</title> 
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+ 
+   <title>HOME</title>    
     
 </head>
+    
 <header>
  <nav class="navbar navbar-default">
   <div class="container">
@@ -29,11 +27,11 @@
     </div>
     <div id="navbar" href="#0" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a id="n1"href="Home.html">About</a></li>
-        <li><a id="n2" href="Home.html#2">Countries</a></li>  
-        <li><a id="n3"href="Home.html#3">Location</a></li>
-        <li><a id="n4" href="Home.html#4">Program</a></li> 
-        <li><a href="tickets.php">Tickets</a></li>
+        <li><a id="n1"href="#1">About</a></li>
+        <li><a id="n2" href="#2">Countries</a></li>  
+        <li><a id="n3"href="#3">Location</a></li>
+        <li><a id="n4" href="#4">Program</a></li> 
+        <li><a href="Tickets.php">Tickets</a></li>
         <li class="dropdown">
           <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Log In<span class="caret"></span></a>
 			<ul id="loginM" class="dropdown-menu">
@@ -62,37 +60,41 @@
                     </div>
 				</li>
 			</ul>
-        </li> 
-          
+        </li>
       </ul>
     </div>
   </div>
 </nav>
     </header>
-
-<body>
-    <br><br>
-<div class="container">
-  <div class="panel-group">
-    <div class="panel panel-default">
-      <div class="panel-heading">MY ACCOUNT</div>
-      <div class="panel-body"> <img src="images/personIcon.png">
+    
+    <body>
+        <section id="1"><h1>About</h1>
+    
+   
+        <div class="containerH">
+            <div class="row">
+                
+                </div>
+            </div>
+                               </section>
         
+       
         
-    </div>
-      </div>
-  <br>
-  <div class="row">
-    <div class="col-sm-4" style="background-color:bisque;">MY TICKETS</div>
-    <div class="col-sm-4" style="background-color:skyblue;">MY CAMPING SITE</div>
-    <div class="col-sm-4" style="background-color:pink;">MY BALANCE</div>
-  </div>
-</div>
-</div>
-
-    </body>
+<section id="2"><h1>Countries</h1>
+    
+    
+    </section>
+<section id="3"><h1>Location</h1></section>
+<section id="4"><h1>Program</h1></section>
+ 
+        
+        <a id="toTop" href="#0"><div class="to-top"></div></a>
+        
+       </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/home.js"></script>
-</html>
+<script src="js/slider.js"></script>    
+        
+ </html>
