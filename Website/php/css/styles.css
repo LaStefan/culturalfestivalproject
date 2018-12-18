@@ -8,25 +8,37 @@ header {
 }
 body {
   background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(../images/festivalimg7.jpg);
-  opacity:0.8;
+  opacity:0.7;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;    
 }
+
 header .navbar-default{
  background-color: white;
  border: none;
  border-bottom: 1px solid rgba(255,255,255,0.3);
- position: fixed;
+  position: fixed;
+ padding: 25px 60px;
  top: 0;
  left: 0;
  right: 0;
- padding: 25px 60px;
+ padding: 20px 60px;
  font-size: 18px;
  letter-spacing: 1px;
+ z-index: 2;    
 
 }
 header .navbar-default .navbar-nav>li>a {
   color: black;
   font-size: 16px;
 
+}
+header .navbar-default .navbar-brand{
+ margin-top: -15%;
+}
+header .navbar-default .navbar-nav>li>a:hover{
+    color: #6e9987;
+    cursor: pointer;
 }
 
 /* log in */
@@ -107,11 +119,13 @@ header .navbar-default .navbar-nav>li>a {
 /* Here starts css for About Page*/
 section {
   width: 100%;
-  padding: 50px;
+  padding: 140px;
   background-color: transparent;
-  border-bottom: 1px solid #ccc;
   height: 50%;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;   
+  z-index: 1;    
 }
 section:nth-child(1) {
   margin-top: 100px;
@@ -133,7 +147,7 @@ section:nth-child(1) {
   margin-right: 100px;
   margin-bottom: 25px;
   opacity: 1;
-  
+  z-index: 1; 
   transition: all .8s ease;
 }
 
@@ -231,12 +245,124 @@ h1, h2, h3, h4 {
     color: #e4e4e4;
 }
 
-.successMessage {
-    color:white;
+/*location*/
+
+
+/*about*/
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #6e9987;
+}
+
+.carousel-indicators li {
+    border-color: #6e9987;
+}
+
+.carousel-indicators li.active {
+    background-color: #6e9987;
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.item span {
+    font-style: normal;
+}
+
+/*program*/
+.green { background-color: #6e9987; }
+.grey { background-color: #bdc3c7; color: #202020; }
+.gray { background-color: #7f8c8d; }
+.red { background-color: #e74c3c; }
+
+.day-columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: center;}
+
+.day-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 400px;
+    min-width: 160px;
+    border: 1px solid $border-color;
+    border-left: none;}
+    
+&:first-child {
+      border-left: 1px solid $border-color;
+    }
+    
+.day-header {
+      border-bottom: 1px solid $border-color;
+      text-align: center;
+      padding: 5px;
+      color: $title-color;
+    }
+    
+.day-content {
+      flex-grow: 1;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 5px;
+      overflow-y: auto;}
+      
+.event {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        padding: 3px;
+        color: white;
+        padding: 5px;
+        box-shadow: 0px 1px 15px 1px rgba(81, 77, 92, 0.08);}
+        
+.title {
+          font-size: 12px;
+        }
+        
+footer{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          font-size: 11px;
+        }
+      
+.day-footer {
+      border-top: 1px solid $border-color;
+      padding: 5px;
+      text-align: center;
+      font-size: 13px;
+      color: darken($title-color, 20%);
+    }
+  
+.container {
+  margin-top: 20px;
+  // border: 1px solid $border-color;
 }
 
 /*Here starts css for footer*/
-footer{
+#footerButtom{
   font-family: 'Open Sans', sans-serif;
   font-family: 'Montserrat', sans-serif;    
   text-align: center;
@@ -248,12 +374,8 @@ footer{
   justify-content: center;
   align-items: center;
   bottom: 0px;
-  z-index: 0;;
+  z-index: 2;;
 }
 /*Here ends css for footer*/
-
-
-
-
 
 
