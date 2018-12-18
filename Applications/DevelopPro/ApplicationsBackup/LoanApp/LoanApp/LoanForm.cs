@@ -17,8 +17,18 @@ namespace LoanApp
         {
             InitializeComponent();
             this.prod = prod;
-            numericUpDown1.Minimum = 0;
-            numericUpDown1.Maximum = 10000;
+            if(this.prod.LoanName == "Mobile Phone")
+            {
+                picShow.Image = Image.FromFile("");
+            }
+            else if(this.prod.LoanName == "Camera")
+            {
+                picShow.Image = Image.FromFile("");
+            }
+            else if(this.prod.LoanName == "Flashing")
+            {
+
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -28,14 +38,13 @@ namespace LoanApp
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            label4.Text = prod.Stock.ToString();
-            lbPrice.Text = prod.Deposit.ToString();
+            lbNrInStock.Text = prod.Stock.ToString();
+            lbDeposit.Text = prod.Deposit.ToString();
             label2.Text = "Name: " + prod.LoanName;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            prod.AddToList(prod);
             this.Close();
         }
 
@@ -45,6 +54,16 @@ namespace LoanApp
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -60,26 +60,36 @@ namespace LoanApp
 
         public Product GetProduct(string product)
         {
-            Database();
-            conn.Open();
-            string select = "SELECT * FROM loan WHERE ProductName = '" + product + "'";
-            MySqlCommand msc = new MySqlCommand(select, conn);
-            
-            MySqlDataReader mdr = msc.ExecuteReader();
+            Product temp = null;
+            try
+            {
+                Database();
+                conn.Open();
+                string select = "SELECT * FROM loan WHERE ProductName = '" + product + "'";
+                MySqlCommand msc = new MySqlCommand(select, conn);
 
-            if(mdr.Read())
-            {
-                this.loanId = mdr.GetInt32("loanId");
-                this.loanName = mdr.GetString("ProductName");
-                this.deposit = mdr.GetDecimal("Deposit");
-                this.stock = mdr.GetInt32("Stock");
-                Product temp = new Product(loanId, loanName, deposit, stock);
-                return temp;
+                MySqlDataReader mdr = msc.ExecuteReader();
+
+                if (mdr.Read())
+                {
+                    this.loanId = mdr.GetInt32("loanId");
+                    this.loanName = mdr.GetString("ProductName");
+                    this.deposit = mdr.GetDecimal("Deposit");
+                    this.stock = mdr.GetInt32("Stock");
+                    temp = new Product(loanId, loanName, deposit, stock);
+                    return temp;
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch(Exception) { }
+            finally
             {
-                return null;
+                conn.Close();
             }
+            return temp;
         }
 
         public void AddToList(Product prod)
@@ -137,12 +147,31 @@ namespace LoanApp
                 MySqlCommand msc = new MySqlCommand(sql, conn);
                 MySqlDataReader mdr = msc.ExecuteReader();
                 mdr.Close();
-                string sql1 = "UPDATE `loan` SET `Stock`= Stock - 1 WHERE LoanId = " + p.LoanId + "";
-                MySqlCommand msc1 = new MySqlCommand(sql1, conn);
-                MySqlDataReader mdr1 = msc1.ExecuteReader();
-                mdr1.Close();
+                string sql2 = "SELECT Balance from customer where TagId = '" + rfid + "'";
+                MySqlCommand msc2 = new MySqlCommand(sql2, conn);
+                MySqlDataReader mdr2 = msc2.ExecuteReader();
+                if (mdr2.Read())
+                {
+                    decimal balance = mdr2.GetDecimal("Balance");
+                    if (balance >= p.deposit)
+                    {
+                        mdr2.Close();
+                        string updateBalance = "UPDATE `customer` SET `Balance`= Balance - '" + p.deposit + "' WHERE TagId = '" + rfid + "'";
+                        MySqlCommand msc3 = new MySqlCommand(updateBalance, conn);
+                        MySqlDataReader mdr3 = msc3.ExecuteReader();
+                        mdr3.Close();
+                        string sql1 = "UPDATE `loan` SET `Stock`= Stock - 1 WHERE LoanId = " + p.LoanId + "";
+                        MySqlCommand msc1 = new MySqlCommand(sql1, conn);
+                        MySqlDataReader mdr1 = msc1.ExecuteReader();
+                        mdr1.Close();
+                        System.Windows.Forms.MessageBox.Show("Done");
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Not enough balance");
+                    }
+                }
             }
-            System.Windows.Forms.MessageBox.Show("Done");
         }
     }
 }
