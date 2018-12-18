@@ -271,5 +271,10 @@ namespace shopApp
             currentItem = new Product(35, "Coctail", 0.50, 4, null);
             ShowProductForm(picCoctail, "Coctail", 0.50);
         }
+
+        private void productDataGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

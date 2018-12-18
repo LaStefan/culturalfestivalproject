@@ -160,5 +160,10 @@ namespace Check_InOutApp
         {
             
         }
+
+        private void AssignRFIDApp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
