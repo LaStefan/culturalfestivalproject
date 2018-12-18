@@ -13,10 +13,12 @@ namespace LoanApp
     public partial class LoanForm : Form
     {
         private Product prod;
-        public LoanForm(Product prod)
+        private List<Product> lP = new List<Product>();
+        public LoanForm(Product prod, List<Product> lp)
         {
             InitializeComponent();
             this.prod = prod;
+            this.lP = lp;
             if(this.prod.LoanName == "Mobile Phone")
             {
                 picShow.Image = Image.FromFile("");
@@ -60,6 +62,7 @@ namespace LoanApp
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
+            lP.Add(prod);
             this.Close();
         }
 

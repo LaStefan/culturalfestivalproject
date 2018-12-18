@@ -32,10 +32,10 @@ namespace LoanApp
         {
             sideBar.Height = btnBrowse.Height;
             sideBar.Top = btnBrowse.Top;
-            panelItem.Visible = true;
-            panelLoan.Visible = false;
-            panelReturn.Visible = false;
-            panelInventory.Visible = false;
+            panelItem.Show();
+            panelLoan.Hide();
+            panelReturn.Hide();
+            panelInventory.Hide();
             panelItem.Dock = DockStyle.Fill;
         }
 
@@ -53,9 +53,10 @@ namespace LoanApp
         {
             sideBar.Height = btnLoan.Height;
             sideBar.Top = btnLoan.Top;
-            panelLoan.Visible = true;
-            panelReturn.Visible = false;
-            panelInventory.Visible = false;
+            panelLoan.Show();
+            panelItem.Hide();
+            panelReturn.Hide();
+            panelInventory.Hide();
             panelLoan.Dock = DockStyle.Fill;
             productDataGV.Rows.Clear();
             foreach (Product p in listOfProducts)
@@ -72,8 +73,7 @@ namespace LoanApp
         private void pbPhone_Click(object sender, EventArgs e)
         {
             product = product.GetProduct("Mobile Phone");
-            listOfProducts.Add(product);
-            LoanForm lf = new LoanForm(product);
+            LoanForm lf = new LoanForm(product, listOfProducts);
             lf.Show();
         }
 
@@ -89,41 +89,36 @@ namespace LoanApp
 
         private void pbUSB_Click(object sender, EventArgs e)
         {
-            product = product.GetProduct("charger");
-            listOfProducts.Add(product);
-            LoanForm lf = new LoanForm(product);
+            product = product.GetProduct("Charger");
+            LoanForm lf = new LoanForm(product, listOfProducts);
             lf.Show();
         }
 
         private void pbFlashlight_Click(object sender, EventArgs e)
         {
             product = product.GetProduct("Touch Light");
-            product.produtList.Add(product);
-            LoanForm lf = new LoanForm(product);
+            LoanForm lf = new LoanForm(product, listOfProducts);
             lf.Show();
         }
 
         private void pbBags_Click(object sender, EventArgs e)
         {
             product = product.GetProduct("Mattress");
-            listOfProducts.Add(product);
-            LoanForm lf = new LoanForm(product);
+            LoanForm lf = new LoanForm(product, listOfProducts);
             lf.Show();
         }
 
         private void pbCamera_Click(object sender, EventArgs e)
         {
             product = product.GetProduct("Camera");
-            listOfProducts.Add(product);
-            LoanForm lf = new LoanForm(product);
+            LoanForm lf = new LoanForm(product, listOfProducts);
             lf.Show();
         }
 
         private void pbBlanckets_Click(object sender, EventArgs e)
         {
             product = product.GetProduct("Blanket");
-            listOfProducts.Add(product);
-            LoanForm lf = new LoanForm(product);
+            LoanForm lf = new LoanForm(product, listOfProducts);
             lf.Show();
         }
 
@@ -145,7 +140,10 @@ namespace LoanApp
             chipNr = e.Tag;
             Customer temp = product.GetCustomer(chipNr);
             PersonalDetails pd = new PersonalDetails(temp);
-            pd.Show();
+            if (!CheckForm(pd))
+            {
+                pd.Show();
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -157,9 +155,10 @@ namespace LoanApp
         {
             sideBar.Height = btnReturn.Height;
             sideBar.Top = btnReturn.Top;
-            panelLoan.Visible = false;
-            panelReturn.Visible = true;
-            panelInventory.Visible = false;
+            panelLoan.Hide();
+            panelItem.Hide();
+            panelReturn.Show();
+            panelInventory.Hide();
             panelReturn.Dock = DockStyle.Fill;
         }
 
@@ -167,9 +166,10 @@ namespace LoanApp
         {
             sideBar.Height = button2.Height;
             sideBar.Top = button2.Top;
-            panelLoan.Visible = false;
-            panelReturn.Visible = false;
-            panelInventory.Visible = true;
+            panelLoan.Hide();
+            panelItem.Hide();
+            panelReturn.Hide();
+            panelInventory.Show();
             panelInventory.Dock = DockStyle.Fill;
         }
 
@@ -182,7 +182,15 @@ namespace LoanApp
         {
 
         }
-        
+
+        private bool CheckForm(Form form)
+        {
+            form = Application.OpenForms[form.Text];
+            if (form != null)
+                return true;
+            else
+                return false;
+        }
 
         private void btnClear_Click_1(object sender, EventArgs e)
         {
@@ -201,6 +209,33 @@ namespace LoanApp
                 if (product != null)
                     listOfProducts.Remove(product);
                 productDataGV.Refresh();
+            }
+        }
+
+        private void panelLoan_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnRefund_Click(object sender, EventArgs e)
+        {
+            Product temp = (Product)listBox1.SelectedItem;
+            product.RefundBorrowedItem(temp, chipNr);
+            listBox1.Items.Clear();
+            List<Product> lp = product.GetBorrowedProducts(chipNr);
+            foreach (var item in lp)
+            {
+                listBox1.Items.Add(item);
+            }
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            List<Product> temp = product.GetBorrowedProducts(chipNr);
+            foreach (var item in temp)
+            {
+                listBox1.Items.Add(item);
             }
         }
     }

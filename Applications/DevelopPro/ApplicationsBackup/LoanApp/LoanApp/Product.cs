@@ -20,7 +20,6 @@ namespace LoanApp
         private int stock;
         private int quantity;
         private DateTime startDate;
-        private DevelopPro.Database dbConn = new DevelopPro.Database();
         private MySqlConnection conn;
         public List<Product> produtList = new List<Product>();
         private Customer cust;
@@ -47,6 +46,11 @@ namespace LoanApp
             this.deposit = Deposit;
             this.quantity = Quantity;
             this.startDate = StartDate;
+        }
+
+        public override string ToString()
+        {
+            return (this.loanId + " " + this.loanName + " " + this.deposit).ToString();
         }
 
         private void Database()
@@ -171,6 +175,66 @@ namespace LoanApp
                         System.Windows.Forms.MessageBox.Show("Not enough balance");
                     }
                 }
+            }
+        }
+
+        public List<Product> GetBorrowedProducts(string rfid)
+        {
+            try
+            {
+                Database();
+                conn.Open();
+                List<Product> listOfBorrowed = new List<Product>();
+                string sql = "SELECT lo.* FROM loanitem l JOIN customer c ON(l.CustomerId = c.CustomerId)" +
+                    " JOIN loan lo ON(l.LoanId = lo.LoanId) WHERE c.TagId = '" + rfid + "'";
+                MySqlCommand msc = new MySqlCommand(sql, conn);
+                MySqlDataReader mdr = msc.ExecuteReader();
+                while (mdr.Read())
+                {
+                    int id = mdr.GetInt32("LoanId");
+                    string prodName = mdr.GetString("ProductName");
+                    decimal deposit = mdr.GetDecimal("Deposit");
+                    int stock = mdr.GetInt32("Stock");
+                    Product temp = new Product(id, prodName, deposit, stock);
+                    listOfBorrowed.Add(temp);
+                }
+                return listOfBorrowed;
+            }
+            catch(MySqlException )
+            {
+                System.Windows.Forms.MessageBox.Show("Something went wrong");
+            }
+            finally { conn.Close(); }
+            return null;
+        }
+
+        public void RefundBorrowedItem(Product p, string rfid)
+        {
+            try
+            {
+                Database();
+                conn.Open();
+                string sql = "UPDATE `loan` SET `Stock`= Stock + 1 WHERE LoanId = '" + p.loanId + "';";
+                MySqlCommand msc = new MySqlCommand(sql, conn);
+                MySqlDataReader mdr = msc.ExecuteReader();
+                mdr.Close();
+                string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" + p.deposit + "' WHERE TagId = '" + rfid + "';";
+                MySqlCommand msc1 = new MySqlCommand(sql1, conn);
+                MySqlDataReader mdr1 = msc1.ExecuteReader();
+                mdr1.Close();
+                int customerId = FindCustomerId(rfid);
+                string sql2 = "DELETE FROM `loanitem` WHERE CustomerId = " + customerId + " AND LoanId = " + p.loanId + ";";
+                MySqlCommand msc2 = new MySqlCommand(sql2, conn);
+                MySqlDataReader mdr2 = msc2.ExecuteReader();
+                mdr2.Close();
+            }
+            catch(MySqlException e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }
