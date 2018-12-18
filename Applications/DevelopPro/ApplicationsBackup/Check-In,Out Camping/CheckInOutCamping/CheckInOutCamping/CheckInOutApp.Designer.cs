@@ -39,7 +39,6 @@
             this.rbCheckOut = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnOpenRfid = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -47,10 +46,12 @@
             // 
             // lbShow
             // 
+            this.lbShow.Font = new System.Drawing.Font("Arial Nova Cond", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShow.FormattingEnabled = true;
+            this.lbShow.ItemHeight = 18;
             this.lbShow.Location = new System.Drawing.Point(29, 107);
             this.lbShow.Name = "lbShow";
-            this.lbShow.Size = new System.Drawing.Size(280, 251);
+            this.lbShow.Size = new System.Drawing.Size(280, 238);
             this.lbShow.TabIndex = 3;
             // 
             // panel1
@@ -146,24 +147,11 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "All rights reserved...";
             // 
-            // btnOpenRfid
-            // 
-            this.btnOpenRfid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.btnOpenRfid.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnOpenRfid.Location = new System.Drawing.Point(12, 49);
-            this.btnOpenRfid.Name = "btnOpenRfid";
-            this.btnOpenRfid.Size = new System.Drawing.Size(82, 27);
-            this.btnOpenRfid.TabIndex = 13;
-            this.btnOpenRfid.Text = "Open";
-            this.btnOpenRfid.UseVisualStyleBackColor = false;
-            this.btnOpenRfid.Click += new System.EventHandler(this.btnOpenRfid_Click);
-            // 
             // CheckInOutApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 406);
-            this.Controls.Add(this.btnOpenRfid);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.rbCheckOut);
             this.Controls.Add(this.rbCheckin);
@@ -175,7 +163,6 @@
             this.Name = "CheckInOutApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check-IN/OUT Camping App";
-            
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -197,7 +184,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnOpenRfid;
     }
 }
 

@@ -16,15 +16,15 @@ namespace DevelopPro
             private string ticketType;
             private string status;
             private string tagId;
-            private List<Customer> customers;
+            
 
-            public int Id { get; set; }
-            public int FirstName { get; set; }
-            public int LastName { get; set; }
-            public int Balance { get; set; }
-            public int TicketType { get; set; }
-            public int Status { get; set; }
-            public int TagId { get; set; }
+            public int Id { get { return id; } }
+            public string FirstName { get { return firstName; } }
+            public string LastName { get { return lastName; } }
+            public decimal Balance { get { return balance; } }
+            public string TicketType { get { return ticketType; }  }
+            public string Status { get { return status; }  }
+            public string TagId { get { return tagId; } }
 
             public Customer(int id, string firstName, string lastName, decimal balance, string ticketType, string status, string tagId)
             {
@@ -35,7 +35,7 @@ namespace DevelopPro
                 this.ticketType = ticketType;
                 this.status = status;
                 this.tagId = tagId;
-                customers = new List<Customer>();
+                
 
             }  
     }

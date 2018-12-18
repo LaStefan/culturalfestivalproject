@@ -23,7 +23,9 @@ namespace Check_InOutApp
         public AssignRFIDApp()
         {
             InitializeComponent();
-             myData= new Database();
+            this.BackColor = Color.LightGray;
+            lbShow.BackColor = Color.DimGray;
+            myData = new Database();
             String connectionInfo = "server=studmysql01.fhict.local;" +
                                   "database=dbi401148;" +
                                    "user id=dbi401148;" +
@@ -79,6 +81,7 @@ namespace Check_InOutApp
                         //MessageBox.Show("This person has a ticket!");
                         lbShow.BackColor = Color.Green;
                         lbShow.Items.Add("Valid ticket!");
+                        
                         lbShow.Items.Add(e.Tag);
                     }
                     else
@@ -120,12 +123,29 @@ namespace Check_InOutApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            String s = button1.Text;
 
             try
             {
-                myRFIDReader.Open();
-                tbTicketNr.Enabled = true;
+                if (s == "Power/ON")
+                {
+                    myRFIDReader.Open();
+                    tbTicketNr.Enabled = true;
+                    lbShow.Enabled = true;
+                    lbShow.BackColor = Color.White;
+                    this.BackColor = Color.White;
+                    button1.Text = "Power/OFF";
+                }
+                else
+                {
+                    myRFIDReader.Close();
+                    tbTicketNr.Enabled = false;
+                    lbShow.Enabled = false;
+                    this.BackColor = Color.LightGray;
+                    lbShow.BackColor = Color.DimGray;
+                    button1.Text = "Power/ON";
+                }
+                
             }
             catch (PhidgetException)
             {
