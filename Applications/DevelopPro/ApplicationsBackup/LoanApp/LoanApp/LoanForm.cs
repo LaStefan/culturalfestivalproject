@@ -19,18 +19,18 @@ namespace LoanApp
             InitializeComponent();
             this.prod = prod;
             this.lP = lp;
-            if(this.prod.LoanName == "Mobile Phone")
-            {
-                picShow.Image = Image.FromFile("");
-            }
-            else if(this.prod.LoanName == "Camera")
-            {
-                picShow.Image = Image.FromFile("");
-            }
-            else if(this.prod.LoanName == "Flashing")
-            {
+            //if(this.prod.LoanName == "Mobile Phone")
+            //{
+            //    picShow.Image = Image.FromFile("");
+            //}
+            //else if(this.prod.LoanName == "Camera")
+            //{
+            //    picShow.Image = Image.FromFile("");
+            //}
+            //else if(this.prod.LoanName == "Flashing")
+            //{
 
-            }
+            //}
         }
 
         private void label3_Click(object sender, EventArgs e)
