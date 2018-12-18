@@ -78,6 +78,9 @@
             this.lbRFID = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.prodId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -106,7 +109,7 @@
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(163, 544);
             this.panel1.TabIndex = 0;
@@ -119,7 +122,7 @@
             this.button2.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(12, 418);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(151, 55);
             this.button2.TabIndex = 6;
@@ -134,7 +137,7 @@
             this.btnReturn.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Location = new System.Drawing.Point(12, 322);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(151, 55);
             this.btnReturn.TabIndex = 5;
@@ -146,7 +149,7 @@
             // 
             this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.sideBar.Location = new System.Drawing.Point(8, 80);
-            this.sideBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sideBar.Margin = new System.Windows.Forms.Padding(4);
             this.sideBar.Name = "sideBar";
             this.sideBar.Size = new System.Drawing.Size(13, 55);
             this.sideBar.TabIndex = 4;
@@ -158,7 +161,7 @@
             this.btnLoan.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoan.ForeColor = System.Drawing.Color.White;
             this.btnLoan.Location = new System.Drawing.Point(12, 246);
-            this.btnLoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoan.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoan.Name = "btnLoan";
             this.btnLoan.Size = new System.Drawing.Size(151, 55);
             this.btnLoan.TabIndex = 2;
@@ -173,7 +176,7 @@
             this.btnBrowse.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
             this.btnBrowse.Location = new System.Drawing.Point(4, 162);
-            this.btnBrowse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(159, 55);
             this.btnBrowse.TabIndex = 1;
@@ -188,7 +191,7 @@
             this.btnHome.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Location = new System.Drawing.Point(12, 80);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(151, 55);
             this.btnHome.TabIndex = 0;
@@ -203,7 +206,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(163, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(936, 49);
             this.panel2.TabIndex = 3;
@@ -212,7 +215,7 @@
             // 
             this.button7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Location = new System.Drawing.Point(900, 4);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(28, 32);
             this.button7.TabIndex = 1;
@@ -249,7 +252,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(473, 111);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(335, 330);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -292,13 +295,14 @@
             // panel4
             // 
             this.panel4.Location = new System.Drawing.Point(183, 49);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(0, 0);
             this.panel4.TabIndex = 11;
             // 
             // panelItem
             // 
+            this.panelItem.Controls.Add(this.panelReturn);
             this.panelItem.Controls.Add(this.pbBlanckets);
             this.panelItem.Controls.Add(this.pbBags);
             this.panelItem.Controls.Add(this.pbFlashlight);
@@ -306,7 +310,7 @@
             this.panelItem.Controls.Add(this.pbPhone);
             this.panelItem.Controls.Add(this.pbUSB);
             this.panelItem.Location = new System.Drawing.Point(171, 80);
-            this.panelItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelItem.Margin = new System.Windows.Forms.Padding(4);
             this.panelItem.Name = "panelItem";
             this.panelItem.Size = new System.Drawing.Size(884, 449);
             this.panelItem.TabIndex = 12;
@@ -316,7 +320,7 @@
             // 
             this.pbBlanckets.Image = ((System.Drawing.Image)(resources.GetObject("pbBlanckets.Image")));
             this.pbBlanckets.Location = new System.Drawing.Point(640, 242);
-            this.pbBlanckets.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbBlanckets.Margin = new System.Windows.Forms.Padding(4);
             this.pbBlanckets.Name = "pbBlanckets";
             this.pbBlanckets.Size = new System.Drawing.Size(280, 196);
             this.pbBlanckets.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -329,7 +333,7 @@
             // 
             this.pbBags.Image = ((System.Drawing.Image)(resources.GetObject("pbBags.Image")));
             this.pbBags.Location = new System.Drawing.Point(640, 11);
-            this.pbBags.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbBags.Margin = new System.Windows.Forms.Padding(4);
             this.pbBags.Name = "pbBags";
             this.pbBags.Size = new System.Drawing.Size(280, 178);
             this.pbBags.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -342,7 +346,7 @@
             // 
             this.pbFlashlight.Image = ((System.Drawing.Image)(resources.GetObject("pbFlashlight.Image")));
             this.pbFlashlight.Location = new System.Drawing.Point(332, 11);
-            this.pbFlashlight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbFlashlight.Margin = new System.Windows.Forms.Padding(4);
             this.pbFlashlight.Name = "pbFlashlight";
             this.pbFlashlight.Size = new System.Drawing.Size(277, 180);
             this.pbFlashlight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -355,7 +359,7 @@
             // 
             this.pbCamera.Image = ((System.Drawing.Image)(resources.GetObject("pbCamera.Image")));
             this.pbCamera.Location = new System.Drawing.Point(32, 242);
-            this.pbCamera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbCamera.Margin = new System.Windows.Forms.Padding(4);
             this.pbCamera.Name = "pbCamera";
             this.pbCamera.Size = new System.Drawing.Size(281, 196);
             this.pbCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -368,7 +372,7 @@
             // 
             this.pbPhone.Image = ((System.Drawing.Image)(resources.GetObject("pbPhone.Image")));
             this.pbPhone.Location = new System.Drawing.Point(332, 242);
-            this.pbPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPhone.Margin = new System.Windows.Forms.Padding(4);
             this.pbPhone.Name = "pbPhone";
             this.pbPhone.Size = new System.Drawing.Size(277, 196);
             this.pbPhone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -381,7 +385,7 @@
             // 
             this.pbUSB.Image = ((System.Drawing.Image)(resources.GetObject("pbUSB.Image")));
             this.pbUSB.Location = new System.Drawing.Point(32, 11);
-            this.pbUSB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbUSB.Margin = new System.Windows.Forms.Padding(4);
             this.pbUSB.Name = "pbUSB";
             this.pbUSB.Size = new System.Drawing.Size(281, 178);
             this.pbUSB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -393,12 +397,13 @@
             // panelReturn
             // 
             this.panelReturn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelReturn.Controls.Add(this.listView1);
             this.panelReturn.Controls.Add(this.btnCheck);
             this.panelReturn.Controls.Add(this.btnRefund);
             this.panelReturn.Controls.Add(this.listBox1);
             this.panelReturn.Controls.Add(this.label6);
-            this.panelReturn.Location = new System.Drawing.Point(183, 62);
-            this.panelReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelReturn.Location = new System.Drawing.Point(11, 11);
+            this.panelReturn.Margin = new System.Windows.Forms.Padding(4);
             this.panelReturn.Name = "panelReturn";
             this.panelReturn.Size = new System.Drawing.Size(935, 496);
             this.panelReturn.TabIndex = 20;
@@ -408,7 +413,7 @@
             // btnCheck
             // 
             this.btnCheck.Location = new System.Drawing.Point(117, 80);
-            this.btnCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheck.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(100, 28);
             this.btnCheck.TabIndex = 22;
@@ -419,7 +424,7 @@
             // btnRefund
             // 
             this.btnRefund.Location = new System.Drawing.Point(783, 287);
-            this.btnRefund.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefund.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefund.Name = "btnRefund";
             this.btnRefund.Size = new System.Drawing.Size(100, 28);
             this.btnRefund.TabIndex = 21;
@@ -432,9 +437,9 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(243, 80);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(183, 212);
+            this.listBox1.Size = new System.Drawing.Size(239, 84);
             this.listBox1.TabIndex = 20;
             // 
             // label6
@@ -458,7 +463,7 @@
             this.panelLoan.Controls.Add(this.btnRemove);
             this.panelLoan.Controls.Add(this.lbRFID);
             this.panelLoan.Location = new System.Drawing.Point(171, 57);
-            this.panelLoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLoan.Margin = new System.Windows.Forms.Padding(4);
             this.panelLoan.Name = "panelLoan";
             this.panelLoan.Size = new System.Drawing.Size(943, 489);
             this.panelLoan.TabIndex = 6;
@@ -473,7 +478,7 @@
             this.panelInventory.Controls.Add(this.button9);
             this.panelInventory.Controls.Add(this.button10);
             this.panelInventory.Location = new System.Drawing.Point(7, 325);
-            this.panelInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelInventory.Margin = new System.Windows.Forms.Padding(4);
             this.panelInventory.Name = "panelInventory";
             this.panelInventory.Size = new System.Drawing.Size(936, 495);
             this.panelInventory.TabIndex = 21;
@@ -497,7 +502,7 @@
             this.button6.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Location = new System.Drawing.Point(820, 427);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(103, 43);
             this.button6.TabIndex = 19;
@@ -511,7 +516,7 @@
             this.button8.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Location = new System.Drawing.Point(687, 427);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(103, 43);
             this.button8.TabIndex = 17;
@@ -525,7 +530,7 @@
             this.button9.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Location = new System.Drawing.Point(72, 427);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(103, 43);
             this.button9.TabIndex = 16;
@@ -539,7 +544,7 @@
             this.button10.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Location = new System.Drawing.Point(203, 427);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(103, 43);
             this.button10.TabIndex = 13;
@@ -553,7 +558,7 @@
             this.btnChekout.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChekout.ForeColor = System.Drawing.Color.White;
             this.btnChekout.Location = new System.Drawing.Point(820, 427);
-            this.btnChekout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChekout.Margin = new System.Windows.Forms.Padding(4);
             this.btnChekout.Name = "btnChekout";
             this.btnChekout.Size = new System.Drawing.Size(103, 43);
             this.btnChekout.TabIndex = 19;
@@ -568,7 +573,7 @@
             this.btnPayment.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.Color.White;
             this.btnPayment.Location = new System.Drawing.Point(687, 427);
-            this.btnPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPayment.Margin = new System.Windows.Forms.Padding(4);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Size = new System.Drawing.Size(103, 43);
             this.btnPayment.TabIndex = 17;
@@ -588,7 +593,7 @@
             this.productPrice});
             this.productDataGV.Enabled = false;
             this.productDataGV.Location = new System.Drawing.Point(48, 76);
-            this.productDataGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productDataGV.Margin = new System.Windows.Forms.Padding(4);
             this.productDataGV.Name = "productDataGV";
             this.productDataGV.Size = new System.Drawing.Size(749, 332);
             this.productDataGV.TabIndex = 18;
@@ -626,7 +631,7 @@
             this.btnClear.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(72, 427);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(103, 43);
             this.btnClear.TabIndex = 16;
@@ -641,7 +646,7 @@
             this.btnRemove.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
             this.btnRemove.Location = new System.Drawing.Point(203, 427);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(103, 43);
             this.btnRemove.TabIndex = 13;
@@ -666,12 +671,27 @@
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(237, 57);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(143, 114);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.prodId,
+            this.columnHeader1});
+            this.listView1.Location = new System.Drawing.Point(289, 259);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(121, 97);
+            this.listView1.TabIndex = 23;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // prodId
+            // 
+            this.prodId.Text = "ProductId";
             // 
             // LoanAppForm
             // 
@@ -679,7 +699,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1099, 544);
-            this.Controls.Add(this.panelReturn);
             this.Controls.Add(this.panelItem);
             this.Controls.Add(this.panelLoan);
             this.Controls.Add(this.panel4);
@@ -692,7 +711,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoanAppForm";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -769,6 +788,9 @@
         private System.Windows.Forms.Button btnRefund;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader prodId;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
 
