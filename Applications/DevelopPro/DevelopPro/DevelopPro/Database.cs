@@ -31,7 +31,7 @@ namespace DevelopPro
                 "For developers: " + originalExceptionMessage
                 );
         }
-        //testing method!
+        
         public int GetVisitorNumber()
         {
             int nr=0;

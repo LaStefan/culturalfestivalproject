@@ -19,9 +19,12 @@ namespace CheckInOutCamping
         private MySqlConnection conn;
         private RFID myRFIDReader;
         Database myData;
+        
+        List<Customer> customers;
         public CheckInOutApp()
         {
             InitializeComponent();
+            
             myData = new Database();
             String connectionInfo = "server=studmysql01.fhict.local;" +
                                   "database=dbi401148;" +
@@ -33,12 +36,13 @@ namespace CheckInOutCamping
                 myRFIDReader = new RFID();
                 //myRFIDReader.TagLost += MyRFIDReader_TagLost;
                 myRFIDReader.Tag += MyRFIDReader_Tag;
-
+                   myRFIDReader.Open();
             }
             catch (PhidgetException)
             {
                 MessageBox.Show("Could not startup!");
             }
+            customers = GetCustomers();
         }
 
         private void MyRFIDReader_Tag(object sender, RFIDTagEventArgs e)
@@ -64,17 +68,33 @@ namespace CheckInOutCamping
                             int update;
                             conn.Open();
                             update = command.ExecuteNonQuery();
-
+                            
+                           
                             lbShow.Items.Clear();
                             //MessageBox.Show("This person has a ticket!");
                             lbShow.BackColor = Color.Green;
                             lbShow.Items.Add("Checked IN");
-                            lbShow.Items.Add(e.Tag);
+                            //lbShow.Items.Add(e.Tag);
+                            //getting firstname and last name of the customer for the output
+                            foreach (Customer c in customers)
+                            {
+                                if (c.TagId == e.Tag)
+                                {
+                                    lbShow.Items.Add("Welcome to our event " + c.FirstName);
+                                    lbShow.Items.Add("Have lots of fun!");
+                                }
+                            }
                         }
 
                         else
-                        {
-                            MessageBox.Show("Already checked in..");
+                        {   foreach(Customer c in customers)
+                            {
+                                if(c.TagId==e.Tag)
+                                {
+                                    MessageBox.Show(c.FirstName+" "+c.LastName+" is already checked in!");
+                                }
+                            }
+                            
                         }
                     }
                     else
@@ -101,9 +121,10 @@ namespace CheckInOutCamping
 
                             lbShow.Items.Clear();
                             //MessageBox.Show("This person has a ticket!");
-                            lbShow.BackColor = Color.White;
+                            lbShow.BackColor = Color.Red;
                             lbShow.Items.Add("Checked OUT");
-                            lbShow.Items.Add(e.Tag);
+                            lbShow.Items.Add("Thank you for visiting us, see you soon!");
+                            //lbShow.Items.Add(e.Tag);
                         }
                         else
                         {
@@ -138,15 +159,60 @@ namespace CheckInOutCamping
 
         private void btnOpenRfid_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    myRFIDReader.Open();
+               
+            //}
+            //catch (PhidgetException)
+            //{
+            //    MessageBox.Show("Could not connect to the RFID-Reader!");
+           // }
+        }
+        private List<Customer> GetCustomers()
+        {
+            List<Customer> temp = new List<Customer>();
+
+              int id;
+       string firstName;
+         string lastName;
+        decimal balance;
+       string ticketType;
+         string status;
+         string tagId;
+        string sql = "SELECT CustomerId,FirstName,LastName,Status,TicketType,Balance,TagId FROM customer";
+            MySqlCommand command = new MySqlCommand(sql,conn);
+
             try
             {
-                myRFIDReader.Open();
-               
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    id = Convert.ToInt32(reader["CustomerId"]);
+                    firstName = Convert.ToString(reader["FirstName"]);
+                    lastName = Convert.ToString(reader["LastName"]);
+                    balance = Convert.ToDecimal(reader["Balance"]);
+                    status = Convert.ToString(reader["Status"]);
+                    ticketType = Convert.ToString(reader["TicketType"]);
+                    tagId=Convert.ToString(reader["TagId"]);
+
+                    temp.Add(new Customer(id, firstName, lastName, balance, ticketType, status, tagId));
+                }
+
             }
-            catch (PhidgetException)
+            catch (MySqlException ex)
             {
-                MessageBox.Show("Could not connect to the RFID-Reader!");
+                MessageBox.Show(ex.ToString());
             }
+            finally
+            {
+                conn.Close();
+            }
+
+            return temp;
         }
+        
     }
 }

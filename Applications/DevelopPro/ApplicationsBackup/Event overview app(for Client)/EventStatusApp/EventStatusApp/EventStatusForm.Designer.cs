@@ -32,7 +32,6 @@
             this.lbOverview = new System.Windows.Forms.ListBox();
             this.CHECK = new System.Windows.Forms.GroupBox();
             this.btnCamp = new System.Windows.Forms.Button();
-            this.btnVisitor = new System.Windows.Forms.Button();
             this.btnBalance = new System.Windows.Forms.Button();
             this.btnTotalVisitors = new System.Windows.Forms.Button();
             this.btnMoneySpent = new System.Windows.Forms.Button();
@@ -58,7 +57,6 @@
             // 
             this.CHECK.BackColor = System.Drawing.Color.White;
             this.CHECK.Controls.Add(this.btnCamp);
-            this.CHECK.Controls.Add(this.btnVisitor);
             this.CHECK.Controls.Add(this.btnBalance);
             this.CHECK.Controls.Add(this.btnTotalVisitors);
             this.CHECK.Controls.Add(this.btnMoneySpent);
@@ -76,26 +74,12 @@
             this.btnCamp.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCamp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCamp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCamp.Location = new System.Drawing.Point(60, 318);
+            this.btnCamp.Location = new System.Drawing.Point(60, 262);
             this.btnCamp.Name = "btnCamp";
             this.btnCamp.Size = new System.Drawing.Size(161, 56);
             this.btnCamp.TabIndex = 5;
             this.btnCamp.Text = "Camping Status";
             this.btnCamp.UseVisualStyleBackColor = false;
-            // 
-            // btnVisitor
-            // 
-            this.btnVisitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.btnVisitor.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVisitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisitor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisitor.Location = new System.Drawing.Point(60, 259);
-            this.btnVisitor.Name = "btnVisitor";
-            this.btnVisitor.Size = new System.Drawing.Size(161, 56);
-            this.btnVisitor.TabIndex = 4;
-            this.btnVisitor.Text = "Visitor Status";
-            this.btnVisitor.UseVisualStyleBackColor = false;
-            this.btnVisitor.Click += new System.EventHandler(this.btnVisitor_Click);
             // 
             // btnBalance
             // 
@@ -209,7 +193,6 @@
         private System.Windows.Forms.ListBox lbOverview;
         private System.Windows.Forms.GroupBox CHECK;
         private System.Windows.Forms.Button btnCamp;
-        private System.Windows.Forms.Button btnVisitor;
         private System.Windows.Forms.Button btnBalance;
         private System.Windows.Forms.Button btnTotalVisitors;
         private System.Windows.Forms.Button btnMoneySpent;
