@@ -77,16 +77,6 @@ namespace LoanApp
             lf.Show();
         }
 
-        private void btnADD_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbRFID_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pbUSB_Click(object sender, EventArgs e)
         {
             product = product.GetProduct("Charger");
@@ -120,19 +110,6 @@ namespace LoanApp
             product = product.GetProduct("Blanket");
             LoanForm lf = new LoanForm(product, listOfProducts);
             lf.Show();
-        }
-
-        private void productDataGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnPayment_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void TagAdd(object sender, RFIDTagEventArgs e)
@@ -173,16 +150,6 @@ namespace LoanApp
             panelInventory.Dock = DockStyle.Fill;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelReturn_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private bool CheckForm(Form form)
         {
             form = Application.OpenForms[form.Text];
@@ -212,11 +179,6 @@ namespace LoanApp
             }
         }
 
-        private void panelLoan_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnRefund_Click(object sender, EventArgs e)
         {
             Product temp = (Product)listBox1.SelectedItem;
@@ -237,6 +199,11 @@ namespace LoanApp
             {
                 listBox1.Items.Add(item);
             }
+        }
+
+        private void panelLoan_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

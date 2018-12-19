@@ -160,7 +160,7 @@ namespace LoanApp
                     if (balance >= p.deposit)
                     {
                         mdr2.Close();
-                        string updateBalance = "UPDATE `customer` SET `Balance`= Balance - '" + p.deposit + "' WHERE TagId = '" + rfid + "'";
+                        string updateBalance = "UPDATE `customer` SET `Balance`= Balance - '" +  p.deposit + "' WHERE TagId = '" + rfid + "'";
                         MySqlCommand msc3 = new MySqlCommand(updateBalance, conn);
                         MySqlDataReader mdr3 = msc3.ExecuteReader();
                         mdr3.Close();
@@ -168,11 +168,11 @@ namespace LoanApp
                         MySqlCommand msc1 = new MySqlCommand(sql1, conn);
                         MySqlDataReader mdr1 = msc1.ExecuteReader();
                         mdr1.Close();
-                        System.Windows.Forms.MessageBox.Show("Done");
+                        System.Windows.Forms.MessageBox.Show("The item was successfully borrowed!");
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Not enough balance");
+                        System.Windows.Forms.MessageBox.Show("Not enough balance!");
                     }
                 }
             }
@@ -193,7 +193,7 @@ namespace LoanApp
                 {
                     int id = mdr.GetInt32("LoanId");
                     string prodName = mdr.GetString("ProductName");
-                    decimal deposit = mdr.GetDecimal("Deposit");
+                    decimal deposit =  mdr.GetDecimal("Deposit");
                     int stock = mdr.GetInt32("Stock");
                     Product temp = new Product(id, prodName, deposit, stock);
                     listOfBorrowed.Add(temp);
@@ -202,7 +202,7 @@ namespace LoanApp
             }
             catch(MySqlException )
             {
-                System.Windows.Forms.MessageBox.Show("Something went wrong");
+                System.Windows.Forms.MessageBox.Show("Something went wrong!");
             }
             finally { conn.Close(); }
             return null;
@@ -218,7 +218,7 @@ namespace LoanApp
                 MySqlCommand msc = new MySqlCommand(sql, conn);
                 MySqlDataReader mdr = msc.ExecuteReader();
                 mdr.Close();
-                string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" + p.deposit + "' WHERE TagId = '" + rfid + "';";
+                string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" +  p.deposit + "' WHERE TagId = '" + rfid + "';";
                 MySqlCommand msc1 = new MySqlCommand(sql1, conn);
                 MySqlDataReader mdr1 = msc1.ExecuteReader();
                 mdr1.Close();
