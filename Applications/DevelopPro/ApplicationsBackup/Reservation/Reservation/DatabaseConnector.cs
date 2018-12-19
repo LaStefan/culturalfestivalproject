@@ -60,21 +60,18 @@ namespace Reservation
             return campingSites;
         }
 
-        public void ReserveCamp(int campId ,string startDate, string endDate)
+        public void ReserveCamp(int campId , string date)
         {
-            string sql = "UPDATE campingsite SET StartDate=@startDate, EndDate=@endDate, Status=1 WHERE CampingSiteId=@campId";
+            string sql = "UPDATE campingsite SET Date=@date, Status=1 WHERE CampingSiteId=@campId";
+           
             MySqlCommand command = new MySqlCommand(sql, connectionToDB);
-            command.Parameters.AddWithValue("@startDate", startDate);
-            command.Parameters.AddWithValue("@endDate", endDate);
+            command.Parameters.AddWithValue("@date", date);
             command.Parameters.AddWithValue("@campId", campId);
             try
             {
                 int update;
-         
                 connectionToDB.Open();
                 update = command.ExecuteNonQuery();
-
-                
             }
             catch(MySqlException ex)
             {
@@ -120,16 +117,17 @@ namespace Reservation
             return false;
         }
 
-        public string GetInfo(string tag)
+        public Customer GetInfo(string tag)
         {
-            string holder;
+            string holder="";
             String fname = "";
             String lname = "";
             String email = "";
             decimal balance = 0;
             String ticket = "";
             String status = "";
-            String sql = "SELECT CustomerId, FirstName, LastName,Email,Balance,TicketType,Status FROM customer WHERE TagId=@tag";
+            String campId = "";
+            String sql = "SELECT CustomerId, FirstName, LastName,Email,Balance,TicketType,Status, CampingSiteId FROM customer WHERE TagId=@tag";
             MySqlCommand command = new MySqlCommand(sql, connectionToDB);
             command.Parameters.AddWithValue("@tag", tag);
             try
@@ -145,7 +143,12 @@ namespace Reservation
                     balance = Convert.ToDecimal(reader["Balance"]);
                     ticket = Convert.ToString(reader["TicketType"]);
                     status = Convert.ToString(reader["Status"]);
-
+                    campId = Convert.ToString(reader["CampingSiteId"]);
+                //    holder = "Person: " + fname + " " + lname + "  Balance: " + balance + " " +
+                //"  Ticket type: " + ticket + " " +
+                //"  Status: " + status + ", CampingSiteId:" + campId;
+                //    return holder;
+                    
                 }
 
             }
@@ -157,13 +160,162 @@ namespace Reservation
             {
                 connectionToDB.Close();
             }
-        
-            holder = "Person: " + fname + " " + lname + "  Balance: " + balance + " " +
-                "  Ticket type: " + ticket + " " +
-                "  Status: " + status;
+            Customer customer = new Customer(fname, lname, balance, ticket, status, campId);
+            
 
-            return holder;
+            return customer;
 
+        }
+
+        public int GetCustomerId(string tag)
+        {
+            int customerId = 0;
+
+            String sql = "SELECT CustomerId FROM customer WHERE TagId=@tag";
+            MySqlCommand command = new MySqlCommand(sql, connectionToDB);
+            command.Parameters.AddWithValue("@tag", tag);
+            try
+            {
+                connectionToDB.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    customerId = Convert.ToInt32(reader["CustomerId"]);                
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                connectionToDB.Close();
+            }
+
+            return customerId;
+        }
+
+        public bool CheckCustomerCamp(string tag)
+        {
+           
+            String sql = "SELECT CampingSiteId FROM customer WHERE TagId=@tag";
+            MySqlCommand command = new MySqlCommand(sql, connectionToDB);
+            command.Parameters.AddWithValue("@tag", tag);
+            try
+            {
+                connectionToDB.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if(Convert.ToString(reader["CampingSiteId"]) != "")
+                    {                      
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                connectionToDB.Close();
+            }
+
+            return false;
+
+        }
+
+        public void UpdateCampId(int campId, string tagId, decimal balance)
+        {
+            string sql = "UPDATE customer SET CampingSiteId=@campId, Balance=@balance WHERE TagId=@tagId";
+            MySqlCommand command = new MySqlCommand(sql, connectionToDB);
+            command.Parameters.AddWithValue("@campId", campId);
+            command.Parameters.AddWithValue("@tagId", tagId);
+            command.Parameters.AddWithValue("@balance", balance);
+            try
+            {
+                int update;
+                connectionToDB.Open();
+                update = command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                connectionToDB.Close();
+            }
+        }
+
+        public decimal GetBalanceByTag(string tagId)
+        {
+            decimal balance = 0;
+
+            String sql = "SELECT Balance FROM customer WHERE TagId=@tag";
+            MySqlCommand command = new MySqlCommand(sql, connectionToDB);
+            command.Parameters.AddWithValue("@tag", tagId);
+            try
+            {
+                connectionToDB.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    balance = Convert.ToDecimal(reader["Balance"]);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                connectionToDB.Close();
+            }
+
+            return balance;
+        }
+
+        public int GetPriceByCampId(int campId)
+        {
+            int price = 0;
+
+            String sql = "SELECT Price FROM campingSite WHERE CampingSiteId=@campId";
+            MySqlCommand command = new MySqlCommand(sql, connectionToDB);
+            command.Parameters.AddWithValue("@campId", campId);
+            try
+            {
+                connectionToDB.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    price = Convert.ToInt32(reader["Price"]);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                connectionToDB.Close();
+            }
+
+            return price;
         }
     }
 }

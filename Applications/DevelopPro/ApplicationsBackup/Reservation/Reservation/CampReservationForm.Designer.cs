@@ -33,14 +33,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lbShow = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.rb1 = new System.Windows.Forms.RadioButton();
             this.rb5 = new System.Windows.Forms.RadioButton();
             this.rb2 = new System.Windows.Forms.RadioButton();
@@ -53,7 +50,11 @@
             this.rb11 = new System.Windows.Forms.RadioButton();
             this.rb6 = new System.Windows.Forms.RadioButton();
             this.rb9 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ckNight1 = new System.Windows.Forms.CheckBox();
+            this.ckNight2 = new System.Windows.Forms.CheckBox();
+            this.ckNight3 = new System.Windows.Forms.CheckBox();
+            this.btClear = new System.Windows.Forms.Button();
+            this.lbshowCus = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -92,6 +93,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -99,13 +101,26 @@
             this.panel1.Size = new System.Drawing.Size(899, 34);
             this.panel1.TabIndex = 12;
             // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(869, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(18, 22);
+            this.btnClose.TabIndex = 54;
+            this.btnClose.Text = "x";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // lbShow
             // 
+            this.lbShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShow.FormattingEnabled = true;
             this.lbShow.HorizontalScrollbar = true;
-            this.lbShow.Location = new System.Drawing.Point(296, 125);
+            this.lbShow.ItemHeight = 16;
+            this.lbShow.Location = new System.Drawing.Point(284, 125);
             this.lbShow.Name = "lbShow";
-            this.lbShow.Size = new System.Drawing.Size(298, 264);
+            this.lbShow.Size = new System.Drawing.Size(310, 260);
             this.lbShow.TabIndex = 24;
             // 
             // label3
@@ -114,9 +129,10 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(281, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 52);
+            this.label3.Size = new System.Drawing.Size(147, 52);
             this.label3.TabIndex = 28;
-            this.label3.Text = "Camping sites:\r\n- for 2 persons, 1-4\r\n- for 4 persons, 5-8\r\n-for 6 persons, 9-12";
+            this.label3.Text = "Camping sites:\r\n- for 2 persons, 1-4, 10€\r\n- for 4 persons, 5-8, 15€\r\n-for 6 pers" +
+    "ons, 9-12, 20€";
             // 
             // btnPay
             // 
@@ -138,40 +154,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(407, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Start Date:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(405, 55);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(192, 20);
-            this.dateTimePicker1.TabIndex = 32;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(407, 78);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "End Date:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(405, 94);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(192, 20);
-            this.dateTimePicker2.TabIndex = 34;
             // 
             // rb1
             // 
@@ -341,13 +323,55 @@
             this.rb9.Text = "9";
             this.rb9.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // ckNight1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 268);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 121);
-            this.textBox1.TabIndex = 47;
+            this.ckNight1.AutoSize = true;
+            this.ckNight1.Location = new System.Drawing.Point(455, 52);
+            this.ckNight1.Name = "ckNight1";
+            this.ckNight1.Size = new System.Drawing.Size(125, 17);
+            this.ckNight1.TabIndex = 51;
+            this.ckNight1.Text = "From 18/12 to 19/12";
+            this.ckNight1.UseVisualStyleBackColor = true;
+            // 
+            // ckNight2
+            // 
+            this.ckNight2.AutoSize = true;
+            this.ckNight2.Location = new System.Drawing.Point(454, 75);
+            this.ckNight2.Name = "ckNight2";
+            this.ckNight2.Size = new System.Drawing.Size(125, 17);
+            this.ckNight2.TabIndex = 52;
+            this.ckNight2.Text = "From 19/12 to 20/12";
+            this.ckNight2.UseVisualStyleBackColor = true;
+            // 
+            // ckNight3
+            // 
+            this.ckNight3.AutoSize = true;
+            this.ckNight3.Location = new System.Drawing.Point(454, 98);
+            this.ckNight3.Name = "ckNight3";
+            this.ckNight3.Size = new System.Drawing.Size(125, 17);
+            this.ckNight3.TabIndex = 53;
+            this.ckNight3.Text = "From 18/12 to 20/12";
+            this.ckNight3.UseVisualStyleBackColor = true;
+            // 
+            // btClear
+            // 
+            this.btClear.Location = new System.Drawing.Point(543, 366);
+            this.btClear.Name = "btClear";
+            this.btClear.Size = new System.Drawing.Size(51, 23);
+            this.btClear.TabIndex = 54;
+            this.btClear.Text = "Clear";
+            this.btClear.UseVisualStyleBackColor = true;
+            this.btClear.Click += new System.EventHandler(this.btClear_Click);
+            // 
+            // lbshowCus
+            // 
+            this.lbshowCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbshowCus.FormattingEnabled = true;
+            this.lbshowCus.ItemHeight = 16;
+            this.lbshowCus.Location = new System.Drawing.Point(12, 268);
+            this.lbshowCus.Name = "lbshowCus";
+            this.lbshowCus.Size = new System.Drawing.Size(263, 132);
+            this.lbshowCus.TabIndex = 55;
             // 
             // CampReservationForm
             // 
@@ -355,7 +379,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(899, 480);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbshowCus);
+            this.Controls.Add(this.btClear);
+            this.Controls.Add(this.ckNight3);
+            this.Controls.Add(this.ckNight2);
+            this.Controls.Add(this.ckNight1);
             this.Controls.Add(this.rb9);
             this.Controls.Add(this.rb6);
             this.Controls.Add(this.rb11);
@@ -368,9 +396,6 @@
             this.Controls.Add(this.rb2);
             this.Controls.Add(this.rb5);
             this.Controls.Add(this.rb1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.label3);
@@ -378,7 +403,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dateTimePicker1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CampReservationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -402,10 +426,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.RadioButton rb1;
         private System.Windows.Forms.RadioButton rb5;
         private System.Windows.Forms.RadioButton rb2;
@@ -418,7 +438,12 @@
         private System.Windows.Forms.RadioButton rb11;
         private System.Windows.Forms.RadioButton rb6;
         private System.Windows.Forms.RadioButton rb9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox ckNight1;
+        private System.Windows.Forms.CheckBox ckNight2;
+        private System.Windows.Forms.CheckBox ckNight3;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btClear;
+        private System.Windows.Forms.ListBox lbshowCus;
     }
 }
 
