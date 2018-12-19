@@ -42,15 +42,15 @@ namespace CheckInOutCamping
             {
                 MessageBox.Show("Could not startup!");
             }
-            customers = GetCustomers();
+            customers = myData.GetCustomers();
         }
 
         private void MyRFIDReader_Tag(object sender, RFIDTagEventArgs e)
         {
             try
             {
-                String statusIn = "Checked";
-                String statusOut = "Not checked";
+               // String statusIn = "Checked";
+                //String statusOut = "Not checked";
                 bool checkedin = myData.CheckedInOrNot(e.Tag);
                 bool checkTag = myData.CheckIfAssigned(e.Tag);
                 if (rbCheckin.Checked)
@@ -59,15 +59,7 @@ namespace CheckInOutCamping
                     {
                         if (checkedin != true)
                         {
-                            string sql = "UPDATE customer SET Status=@stat WHERE TagId = @id";
-                            MySqlCommand command = new MySqlCommand(sql, conn);
-                            command.Parameters.AddWithValue("@id", e.Tag);
-                            command.Parameters.AddWithValue("@stat", statusIn);
-
-
-                            int update;
-                            conn.Open();
-                            update = command.ExecuteNonQuery();
+                            myData.CheckIn(e.Tag);
                             
                            
                             lbShow.Items.Clear();
@@ -91,7 +83,9 @@ namespace CheckInOutCamping
                             {
                                 if(c.TagId==e.Tag)
                                 {
-                                    MessageBox.Show(c.FirstName+" "+c.LastName+" is already checked in!");
+                                    lbShow.Items.Clear();
+                                    lbShow.BackColor = Color.White;
+                                    lbShow.Items.Add(c.FirstName + " " + c.LastName + " is already checked in!");
                                 }
                             }
                             
@@ -99,7 +93,9 @@ namespace CheckInOutCamping
                     }
                     else
                     {
-                        MessageBox.Show("Bracelet is not assigned to a person...");
+                        lbShow.Items.Clear();
+                        lbShow.BackColor = Color.White;
+                        lbShow.Items.Add("Bracelet is not assigned to a person...");
                     }
                    
                 }
@@ -109,15 +105,7 @@ namespace CheckInOutCamping
                     {
                         if (checkedin == true)
                         {
-                            string sql = "UPDATE customer SET Status=@stat WHERE TagId = @id";
-                            MySqlCommand command = new MySqlCommand(sql, conn);
-                            command.Parameters.AddWithValue("@id", e.Tag);
-                            command.Parameters.AddWithValue("@stat", statusOut);
-
-
-                            int update;
-                            conn.Open();
-                            update = command.ExecuteNonQuery();
+                            myData.CheckOut(e.Tag);
 
                             lbShow.Items.Clear();
                             //MessageBox.Show("This person has a ticket!");
@@ -128,12 +116,16 @@ namespace CheckInOutCamping
                         }
                         else
                         {
-                            MessageBox.Show("Already checked out..");
+                            lbShow.Items.Clear();
+                            lbShow.BackColor = Color.White;
+                            lbShow.Items.Add("Already checked out..");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Bracelet is not assigned to a person...");
+                        lbShow.Items.Clear();
+                        lbShow.BackColor = Color.White;
+                        lbShow.Items.Add("Bracelet is not assigned to a person...");
                     }
                 }
             }
@@ -169,50 +161,6 @@ namespace CheckInOutCamping
             //    MessageBox.Show("Could not connect to the RFID-Reader!");
            // }
         }
-        private List<Customer> GetCustomers()
-        {
-            List<Customer> temp = new List<Customer>();
-
-              int id;
-       string firstName;
-         string lastName;
-        decimal balance;
-       string ticketType;
-         string status;
-         string tagId;
-        string sql = "SELECT CustomerId,FirstName,LastName,Status,TicketType,Balance,TagId FROM customer";
-            MySqlCommand command = new MySqlCommand(sql,conn);
-
-            try
-            {
-                conn.Open();
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    id = Convert.ToInt32(reader["CustomerId"]);
-                    firstName = Convert.ToString(reader["FirstName"]);
-                    lastName = Convert.ToString(reader["LastName"]);
-                    balance = Convert.ToDecimal(reader["Balance"]);
-                    status = Convert.ToString(reader["Status"]);
-                    ticketType = Convert.ToString(reader["TicketType"]);
-                    tagId=Convert.ToString(reader["TagId"]);
-
-                    temp.Add(new Customer(id, firstName, lastName, balance, ticketType, status, tagId));
-                }
-
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return temp;
-        }
-        
+       
     }
 }

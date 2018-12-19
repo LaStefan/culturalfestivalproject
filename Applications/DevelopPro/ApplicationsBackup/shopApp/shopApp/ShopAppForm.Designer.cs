@@ -47,15 +47,10 @@
             this.panelDrinks = new System.Windows.Forms.Panel();
             this.panelPay = new System.Windows.Forms.Panel();
             this.productDataGV = new System.Windows.Forms.DataGridView();
-            this.productID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelTotal = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.lbRFID = new System.Windows.Forms.Label();
             this.picWhiskey = new System.Windows.Forms.PictureBox();
@@ -89,6 +84,12 @@
             this.picBalls = new System.Windows.Forms.PictureBox();
             this.picHam = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbRfidCode = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -139,9 +140,8 @@
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(143, 575);
+            this.panel1.Size = new System.Drawing.Size(107, 467);
             this.panel1.TabIndex = 0;
             // 
             // btnFood
@@ -150,10 +150,9 @@
             this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFood.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFood.ForeColor = System.Drawing.Color.White;
-            this.btnFood.Location = new System.Drawing.Point(8, 176);
-            this.btnFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFood.Location = new System.Drawing.Point(6, 143);
             this.btnFood.Name = "btnFood";
-            this.btnFood.Size = new System.Drawing.Size(135, 44);
+            this.btnFood.Size = new System.Drawing.Size(101, 36);
             this.btnFood.TabIndex = 8;
             this.btnFood.Text = "Foods";
             this.btnFood.UseVisualStyleBackColor = true;
@@ -165,10 +164,9 @@
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(8, 358);
-            this.btnPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPay.Location = new System.Drawing.Point(6, 291);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(135, 44);
+            this.btnPay.Size = new System.Drawing.Size(101, 36);
             this.btnPay.TabIndex = 7;
             this.btnPay.Text = "Payment";
             this.btnPay.UseVisualStyleBackColor = true;
@@ -180,10 +178,9 @@
             this.btnDrinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrinks.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDrinks.ForeColor = System.Drawing.Color.White;
-            this.btnDrinks.Location = new System.Drawing.Point(8, 265);
-            this.btnDrinks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDrinks.Location = new System.Drawing.Point(6, 215);
             this.btnDrinks.Name = "btnDrinks";
-            this.btnDrinks.Size = new System.Drawing.Size(135, 44);
+            this.btnDrinks.Size = new System.Drawing.Size(101, 36);
             this.btnDrinks.TabIndex = 6;
             this.btnDrinks.Text = "Drinks";
             this.btnDrinks.UseVisualStyleBackColor = true;
@@ -192,10 +189,9 @@
             // sideBar
             // 
             this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.sideBar.Location = new System.Drawing.Point(0, 76);
-            this.sideBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sideBar.Location = new System.Drawing.Point(0, 62);
             this.sideBar.Name = "sideBar";
-            this.sideBar.Size = new System.Drawing.Size(13, 44);
+            this.sideBar.Size = new System.Drawing.Size(10, 36);
             this.sideBar.TabIndex = 5;
             // 
             // btnHome
@@ -204,10 +200,9 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Location = new System.Drawing.Point(8, 76);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Location = new System.Drawing.Point(6, 62);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(135, 44);
+            this.btnHome.Size = new System.Drawing.Size(101, 36);
             this.btnHome.TabIndex = 5;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
@@ -219,19 +214,17 @@
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(143, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(107, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1044, 42);
+            this.panel2.Size = new System.Drawing.Size(783, 34);
             this.panel2.TabIndex = 1;
             // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(1012, 4);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(759, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(24, 27);
+            this.btnClose.Size = new System.Drawing.Size(18, 22);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "x";
             this.toolTip1.SetToolTip(this.btnClose, "Close");
@@ -242,20 +235,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(169, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(127, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(682, 32);
+            this.label4.Size = new System.Drawing.Size(534, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "The European Cultural Event Food Shop Application";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(249, 101);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(187, 82);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(123, 122);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -264,10 +255,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(268, 286);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(201, 232);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 28);
+            this.label1.Size = new System.Drawing.Size(98, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Welcome";
             // 
@@ -275,20 +265,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(269, 331);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(202, 269);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 140);
+            this.label2.Size = new System.Drawing.Size(118, 119);
             this.label2.TabIndex = 7;
             this.label2.Text = "- Tassty foods\r\n\r\n- Affordable prices\r\n\r\n- Variety choices\r\n\r\n- The very best";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(577, 76);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(433, 62);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(476, 443);
+            this.pictureBox2.Size = new System.Drawing.Size(357, 360);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -312,10 +300,9 @@
             this.panelFood.Controls.Add(this.picFrite);
             this.panelFood.Controls.Add(this.picBalls);
             this.panelFood.Controls.Add(this.picHam);
-            this.panelFood.Location = new System.Drawing.Point(147, 49);
-            this.panelFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelFood.Location = new System.Drawing.Point(110, 40);
             this.panelFood.Name = "panelFood";
-            this.panelFood.Size = new System.Drawing.Size(1024, 526);
+            this.panelFood.Size = new System.Drawing.Size(768, 427);
             this.panelFood.TabIndex = 9;
             this.panelFood.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFood_Paint);
             // 
@@ -337,26 +324,25 @@
             this.panelDrinks.Controls.Add(this.picCola);
             this.panelDrinks.Controls.Add(this.picBeer);
             this.panelDrinks.Controls.Add(this.picApple);
-            this.panelDrinks.Location = new System.Drawing.Point(4, 4);
-            this.panelDrinks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDrinks.Location = new System.Drawing.Point(3, 3);
             this.panelDrinks.Name = "panelDrinks";
-            this.panelDrinks.Size = new System.Drawing.Size(1023, 518);
+            this.panelDrinks.Size = new System.Drawing.Size(767, 421);
             this.panelDrinks.TabIndex = 15;
             // 
             // panelPay
             // 
+            this.panelPay.Controls.Add(this.button1);
+            this.panelPay.Controls.Add(this.lbRfidCode);
             this.panelPay.Controls.Add(this.productDataGV);
             this.panelPay.Controls.Add(this.textBox1);
             this.panelPay.Controls.Add(this.labelTotal);
             this.panelPay.Controls.Add(this.btnPayment);
             this.panelPay.Controls.Add(this.btnClear);
-            this.panelPay.Controls.Add(this.btnExit);
             this.panelPay.Controls.Add(this.btnRemove);
             this.panelPay.Controls.Add(this.lbRFID);
-            this.panelPay.Location = new System.Drawing.Point(8, 4);
-            this.panelPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelPay.Location = new System.Drawing.Point(3, 3);
             this.panelPay.Name = "panelPay";
-            this.panelPay.Size = new System.Drawing.Size(1011, 491);
+            this.panelPay.Size = new System.Drawing.Size(761, 399);
             this.panelPay.TabIndex = 10;
             // 
             // productDataGV
@@ -364,54 +350,30 @@
             this.productDataGV.BackgroundColor = System.Drawing.Color.White;
             this.productDataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productDataGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productID,
             this.productName,
-            this.productQty,
-            this.productPrice});
-            this.productDataGV.Location = new System.Drawing.Point(136, 44);
-            this.productDataGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productStock,
+            this.productPrice,
+            this.prodQty});
+            this.productDataGV.Location = new System.Drawing.Point(102, 36);
             this.productDataGV.Name = "productDataGV";
-            this.productDataGV.Size = new System.Drawing.Size(744, 332);
+            this.productDataGV.Size = new System.Drawing.Size(491, 270);
             this.productDataGV.TabIndex = 9;
             this.productDataGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productDataGV_CellContentClick);
             // 
-            // productID
-            // 
-            this.productID.HeaderText = "Prod ID";
-            this.productID.Name = "productID";
-            // 
-            // productName
-            // 
-            this.productName.HeaderText = "Name";
-            this.productName.Name = "productName";
-            this.productName.Width = 210;
-            // 
-            // productQty
-            // 
-            this.productQty.HeaderText = "Quantity";
-            this.productQty.Name = "productQty";
-            // 
-            // productPrice
-            // 
-            this.productPrice.HeaderText = "Price";
-            this.productPrice.Name = "productPrice";
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(672, 396);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(504, 322);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 22);
+            this.textBox1.Size = new System.Drawing.Size(216, 20);
             this.textBox1.TabIndex = 11;
             // 
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(565, 396);
-            this.labelTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotal.Location = new System.Drawing.Point(424, 322);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(92, 25);
+            this.labelTotal.Size = new System.Drawing.Size(74, 20);
             this.labelTotal.TabIndex = 10;
             this.labelTotal.Text = "Total: € ";
             // 
@@ -420,72 +382,56 @@
             this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(844, 439);
-            this.btnPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPayment.Location = new System.Drawing.Point(621, 357);
             this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(116, 43);
+            this.btnPayment.Size = new System.Drawing.Size(123, 35);
             this.btnPayment.TabIndex = 8;
-            this.btnPayment.Text = "pay";
+            this.btnPayment.Text = "proceed to pay";
             this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(216, 439);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Location = new System.Drawing.Point(162, 357);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(112, 43);
+            this.btnClear.Size = new System.Drawing.Size(84, 35);
             this.btnClear.TabIndex = 7;
             this.btnClear.Text = "clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(31, 439);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(111, 43);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "exit";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(409, 439);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemove.Location = new System.Drawing.Point(307, 357);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(136, 43);
+            this.btnRemove.Size = new System.Drawing.Size(102, 35);
             this.btnRemove.TabIndex = 4;
             this.btnRemove.Text = "remove\r\n";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // lbRFID
             // 
             this.lbRFID.AutoSize = true;
             this.lbRFID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRFID.Location = new System.Drawing.Point(40, 17);
-            this.lbRFID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRFID.Location = new System.Drawing.Point(34, 3);
             this.lbRFID.Name = "lbRFID";
-            this.lbRFID.Size = new System.Drawing.Size(64, 20);
+            this.lbRFID.Size = new System.Drawing.Size(51, 16);
             this.lbRFID.TabIndex = 1;
             this.lbRFID.Text = "RFID: ";
             // 
             // picWhiskey
             // 
             this.picWhiskey.Image = ((System.Drawing.Image)(resources.GetObject("picWhiskey.Image")));
-            this.picWhiskey.Location = new System.Drawing.Point(853, 348);
-            this.picWhiskey.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWhiskey.Location = new System.Drawing.Point(640, 283);
             this.picWhiskey.Name = "picWhiskey";
-            this.picWhiskey.Size = new System.Drawing.Size(163, 114);
+            this.picWhiskey.Size = new System.Drawing.Size(122, 93);
             this.picWhiskey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWhiskey.TabIndex = 29;
             this.picWhiskey.TabStop = false;
@@ -495,10 +441,9 @@
             // picKoffiee
             // 
             this.picKoffiee.Image = ((System.Drawing.Image)(resources.GetObject("picKoffiee.Image")));
-            this.picKoffiee.Location = new System.Drawing.Point(632, 348);
-            this.picKoffiee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picKoffiee.Location = new System.Drawing.Point(474, 283);
             this.picKoffiee.Name = "picKoffiee";
-            this.picKoffiee.Size = new System.Drawing.Size(163, 114);
+            this.picKoffiee.Size = new System.Drawing.Size(122, 93);
             this.picKoffiee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKoffiee.TabIndex = 28;
             this.picKoffiee.TabStop = false;
@@ -508,10 +453,9 @@
             // picCoctail
             // 
             this.picCoctail.Image = ((System.Drawing.Image)(resources.GetObject("picCoctail.Image")));
-            this.picCoctail.Location = new System.Drawing.Point(421, 348);
-            this.picCoctail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picCoctail.Location = new System.Drawing.Point(316, 283);
             this.picCoctail.Name = "picCoctail";
-            this.picCoctail.Size = new System.Drawing.Size(163, 114);
+            this.picCoctail.Size = new System.Drawing.Size(122, 93);
             this.picCoctail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCoctail.TabIndex = 27;
             this.picCoctail.TabStop = false;
@@ -521,10 +465,9 @@
             // picWhiteWine
             // 
             this.picWhiteWine.Image = ((System.Drawing.Image)(resources.GetObject("picWhiteWine.Image")));
-            this.picWhiteWine.Location = new System.Drawing.Point(219, 348);
-            this.picWhiteWine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWhiteWine.Location = new System.Drawing.Point(164, 283);
             this.picWhiteWine.Name = "picWhiteWine";
-            this.picWhiteWine.Size = new System.Drawing.Size(163, 114);
+            this.picWhiteWine.Size = new System.Drawing.Size(122, 93);
             this.picWhiteWine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWhiteWine.TabIndex = 26;
             this.picWhiteWine.TabStop = false;
@@ -533,10 +476,9 @@
             // picTea
             // 
             this.picTea.Image = ((System.Drawing.Image)(resources.GetObject("picTea.Image")));
-            this.picTea.Location = new System.Drawing.Point(21, 348);
-            this.picTea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picTea.Location = new System.Drawing.Point(16, 283);
             this.picTea.Name = "picTea";
-            this.picTea.Size = new System.Drawing.Size(163, 114);
+            this.picTea.Size = new System.Drawing.Size(122, 93);
             this.picTea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTea.TabIndex = 25;
             this.picTea.TabStop = false;
@@ -546,10 +488,9 @@
             // picRedWine
             // 
             this.picRedWine.Image = ((System.Drawing.Image)(resources.GetObject("picRedWine.Image")));
-            this.picRedWine.Location = new System.Drawing.Point(853, 190);
-            this.picRedWine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picRedWine.Location = new System.Drawing.Point(640, 154);
             this.picRedWine.Name = "picRedWine";
-            this.picRedWine.Size = new System.Drawing.Size(163, 114);
+            this.picRedWine.Size = new System.Drawing.Size(122, 93);
             this.picRedWine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRedWine.TabIndex = 24;
             this.picRedWine.TabStop = false;
@@ -559,10 +500,9 @@
             // picWater
             // 
             this.picWater.Image = ((System.Drawing.Image)(resources.GetObject("picWater.Image")));
-            this.picWater.Location = new System.Drawing.Point(632, 190);
-            this.picWater.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWater.Location = new System.Drawing.Point(474, 154);
             this.picWater.Name = "picWater";
-            this.picWater.Size = new System.Drawing.Size(163, 114);
+            this.picWater.Size = new System.Drawing.Size(122, 93);
             this.picWater.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWater.TabIndex = 23;
             this.picWater.TabStop = false;
@@ -572,10 +512,9 @@
             // picSprite
             // 
             this.picSprite.Image = ((System.Drawing.Image)(resources.GetObject("picSprite.Image")));
-            this.picSprite.Location = new System.Drawing.Point(421, 190);
-            this.picSprite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picSprite.Location = new System.Drawing.Point(316, 154);
             this.picSprite.Name = "picSprite";
-            this.picSprite.Size = new System.Drawing.Size(163, 114);
+            this.picSprite.Size = new System.Drawing.Size(122, 93);
             this.picSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSprite.TabIndex = 22;
             this.picSprite.TabStop = false;
@@ -585,10 +524,9 @@
             // picRadler
             // 
             this.picRadler.Image = ((System.Drawing.Image)(resources.GetObject("picRadler.Image")));
-            this.picRadler.Location = new System.Drawing.Point(219, 190);
-            this.picRadler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picRadler.Location = new System.Drawing.Point(164, 154);
             this.picRadler.Name = "picRadler";
-            this.picRadler.Size = new System.Drawing.Size(163, 114);
+            this.picRadler.Size = new System.Drawing.Size(122, 93);
             this.picRadler.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRadler.TabIndex = 21;
             this.picRadler.TabStop = false;
@@ -598,10 +536,9 @@
             // picOrange
             // 
             this.picOrange.Image = ((System.Drawing.Image)(resources.GetObject("picOrange.Image")));
-            this.picOrange.Location = new System.Drawing.Point(21, 190);
-            this.picOrange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picOrange.Location = new System.Drawing.Point(16, 154);
             this.picOrange.Name = "picOrange";
-            this.picOrange.Size = new System.Drawing.Size(163, 114);
+            this.picOrange.Size = new System.Drawing.Size(122, 93);
             this.picOrange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picOrange.TabIndex = 20;
             this.picOrange.TabStop = false;
@@ -611,10 +548,9 @@
             // picRedBull
             // 
             this.picRedBull.Image = ((System.Drawing.Image)(resources.GetObject("picRedBull.Image")));
-            this.picRedBull.Location = new System.Drawing.Point(853, 31);
-            this.picRedBull.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picRedBull.Location = new System.Drawing.Point(640, 25);
             this.picRedBull.Name = "picRedBull";
-            this.picRedBull.Size = new System.Drawing.Size(163, 114);
+            this.picRedBull.Size = new System.Drawing.Size(122, 93);
             this.picRedBull.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRedBull.TabIndex = 19;
             this.picRedBull.TabStop = false;
@@ -624,10 +560,9 @@
             // picFanta
             // 
             this.picFanta.Image = ((System.Drawing.Image)(resources.GetObject("picFanta.Image")));
-            this.picFanta.Location = new System.Drawing.Point(632, 31);
-            this.picFanta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFanta.Location = new System.Drawing.Point(474, 25);
             this.picFanta.Name = "picFanta";
-            this.picFanta.Size = new System.Drawing.Size(163, 114);
+            this.picFanta.Size = new System.Drawing.Size(122, 93);
             this.picFanta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFanta.TabIndex = 18;
             this.picFanta.TabStop = false;
@@ -637,10 +572,9 @@
             // picCola
             // 
             this.picCola.Image = ((System.Drawing.Image)(resources.GetObject("picCola.Image")));
-            this.picCola.Location = new System.Drawing.Point(421, 31);
-            this.picCola.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picCola.Location = new System.Drawing.Point(316, 25);
             this.picCola.Name = "picCola";
-            this.picCola.Size = new System.Drawing.Size(163, 114);
+            this.picCola.Size = new System.Drawing.Size(122, 93);
             this.picCola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCola.TabIndex = 17;
             this.picCola.TabStop = false;
@@ -650,10 +584,9 @@
             // picBeer
             // 
             this.picBeer.Image = ((System.Drawing.Image)(resources.GetObject("picBeer.Image")));
-            this.picBeer.Location = new System.Drawing.Point(219, 31);
-            this.picBeer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picBeer.Location = new System.Drawing.Point(164, 25);
             this.picBeer.Name = "picBeer";
-            this.picBeer.Size = new System.Drawing.Size(163, 114);
+            this.picBeer.Size = new System.Drawing.Size(122, 93);
             this.picBeer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBeer.TabIndex = 16;
             this.picBeer.TabStop = false;
@@ -663,10 +596,9 @@
             // picApple
             // 
             this.picApple.Image = ((System.Drawing.Image)(resources.GetObject("picApple.Image")));
-            this.picApple.Location = new System.Drawing.Point(21, 31);
-            this.picApple.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picApple.Location = new System.Drawing.Point(16, 25);
             this.picApple.Name = "picApple";
-            this.picApple.Size = new System.Drawing.Size(163, 114);
+            this.picApple.Size = new System.Drawing.Size(122, 93);
             this.picApple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picApple.TabIndex = 15;
             this.picApple.TabStop = false;
@@ -676,10 +608,9 @@
             // picLamb
             // 
             this.picLamb.Image = ((System.Drawing.Image)(resources.GetObject("picLamb.Image")));
-            this.picLamb.Location = new System.Drawing.Point(853, 352);
-            this.picLamb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLamb.Location = new System.Drawing.Point(640, 286);
             this.picLamb.Name = "picLamb";
-            this.picLamb.Size = new System.Drawing.Size(163, 114);
+            this.picLamb.Size = new System.Drawing.Size(122, 93);
             this.picLamb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLamb.TabIndex = 14;
             this.picLamb.TabStop = false;
@@ -689,10 +620,9 @@
             // picDurum
             // 
             this.picDurum.Image = ((System.Drawing.Image)(resources.GetObject("picDurum.Image")));
-            this.picDurum.Location = new System.Drawing.Point(632, 352);
-            this.picDurum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDurum.Location = new System.Drawing.Point(474, 286);
             this.picDurum.Name = "picDurum";
-            this.picDurum.Size = new System.Drawing.Size(163, 114);
+            this.picDurum.Size = new System.Drawing.Size(122, 93);
             this.picDurum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDurum.TabIndex = 13;
             this.picDurum.TabStop = false;
@@ -702,10 +632,9 @@
             // picWings
             // 
             this.picWings.Image = ((System.Drawing.Image)(resources.GetObject("picWings.Image")));
-            this.picWings.Location = new System.Drawing.Point(421, 352);
-            this.picWings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWings.Location = new System.Drawing.Point(316, 286);
             this.picWings.Name = "picWings";
-            this.picWings.Size = new System.Drawing.Size(163, 114);
+            this.picWings.Size = new System.Drawing.Size(122, 93);
             this.picWings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWings.TabIndex = 12;
             this.picWings.TabStop = false;
@@ -715,10 +644,9 @@
             // picKremen
             // 
             this.picKremen.Image = ((System.Drawing.Image)(resources.GetObject("picKremen.Image")));
-            this.picKremen.Location = new System.Drawing.Point(219, 352);
-            this.picKremen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picKremen.Location = new System.Drawing.Point(164, 286);
             this.picKremen.Name = "picKremen";
-            this.picKremen.Size = new System.Drawing.Size(163, 114);
+            this.picKremen.Size = new System.Drawing.Size(122, 93);
             this.picKremen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKremen.TabIndex = 11;
             this.picKremen.TabStop = false;
@@ -728,10 +656,9 @@
             // picPancakes
             // 
             this.picPancakes.Image = ((System.Drawing.Image)(resources.GetObject("picPancakes.Image")));
-            this.picPancakes.Location = new System.Drawing.Point(21, 352);
-            this.picPancakes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPancakes.Location = new System.Drawing.Point(16, 286);
             this.picPancakes.Name = "picPancakes";
-            this.picPancakes.Size = new System.Drawing.Size(163, 114);
+            this.picPancakes.Size = new System.Drawing.Size(122, 93);
             this.picPancakes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPancakes.TabIndex = 10;
             this.picPancakes.TabStop = false;
@@ -741,10 +668,9 @@
             // picKaas
             // 
             this.picKaas.Image = ((System.Drawing.Image)(resources.GetObject("picKaas.Image")));
-            this.picKaas.Location = new System.Drawing.Point(853, 193);
-            this.picKaas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picKaas.Location = new System.Drawing.Point(640, 157);
             this.picKaas.Name = "picKaas";
-            this.picKaas.Size = new System.Drawing.Size(163, 114);
+            this.picKaas.Size = new System.Drawing.Size(122, 93);
             this.picKaas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKaas.TabIndex = 9;
             this.picKaas.TabStop = false;
@@ -754,22 +680,21 @@
             // picFish
             // 
             this.picFish.Image = ((System.Drawing.Image)(resources.GetObject("picFish.Image")));
-            this.picFish.Location = new System.Drawing.Point(632, 193);
-            this.picFish.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFish.Location = new System.Drawing.Point(474, 157);
             this.picFish.Name = "picFish";
-            this.picFish.Size = new System.Drawing.Size(163, 114);
+            this.picFish.Size = new System.Drawing.Size(122, 93);
             this.picFish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFish.TabIndex = 8;
             this.picFish.TabStop = false;
             this.toolTip1.SetToolTip(this.picFish, "Fish");
+            this.picFish.Click += new System.EventHandler(this.picFish_Click);
             // 
             // picFruit
             // 
             this.picFruit.Image = ((System.Drawing.Image)(resources.GetObject("picFruit.Image")));
-            this.picFruit.Location = new System.Drawing.Point(421, 193);
-            this.picFruit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFruit.Location = new System.Drawing.Point(316, 157);
             this.picFruit.Name = "picFruit";
-            this.picFruit.Size = new System.Drawing.Size(163, 114);
+            this.picFruit.Size = new System.Drawing.Size(122, 93);
             this.picFruit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFruit.TabIndex = 7;
             this.picFruit.TabStop = false;
@@ -779,10 +704,9 @@
             // picPizza
             // 
             this.picPizza.Image = ((System.Drawing.Image)(resources.GetObject("picPizza.Image")));
-            this.picPizza.Location = new System.Drawing.Point(219, 193);
-            this.picPizza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPizza.Location = new System.Drawing.Point(164, 157);
             this.picPizza.Name = "picPizza";
-            this.picPizza.Size = new System.Drawing.Size(163, 114);
+            this.picPizza.Size = new System.Drawing.Size(122, 93);
             this.picPizza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPizza.TabIndex = 6;
             this.picPizza.TabStop = false;
@@ -792,10 +716,9 @@
             // picRice
             // 
             this.picRice.Image = ((System.Drawing.Image)(resources.GetObject("picRice.Image")));
-            this.picRice.Location = new System.Drawing.Point(21, 193);
-            this.picRice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picRice.Location = new System.Drawing.Point(16, 157);
             this.picRice.Name = "picRice";
-            this.picRice.Size = new System.Drawing.Size(163, 114);
+            this.picRice.Size = new System.Drawing.Size(122, 93);
             this.picRice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRice.TabIndex = 5;
             this.picRice.TabStop = false;
@@ -805,10 +728,9 @@
             // picSalad
             // 
             this.picSalad.Image = ((System.Drawing.Image)(resources.GetObject("picSalad.Image")));
-            this.picSalad.Location = new System.Drawing.Point(853, 34);
-            this.picSalad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picSalad.Location = new System.Drawing.Point(640, 28);
             this.picSalad.Name = "picSalad";
-            this.picSalad.Size = new System.Drawing.Size(163, 114);
+            this.picSalad.Size = new System.Drawing.Size(122, 93);
             this.picSalad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSalad.TabIndex = 4;
             this.picSalad.TabStop = false;
@@ -818,10 +740,9 @@
             // picWaffle
             // 
             this.picWaffle.Image = ((System.Drawing.Image)(resources.GetObject("picWaffle.Image")));
-            this.picWaffle.Location = new System.Drawing.Point(632, 34);
-            this.picWaffle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWaffle.Location = new System.Drawing.Point(474, 28);
             this.picWaffle.Name = "picWaffle";
-            this.picWaffle.Size = new System.Drawing.Size(163, 114);
+            this.picWaffle.Size = new System.Drawing.Size(122, 93);
             this.picWaffle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWaffle.TabIndex = 3;
             this.picWaffle.TabStop = false;
@@ -831,10 +752,9 @@
             // picFrite
             // 
             this.picFrite.Image = ((System.Drawing.Image)(resources.GetObject("picFrite.Image")));
-            this.picFrite.Location = new System.Drawing.Point(421, 34);
-            this.picFrite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFrite.Location = new System.Drawing.Point(316, 28);
             this.picFrite.Name = "picFrite";
-            this.picFrite.Size = new System.Drawing.Size(163, 114);
+            this.picFrite.Size = new System.Drawing.Size(122, 93);
             this.picFrite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFrite.TabIndex = 2;
             this.picFrite.TabStop = false;
@@ -844,10 +764,9 @@
             // picBalls
             // 
             this.picBalls.Image = ((System.Drawing.Image)(resources.GetObject("picBalls.Image")));
-            this.picBalls.Location = new System.Drawing.Point(219, 34);
-            this.picBalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picBalls.Location = new System.Drawing.Point(164, 28);
             this.picBalls.Name = "picBalls";
-            this.picBalls.Size = new System.Drawing.Size(163, 114);
+            this.picBalls.Size = new System.Drawing.Size(122, 93);
             this.picBalls.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBalls.TabIndex = 1;
             this.picBalls.TabStop = false;
@@ -857,22 +776,64 @@
             // picHam
             // 
             this.picHam.Image = ((System.Drawing.Image)(resources.GetObject("picHam.Image")));
-            this.picHam.Location = new System.Drawing.Point(21, 34);
-            this.picHam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picHam.Location = new System.Drawing.Point(16, 28);
             this.picHam.Name = "picHam";
-            this.picHam.Size = new System.Drawing.Size(163, 114);
+            this.picHam.Size = new System.Drawing.Size(122, 93);
             this.picHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picHam.TabIndex = 0;
             this.picHam.TabStop = false;
             this.toolTip1.SetToolTip(this.picHam, "Burgers");
             this.picHam.Click += new System.EventHandler(this.picHam_Click);
             // 
+            // productName
+            // 
+            this.productName.HeaderText = "Name";
+            this.productName.Name = "productName";
+            this.productName.Width = 150;
+            // 
+            // productStock
+            // 
+            this.productStock.HeaderText = "In stock";
+            this.productStock.Name = "productStock";
+            // 
+            // productPrice
+            // 
+            this.productPrice.HeaderText = "Price";
+            this.productPrice.Name = "productPrice";
+            // 
+            // prodQty
+            // 
+            this.prodQty.HeaderText = "Quantity";
+            this.prodQty.Name = "prodQty";
+            // 
+            // lbRfidCode
+            // 
+            this.lbRfidCode.AutoSize = true;
+            this.lbRfidCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRfidCode.Location = new System.Drawing.Point(104, 3);
+            this.lbRfidCode.Name = "lbRfidCode";
+            this.lbRfidCode.Size = new System.Drawing.Size(0, 16);
+            this.lbRfidCode.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(20, 357);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 35);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "new order";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ShopAppForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1187, 575);
+            this.ClientSize = new System.Drawing.Size(890, 467);
             this.Controls.Add(this.panelFood);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
@@ -881,7 +842,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ShopAppForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -977,7 +937,6 @@
         private System.Windows.Forms.Panel panelPay;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label lbRFID;
         private System.Windows.Forms.Label label4;
@@ -985,12 +944,14 @@
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.DataGridView productDataGV;
         private System.Windows.Forms.PictureBox picCola;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productPrice;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodQty;
+        private System.Windows.Forms.Label lbRfidCode;
+        private System.Windows.Forms.Button button1;
     }
 }
 

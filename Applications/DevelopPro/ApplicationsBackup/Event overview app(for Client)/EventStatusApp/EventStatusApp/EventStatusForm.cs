@@ -37,7 +37,8 @@ namespace EventStatusApp
         private void btnTotalVisitors_Click(object sender, EventArgs e)
         {
             int nr=myData.GetVisitorNumber();
-            lbOverview.Items.Add(nr.ToString());
+            lbOverview.Items.Clear();
+            lbOverview.Items.Add("Total number of visitors: "+nr.ToString());
         }
 
         private void btnCurrentStatus_Click(object sender, EventArgs e)
@@ -50,6 +51,18 @@ namespace EventStatusApp
         private void btnVisitor_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBalance_Click(object sender, EventArgs e)
+        {
+            decimal balance = myData.GetTotalBalance();
+            lbOverview.Items.Clear();
+            lbOverview.Items.Add("Total balance of all visitors: $" + balance);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -66,15 +66,7 @@ namespace Check_InOutApp
                 { if (checkTag != true)
 
                     {
-                        string sql = "UPDATE customer SET TagId = @tag WHERE CustomerId = @id";
-                        MySqlCommand command = new MySqlCommand(sql, conn);
-                        command.Parameters.AddWithValue("@id", id);
-                        command.Parameters.AddWithValue("@tag", e.Tag);
-
-
-                        int update;
-                        conn.Open();
-                        update = command.ExecuteNonQuery();
+                        AssignRFID(id, e.Tag);
 
 
                         lbShow.Items.Clear();
@@ -164,6 +156,33 @@ namespace Check_InOutApp
         private void AssignRFIDApp_Load(object sender, EventArgs e)
         {
 
+        }
+        private void AssignRFID(int id,string tag)
+        {
+            try
+            {
+                string sql = "UPDATE customer SET TagId = @tag WHERE CustomerId = @id";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@tag", tag);
+
+
+                int update;
+                conn.Open();
+                update = command.ExecuteNonQuery();
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (MySqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

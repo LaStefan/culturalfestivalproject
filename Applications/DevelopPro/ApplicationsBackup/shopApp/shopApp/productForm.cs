@@ -13,12 +13,14 @@ namespace shopApp
     public partial class productForm : Form
     {
         public bool ItemIsAdded;
-        public productForm(PictureBox pb, string name, double price)
+        public decimal quantity;
+        public productForm(PictureBox pb, string name, decimal price)
         {
             InitializeComponent();
             picShow.Image = pb.Image;
             lbName.Text = name;
-            lbPrice.Text = price.ToString("0.00");
+            lbPrice.Text = price.ToString("$0.00");
+            
             ItemIsAdded = false;
         }
 
@@ -30,6 +32,8 @@ namespace shopApp
         private void btnOK_Click(object sender, EventArgs e)
         {
             ItemIsAdded = true;
+            quantity = numericUpDown1.Value;
+           
             this.Close();
         }
 

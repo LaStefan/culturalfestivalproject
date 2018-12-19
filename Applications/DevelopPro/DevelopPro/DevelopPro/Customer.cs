@@ -21,7 +21,8 @@ namespace DevelopPro
             public int Id { get { return id; } }
             public string FirstName { get { return firstName; } }
             public string LastName { get { return lastName; } }
-            public decimal Balance { get { return balance; } }
+            public decimal Balance { get { return balance; }
+            set { balance = value; } }
             public string TicketType { get { return ticketType; }  }
             public string Status { get { return status; }  }
             public string TagId { get { return tagId; } }
