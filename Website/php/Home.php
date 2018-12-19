@@ -33,7 +33,7 @@
         <li><a id="n2" href="#2">Countries</a></li>  
         <li><a id="n3"href="#3">Program</a></li>
         <li><a id="n5" href="#4">Location</a></li>   
-        <li><a href="Tickets.html">Tickets</a></li>
+        <li><a href="Tickets.php">Tickets</a></li>
         <li class="dropdown">
           <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Log In<span class="caret"></span></a>
 			<ul id="loginM" class="dropdown-menu">

@@ -171,8 +171,8 @@ namespace LoanApp
             foreach (DataGridViewRow row in productDataGV.SelectedRows)
             {
                 productDataGV.Rows.RemoveAt(row.Index);
-                int productId = (int)productDataGV.Rows[row.Index].Cells[0].Value;
-                var product = listOfProducts.FirstOrDefault(p => p.LoanId == productId);
+                //int productId = (int)productDataGV.Rows[row.Index].Cells[0].Value;
+                var product = listOfProducts.FirstOrDefault();
                 if (product != null)
                     listOfProducts.Remove(product);
                 productDataGV.Refresh();
