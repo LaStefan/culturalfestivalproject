@@ -60,6 +60,7 @@
     <Compile Include="CampReservationForm.Designer.cs">
       <DependentUpon>CampReservationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer.cs" />
     <Compile Include="DatabaseConnector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

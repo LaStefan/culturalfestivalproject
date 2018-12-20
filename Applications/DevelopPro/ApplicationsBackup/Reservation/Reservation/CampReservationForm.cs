@@ -20,7 +20,9 @@ namespace Reservation
         List<CampingSite> campingSites;
         List<RadioButton> rbuttons;
         Dictionary<int, RadioButton> dic;
-        //private bool reservationCheck = false;
+        List<CheckBox> checkBoxes;
+        string tagId;
+        
 
         public CampReservationForm()
         {
@@ -60,6 +62,12 @@ namespace Reservation
             dic.Add(10, rb10);
             dic.Add(11, rb11);
             dic.Add(12, rb12);
+
+            checkBoxes = new List<CheckBox>();
+
+            checkBoxes.Add(ckNight1);
+            checkBoxes.Add(ckNight2);
+            checkBoxes.Add(ckNight3);
 
             try
             {
@@ -122,9 +130,15 @@ namespace Reservation
 
         private void Reader_Tag(object sender, RFIDTagEventArgs e)
         {
-            string c = dbConnect.GetInfo(e.Tag);
-            textBox1.Text = c;
-           
+            Customer customer = dbConnect.GetInfo(e.Tag);
+            //string c = dbConnect.GetInfo(e.Tag);
+            //textBox1.Text = c;
+            lbshowCus.Items.Add("Name: "+ customer.Fname+" "+customer.Lname);
+            lbshowCus.Items.Add("Balance: " + customer.Balance);
+            lbshowCus.Items.Add("Ticket Type: " + customer.TicketType);
+            lbshowCus.Items.Add("Status: " + customer.Status);
+            lbshowCus.Items.Add("CampingSite Id: " + customer.CampId);
+            tagId = e.Tag;
         }
 
         private void Reader_TagLost(object sender, RFIDTagLostEventArgs e)
@@ -139,31 +153,111 @@ namespace Reservation
             //}
         }
 
+        private string GetDate()
+        {
+            string date;
+
+            if (ckNight1.Checked)
+            {
+                date = ckNight1.Text;
+                return date;
+            }
+            else if (ckNight2.Checked)
+            {
+                date = ckNight2.Text;
+                return date;
+            }
+            else if (ckNight3.Checked)
+            {
+                date = ckNight3.Text;
+                return date;
+            }
+            else
+                return null;
+        }
+
         private void btnPay_Click_1(object sender, EventArgs e)
         {
-            string stDate = dateTimePicker1.Value.Year+"-"+dateTimePicker1.Value.Month+"-"+dateTimePicker1.Value.Day;
-            string enDate = dateTimePicker2.Value.Year+"-"+dateTimePicker2.Value.Month+"-"+dateTimePicker2.Value.Day;
+          
             foreach (RadioButton b in rbuttons)
             {
                 if (b.Checked)
                 {
                     int id = GetIdbyRb(b);
                     CampingSite c = GetCampingById(id);
-                    if (dbConnect.CheckStatus(id) == false)
-                    {                     
-                        dbConnect.ReserveCamp(id,stDate,enDate);                      
-                        b.BackColor = Color.Red;
-                        lbShow.Items.Add("You have successfully registered Campingsite " + c.CampingId);
-                        lbShow.Items.Add("Camping maximum for " + c.CampingType);
-                        lbShow.Items.Add("Start from " + stDate);
-                        lbShow.Items.Add("To " + enDate);
+                    if (dbConnect.GetInfo(tagId) != null)
+                    {
+                        if (dbConnect.CheckCustomerCamp(tagId) == false)
+                        {
+                            if (dbConnect.CheckStatus(id) == false)
+                            {
+                                if (GetDate() != null)
+                                {
+                                    if (UpdateBalance() >= 0)
+                                    {
+                                        dbConnect.ReserveCamp(id, GetDate());
+                                        dbConnect.UpdateCampId(id, tagId, UpdateBalance());
+                                        b.BackColor = Color.Red;
+                                        lbShow.Items.Add("You have successfully registered Campingsite " + c.CampingId);
+                                        lbShow.Items.Add("Camping maximum for " + c.CampingType);
+                                        lbShow.Items.Add(GetDate());
+                                    }
+                                    else
+                                    {
+                                        lbShow.Items.Add("Wrong! You do not have enough balance!");
+                                    }
+                                }
+                                else
+                                {
+                                    lbShow.Items.Add("Please select a correct date!");
+                                }
+                            }
+                            else
+                            {
+                                lbShow.Items.Add("Sorry, this Campingsite is not valid!");
+                            }
+                        }
+                        else
+                        {
+                            lbShow.Items.Add("Wrong! The reservation failed!");
+                            lbShow.Items.Add("Please check the Date and Plot!");
+                        }
                     }
                     else
                     {
-                        lbShow.Items.Add("Sorry, this Campingsite has already registered!");
+                        lbShow.Items.Add("Please scan RFID first!");
                     }
                 }
             }
-        }    
+        }       
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btClear_Click(object sender, EventArgs e)
+        {
+            lbShow.Items.Clear();
+        }
+
+        private decimal UpdateBalance()
+        {       
+            int id = 0;
+            foreach (RadioButton b in rbuttons)
+            {
+                if (b.Checked)
+                {
+                    id = GetIdbyRb(b);
+                }
+            }
+            decimal balance = dbConnect.GetBalanceByTag(tagId);
+
+            int price = dbConnect.GetPriceByCampId(id);
+
+            decimal balance2 = balance - Convert.ToDecimal(price);
+
+            return balance2;
+        }
     }
 }
