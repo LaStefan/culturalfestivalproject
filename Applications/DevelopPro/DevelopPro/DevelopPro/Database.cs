@@ -7,14 +7,18 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+
 namespace DevelopPro
 {
     public class Database
-    {
+    { 
+        //list of items used in the loan application
+        public List<Item> listOfItems = new List<Item>();
+        private Item item = null;
 
+        //create database connection
         private MySqlConnection conn;
         public MySqlConnection Conn { get; set; }
-
         public Database()
         {
             String connectionInfo = "server=studmysql01.fhict.local;" +
@@ -234,7 +238,6 @@ namespace DevelopPro
             return 0;
         }
 
-
         public void CheckIn(string tag)
         {
             try
@@ -387,5 +390,227 @@ namespace DevelopPro
             }
             return totalbal;
         }
+
+        //sql used for the loan application
+        public Item GetProduct(string product)
+        {
+            try
+            {
+                conn.Open();
+                string select = "SELECT * FROM loan WHERE ProductName = '" + product + "'";
+                MySqlCommand msc = new MySqlCommand(select, conn);
+
+                MySqlDataReader mdr = msc.ExecuteReader();
+
+                if (mdr.Read())
+                {
+                    int loanId = mdr.GetInt32("loanId");
+                    string loanName = mdr.GetString("ProductName");
+                    decimal deposit = mdr.GetDecimal("Deposit");
+                    int stock = mdr.GetInt32("Stock");
+                    item = new Item(loanId, loanName, deposit, stock);
+                    return new Item(loanId, loanName, deposit, stock);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (MySqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+        }
+
+        public Customer GetCustomer(string rfid)
+        {
+            try
+            {
+                conn.Open();
+                Customer temp = null;
+                string sql = "SELECT * FROM customer WHERE TagId = '" + rfid + "'";
+                MySqlCommand msc = new MySqlCommand(sql, conn);
+                MySqlDataReader mdr = msc.ExecuteReader();
+                if (mdr.Read())
+                {
+                    int id = mdr.GetInt32("CustomerId");
+                    string name = mdr.GetString("FirstName");
+                    string lname = mdr.GetString("LastName");
+                    string email = mdr.GetString("Email");
+                    string pass = mdr.GetString("Password");
+                    decimal balance = mdr.GetDecimal("Balance");
+                    string ticketType = mdr.GetString("TicketType");
+                    string status = mdr.GetString("Status");
+                    string tag = mdr.GetString("TagId");
+                    temp = new Customer(id, name, lname, balance, ticketType, status, tag);
+                }
+                return temp;
+            }
+            catch (MySqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+        }
+
+        public int FindCustomerId(string rfid)
+        {
+            try
+            {
+                conn.Open();
+                int temp = 0;
+                string sql = "SELECT CustomerId FROM customer WHERE TagId = '" + rfid + "'";
+                MySqlCommand mysqlcommand = new MySqlCommand(sql, conn);
+                MySqlDataReader mdr = mysqlcommand.ExecuteReader();
+                if (mdr.Read())
+                {
+                    temp = mdr.GetInt32("customerId");
+                }
+                mdr.Close();
+                return temp;
+            }
+            catch (MySqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return 0;
+        }
+
+        public void LoanItem(List<Item> listOfProd, string rfid)
+        {
+            decimal total = 0;
+            bool sent = false;
+            try
+            {   int temp = FindCustomerId(rfid);
+                conn.Open();
+                foreach (Item p in listOfProd)
+                {
+                    string sql = "INSERT INTO `loanitem`(`LoanItemId`, `BorrowDate`, `ReturnDate`, `StateReturned`, `CustomerId`, `LoanId`) " +
+                        "VALUES (null,sysdate(),null,null," + temp + " ," + p.LoanId + ")";
+                    MySqlCommand msc = new MySqlCommand(sql, conn);
+                    int res = msc.ExecuteNonQuery();
+                    conn.Close();
+                    string sql2 = "SELECT Balance from customer where TagId = '" + rfid + "'";
+                    MySqlCommand msc2 = new MySqlCommand(sql2, conn);
+                    conn.Open();
+                    MySqlDataReader mdr2 = msc2.ExecuteReader();
+
+                    if (mdr2.Read())
+                    {
+                        decimal balance = mdr2.GetDecimal("Balance");
+                        mdr2.Close();
+                        foreach (Item item in listOfItems)
+                        {
+                            total += item.Deposit;
+                        }
+                        if (balance >= total)
+                        {
+                            string updateBalance = "UPDATE `customer` SET `Balance`= Balance - '" + p.Deposit + "' WHERE TagId = '" + rfid + "'";
+                            MySqlCommand msc3 = new MySqlCommand(updateBalance, conn);
+
+
+                            int result = msc3.ExecuteNonQuery();
+                            conn.Close();
+                            string sql1 = "UPDATE `loan` SET `Stock`= Stock - 1 WHERE LoanId = " + p.LoanId + "";
+                            MySqlCommand msc1 = new MySqlCommand(sql1, conn);
+                            conn.Open();
+
+                            int resultschanged = msc1.ExecuteNonQuery();
+                            conn.Close();
+
+                        }
+                        else
+                        {
+                            if (sent == false)
+                            {
+                                MessageBox.Show("The customer does not have enough balance!");
+                            }
+                            sent = true;
+                        }
+                    }
+                }
+            }
+            catch (MySqlException)
+            {
+                
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+     public List<Item> GetBorrowedProducts(string rfid)
+        {
+            conn.Open();
+            try
+            {
+                conn.Open();
+                List<Item> listOfBorrowed = new List<Item>();
+                string sql = "SELECT lo.* FROM loanitem l JOIN customer c ON(l.CustomerId = c.CustomerId)" +
+                    " JOIN loan lo ON(l.LoanId = lo.LoanId) WHERE c.TagId = '" + rfid + "'";
+                MySqlCommand msc = new MySqlCommand(sql, conn);
+                MySqlDataReader mdr = msc.ExecuteReader();
+                while (mdr.Read())
+                {
+                    int id = mdr.GetInt32("LoanId");
+                    string prodName = mdr.GetString("ProductName");
+                    decimal deposit = mdr.GetDecimal("Deposit");
+                    int stock = mdr.GetInt32("Stock");
+                    Item temp = new Item(id, prodName, deposit, stock);
+                    listOfBorrowed.Add(temp);
+                }
+                return listOfBorrowed;
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("Something went wrong!");
+            }
+            finally { conn.Close(); }
+            return null;
+        }
+
+        public void RefundBorrowedItem(Item p, string rfid)
+        {
+            try
+            {
+                conn.Open();
+                string sql = "UPDATE `loan` SET `Stock`= Stock + 1 WHERE LoanId = '" + item.LoanId + "';";
+                MySqlCommand msc = new MySqlCommand(sql, conn);
+                MySqlDataReader mdr = msc.ExecuteReader();
+                mdr.Close();
+                string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" + item.Deposit + "' WHERE TagId = '" + rfid + "';";
+                MySqlCommand msc1 = new MySqlCommand(sql1, conn);
+                MySqlDataReader mdr1 = msc1.ExecuteReader();
+                mdr1.Close();
+                int customerId = FindCustomerId(rfid);
+                string sql2 = "DELETE FROM `loanitem` WHERE CustomerId = " + customerId + " AND LoanId = " + item.LoanId + ";";
+                MySqlCommand msc2 = new MySqlCommand(sql2, conn);
+                MySqlDataReader mdr2 = msc2.ExecuteReader();
+                mdr2.Close();
+            }
+            catch (MySqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        //here finish the code used for the loan application
     }
 }
