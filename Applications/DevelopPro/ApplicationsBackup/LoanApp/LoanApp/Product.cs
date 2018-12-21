@@ -8,7 +8,7 @@ using Phidget22;
 using Phidget22.Events;
 using MySql.Data.MySqlClient;
 using MySql.Data;
-using DevelopPro;
+using System.Windows.Forms;
 
 namespace LoanApp
 {
@@ -237,5 +237,6 @@ namespace LoanApp
                 conn.Close();
             }
         }
+       
     }
 }

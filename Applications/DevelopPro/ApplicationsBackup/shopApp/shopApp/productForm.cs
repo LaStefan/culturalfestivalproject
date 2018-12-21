@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevelopPro;
 
 namespace shopApp
 {
@@ -14,13 +15,13 @@ namespace shopApp
     {
         public bool ItemIsAdded;
         public decimal quantity;
+        public string Pname { get; set; }
         public productForm(PictureBox pb, string name, decimal price)
         {
             InitializeComponent();
             picShow.Image = pb.Image;
-            lbName.Text = name;
+            Pname = lbName.Text = name;
             lbPrice.Text = price.ToString("$0.00");
-            
             ItemIsAdded = false;
         }
 
@@ -32,8 +33,7 @@ namespace shopApp
         private void btnOK_Click(object sender, EventArgs e)
         {
             ItemIsAdded = true;
-            quantity = numericUpDown1.Value;
-           
+            quantity = pbQuantity.Value;
             this.Close();
         }
 
@@ -41,5 +41,7 @@ namespace shopApp
         {
             this.Close();
         }
+
+        
     }
 }

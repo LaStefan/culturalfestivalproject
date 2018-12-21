@@ -13,32 +13,20 @@ using Phidget22.Events;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 
-
-
-
 namespace shopApp
 {
     public partial class ShopAppForm : Form
     {
-        private MySqlConnection conn;
-        private RFID myRFIDReader;
-        Database myData;
+       private RFID myRFIDReader;
         productForm pq;
        Product myProduct;
-        List<Product> products;
-        List<Customer> customers;
         decimal totalPrice=0;
+        Shop myShop;
         
         public ShopAppForm()
         {
             InitializeComponent();
-            myData = new Database();
-            
-            String connectionInfo = "server=studmysql01.fhict.local;" +
-                                  "database=dbi401148;" +
-                                   "user id=dbi401148;" +
-                                   "password=123456789;";
-            conn = new MySqlConnection(connectionInfo);
+            myShop = new Shop();
             try
             {
                 myRFIDReader = new RFID();
@@ -55,8 +43,6 @@ namespace shopApp
             panelDrinks.Visible = false;
             panelFood.Visible = false;
             panelPay.Visible = false;
-            products = GetProducts();
-            customers = myData.GetCustomers();
         }
         /// <summary>
         /// 
@@ -72,8 +58,8 @@ namespace shopApp
         /// <param name="price"></param>
         public void ShowProductForm(PictureBox pb, string name, decimal price)
         {
+
             pq = new productForm(pb, name, price);
-            //??????????
             pq.FormClosed += new FormClosedEventHandler(productForm_FormClosed);
             pq.ShowDialog();
         }
@@ -121,12 +107,11 @@ namespace shopApp
 
         private void picHam_Click(object sender, EventArgs e)
         {
-           foreach(Product p in products)
+           foreach(Product p in myShop.GetProducts())
             {
                 if(p.ProductName=="Burger")
                 {
                     ShowProductForm(picHam, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -139,36 +124,33 @@ namespace shopApp
 
         private void picBalls_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Meat Balls")
                 {
                     ShowProductForm(picBalls, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
         }
         private void picWaffle_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Waffles")
                 {
                     ShowProductForm(picWaffle, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
         }
         private void picSalad_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Salad")
                 {
                     ShowProductForm(picSalad, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -176,12 +158,11 @@ namespace shopApp
 
         private void picFrite_Click_1(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Friet")
                 {
                     ShowProductForm(picFrite, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -189,12 +170,11 @@ namespace shopApp
 
         private void picRice_Click(object sender, EventArgs e)
         {
-            foreach(Product p in products)
+            foreach(Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Rice")
                 {
                     ShowProductForm(picRice, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
            
@@ -202,12 +182,11 @@ namespace shopApp
 
         private void picPizza_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Pizza")
                 {
                     ShowProductForm(picPizza, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -215,12 +194,11 @@ namespace shopApp
 
         private void picFruit_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Fruit")
                 {
                     ShowProductForm(picFruit, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -233,12 +211,11 @@ namespace shopApp
 
         private void picKaas_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Kaas")
                 {
                     ShowProductForm(picKaas, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -246,12 +223,11 @@ namespace shopApp
 
         private void picPancakes_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Pancakes")
                 {
                     ShowProductForm(picPancakes, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -259,12 +235,11 @@ namespace shopApp
 
         private void picKremen_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Kremen")
                 {
                     ShowProductForm(picKremen, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
            
@@ -272,12 +247,11 @@ namespace shopApp
 
         private void picWings_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Chicken Wings")
                 {
                     ShowProductForm(picWings, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
            
@@ -285,12 +259,11 @@ namespace shopApp
 
         private void picDurum_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Durum")
                 {
                     ShowProductForm(picDurum, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -298,12 +271,11 @@ namespace shopApp
 
         private void picLamb_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Lamb")
                 {
                     ShowProductForm(picLamb, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -311,12 +283,11 @@ namespace shopApp
 
         private void picApple_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Apple Juice")
                 {
                     ShowProductForm(picApple, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -324,12 +295,11 @@ namespace shopApp
 
         private void picOrange_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Orange Juice")
                 {
                     ShowProductForm(picOrange, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -337,12 +307,11 @@ namespace shopApp
 
         private void picBeer_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Beer")
                 {
                     ShowProductForm(picBeer, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -350,12 +319,11 @@ namespace shopApp
 
         private void picRadler_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Radler")
                 {
                     ShowProductForm(picRadler, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
            
@@ -363,12 +331,11 @@ namespace shopApp
 
         private void picTea_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Tea")
                 {
                     ShowProductForm(picTea, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -376,12 +343,11 @@ namespace shopApp
 
         private void picWhiskey_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Whisky")
                 {
                     ShowProductForm(picWhiskey, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -389,12 +355,11 @@ namespace shopApp
 
         private void picRedWine_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Red Wine")
                 {
                     ShowProductForm(picRedWine, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -402,12 +367,11 @@ namespace shopApp
 
         private void picRedBull_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "RedBull")
                 {
                     ShowProductForm(picRedBull, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -415,12 +379,11 @@ namespace shopApp
 
         private void picFanta_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Fanta")
                 {
                     ShowProductForm(picFanta, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -428,12 +391,11 @@ namespace shopApp
 
         private void picWater_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Water")
                 {
                     ShowProductForm(picWater, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
            
@@ -441,12 +403,11 @@ namespace shopApp
 
         private void picKoffiee_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Koffie")
                 {
                     ShowProductForm(picKoffiee, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -454,12 +415,11 @@ namespace shopApp
 
         private void picCola_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "CocaCola")
                 {
                     ShowProductForm(picCola, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
            
@@ -467,12 +427,11 @@ namespace shopApp
 
         private void picSprite_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Sprite")
                 {
                     ShowProductForm(picSprite, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
            
@@ -480,12 +439,11 @@ namespace shopApp
 
         private void picCoctail_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Coctail")
                 {
                     ShowProductForm(picCoctail, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
             
@@ -498,14 +456,14 @@ namespace shopApp
         //rfid tag reader
         private void MyRFIDReader_Tag(object sender, RFIDTagEventArgs e)
         {
-            foreach(Customer c in customers)
+            foreach (Customer c in myShop.GetCustomers())
             {
-                if(c.TagId==e.Tag)
+                if (c.TagId == e.Tag)
                 {
-                    if(c.Balance>=totalPrice)
+                    if (c.Balance >= totalPrice)
                     {
                         //change balance and stock
-                        myData.ChangeBalance(e.Tag, totalPrice, c.Balance);
+                        myShop.MyData.ChangeBalance(e.Tag, totalPrice, c.Balance);
                         c.Balance -= totalPrice;
                         MessageBox.Show("Thank you for the purchase." +
                             "Come again!");
@@ -516,84 +474,40 @@ namespace shopApp
                     }
                 }
             }
-            
+
         }
+        
         public void productForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (pq.ItemIsAdded)
-            {     
-                
-                    //  MessageBox.Show("Just got a bite ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    productDataGV.Rows.Add(myProduct.ProductName, myProduct.Stock.ToString(), myProduct.ProductPrice.ToString(), pq.quantity);
+            {
+                myProduct = myShop.GetProduct(pq.Pname);
+                productDataGV.Rows.Add(myProduct.ProductName, myProduct.Stock.ToString(), myProduct.ProductPrice.ToString(), pq.quantity);
                 decimal price = myProduct.ProductPrice * pq.quantity;
-
-
-               // myProduct.Stock =Convert.ToInt32( myProduct.Stock - pq.quantity);
                 totalPrice += price;
             }       
-                
-            //?????????
            pq.FormClosed -= new FormClosedEventHandler(productForm_FormClosed);
         }
-        public List<Product> GetProducts()
-        {
-            List<Product> temp = new List<Product>();
-
-            int id;
-            string name;
-            decimal price;
-            int stock;
-            string sql = "SELECT ProductId,ProductName,Price,Stock FROM product";
-            MySqlCommand command = new MySqlCommand(sql, conn);
-
-            try
-            {
-                conn.Open();
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    id = Convert.ToInt32(reader["ProductId"]);
-                    name = Convert.ToString(reader["ProductName"]);
-                    price = Convert.ToDecimal(reader["Price"]);
-                    stock = Convert.ToInt32(reader["Stock"]);
-
-                    temp.Add(new Product(id, name, price, stock));
-                }
-
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return temp;
-        }
+        
 
         private void picWhiteWine_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "White Wine")
                 {
                     ShowProductForm(picWhiteWine, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
         }
 
         private void picFish_Click(object sender, EventArgs e)
         {
-            foreach (Product p in products)
+            foreach (Product p in myShop.GetProducts())
             {
                 if (p.ProductName == "Fish")
                 {
                     ShowProductForm(picFish, p.ProductName, p.ProductPrice);
-                    myProduct = p;
                 }
             }
         }
@@ -607,7 +521,6 @@ namespace shopApp
         {
             if(productDataGV.CurrentRow.Selected)
             {
-
                 productDataGV.Rows.RemoveAt(productDataGV.CurrentRow.Index);
             }
         }
@@ -615,7 +528,8 @@ namespace shopApp
         private void btnPayment_Click(object sender, EventArgs e)
         {
             try
-            { myRFIDReader.Open();
+            {
+                myRFIDReader.Open();
                 textBox1.Text = Convert.ToString(totalPrice);
                 lbRfidCode.Text = "Please scan your bracelet for successfull purchase!";
                 productDataGV.Enabled = false;

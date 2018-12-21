@@ -13,7 +13,7 @@ namespace DevelopPro
     {
 
         private MySqlConnection conn;
-        public MySqlConnection Conn { get; set; }
+       
 
         public Database()
         {
@@ -23,6 +23,8 @@ namespace DevelopPro
                                     "password=123456789;";
             conn = new MySqlConnection(connectionInfo);
         }
+
+        public MySqlConnection Conn { get { return conn; } }
         private string sqlExceptionMessage(string originalExceptionMessage)
         {
             return (
@@ -334,7 +336,6 @@ namespace DevelopPro
         {
             try
             {
-                
                 string sql = "UPDATE customer SET Balance=@balance WHERE TagId = @id";
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 command.Parameters.AddWithValue("@id", tag);
@@ -387,5 +388,7 @@ namespace DevelopPro
             }
             return totalbal;
         }
+
+       
     }
 }
