@@ -7,19 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevelopPro;
 
 namespace LoanApp
 {
     public partial class LoanForm : Form
     {
-        private Product prod;
-        private List<Product> lP = new List<Product>();
-        public LoanForm(Product prod, List<Product> lp)
+        private Item prod;
+        public Item Prod { get { return this.prod; } }
+        private Database db;
+        List<Item> prodItem;
+        public LoanForm(Item prod, List<Item> lp, Database db)
         {
             InitializeComponent();
             this.prod = prod;
-            this.lP = lp;
-
+            this.prodItem = lp;
+            this.db = db;
             try { 
             if (this.prod.LoanName == "Mobile Phone")
             {
@@ -66,7 +69,7 @@ namespace LoanApp
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            lP.Add(prod);
+            db.listOfItems.Add(prod);
             this.Close();
         }
 

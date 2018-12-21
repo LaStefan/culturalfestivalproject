@@ -15,9 +15,10 @@ namespace LoanApp
 {
     public partial class LoanAppForm : Form
     {
-        private Product product = new Product(0, "", 0, 0);
+        private Item product = new Item(0, "", 0, 0);
         private RFID rfid = new RFID();
-        private List<Product> listOfProducts = new List<Product>();
+        private Database db = new Database();
+        private List<Item> listOfProducts = new List<Item>();
         string chipNr = "";
         public LoanAppForm()
         {
@@ -25,7 +26,6 @@ namespace LoanApp
             sideBar.Height = btnHome.Height;
             sideBar.Top = btnHome.Top;
             rfid.Open();
-            rfid.Tag += TagAdd;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,9 +59,20 @@ namespace LoanApp
             panelInventory.Hide();
             panelLoan.Dock = DockStyle.Fill;
             productDataGV.Rows.Clear();
-            foreach (Product p in listOfProducts)
+            productDataGV.Refresh();
+            productDataGV.DataSource = null;
+            foreach (Item p in db.listOfItems)
             {
-                productDataGV.Rows.Add(p.LoanId.ToString(), p.LoanName, DateTime.Now, "5", p.Deposit.ToString());
+                productDataGV.Rows.Add(p.LoanId.ToString(), p.LoanName, DateTime.Now, "€" + p.Deposit.ToString());
+            }
+            if(productDataGV.Rows.Count > 0)
+            {
+                rfid.Tag += TagAdd;
+            }
+            else
+            {
+
+                rfid.Tag -= TagAdd;
             }
         }
 
@@ -72,50 +83,56 @@ namespace LoanApp
 
         private void pbPhone_Click(object sender, EventArgs e)
         {
-            product = product.GetProduct("Mobile Phone");
-            LoanForm lf = new LoanForm(product, listOfProducts);
-            lf.Show();
+            product = db.GetProduct("Mobile Phone");
+           // MessageBox.Show(product.LoanName);
+            LoanForm lf = new LoanForm(product, db.listOfItems, this.db);
+            lf.ShowDialog();
+
+            // lf.Show();
         }
 
         private void pbUSB_Click(object sender, EventArgs e)
         {
-            product = product.GetProduct("Charger");
-            LoanForm lf = new LoanForm(product, listOfProducts);
-            lf.Show();
+            product = db.GetProduct("Charger");
+           // MessageBox.Show(product.LoanName);
+            LoanForm lf = new LoanForm(product, db.listOfItems, this.db);
+            lf.ShowDialog();
+
         }
 
         private void pbFlashlight_Click(object sender, EventArgs e)
         {
-            product = product.GetProduct("Touch Light");
-            LoanForm lf = new LoanForm(product, listOfProducts);
-            lf.Show();
+            product = db.GetProduct("Touch Light");
+            LoanForm lf = new LoanForm(product, db.listOfItems, this.db);
+            lf.ShowDialog();
         }
 
         private void pbBags_Click(object sender, EventArgs e)
         {
-            product = product.GetProduct("Mattress");
-            LoanForm lf = new LoanForm(product, listOfProducts);
-            lf.Show();
+            product = db.GetProduct("Mattress");
+            LoanForm lf = new LoanForm(product, db.listOfItems, this.db);
+            lf.ShowDialog();
+
         }
 
         private void pbCamera_Click(object sender, EventArgs e)
         {
-            product = product.GetProduct("Camera");
-            LoanForm lf = new LoanForm(product, listOfProducts);
-            lf.Show();
+            product = db.GetProduct("Camera");
+            LoanForm lf = new LoanForm(product, db.listOfItems, this.db);
+            lf.ShowDialog();
         }
 
         private void pbBlanckets_Click(object sender, EventArgs e)
         {
-            product = product.GetProduct("Blanket");
-            LoanForm lf = new LoanForm(product, listOfProducts);
-            lf.Show();
+            product = db.GetProduct("Blanket");
+            LoanForm lf = new LoanForm(product, db.listOfItems, this.db);
+            lf.ShowDialog();
         }
 
         private void TagAdd(object sender, RFIDTagEventArgs e)
         {
             chipNr = e.Tag;
-            Customer temp = product.GetCustomer(chipNr);
+            Customer temp = db.GetCustomer(chipNr);
             PersonalDetails pd = new PersonalDetails(temp);
             if (!CheckForm(pd))
             {
@@ -123,10 +140,6 @@ namespace LoanApp
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            product.LoanItem(listOfProducts, chipNr);
-        }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -162,7 +175,7 @@ namespace LoanApp
         private void btnClear_Click_1(object sender, EventArgs e)
         {
             productDataGV.Rows.Clear();
-            listOfProducts.Clear();
+            db.listOfItems.Clear();
             productDataGV.Refresh();
         }
 
@@ -172,19 +185,19 @@ namespace LoanApp
             {
                 productDataGV.Rows.RemoveAt(row.Index);
                 //int productId = (int)productDataGV.Rows[row.Index].Cells[0].Value;
-                var product = listOfProducts.FirstOrDefault();
+                var product = db.listOfItems.FirstOrDefault();
                 if (product != null)
-                    listOfProducts.Remove(product);
+                    db.listOfItems.Remove(product);
                 productDataGV.Refresh();
             }
         }
 
         private void btnRefund_Click(object sender, EventArgs e)
         {
-            Product temp = (Product)listBox1.SelectedItem;
-            product.RefundBorrowedItem(temp, chipNr);
+            Item temp = (Item)listBox1.SelectedItem;
+            db.RefundBorrowedItem(temp, chipNr);
             listBox1.Items.Clear();
-            List<Product> lp = product.GetBorrowedProducts(chipNr);
+            List<Item> lp = db.GetBorrowedProducts(chipNr);
             foreach (var item in lp)
             {
                 listBox1.Items.Add(item);
@@ -194,16 +207,26 @@ namespace LoanApp
         private void btnCheck_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            List<Product> temp = product.GetBorrowedProducts(chipNr);
+            List<Item> temp = db.GetBorrowedProducts(chipNr);
             foreach (var item in temp)
             {
                 listBox1.Items.Add(item);
             }
         }
 
-        private void panelLoan_Paint(object sender, PaintEventArgs e)
+        private void btnChekout_Click(object sender, EventArgs e)
         {
-
+            if (chipNr != "")
+            {
+                db.LoanItem(db.listOfItems, chipNr);
+                productDataGV.Rows.Clear();
+                db.listOfItems.Clear();
+                chipNr = "";
+            }
+            else
+            {
+                MessageBox.Show("Please first scan rfid tag");
+            }
         }
     }
 }
