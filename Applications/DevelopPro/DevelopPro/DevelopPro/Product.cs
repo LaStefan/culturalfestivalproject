@@ -17,7 +17,7 @@ namespace DevelopPro
         public int Id { get { return id; } }
         public string ProductName { get { return name; } }
         public decimal ProductPrice { get { return price; } }
-            public int Stock
+        public int Stock
         {
             get { return stock; }
             set { stock = value; }

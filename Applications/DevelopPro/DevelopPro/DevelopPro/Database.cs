@@ -18,12 +18,6 @@ namespace DevelopPro
 
         //create database connection
         private MySqlConnection conn;
-<<<<<<< HEAD
-       
-
-=======
-        public MySqlConnection Conn { get; set; }
->>>>>>> 5ee6fd24ee5e016e599324a4178c26b26b420988
         public Database()
         {
             String connectionInfo = "server=studmysql01.fhict.local;" +
@@ -33,7 +27,7 @@ namespace DevelopPro
             conn = new MySqlConnection(connectionInfo);
         }
 
-        public MySqlConnection Conn { get { return conn; } }
+           public MySqlConnection Conn { get { return conn; } }
         private string sqlExceptionMessage(string originalExceptionMessage)
         {
             return (
@@ -396,10 +390,8 @@ namespace DevelopPro
             }
             return totalbal;
         }
-
-<<<<<<< HEAD
        
-=======
+
         //sql used for the loan application
         public Item GetProduct(string product)
         {
@@ -621,6 +613,5 @@ namespace DevelopPro
             }
         }
         //here finish the code used for the loan application
->>>>>>> 5ee6fd24ee5e016e599324a4178c26b26b420988
     }
 }
