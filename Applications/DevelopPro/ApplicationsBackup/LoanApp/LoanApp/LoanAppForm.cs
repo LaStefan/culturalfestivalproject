@@ -11,15 +11,18 @@ using DevelopPro;
 using Phidget22.Events;
 using Phidget22;
 
+
 namespace LoanApp
 {
     public partial class LoanAppForm : Form
     {
         private Item product = new Item(0, "", 0, 0);
+        private Item inventory = null;
         private RFID rfid = new RFID();
         private Database db = new Database();
         private List<Item> listOfProducts = new List<Item>();
         string chipNr = "";
+
         public LoanAppForm()
         {
             InitializeComponent();
@@ -227,6 +230,89 @@ namespace LoanApp
             {
                 MessageBox.Show("Please first scan rfid tag");
             }
+        }
+
+        private void pbChargerIn_Click(object sender, EventArgs e)
+        {
+           inventory = db.GetProduct("Charger");
+
+            pbChargerIn.BorderStyle = BorderStyle.Fixed3D;
+            pBcameraIn.BorderStyle = BorderStyle.None;
+            pbPhoneIn.BorderStyle = BorderStyle.None;
+            pbBlanketIn.BorderStyle = BorderStyle.None;
+            pbmattressIn.BorderStyle = BorderStyle.None;
+            pbLightIn.BorderStyle = BorderStyle.None;
+        }
+
+
+        private void pBcameraIn_Click(object sender, EventArgs e)
+        {
+            inventory = db.GetProduct("Camera");
+
+            pBcameraIn.BorderStyle = BorderStyle.Fixed3D;
+            pbChargerIn.BorderStyle = BorderStyle.None;
+            pbPhoneIn.BorderStyle = BorderStyle.None;
+            pbBlanketIn.BorderStyle = BorderStyle.None;
+            pbmattressIn.BorderStyle = BorderStyle.None;
+            pbLightIn.BorderStyle = BorderStyle.None;
+        }
+
+        private void pbPhoneIn_Click(object sender, EventArgs e)
+        {
+            inventory = db.GetProduct("Mobile Phone");
+
+            pbPhoneIn.BorderStyle = BorderStyle.Fixed3D;
+            pBcameraIn.BorderStyle = BorderStyle.None;
+            pbChargerIn.BorderStyle = BorderStyle.None;
+            pbBlanketIn.BorderStyle = BorderStyle.None;
+            pbmattressIn.BorderStyle = BorderStyle.None;
+            pbLightIn.BorderStyle = BorderStyle.None;
+        }
+
+        private void pbBlanketIn_Click(object sender, EventArgs e)
+        {
+            inventory = db.GetProduct("Blanket");
+
+            pbBlanketIn.BorderStyle = BorderStyle.Fixed3D;
+            pBcameraIn.BorderStyle = BorderStyle.None;
+            pbPhoneIn.BorderStyle = BorderStyle.None;
+            pbChargerIn.BorderStyle = BorderStyle.None;
+            pbmattressIn.BorderStyle = BorderStyle.None;
+            pbLightIn.BorderStyle = BorderStyle.None;
+        }
+
+        private void pbmattressIn_Click(object sender, EventArgs e)
+        {
+            inventory = db.GetProduct("Mattress");
+
+            pbmattressIn.BorderStyle = BorderStyle.Fixed3D;
+            pBcameraIn.BorderStyle = BorderStyle.None;
+            pbPhoneIn.BorderStyle = BorderStyle.None;
+            pbBlanketIn.BorderStyle = BorderStyle.None;
+            pbChargerIn.BorderStyle = BorderStyle.None;
+            pbLightIn.BorderStyle = BorderStyle.None;
+        }
+
+        private void pbLightIn_Click(object sender, EventArgs e)
+        {
+            inventory = db.GetProduct("Flashlight");
+
+            pbLightIn.BorderStyle = BorderStyle.Fixed3D;
+            pBcameraIn.BorderStyle = BorderStyle.None;
+            pbPhoneIn.BorderStyle = BorderStyle.None;
+            pbBlanketIn.BorderStyle = BorderStyle.None;
+            pbmattressIn.BorderStyle = BorderStyle.None;
+            pbChargerIn.BorderStyle = BorderStyle.None;
+
+        }
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            int numericValue = Convert.ToInt32(numericUPInventory.Value);
+            db.AddInventory(inventory,numericValue);
+            inventory = null;
+            numericUPInventory.Value = 0;
         }
     }
 }

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanAppForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
@@ -42,22 +42,27 @@
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panelItem = new System.Windows.Forms.Panel();
+            this.panelReturn = new System.Windows.Forms.Panel();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.btnRefund = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.pbBlanckets = new System.Windows.Forms.PictureBox();
             this.pbBags = new System.Windows.Forms.PictureBox();
             this.pbFlashlight = new System.Windows.Forms.PictureBox();
             this.pbCamera = new System.Windows.Forms.PictureBox();
             this.pbPhone = new System.Windows.Forms.PictureBox();
             this.pbUSB = new System.Windows.Forms.PictureBox();
-            this.panelReturn = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.prodId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelInventory = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnCheck = new System.Windows.Forms.Button();
-            this.btnRefund = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lBInventory = new System.Windows.Forms.Label();
+            this.numericUPInventory = new System.Windows.Forms.NumericUpDown();
+            this.pbBlanketIn = new System.Windows.Forms.PictureBox();
+            this.pbmattressIn = new System.Windows.Forms.PictureBox();
+            this.pbLightIn = new System.Windows.Forms.PictureBox();
+            this.pBcameraIn = new System.Windows.Forms.PictureBox();
+            this.pbPhoneIn = new System.Windows.Forms.PictureBox();
+            this.pbChargerIn = new System.Windows.Forms.PictureBox();
             this.panelLoan = new System.Windows.Forms.Panel();
             this.btnChekout = new System.Windows.Forms.Button();
             this.productDataGV = new System.Windows.Forms.DataGridView();
@@ -81,14 +86,21 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelItem.SuspendLayout();
+            this.panelReturn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlanckets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBags)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlashlight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUSB)).BeginInit();
-            this.panelReturn.SuspendLayout();
             this.panelInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUPInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBlanketIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbmattressIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLightIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBcameraIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoneIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChargerIn)).BeginInit();
             this.panelLoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGV)).BeginInit();
             this.panel2.SuspendLayout();
@@ -210,12 +222,69 @@
             this.panelItem.Controls.Add(this.pbCamera);
             this.panelItem.Controls.Add(this.pbPhone);
             this.panelItem.Controls.Add(this.pbUSB);
-            this.panelItem.Location = new System.Drawing.Point(167, 52);
+            this.panelItem.Location = new System.Drawing.Point(12, 78);
             this.panelItem.Margin = new System.Windows.Forms.Padding(4);
             this.panelItem.Name = "panelItem";
             this.panelItem.Size = new System.Drawing.Size(924, 465);
             this.panelItem.TabIndex = 12;
             this.panelItem.Visible = false;
+            // 
+            // panelReturn
+            // 
+            this.panelReturn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelReturn.Controls.Add(this.btnCheck);
+            this.panelReturn.Controls.Add(this.btnRefund);
+            this.panelReturn.Controls.Add(this.listBox1);
+            this.panelReturn.Controls.Add(this.label6);
+            this.panelReturn.Location = new System.Drawing.Point(16, 108);
+            this.panelReturn.Margin = new System.Windows.Forms.Padding(4);
+            this.panelReturn.Name = "panelReturn";
+            this.panelReturn.Size = new System.Drawing.Size(939, 472);
+            this.panelReturn.TabIndex = 20;
+            this.panelReturn.Visible = false;
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(117, 80);
+            this.btnCheck.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(100, 28);
+            this.btnCheck.TabIndex = 22;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // btnRefund
+            // 
+            this.btnRefund.Location = new System.Drawing.Point(783, 287);
+            this.btnRefund.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefund.Name = "btnRefund";
+            this.btnRefund.Size = new System.Drawing.Size(100, 28);
+            this.btnRefund.TabIndex = 21;
+            this.btnRefund.Text = "Refund";
+            this.btnRefund.UseVisualStyleBackColor = true;
+            this.btnRefund.Click += new System.EventHandler(this.btnRefund_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(243, 80);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(239, 84);
+            this.listBox1.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(56, 34);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Return";
             // 
             // pbBlanckets
             // 
@@ -301,109 +370,152 @@
             this.toolTip1.SetToolTip(this.pbUSB, "Charger");
             this.pbUSB.Click += new System.EventHandler(this.pbUSB_Click);
             // 
-            // panelReturn
-            // 
-            this.panelReturn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelReturn.Controls.Add(this.listView1);
-            this.panelReturn.Controls.Add(this.panelInventory);
-            this.panelReturn.Controls.Add(this.btnCheck);
-            this.panelReturn.Controls.Add(this.btnRefund);
-            this.panelReturn.Controls.Add(this.listBox1);
-            this.panelReturn.Controls.Add(this.label6);
-            this.panelReturn.Location = new System.Drawing.Point(0, 0);
-            this.panelReturn.Margin = new System.Windows.Forms.Padding(4);
-            this.panelReturn.Name = "panelReturn";
-            this.panelReturn.Size = new System.Drawing.Size(939, 472);
-            this.panelReturn.TabIndex = 20;
-            this.panelReturn.Visible = false;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.prodId,
-            this.columnHeader1});
-            this.listView1.Location = new System.Drawing.Point(289, 259);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
-            this.listView1.TabIndex = 23;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // prodId
-            // 
-            this.prodId.Text = "ProductId";
-            // 
             // panelInventory
             // 
-            this.panelInventory.Controls.Add(this.label7);
-            this.panelInventory.Location = new System.Drawing.Point(3, 0);
+            this.panelInventory.Controls.Add(this.btnAdd);
+            this.panelInventory.Controls.Add(this.lBInventory);
+            this.panelInventory.Controls.Add(this.numericUPInventory);
+            this.panelInventory.Controls.Add(this.pbBlanketIn);
+            this.panelInventory.Controls.Add(this.pbmattressIn);
+            this.panelInventory.Controls.Add(this.pbLightIn);
+            this.panelInventory.Controls.Add(this.pBcameraIn);
+            this.panelInventory.Controls.Add(this.pbPhoneIn);
+            this.panelInventory.Controls.Add(this.pbChargerIn);
+            this.panelInventory.Location = new System.Drawing.Point(171, 53);
             this.panelInventory.Margin = new System.Windows.Forms.Padding(4);
             this.panelInventory.Name = "panelInventory";
-            this.panelInventory.Size = new System.Drawing.Size(937, 471);
+            this.panelInventory.Size = new System.Drawing.Size(927, 464);
             this.panelInventory.TabIndex = 21;
             this.panelInventory.Visible = false;
             // 
-            // label7
+            // btnAdd
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(56, 34);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 19);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Inventoryy";
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(394, 402);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(163, 43);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "Add inventory";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnCheck
+            // lBInventory
             // 
-            this.btnCheck.Location = new System.Drawing.Point(117, 80);
-            this.btnCheck.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(100, 28);
-            this.btnCheck.TabIndex = 22;
-            this.btnCheck.Text = "Check";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            this.lBInventory.AutoSize = true;
+            this.lBInventory.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBInventory.Location = new System.Drawing.Point(185, 20);
+            this.lBInventory.Name = "lBInventory";
+            this.lBInventory.Size = new System.Drawing.Size(546, 46);
+            this.lBInventory.TabIndex = 13;
+            this.lBInventory.Text = "Select an item, then the quantity of this item \r\nand click the button \"Add invent" +
+    "ory\" in order to add the item in stock\r\n";
+            this.lBInventory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnRefund
+            // numericUPInventory
             // 
-            this.btnRefund.Location = new System.Drawing.Point(783, 287);
-            this.btnRefund.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefund.Name = "btnRefund";
-            this.btnRefund.Size = new System.Drawing.Size(100, 28);
-            this.btnRefund.TabIndex = 21;
-            this.btnRefund.Text = "Refund";
-            this.btnRefund.UseVisualStyleBackColor = true;
-            this.btnRefund.Click += new System.EventHandler(this.btnRefund_Click);
+            this.numericUPInventory.Location = new System.Drawing.Point(451, 366);
+            this.numericUPInventory.Name = "numericUPInventory";
+            this.numericUPInventory.Size = new System.Drawing.Size(55, 22);
+            this.numericUPInventory.TabIndex = 12;
             // 
-            // listBox1
+            // pbBlanketIn
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(243, 80);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(239, 84);
-            this.listBox1.TabIndex = 20;
+            this.pbBlanketIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBlanketIn.Image = ((System.Drawing.Image)(resources.GetObject("pbBlanketIn.Image")));
+            this.pbBlanketIn.Location = new System.Drawing.Point(604, 215);
+            this.pbBlanketIn.Margin = new System.Windows.Forms.Padding(4);
+            this.pbBlanketIn.Name = "pbBlanketIn";
+            this.pbBlanketIn.Size = new System.Drawing.Size(142, 122);
+            this.pbBlanketIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBlanketIn.TabIndex = 11;
+            this.pbBlanketIn.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbBlanketIn, "Blanket");
+            this.pbBlanketIn.Click += new System.EventHandler(this.pbBlanketIn_Click);
             // 
-            // label6
+            // pbmattressIn
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(56, 34);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 19);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Return";
+            this.pbmattressIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbmattressIn.Image = ((System.Drawing.Image)(resources.GetObject("pbmattressIn.Image")));
+            this.pbmattressIn.Location = new System.Drawing.Point(604, 84);
+            this.pbmattressIn.Margin = new System.Windows.Forms.Padding(4);
+            this.pbmattressIn.Name = "pbmattressIn";
+            this.pbmattressIn.Size = new System.Drawing.Size(142, 122);
+            this.pbmattressIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbmattressIn.TabIndex = 10;
+            this.pbmattressIn.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbmattressIn, "Mattress");
+            this.pbmattressIn.Click += new System.EventHandler(this.pbmattressIn_Click);
+            // 
+            // pbLightIn
+            // 
+            this.pbLightIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLightIn.Image = ((System.Drawing.Image)(resources.GetObject("pbLightIn.Image")));
+            this.pbLightIn.Location = new System.Drawing.Point(407, 84);
+            this.pbLightIn.Margin = new System.Windows.Forms.Padding(4);
+            this.pbLightIn.Name = "pbLightIn";
+            this.pbLightIn.Size = new System.Drawing.Size(135, 122);
+            this.pbLightIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLightIn.TabIndex = 9;
+            this.pbLightIn.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbLightIn, "Touch Light");
+            this.pbLightIn.Click += new System.EventHandler(this.pbLightIn_Click);
+            // 
+            // pBcameraIn
+            // 
+            this.pBcameraIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBcameraIn.Image = ((System.Drawing.Image)(resources.GetObject("pBcameraIn.Image")));
+            this.pBcameraIn.Location = new System.Drawing.Point(177, 215);
+            this.pBcameraIn.Margin = new System.Windows.Forms.Padding(4);
+            this.pBcameraIn.Name = "pBcameraIn";
+            this.pBcameraIn.Size = new System.Drawing.Size(145, 122);
+            this.pBcameraIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBcameraIn.TabIndex = 8;
+            this.pBcameraIn.TabStop = false;
+            this.toolTip1.SetToolTip(this.pBcameraIn, "Camera");
+            this.pBcameraIn.Click += new System.EventHandler(this.pBcameraIn_Click);
+            // 
+            // pbPhoneIn
+            // 
+            this.pbPhoneIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbPhoneIn.Image = ((System.Drawing.Image)(resources.GetObject("pbPhoneIn.Image")));
+            this.pbPhoneIn.Location = new System.Drawing.Point(407, 215);
+            this.pbPhoneIn.Margin = new System.Windows.Forms.Padding(4);
+            this.pbPhoneIn.Name = "pbPhoneIn";
+            this.pbPhoneIn.Size = new System.Drawing.Size(135, 122);
+            this.pbPhoneIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPhoneIn.TabIndex = 7;
+            this.pbPhoneIn.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbPhoneIn, "Mobile Phone");
+            this.pbPhoneIn.Click += new System.EventHandler(this.pbPhoneIn_Click);
+            // 
+            // pbChargerIn
+            // 
+            this.pbChargerIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbChargerIn.Image = ((System.Drawing.Image)(resources.GetObject("pbChargerIn.Image")));
+            this.pbChargerIn.Location = new System.Drawing.Point(177, 84);
+            this.pbChargerIn.Margin = new System.Windows.Forms.Padding(4);
+            this.pbChargerIn.Name = "pbChargerIn";
+            this.pbChargerIn.Size = new System.Drawing.Size(145, 122);
+            this.pbChargerIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbChargerIn.TabIndex = 6;
+            this.pbChargerIn.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbChargerIn, "Charger");
+            this.pbChargerIn.Click += new System.EventHandler(this.pbChargerIn_Click);
             // 
             // panelLoan
             // 
+            this.panelLoan.Controls.Add(this.panelItem);
             this.panelLoan.Controls.Add(this.btnChekout);
             this.panelLoan.Controls.Add(this.productDataGV);
             this.panelLoan.Controls.Add(this.btnClear);
             this.panelLoan.Controls.Add(this.btnRemove);
             this.panelLoan.Controls.Add(this.lbRFID);
-            this.panelLoan.Location = new System.Drawing.Point(171, 53);
+            this.panelLoan.Location = new System.Drawing.Point(193, 178);
             this.panelLoan.Margin = new System.Windows.Forms.Padding(4);
             this.panelLoan.Name = "panelLoan";
             this.panelLoan.Size = new System.Drawing.Size(847, 473);
@@ -432,19 +544,19 @@
             this.productDataGV.AllowUserToDeleteRows = false;
             this.productDataGV.AllowUserToResizeColumns = false;
             this.productDataGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.productDataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.productDataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.productDataGV.BackgroundColor = System.Drawing.Color.White;
             this.productDataGV.CausesValidation = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productDataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productDataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.productDataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productDataGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productID,
@@ -452,26 +564,26 @@
             this.productQty,
             this.productPrice});
             this.productDataGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productDataGV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.productDataGV.DefaultCellStyle = dataGridViewCellStyle7;
             this.productDataGV.Location = new System.Drawing.Point(126, 54);
             this.productDataGV.Margin = new System.Windows.Forms.Padding(4);
             this.productDataGV.Name = "productDataGV";
             this.productDataGV.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productDataGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productDataGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.productDataGV.RowHeadersWidth = 40;
             this.productDataGV.Size = new System.Drawing.Size(656, 355);
             this.productDataGV.TabIndex = 18;
@@ -663,7 +775,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1104, 530);
-            this.Controls.Add(this.panelItem);
+            this.Controls.Add(this.panelInventory);
             this.Controls.Add(this.panelLoan);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label5);
@@ -680,16 +792,23 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panelItem.ResumeLayout(false);
+            this.panelReturn.ResumeLayout(false);
+            this.panelReturn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlanckets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBags)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlashlight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUSB)).EndInit();
-            this.panelReturn.ResumeLayout(false);
-            this.panelReturn.PerformLayout();
             this.panelInventory.ResumeLayout(false);
             this.panelInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUPInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBlanketIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbmattressIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLightIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBcameraIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoneIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChargerIn)).EndInit();
             this.panelLoan.ResumeLayout(false);
             this.panelLoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGV)).EndInit();
@@ -737,18 +856,23 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelReturn;
         private System.Windows.Forms.Panel panelInventory;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnRefund;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnCheck;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader prodId;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productID;
         private System.Windows.Forms.DataGridViewTextBoxColumn productName;
         private System.Windows.Forms.DataGridViewTextBoxColumn productQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn productPrice;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lBInventory;
+        private System.Windows.Forms.NumericUpDown numericUPInventory;
+        private System.Windows.Forms.PictureBox pbBlanketIn;
+        private System.Windows.Forms.PictureBox pbmattressIn;
+        private System.Windows.Forms.PictureBox pbLightIn;
+        private System.Windows.Forms.PictureBox pBcameraIn;
+        private System.Windows.Forms.PictureBox pbPhoneIn;
+        private System.Windows.Forms.PictureBox pbChargerIn;
     }
 }
 

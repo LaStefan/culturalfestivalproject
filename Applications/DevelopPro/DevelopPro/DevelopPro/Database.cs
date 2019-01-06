@@ -15,7 +15,7 @@ namespace DevelopPro
         //list of items used in the loan application
         public List<Item> listOfItems = new List<Item>();
         private Item item = null;
-
+       
         //create database connection
         private MySqlConnection conn;
         public Database()
@@ -583,7 +583,7 @@ namespace DevelopPro
             finally { conn.Close(); }
             return null;
         }
-
+        
         public void RefundBorrowedItem(Item p, string rfid)
         {
             try
@@ -611,6 +611,27 @@ namespace DevelopPro
             {
                 conn.Close();
             }
+        }
+
+        public void AddInventory(Item p, int numericValue)
+        {
+            try
+            {
+                conn.Open();
+                string updateStock = "UPDATE `loan` SET `Stock`= Stock + '" + numericValue + "' WHERE LoanId = '" + item.LoanId + "';";
+                MySqlCommand msc = new MySqlCommand(updateStock, conn);
+                MySqlDataReader mdr = msc.ExecuteReader();
+                mdr.Close();
+            }
+            catch (MySqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
         //here finish the code used for the loan application
     }
