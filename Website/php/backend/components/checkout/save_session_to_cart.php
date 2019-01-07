@@ -67,11 +67,8 @@ if (!empty($_SESSION['tickettype']) && !empty($_SESSION['dateOne']) && !empty($_
 
 // save camping reservations to cart
 if (!empty($_SESSION['buttonId'] && !empty($_SESSION['cpPrice']))) {
-
     $_SESSION['cart']['cp']['cpId'] = (int) $_SESSION['buttonId'];
     $_SESSION['cart']['cp']['cpPrice'] = (int) $_SESSION['cpPrice'];
-
-
 
     unset($_SESSION['buttonId']);
     unset($_SESSION['cpPrice']);

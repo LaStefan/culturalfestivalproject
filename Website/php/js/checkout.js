@@ -120,8 +120,25 @@ $( document ).ready(function() {
 
     });
 
-});
 
+    $("#nextSix").click(function() {
+
+        var json = {
+            data:"stringData"
+        };
+
+        $.ajax({
+            url:"backend/components/checkout/finish_order.php",
+            data: json,
+            type:"POST",
+            success: function(response){
+
+            }
+        });
+
+
+    });
+});
 
 // remove items from cart
 function removeCartItem(id) {
@@ -146,7 +163,6 @@ function removeCartItem(id) {
                 type:"GET",
                 url: "backend/components/checkout/get_total_price.php",
                 success: function(response) {
-                    console.log(response);
                     $("#totalPriceField").text(response);
                 }
             })

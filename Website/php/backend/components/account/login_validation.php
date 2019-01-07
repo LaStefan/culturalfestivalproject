@@ -6,7 +6,7 @@ require __DIR__ . '/../db/db.php';
 
 login($_POST['email'], $_POST['password']);
 
-header('Location: ../../../Account.php');
+header('Location: ../../../Tickets.php');
 
 
 function login($email, $password)

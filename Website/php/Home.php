@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,30 +40,53 @@
         <li class="dropdown">
           <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Log In<span class="caret"></span></a>
 			<ul id="loginM" class="dropdown-menu">
-				<li>
-					 <div class="row">
-							<div class="col-md-12">
-							 <form class="form">
-										<div class="formLI">
-										  <label id="labelIN">
-                                Email <span id="spanReq"class="req">*</span>
-                            </label>
-                            <input id="inputLI" type="email" name="email" placeholder="Email" required/>
-										</div>
-										<div class="formLI">
-											 <label id="labelIN">
-                                Password<span id="spanReq" class="req">*</span>
-                            </label>
-                            <input id="inputLI" type="password" name="password" placeholder="Password" required/>
-                                            <p class="forget">Forget Password?</p>
-										</div>
-										<div class="formLI">
-											 <button class="buttonLI">Log In</button>
-										</div>
+
+                <?php if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true): ?>
+
+                    <li>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form name="loginCustomer" action="backend/components/account/login_validation.php" method="post">
+                                    <div class="formLI">
+                                        <label id="labelIN">
+                                            Email <span id="spanReq" class="req">*</span>
+                                        </label>
+                                        <input id="inputLI" type="email" name="email" placeholder="Email"
+                                               required/>
+                                    </div>
+                                    <div class="formLI">
+                                        <label id="labelIN">
+                                            Password<span id="spanReq" class="req">*</span>
+                                        </label>
+                                        <input id="inputLI" type="password" name="password"
+                                               placeholder="Password"
+                                               required/>
+                                        <p class="forget">Forget Password?</p>
+                                    </div>
+                                    <div class="formLI">
+                                        <button class="buttonLI">Log In</button>
+                                    </div>
                                 </form>
-                         </div>
-                    </div>
-				</li>
+                            </div>
+                        </div>
+                    </li>
+
+                <?php else: ?>
+
+                    <li>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form name="logoutCustomer" action="backend/components/account/logout.php" method="post">
+                                    <div class="formLI">
+                                        <button class="buttonLI">Log out</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+
+                <?php endif ?>
+
 			</ul>
         </li>
       </ul>

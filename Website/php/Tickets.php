@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,6 +12,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <script type='text/javascript' src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/checkout.js"></script>
+    <script type="text/javascript" src="js/RegisterPeople.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
 
     <title>TICKETS</title>
@@ -42,33 +43,53 @@ session_start();
                         <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Log
                             In<span class="caret"></span></a>
                         <ul id="loginM" class="dropdown-menu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <form class="form">
-                                            <div class="formLI">
-                                                <label id="labelIN">
-                                                    Email <span id="spanReq" class="req">*</span>
-                                                </label>
-                                                <input id="inputLI" type="email" name="email" placeholder="Email"
-                                                       required/>
+
+                            <?php if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true): ?>
+
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <form name="loginCustomer" action="backend/components/account/login_validation.php" method="post">
+                                                    <div class="formLI">
+                                                        <label id="labelIN">
+                                                            Email <span id="spanReq" class="req">*</span>
+                                                        </label>
+                                                        <input id="inputLI" type="email" name="email" placeholder="Email"
+                                                               required/>
+                                                    </div>
+                                                    <div class="formLI">
+                                                        <label id="labelIN">
+                                                            Password<span id="spanReq" class="req">*</span>
+                                                        </label>
+                                                        <input id="inputLI" type="password" name="password"
+                                                               placeholder="Password"
+                                                               required/>
+                                                        <p class="forget">Forget Password?</p>
+                                                    </div>
+                                                    <div class="formLI">
+                                                        <button class="buttonLI">Log In</button>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <div class="formLI">
-                                                <label id="labelIN">
-                                                    Password<span id="spanReq" class="req">*</span>
-                                                </label>
-                                                <input id="inputLI" type="password" name="password"
-                                                       placeholder="Password"
-                                                       required/>
-                                                <p class="forget">Forget Password?</p>
-                                            </div>
-                                            <div class="formLI">
-                                                <button class="buttonLI">Log In</button>
-                                            </div>
-                                        </form>
+                                        </div>
+                                    </li>
+
+                            <?php else: ?>
+
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form name="logoutCustomer" action="backend/components/account/logout.php" method="post">
+                                                <div class="formLI">
+                                                    <button class="buttonLI">Log out</button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+
+                            <?php endif ?>
+
                         </ul>
                     </li>
                 </ul>
@@ -78,7 +99,7 @@ session_start();
 </header>
 <body>
 <section>
-    <form id="MainForm">
+    <div id="MainForm">
         <ul id="progress">
             <li class="active">Select Ticket</li>
             <li>Do you want a camping spot?</li>
@@ -240,63 +261,32 @@ session_start();
             <input type="button" name="previous" class="previousMain" value="Previous"/>
             <input type="button" name="next" class="nextMain" id="nextFive" value="Next"/>
 
-            <div id="TicketRe">
-                <div class="formRe">
-                    <div id="AccountForm">
+            <form name="registerUsers" method="post" action="backend/components/account/register_people.php" id="registerPeople">
 
-                        <ul id="progressAcc">
-                            <li class="active"></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        <fieldset id="FormAcc">
-                            <h2 class="accTitle">Create an account</h2>
-                            <div class="top-row">
-                                <div class="field-wrap">
-                                    <label id="Accountlabel">
-                                        First Name<span class="req">*</span>
-                                    </label>
-                                    <input class="Accountinput" type="text" required autocomplete="off"/>
-                                </div>
+                <div id="TicketRe">
+                    <div class="formRe">
+                        <div id="AccountForm">
 
-                                <div class="field-wrap">
-                                    <label id="Accountlabel">
-                                        Last Name<span class="req">*</span>
-                                    </label>
-                                    <input class="Accountinput" type="text" required autocomplete="off"/>
-                                </div>
+                            <ul id="progressAcc">
+                                <li class="active"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+
+                            <div id="extraPersonRegistrations">
                             </div>
-
-                            <div class="field-wrap">
-                                <label id="Accountlabel">
-                                    Email Address<span class="req">*</span>
-                                </label>
-                                <input class="Accountinput" type="email" required autocomplete="off"/>
-                            </div>
-
-                            <div class="field-wrap">
-                                <label id="Accountlabel">
-                                    Set a password<span class="req">*</span>
-                                </label>
-                                <input class="Accountinput" type="password" required autocomplete="off"/>
-                            </div>
-                            <input type="button" id="nextBt" name="next" class="next action-button"
-                                   value="Register next person"/>
-                        </fieldset>
-
-                        <div id="extraPersonRegistrations">
-
-
 
                         </div>
-
-
                     </div>
                 </div>
+            </form>
+
+            <div id="form_output">
             </div>
+
         </figure>
 
         <!-- Panel 6 -->
@@ -346,7 +336,7 @@ session_start();
         </figure>
 
 
-    </form>
+    </div>
 </section>
 </body>
 

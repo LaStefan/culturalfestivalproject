@@ -30,7 +30,7 @@ var left, opacity, scale;
 var animating; 
 
 $(".next").click(function(){
-	if(animating) return false;
+	// if(animating) return false;
 	animating = true;
 	
 	current_fs = $(this).parent();
@@ -55,6 +55,61 @@ $(".next").click(function(){
 		}, 
 		easing: 'easeOutQuint'
 	});
+});
+
+// slide panels after being generated
+$(document).ajaxSuccess(function() {
+
+    var current_fs, next_fs, previous_fs;
+    var left, opacity, scale;
+    var animating;
+
+    $(".next").click(function(){
+        // if(animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
+
+        $("#progressAcc li").eq($("fieldset").index(next_fs)).addClass("active");
+
+        next_fs.show();
+        current_fs.animate({opacity: 0}, {
+            step: function(now, mx) {
+                scale = 1 - (1 - now) * 0.2;
+                left = (now * 50)+"%";
+                opacity = 1 - now;
+                current_fs.css({'transform': 'scale('+scale+')'});
+                next_fs.css({'left': left, 'opacity': opacity});
+            },
+            duration: 2,
+            complete: function(){
+                current_fs.hide();
+                animating = false;
+            },
+            easing: 'easeOutQuint'
+        });
+    });
+});
+
+// submit form to register people
+$(document).ajaxSuccess(function() {
+    $("#registerPeople").on("submit", function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            url: $(this).attr('action'),
+            type: "POST",
+            data: $(this).serialize(),
+            success: function (data) {
+                $("#form_output").html(data);
+            },
+            error: function (jXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
 });
 
 $(".previous").click(function(){
@@ -84,8 +139,4 @@ $(".previous").click(function(){
 		easing: 'easeOutQuint'
 	});
 });
-
-$(".submit").click(function(){
-	return false;
-})
 

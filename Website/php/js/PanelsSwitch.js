@@ -17,12 +17,9 @@ $(".nextMain").click(function(){
 	animating = true;
 	current_fs = $(this).parent();
 	next_fs = $(this).parent().next();
-	
-	
-    	$("#progress li").eq($("figure").index(next_fs)).addClass("active");
 
-    
-    
+	$("#progress li").eq($("figure").index(next_fs)).addClass("active");
+
     if(check == true){
 	next_fs.show(); 
     }
@@ -53,6 +50,8 @@ $(".nextMain").click(function(){
 		easing: 'easeInOutBack'
 	});
 });
+
+
 
 $(".previousMain").click(function(){
 	if(animating) return false;
