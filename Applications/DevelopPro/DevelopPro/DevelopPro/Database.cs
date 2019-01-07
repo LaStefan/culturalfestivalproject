@@ -627,6 +627,10 @@ namespace DevelopPro
             {
                 MessageBox.Show(sql.Message);
             }
+            catch (NullReferenceException s)
+            {
+                MessageBox.Show(s.Message);
+            }
             finally
             {
                 conn.Close();
