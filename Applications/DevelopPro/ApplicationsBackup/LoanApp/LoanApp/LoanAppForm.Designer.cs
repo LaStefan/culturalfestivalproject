@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanAppForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnInventory = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.sideBar = new System.Windows.Forms.Panel();
             this.btnLoan = new System.Windows.Forms.Button();
@@ -53,10 +53,12 @@
             this.pbPhone = new System.Windows.Forms.PictureBox();
             this.pbUSB = new System.Windows.Forms.PictureBox();
             this.panelReturn = new System.Windows.Forms.Panel();
-            this.rBDamaged = new System.Windows.Forms.RadioButton();
-            this.rB = new System.Windows.Forms.RadioButton();
             this.tBReturnStatus = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lBDamage = new System.Windows.Forms.Label();
+            this.rBDamaged = new System.Windows.Forms.RadioButton();
+            this.rBUnDamaged = new System.Windows.Forms.RadioButton();
+            this.lbQuestion = new System.Windows.Forms.Label();
+            this.btnScanRFID = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dGVReturn = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,8 +99,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lBDamage = new System.Windows.Forms.Label();
-            this.btnScanRFID = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlanckets)).BeginInit();
@@ -127,7 +127,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnInventory);
             this.panel1.Controls.Add(this.btnReturn);
             this.panel1.Controls.Add(this.sideBar);
             this.panel1.Controls.Add(this.btnLoan);
@@ -140,21 +140,21 @@
             this.panel1.Size = new System.Drawing.Size(165, 530);
             this.panel1.TabIndex = 0;
             // 
-            // button2
+            // btnInventory
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Baskerville Old Face", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(6, 436);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 55);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Inventory Replenishment";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInventory.FlatAppearance.BorderSize = 0;
+            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventory.Font = new System.Drawing.Font("Baskerville Old Face", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventory.ForeColor = System.Drawing.Color.White;
+            this.btnInventory.Location = new System.Drawing.Point(6, 436);
+            this.btnInventory.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(161, 55);
+            this.btnInventory.TabIndex = 6;
+            this.btnInventory.Text = "Inventory Replenishment";
+            this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // btnReturn
             // 
@@ -334,8 +334,8 @@
             this.panelReturn.Controls.Add(this.tBReturnStatus);
             this.panelReturn.Controls.Add(this.lBDamage);
             this.panelReturn.Controls.Add(this.rBDamaged);
-            this.panelReturn.Controls.Add(this.rB);
-            this.panelReturn.Controls.Add(this.label6);
+            this.panelReturn.Controls.Add(this.rBUnDamaged);
+            this.panelReturn.Controls.Add(this.lbQuestion);
             this.panelReturn.Controls.Add(this.btnScanRFID);
             this.panelReturn.Controls.Add(this.label7);
             this.panelReturn.Controls.Add(this.dGVReturn);
@@ -348,48 +348,79 @@
             this.panelReturn.TabIndex = 20;
             this.panelReturn.Visible = false;
             // 
-            // rBDamaged
-            // 
-            this.rBDamaged.AutoSize = true;
-            this.rBDamaged.Location = new System.Drawing.Point(511, 298);
-            this.rBDamaged.Name = "rBDamaged";
-            this.rBDamaged.Size = new System.Drawing.Size(90, 21);
-            this.rBDamaged.TabIndex = 29;
-            this.rBDamaged.TabStop = true;
-            this.rBDamaged.Text = "Damaged";
-            this.rBDamaged.UseVisualStyleBackColor = true;
-            this.rBDamaged.CheckedChanged += new System.EventHandler(this.rBDamaged_CheckedChanged);
-            // 
-            // rB
-            // 
-            this.rB.AutoSize = true;
-            this.rB.Location = new System.Drawing.Point(331, 298);
-            this.rB.Name = "rB";
-            this.rB.Size = new System.Drawing.Size(64, 21);
-            this.rB.TabIndex = 28;
-            this.rB.TabStop = true;
-            this.rB.Text = "Good";
-            this.rB.UseVisualStyleBackColor = true;
-            // 
             // tBReturnStatus
             // 
-            this.tBReturnStatus.Location = new System.Drawing.Point(331, 346);
+            this.tBReturnStatus.Location = new System.Drawing.Point(331, 363);
             this.tBReturnStatus.Multiline = true;
             this.tBReturnStatus.Name = "tBReturnStatus";
             this.tBReturnStatus.Size = new System.Drawing.Size(270, 78);
             this.tBReturnStatus.TabIndex = 27;
             this.tBReturnStatus.Visible = false;
             // 
-            // label6
+            // lBDamage
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(263, 266);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(408, 19);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "WHAT IS THE STATE OF THE RETURNED ITEM?";
+            this.lBDamage.AutoSize = true;
+            this.lBDamage.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBDamage.Location = new System.Drawing.Point(371, 338);
+            this.lBDamage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lBDamage.Name = "lBDamage";
+            this.lBDamage.Size = new System.Drawing.Size(186, 38);
+            this.lBDamage.TabIndex = 30;
+            this.lBDamage.Text = "Describe the damage here\r\n\r\n";
+            this.lBDamage.Visible = false;
+            // 
+            // rBDamaged
+            // 
+            this.rBDamaged.AutoSize = true;
+            this.rBDamaged.Location = new System.Drawing.Point(481, 299);
+            this.rBDamaged.Name = "rBDamaged";
+            this.rBDamaged.Size = new System.Drawing.Size(90, 21);
+            this.rBDamaged.TabIndex = 29;
+            this.rBDamaged.TabStop = true;
+            this.rBDamaged.Text = "Damaged";
+            this.rBDamaged.UseVisualStyleBackColor = true;
+            this.rBDamaged.Visible = false;
+            this.rBDamaged.CheckedChanged += new System.EventHandler(this.rBDamaged_CheckedChanged);
+            // 
+            // rBUnDamaged
+            // 
+            this.rBUnDamaged.AutoSize = true;
+            this.rBUnDamaged.Location = new System.Drawing.Point(358, 299);
+            this.rBUnDamaged.Name = "rBUnDamaged";
+            this.rBUnDamaged.Size = new System.Drawing.Size(106, 21);
+            this.rBUnDamaged.TabIndex = 28;
+            this.rBUnDamaged.TabStop = true;
+            this.rBUnDamaged.Text = "Undamaged";
+            this.rBUnDamaged.UseVisualStyleBackColor = true;
+            this.rBUnDamaged.Visible = false;
+            this.rBUnDamaged.CheckedChanged += new System.EventHandler(this.rBUnDamaged_CheckedChanged);
+            // 
+            // lbQuestion
+            // 
+            this.lbQuestion.AutoSize = true;
+            this.lbQuestion.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuestion.Location = new System.Drawing.Point(257, 265);
+            this.lbQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbQuestion.Name = "lbQuestion";
+            this.lbQuestion.Size = new System.Drawing.Size(408, 19);
+            this.lbQuestion.TabIndex = 26;
+            this.lbQuestion.Text = "WHAT IS THE STATE OF THE RETURNED ITEM?";
+            this.lbQuestion.Visible = false;
+            // 
+            // btnScanRFID
+            // 
+            this.btnScanRFID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.btnScanRFID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnScanRFID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnScanRFID.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScanRFID.ForeColor = System.Drawing.Color.White;
+            this.btnScanRFID.Location = new System.Drawing.Point(52, 404);
+            this.btnScanRFID.Margin = new System.Windows.Forms.Padding(4);
+            this.btnScanRFID.Name = "btnScanRFID";
+            this.btnScanRFID.Size = new System.Drawing.Size(122, 47);
+            this.btnScanRFID.TabIndex = 25;
+            this.btnScanRFID.Text = "Scan RFID";
+            this.btnScanRFID.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -408,19 +439,19 @@
             this.dGVReturn.AllowUserToDeleteRows = false;
             this.dGVReturn.AllowUserToResizeColumns = false;
             this.dGVReturn.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.dGVReturn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.dGVReturn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVReturn.BackgroundColor = System.Drawing.Color.White;
             this.dGVReturn.CausesValidation = false;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVReturn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVReturn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVReturn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -428,26 +459,26 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.dGVReturn.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVReturn.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVReturn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dGVReturn.Location = new System.Drawing.Point(137, 56);
             this.dGVReturn.Margin = new System.Windows.Forms.Padding(4);
             this.dGVReturn.Name = "dGVReturn";
             this.dGVReturn.ReadOnly = true;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVReturn.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVReturn.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dGVReturn.RowHeadersWidth = 40;
             this.dGVReturn.Size = new System.Drawing.Size(656, 188);
             this.dGVReturn.TabIndex = 23;
@@ -686,19 +717,19 @@
             this.productDataGV.AllowUserToDeleteRows = false;
             this.productDataGV.AllowUserToResizeColumns = false;
             this.productDataGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.productDataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.productDataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.productDataGV.BackgroundColor = System.Drawing.Color.White;
             this.productDataGV.CausesValidation = false;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productDataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productDataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.productDataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productDataGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productID,
@@ -706,26 +737,26 @@
             this.productQty,
             this.productPrice});
             this.productDataGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productDataGV.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.productDataGV.DefaultCellStyle = dataGridViewCellStyle7;
             this.productDataGV.Location = new System.Drawing.Point(126, 54);
             this.productDataGV.Margin = new System.Windows.Forms.Padding(4);
             this.productDataGV.Name = "productDataGV";
             this.productDataGV.ReadOnly = true;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productDataGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productDataGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.productDataGV.RowHeadersWidth = 40;
             this.productDataGV.Size = new System.Drawing.Size(656, 355);
             this.productDataGV.TabIndex = 18;
@@ -913,33 +944,6 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // lBDamage
-            // 
-            this.lBDamage.AutoSize = true;
-            this.lBDamage.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBDamage.Location = new System.Drawing.Point(368, 322);
-            this.lBDamage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lBDamage.Name = "lBDamage";
-            this.lBDamage.Size = new System.Drawing.Size(186, 38);
-            this.lBDamage.TabIndex = 30;
-            this.lBDamage.Text = "Describe the damage here\r\n\r\n";
-            this.lBDamage.Visible = false;
-            // 
-            // btnScanRFID
-            // 
-            this.btnScanRFID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.btnScanRFID.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnScanRFID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnScanRFID.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScanRFID.ForeColor = System.Drawing.Color.White;
-            this.btnScanRFID.Location = new System.Drawing.Point(161, 401);
-            this.btnScanRFID.Margin = new System.Windows.Forms.Padding(4);
-            this.btnScanRFID.Name = "btnScanRFID";
-            this.btnScanRFID.Size = new System.Drawing.Size(122, 47);
-            this.btnScanRFID.TabIndex = 25;
-            this.btnScanRFID.Text = "Scan RFID";
-            this.btnScanRFID.UseVisualStyleBackColor = false;
-            // 
             // LoanAppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1026,7 +1030,7 @@
         private System.Windows.Forms.Label lbRFID;
         private System.Windows.Forms.Button btnChekout;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelReturn;
         private System.Windows.Forms.Panel panelInventory;
@@ -1052,10 +1056,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tBReturnStatus;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbQuestion;
         private System.Windows.Forms.Label succAdded;
         private System.Windows.Forms.RadioButton rBDamaged;
-        private System.Windows.Forms.RadioButton rB;
+        private System.Windows.Forms.RadioButton rBUnDamaged;
         private System.Windows.Forms.Label lBDamage;
         private System.Windows.Forms.Button btnScanRFID;
     }

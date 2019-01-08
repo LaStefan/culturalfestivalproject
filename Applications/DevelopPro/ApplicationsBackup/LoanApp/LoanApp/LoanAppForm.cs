@@ -149,16 +149,26 @@ namespace LoanApp
             panelInventory.Hide();
             panelReturn.Dock = DockStyle.Fill;
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnInventory_Click(object sender, EventArgs e)
         {
-            sideBar.Height = button2.Height;
-            sideBar.Top = button2.Top;
+            sideBar.Height = btnInventory.Height;
+            sideBar.Top = btnInventory.Top;
             panelLoan.Hide();
             panelItem.Hide();
             panelReturn.Hide();
             panelInventory.Show();
             panelInventory.Dock = DockStyle.Fill;
+            inventory = null;
+            succAdded.Visible = false;
+            numericUPInventory.Value = 0;
+            pbLightIn.BorderStyle = BorderStyle.Fixed3D;
+            pBcameraIn.BorderStyle = BorderStyle.None;
+            pbPhoneIn.BorderStyle = BorderStyle.None;
+            pbBlanketIn.BorderStyle = BorderStyle.None;
+            pbmattressIn.BorderStyle = BorderStyle.None;
+            pbChargerIn.BorderStyle = BorderStyle.None;
+            pbLightIn.BorderStyle = BorderStyle.None;
+
         }
 
         private bool CheckForm(Form form)
@@ -328,6 +338,12 @@ namespace LoanApp
         {
             tBReturnStatus.Visible = true;
             lBDamage.Visible = true;
+        }
+
+        private void rBUnDamaged_CheckedChanged(object sender, EventArgs e)
+        {
+            tBReturnStatus.Visible = false;
+            lBDamage.Visible = false;
         }
 
     }
