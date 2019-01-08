@@ -467,6 +467,7 @@ namespace shopApp
                         c.Balance -= totalPrice;
                         MessageBox.Show("Thank you for the purchase." +
                             "Come again!");
+
                     }
                     else
                     {
