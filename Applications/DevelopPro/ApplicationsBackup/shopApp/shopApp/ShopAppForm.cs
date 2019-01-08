@@ -22,6 +22,7 @@ namespace shopApp
        Product myProduct;
         decimal totalPrice=0;
         Shop myShop;
+        List<Customer> customers;
         
         public ShopAppForm()
         {
@@ -43,6 +44,7 @@ namespace shopApp
             panelDrinks.Visible = false;
             panelFood.Visible = false;
             panelPay.Visible = false;
+            customers = myShop.GetCustomers();
         }
         /// <summary>
         /// 
@@ -456,7 +458,7 @@ namespace shopApp
         //rfid tag reader
         private void MyRFIDReader_Tag(object sender, RFIDTagEventArgs e)
         {
-            foreach (Customer c in myShop.GetCustomers())
+            foreach (Customer c in customers)
             {
                 if (c.TagId == e.Tag)
                 {
@@ -465,8 +467,14 @@ namespace shopApp
                         //change balance and stock
                         myShop.MyData.ChangeBalance(e.Tag, totalPrice, c.Balance);
                         c.Balance -= totalPrice;
-                        MessageBox.Show("Thank you for the purchase." +
-                            "Come again!");
+                        //MessageBox.Show("Thank you for the purchase." +"Come again!");
+                            
+                        myRFIDReader.Close();
+                        textBox1.Clear();
+                        productDataGV.Enabled = true;
+                        lbRfidCode.Text = "";
+                        totalPrice = 0;
+                        productDataGV.Rows.Clear();
 
                     }
                     else
@@ -486,6 +494,7 @@ namespace shopApp
                 productDataGV.Rows.Add(myProduct.ProductName, myProduct.Stock.ToString(), myProduct.ProductPrice.ToString(), pq.quantity);
                 decimal price = myProduct.ProductPrice * pq.quantity;
                 totalPrice += price;
+                textBox1.Text = Convert.ToString(totalPrice);
             }       
            pq.FormClosed -= new FormClosedEventHandler(productForm_FormClosed);
         }
@@ -541,22 +550,6 @@ namespace shopApp
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                myRFIDReader.Close();
-                textBox1.Clear();
-                productDataGV.Enabled = true;
-                lbRfidCode.Text = "";
-                totalPrice = 0;
-                productDataGV.Rows.Clear();
-
-            }
-            catch (PhidgetException)
-            {
-                MessageBox.Show("Could not startup!");
-            }
-        }
+       
     }
 }

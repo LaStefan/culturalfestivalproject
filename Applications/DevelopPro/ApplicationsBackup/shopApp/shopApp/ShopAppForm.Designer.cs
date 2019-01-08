@@ -46,7 +46,12 @@
             this.panelFood = new System.Windows.Forms.Panel();
             this.panelDrinks = new System.Windows.Forms.Panel();
             this.panelPay = new System.Windows.Forms.Panel();
+            this.lbRfidCode = new System.Windows.Forms.Label();
             this.productDataGV = new System.Windows.Forms.DataGridView();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelTotal = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
@@ -84,12 +89,6 @@
             this.picBalls = new System.Windows.Forms.PictureBox();
             this.picHam = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbRfidCode = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -331,7 +330,6 @@
             // 
             // panelPay
             // 
-            this.panelPay.Controls.Add(this.button1);
             this.panelPay.Controls.Add(this.lbRfidCode);
             this.panelPay.Controls.Add(this.productDataGV);
             this.panelPay.Controls.Add(this.textBox1);
@@ -344,6 +342,15 @@
             this.panelPay.Name = "panelPay";
             this.panelPay.Size = new System.Drawing.Size(761, 399);
             this.panelPay.TabIndex = 10;
+            // 
+            // lbRfidCode
+            // 
+            this.lbRfidCode.AutoSize = true;
+            this.lbRfidCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRfidCode.Location = new System.Drawing.Point(104, 3);
+            this.lbRfidCode.Name = "lbRfidCode";
+            this.lbRfidCode.Size = new System.Drawing.Size(0, 16);
+            this.lbRfidCode.TabIndex = 12;
             // 
             // productDataGV
             // 
@@ -359,6 +366,27 @@
             this.productDataGV.Size = new System.Drawing.Size(491, 270);
             this.productDataGV.TabIndex = 9;
             this.productDataGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productDataGV_CellContentClick);
+            // 
+            // productName
+            // 
+            this.productName.HeaderText = "Name";
+            this.productName.Name = "productName";
+            this.productName.Width = 150;
+            // 
+            // productStock
+            // 
+            this.productStock.HeaderText = "In stock";
+            this.productStock.Name = "productStock";
+            // 
+            // productPrice
+            // 
+            this.productPrice.HeaderText = "Price";
+            this.productPrice.Name = "productPrice";
+            // 
+            // prodQty
+            // 
+            this.prodQty.HeaderText = "Quantity";
+            this.prodQty.Name = "prodQty";
             // 
             // textBox1
             // 
@@ -785,49 +813,6 @@
             this.toolTip1.SetToolTip(this.picHam, "Burgers");
             this.picHam.Click += new System.EventHandler(this.picHam_Click);
             // 
-            // productName
-            // 
-            this.productName.HeaderText = "Name";
-            this.productName.Name = "productName";
-            this.productName.Width = 150;
-            // 
-            // productStock
-            // 
-            this.productStock.HeaderText = "In stock";
-            this.productStock.Name = "productStock";
-            // 
-            // productPrice
-            // 
-            this.productPrice.HeaderText = "Price";
-            this.productPrice.Name = "productPrice";
-            // 
-            // prodQty
-            // 
-            this.prodQty.HeaderText = "Quantity";
-            this.prodQty.Name = "prodQty";
-            // 
-            // lbRfidCode
-            // 
-            this.lbRfidCode.AutoSize = true;
-            this.lbRfidCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRfidCode.Location = new System.Drawing.Point(104, 3);
-            this.lbRfidCode.Name = "lbRfidCode";
-            this.lbRfidCode.Size = new System.Drawing.Size(0, 16);
-            this.lbRfidCode.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(20, 357);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 35);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "new order";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ShopAppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -951,7 +936,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn prodQty;
         private System.Windows.Forms.Label lbRfidCode;
-        private System.Windows.Forms.Button button1;
     }
 }
 

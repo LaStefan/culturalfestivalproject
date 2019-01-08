@@ -59,6 +59,19 @@ namespace DevelopPro
             }
             return nr;
         }
+        public int GetVisitorNumberInsideEvent()
+        {
+            int nr = 0;
+            List<Customer> temp = GetCustomers();
+            foreach(Customer c in temp)
+            {
+                if(c.Status=="Checked")
+                {
+                    nr++;
+                }
+            }
+            return nr;
+        }
         public bool CheckCustomer(int id)
         {
             String sql = "SELECT CustomerId FROM customer";
