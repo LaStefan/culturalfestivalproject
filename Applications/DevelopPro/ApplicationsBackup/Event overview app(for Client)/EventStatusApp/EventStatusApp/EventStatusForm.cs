@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevelopPro;
+using Reservation;
 using Phidget22.Events;
 using Phidget22;
 
@@ -69,6 +70,18 @@ namespace EventStatusApp
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnCamp_Click(object sender, EventArgs e)
+        {
+            DatabaseConnector databaseConnector = new DatabaseConnector();
+            List<CampingSite> temp = databaseConnector.GetAllCampingSites();
+            lbOverview.Items.Clear();
+            lbOverview.Items.Add("Free - 0, Booked - 1");
+            foreach(CampingSite c in temp)
+            {
+                lbOverview.Items.Add("CampingSite Id: " + c.CampingId + ", Free or Not: " + c.Status);
+            }
         }
     }
 }

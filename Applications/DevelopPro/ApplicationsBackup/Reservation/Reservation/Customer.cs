@@ -14,6 +14,7 @@ namespace Reservation
         private string ticketType;
         private string status;
         private string campId;
+        private string tagId;
 
         public string Fname
         {
@@ -51,8 +52,14 @@ namespace Reservation
             set { campId = value; }
         }
 
-        
-        public Customer(string fname, string lname, decimal balance, string ticketType, string status, string campId)
+        public string TagId
+        {
+            get { return tagId; }
+            set { tagId = value; }
+        }
+
+
+        public Customer(string fname, string lname, decimal balance, string ticketType, string status, string campId, string tagId)
         {
             this.fname = fname;
             this.lname = lname;
@@ -60,6 +67,7 @@ namespace Reservation
             this.ticketType = ticketType;
             this.status = status;
             this.campId = campId;
+            this.tagId = tagId;
         }
     }
 }

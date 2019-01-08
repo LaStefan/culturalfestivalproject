@@ -91,6 +91,10 @@
       <Project>{485aa1f0-4646-4a2a-89f3-b13c5405e073}</Project>
       <Name>DevelopPro</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Reservation\Reservation\CampReservation.csproj">
+      <Project>{04b7b24c-1256-43c1-aa03-c08734187a45}</Project>
+      <Name>CampReservation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

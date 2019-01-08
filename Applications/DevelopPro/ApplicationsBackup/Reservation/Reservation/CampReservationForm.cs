@@ -20,19 +20,20 @@ namespace Reservation
         List<CampingSite> campingSites;
         List<RadioButton> rbuttons;
         Dictionary<int, RadioButton> dic;
+        Dictionary<int, Customer> customerDic;
         List<CheckBox> checkBoxes;
-        string tagId;
         
+        string tagId;
+        int count = 1;
 
         public CampReservationForm()
         {
             InitializeComponent();
             campingSites = new List<CampingSite>();
             dbConnect = new DatabaseConnector();
-        
+            
+            customerDic = new Dictionary<int, Customer>();
             campingSites =dbConnect.GetAllCampingSites();
-          
-            //lbShow.Items.Add(campingSites.Count);
             rbuttons = new List<RadioButton>();
 
             rbuttons.Add(rb1);
@@ -106,6 +107,30 @@ namespace Reservation
             return null;
         }
 
+        private Customer GetFirstCustomer()
+        {
+            foreach(KeyValuePair<int, Customer> d in customerDic)
+            {
+                if (d.Key == 1)
+                    return d.Value;
+            }
+            return null;
+        }
+
+        private List<Customer> GetRestCustomers()
+        {
+            List<Customer> customers = new List<Customer>();
+            foreach(KeyValuePair<int, Customer> d in customerDic)
+            {
+                if(d.Key > 1)
+                {
+                    customers.Add(d.Value);                   
+                }
+                
+            }
+            return customers;
+        }
+
         private int GetIdbyRb(RadioButton b)
         {
             foreach (KeyValuePair<int, RadioButton> d in dic)
@@ -130,27 +155,22 @@ namespace Reservation
 
         private void Reader_Tag(object sender, RFIDTagEventArgs e)
         {
-            Customer customer = dbConnect.GetInfo(e.Tag);
-            //string c = dbConnect.GetInfo(e.Tag);
-            //textBox1.Text = c;
+            
+            Customer customer = dbConnect.GetInfo(e.Tag);                     
             lbshowCus.Items.Add("Name: "+ customer.Fname+" "+customer.Lname);
             lbshowCus.Items.Add("Balance: " + customer.Balance);
             lbshowCus.Items.Add("Ticket Type: " + customer.TicketType);
             lbshowCus.Items.Add("Status: " + customer.Status);
             lbshowCus.Items.Add("CampingSite Id: " + customer.CampId);
-            tagId = e.Tag;
+            //tagId = e.Tag;
+            tagId = customer.TagId;
+            customerDic.Add(count, customer);
+            count++;
         }
 
         private void Reader_TagLost(object sender, RFIDTagLostEventArgs e)
         {
-            //if (reservationCheck)
-            //{
-            //    lbShow.Items.Add("Thanks for your reservation!");
-            //}
-            //else
-            //{
-            //    lbShow.Items.Add("Reservation cancelled!");
-            //}
+            
         }
 
         private string GetDate()
@@ -195,8 +215,14 @@ namespace Reservation
                                 {
                                     if (UpdateBalance() >= 0)
                                     {
+                                        Customer firstCustomer = GetFirstCustomer();
+                                        List<Customer> temp = GetRestCustomers();
                                         dbConnect.ReserveCamp(id, GetDate());
-                                        dbConnect.UpdateCampId(id, tagId, UpdateBalance());
+                                        dbConnect.UpdateCampIdAndBalanceByTagId(id, firstCustomer.TagId, UpdateBalance());
+                                        foreach(Customer cus in temp)
+                                        {
+                                            dbConnect.UpdateCampIdByTagId(id, cus.TagId);
+                                        }
                                         b.BackColor = Color.Red;
                                         lbShow.Items.Add("You have successfully registered Campingsite " + c.CampingId);
                                         lbShow.Items.Add("Camping maximum for " + c.CampingType);
@@ -251,13 +277,19 @@ namespace Reservation
                     id = GetIdbyRb(b);
                 }
             }
-            decimal balance = dbConnect.GetBalanceByTag(tagId);
-
+            Customer c = GetFirstCustomer();
+            //decimal balance = dbConnect.GetBalanceByTag(tagId);
+            decimal balance = c.Balance;
             int price = dbConnect.GetPriceByCampId(id);
 
             decimal balance2 = balance - Convert.ToDecimal(price);
 
             return balance2;
+        }
+
+        private void btClear2_Click(object sender, EventArgs e)
+        {
+            lbshowCus.Items.Clear();
         }
     }
 }

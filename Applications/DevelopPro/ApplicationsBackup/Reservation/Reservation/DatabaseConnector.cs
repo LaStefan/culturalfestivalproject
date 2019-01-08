@@ -12,7 +12,7 @@ namespace Reservation
     public class DatabaseConnector
     {
         private MySqlConnection connectionToDB;   
-
+        
         public DatabaseConnector()
         {
             String connectionInfo = "Server=studmysql01.fhict.local;" +
@@ -118,8 +118,7 @@ namespace Reservation
         }
 
         public Customer GetInfo(string tag)
-        {
-            string holder="";
+        {           
             String fname = "";
             String lname = "";
             String email = "";
@@ -127,7 +126,8 @@ namespace Reservation
             String ticket = "";
             String status = "";
             String campId = "";
-            String sql = "SELECT CustomerId, FirstName, LastName,Email,Balance,TicketType,Status, CampingSiteId FROM customer WHERE TagId=@tag";
+            String tagId = "";
+            String sql = "SELECT CustomerId, FirstName, LastName,Email,Balance,TicketType,Status, CampingSiteId, TagId FROM customer WHERE TagId=@tag";
             MySqlCommand command = new MySqlCommand(sql, connectionToDB);
             command.Parameters.AddWithValue("@tag", tag);
             try
@@ -144,11 +144,7 @@ namespace Reservation
                     ticket = Convert.ToString(reader["TicketType"]);
                     status = Convert.ToString(reader["Status"]);
                     campId = Convert.ToString(reader["CampingSiteId"]);
-                //    holder = "Person: " + fname + " " + lname + "  Balance: " + balance + " " +
-                //"  Ticket type: " + ticket + " " +
-                //"  Status: " + status + ", CampingSiteId:" + campId;
-                //    return holder;
-                    
+                    tagId = Convert.ToString(reader["TagId"]);
                 }
 
             }
@@ -160,7 +156,7 @@ namespace Reservation
             {
                 connectionToDB.Close();
             }
-            Customer customer = new Customer(fname, lname, balance, ticket, status, campId);
+            Customer customer = new Customer(fname, lname, balance, ticket, status, campId, tagId);
             
 
             return customer;
@@ -235,13 +231,35 @@ namespace Reservation
 
         }
 
-        public void UpdateCampId(int campId, string tagId, decimal balance)
+        public void UpdateCampIdAndBalanceByTagId(int campId, string tagId, decimal balance)
         {
             string sql = "UPDATE customer SET CampingSiteId=@campId, Balance=@balance WHERE TagId=@tagId";
             MySqlCommand command = new MySqlCommand(sql, connectionToDB);
             command.Parameters.AddWithValue("@campId", campId);
             command.Parameters.AddWithValue("@tagId", tagId);
             command.Parameters.AddWithValue("@balance", balance);
+            try
+            {
+                int update;
+                connectionToDB.Open();
+                update = command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                connectionToDB.Close();
+            }
+        }
+
+        public void UpdateCampIdByTagId(int campId, string tagId)
+        {
+            string sql = "UPDATE customer SET CampingSiteId=@campId WHERE TagId=@tagId";
+            MySqlCommand command = new MySqlCommand(sql, connectionToDB);
+            command.Parameters.AddWithValue("@campId", campId);
+            command.Parameters.AddWithValue("@tagId", tagId);
             try
             {
                 int update;

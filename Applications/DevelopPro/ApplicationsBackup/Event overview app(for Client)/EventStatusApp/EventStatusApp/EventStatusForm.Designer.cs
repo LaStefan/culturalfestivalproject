@@ -37,9 +37,9 @@
             this.btnMoneySpent = new System.Windows.Forms.Button();
             this.btnCurrentStatus = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.CHECK.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,20 +76,21 @@
             this.btnCamp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnCamp.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCamp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCamp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCamp.Location = new System.Drawing.Point(60, 262);
             this.btnCamp.Name = "btnCamp";
             this.btnCamp.Size = new System.Drawing.Size(161, 56);
             this.btnCamp.TabIndex = 5;
             this.btnCamp.Text = "Camping Status";
             this.btnCamp.UseVisualStyleBackColor = false;
+            this.btnCamp.Click += new System.EventHandler(this.btnCamp_Click);
             // 
             // btnBalance
             // 
             this.btnBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnBalance.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBalance.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBalance.Location = new System.Drawing.Point(60, 141);
             this.btnBalance.Name = "btnBalance";
             this.btnBalance.Size = new System.Drawing.Size(161, 56);
@@ -103,7 +104,7 @@
             this.btnTotalVisitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnTotalVisitors.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnTotalVisitors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTotalVisitors.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotalVisitors.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTotalVisitors.Location = new System.Drawing.Point(60, 82);
             this.btnTotalVisitors.Name = "btnTotalVisitors";
             this.btnTotalVisitors.Size = new System.Drawing.Size(161, 56);
@@ -117,7 +118,7 @@
             this.btnMoneySpent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnMoneySpent.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnMoneySpent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMoneySpent.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoneySpent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoneySpent.Location = new System.Drawing.Point(60, 200);
             this.btnMoneySpent.Name = "btnMoneySpent";
             this.btnMoneySpent.Size = new System.Drawing.Size(161, 56);
@@ -130,7 +131,7 @@
             this.btnCurrentStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.btnCurrentStatus.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCurrentStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCurrentStatus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCurrentStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCurrentStatus.Location = new System.Drawing.Point(60, 23);
             this.btnCurrentStatus.Name = "btnCurrentStatus";
             this.btnCurrentStatus.Size = new System.Drawing.Size(161, 56);
@@ -150,13 +151,27 @@
             this.panel1.Size = new System.Drawing.Size(676, 41);
             this.panel1.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(551, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 29);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "x";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(193, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 25);
+            this.label1.Size = new System.Drawing.Size(270, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Event Status Application";
             // 
@@ -169,20 +184,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(551, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 29);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "x";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // EventStatusForm
             // 

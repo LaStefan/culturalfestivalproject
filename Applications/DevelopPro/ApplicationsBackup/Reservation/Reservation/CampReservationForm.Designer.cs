@@ -55,6 +55,7 @@
             this.ckNight3 = new System.Windows.Forms.CheckBox();
             this.btClear = new System.Windows.Forms.Button();
             this.lbshowCus = new System.Windows.Forms.ListBox();
+            this.btClear2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -355,7 +356,7 @@
             // 
             // btClear
             // 
-            this.btClear.Location = new System.Drawing.Point(543, 366);
+            this.btClear.Location = new System.Drawing.Point(543, 362);
             this.btClear.Name = "btClear";
             this.btClear.Size = new System.Drawing.Size(51, 23);
             this.btClear.TabIndex = 54;
@@ -373,12 +374,23 @@
             this.lbshowCus.Size = new System.Drawing.Size(263, 132);
             this.lbshowCus.TabIndex = 55;
             // 
+            // btClear2
+            // 
+            this.btClear2.Location = new System.Drawing.Point(224, 377);
+            this.btClear2.Name = "btClear2";
+            this.btClear2.Size = new System.Drawing.Size(51, 23);
+            this.btClear2.TabIndex = 56;
+            this.btClear2.Text = "Clear";
+            this.btClear2.UseVisualStyleBackColor = true;
+            this.btClear2.Click += new System.EventHandler(this.btClear2_Click);
+            // 
             // CampReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(899, 480);
+            this.Controls.Add(this.btClear2);
             this.Controls.Add(this.lbshowCus);
             this.Controls.Add(this.btClear);
             this.Controls.Add(this.ckNight3);
@@ -444,6 +456,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btClear;
         private System.Windows.Forms.ListBox lbshowCus;
+        private System.Windows.Forms.Button btClear2;
     }
 }
 
