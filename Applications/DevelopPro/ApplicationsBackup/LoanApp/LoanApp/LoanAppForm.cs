@@ -87,20 +87,15 @@ namespace LoanApp
         private void pbPhone_Click(object sender, EventArgs e)
         {
             product = db.GetProduct("Mobile Phone");
-           // MessageBox.Show(product.LoanName);
             LoanForm lf = new LoanForm(product, db.listOfItems, this.db);
             lf.ShowDialog();
-
-            // lf.Show();
         }
 
         private void pbUSB_Click(object sender, EventArgs e)
         {
             product = db.GetProduct("Charger");
-           // MessageBox.Show(product.LoanName);
             LoanForm lf = new LoanForm(product, db.listOfItems, this.db);
             lf.ShowDialog();
-
         }
 
         private void pbFlashlight_Click(object sender, EventArgs e)
@@ -197,23 +192,23 @@ namespace LoanApp
 
         private void btnRefund_Click(object sender, EventArgs e)
         {
-            Item temp = (Item)listBox1.SelectedItem;
-            db.RefundBorrowedItem(temp, chipNr);
-            listBox1.Items.Clear();
+            //Item temp = (Item)dGVReturn.SelectedRows;
+            //db.RefundBorrowedItem(temp, chipNr);
+            dGVReturn.Rows.Clear();
             List<Item> lp = db.GetBorrowedProducts(chipNr);
             foreach (var item in lp)
             {
-                listBox1.Items.Add(item);
+                dGVReturn.Rows.Add(item);
             }
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
+            dGVReturn.Rows.Clear();
             List<Item> temp = db.GetBorrowedProducts(chipNr);
             foreach (var item in temp)
             {
-                listBox1.Items.Add(item);
+                dGVReturn.Rows.Add(item);
             }
         }
 
@@ -242,6 +237,7 @@ namespace LoanApp
             pbBlanketIn.BorderStyle = BorderStyle.None;
             pbmattressIn.BorderStyle = BorderStyle.None;
             pbLightIn.BorderStyle = BorderStyle.None;
+            succAdded.Visible = false;
         }
 
 
@@ -255,6 +251,7 @@ namespace LoanApp
             pbBlanketIn.BorderStyle = BorderStyle.None;
             pbmattressIn.BorderStyle = BorderStyle.None;
             pbLightIn.BorderStyle = BorderStyle.None;
+            succAdded.Visible = false;
         }
 
         private void pbPhoneIn_Click(object sender, EventArgs e)
@@ -267,6 +264,7 @@ namespace LoanApp
             pbBlanketIn.BorderStyle = BorderStyle.None;
             pbmattressIn.BorderStyle = BorderStyle.None;
             pbLightIn.BorderStyle = BorderStyle.None;
+            succAdded.Visible = false;
         }
 
         private void pbBlanketIn_Click(object sender, EventArgs e)
@@ -279,6 +277,7 @@ namespace LoanApp
             pbChargerIn.BorderStyle = BorderStyle.None;
             pbmattressIn.BorderStyle = BorderStyle.None;
             pbLightIn.BorderStyle = BorderStyle.None;
+            succAdded.Visible = false;
         }
 
         private void pbmattressIn_Click(object sender, EventArgs e)
@@ -291,6 +290,7 @@ namespace LoanApp
             pbBlanketIn.BorderStyle = BorderStyle.None;
             pbChargerIn.BorderStyle = BorderStyle.None;
             pbLightIn.BorderStyle = BorderStyle.None;
+            succAdded.Visible = false;
         }
 
         private void pbLightIn_Click(object sender, EventArgs e)
@@ -303,6 +303,7 @@ namespace LoanApp
             pbBlanketIn.BorderStyle = BorderStyle.None;
             pbmattressIn.BorderStyle = BorderStyle.None;
             pbChargerIn.BorderStyle = BorderStyle.None;
+            succAdded.Visible = false;
 
         }
 
@@ -312,7 +313,22 @@ namespace LoanApp
             int numericValue = Convert.ToInt32(numericUPInventory.Value);
             db.AddInventory(inventory,numericValue);
             inventory = null;
+            succAdded.Visible = true;
             numericUPInventory.Value = 0;
+            pbLightIn.BorderStyle = BorderStyle.Fixed3D;
+            pBcameraIn.BorderStyle = BorderStyle.None;
+            pbPhoneIn.BorderStyle = BorderStyle.None;
+            pbBlanketIn.BorderStyle = BorderStyle.None;
+            pbmattressIn.BorderStyle = BorderStyle.None;
+            pbChargerIn.BorderStyle = BorderStyle.None;
+            pbLightIn.BorderStyle = BorderStyle.None;
         }
+
+        private void rBDamaged_CheckedChanged(object sender, EventArgs e)
+        {
+            tBReturnStatus.Visible = true;
+            lBDamage.Visible = true;
+        }
+
     }
 }
