@@ -1,21 +1,17 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
     
-<link rel="stylesheet" href="css/stylesTickets.css">    
+<link rel="stylesheet" href="css/stylesProfile.css">    
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> 
-
+    
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>TICKETS</title> 
+
+
+    <title>PROFILE</title> 
     
 </head>
 <header>
@@ -36,57 +32,20 @@
         <li><a id="n2" href="Home.html#2">Countries</a></li>  
         <li><a id="n3"href="Home.html#3">Location</a></li>
         <li><a id="n4" href="Home.html#4">Program</a></li> 
-        <li><a href="tickets.php">Tickets</a></li>
+        <li><a href="#tickets">Tickets</a></li>
         <li class="dropdown">
-          <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Log In<span class="caret"></span></a>
+          <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Log Out<span class="caret"></span></a>
 			<ul id="loginM" class="dropdown-menu">
-
-                <?php if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true): ?>
-
-                    <li>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <form name="loginCustomer" action="backend/components/account/login_validation.php" method="post">
-                                    <div class="formLI">
-                                        <label id="labelIN">
-                                            Email <span id="spanReq" class="req">*</span>
-                                        </label>
-                                        <input id="inputLI" type="email" name="email" placeholder="Email"
-                                               required/>
-                                    </div>
-                                    <div class="formLI">
-                                        <label id="labelIN">
-                                            Password<span id="spanReq" class="req">*</span>
-                                        </label>
-                                        <input id="inputLI" type="password" name="password"
-                                               placeholder="Password"
-                                               required/>
-                                        <p class="forget">Forget Password?</p>
-                                    </div>
-                                    <div class="formLI">
-                                        <button class="buttonLI">Log In</button>
-                                    </div>
+				<li>
+					 <div class="row">
+							<div class="col-md-12">
+							 <form class="form">
+										 <button class="buttonLI">Log Out</button>
+									
                                 </form>
-                            </div>
-                        </div>
-                    </li>
-
-                <?php else: ?>
-
-                    <li>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <form name="logoutCustomer" action="backend/components/account/logout.php" method="post">
-                                    <div class="formLI">
-                                        <button class="buttonLI">Log out</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
-
-                <?php endif ?>
-
+                         </div>
+                    </div>
+				</li>
 			</ul>
         </li> 
           
@@ -98,27 +57,68 @@
 
 <body>
     <br><br>
-<div class="container">
-  <div class="panel-group">
-    <div class="panel panel-default">
-      <div class="panel-heading">MY ACCOUNT</div>
-      <div class="panel-body"> <img src="images/personIcon.png">
-        
-        
-    </div>
-      </div>
-  <br>
-  <div class="row">
-    <div class="col-sm-4" style="background-color:bisque;">MY TICKETS</div>
-    <div class="col-sm-4" style="background-color:skyblue;">MY CAMPING SITE</div>
-    <div class="col-sm-4" style="background-color:pink;">MY BALANCE</div>
+    <div class="profile">
+<div class="containerProfile">
+  <div class="left-content">
+    <img src="images/profile.png" style="display: flex;">
   </div>
-</div>
+  <div class="right-content">
+    <span class="greeting">Hello</span>
+    <h3 class="my-name">
+      <span>Display the name of the person</span>
+    </h3>
+      <br>
+      <div class="detail-infor">
+    <div class="labels">
+      <p>NAME:</p>
+        <br>
+      <p>MY TICKETS:</p>
+        <br>
+      <p>CAMPINGSITE:</p>
+        <br>
+      <p>BALANCE:</p>
+    </div>
+    <div class="infor">
+      <p>Nadya Cheperkova</p>
+        <br>
+      <p>Ticket Type One</p>
+        <br>
+      <p>Spot 8</p>
+        <br>
+      <p>€1234</p>
+    </div>
+  </div>
+  </div>
+    <br>
+         <div class="bottom-content">
+          
+	<a class="button" href="#popup1">Deposit money</a>
 </div>
 
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h3>Fill the amount of money that you want to deposit</h3>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+<input name="money"/>	
+            <p><br></p>
+<p><button id="makeDeposit">Make your deposit</button></p>
+            <p><br></p>
+        </div>
+	</div>
+
+        </div>
+    </div>
+    </div>
+
+    
+    <footer id="footerButtom">
+     <div>&copy;CULTURAL FESTIVAL 2018. All rights reserved. Made by DevelopPro.</div>
+    </footer>
     </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/home.js"></script>
+<script src="js/depositMoney.js"></script>    
 </html>

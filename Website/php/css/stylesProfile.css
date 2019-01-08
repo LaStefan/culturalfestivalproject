@@ -1,0 +1,338 @@
+/* Here starts css for top and navigation bar*/
+header {
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;    
+ 
+}
+body {
+     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(../images/festivalimg7.jpg);
+     opacity:0.8;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+header .navbar-default{
+ background-color: white;
+ border: none;
+ border-bottom: 1px solid rgba(255,255,255,0.3);
+ padding: 25px 60px;
+ font-size: 18px;
+ letter-spacing: 1px;
+
+}
+header .navbar-default .navbar-nav>li>a {
+  color: black;
+  font-size: 16px;
+
+}
+header .navbar-default .navbar-brand{
+ margin-top: -15%;
+}
+header .navbar-default .navbar-nav>li>a:hover{
+    color: #6e9987;
+    cursor: pointer;
+}
+
+/* log in */
+#loginM{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+
+#loginM .bottom{
+    background-color:t;
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+    box-shadow: red;
+}
+
+#loginM .formLI {
+    margin-bottom: 10px;
+}
+
+#inputLI{
+  display: block;
+  width: 100%;
+  height: 70%;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  padding: 5px 10px;
+  outline: 0px;    
+  border: 1px solid  #6e9987;
+  border-radius: 10px;
+}
+
+#labelIN{
+  color: #6e9987;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  pointer-events: none;
+  font-size: 13px;
+}
+#spanReq {
+  margin: 2px;
+  color: red;
+}
+
+.forget{
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-align: right;
+  color:#6e9987;
+  cursor: pointer;
+}
+
+.buttonLI {
+  border: 0;
+  outline: none;
+  width: 40%;
+  border-radius: 10px;
+  padding: 5px 0;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  float: right;
+  background: #6e9987;
+  color: #ffffff;
+  margin-bottom: 5px;    
+
+}
+.buttonLI:hover, .button:focus {
+  background: #99B2B2;;
+}
+/* Here starts css for top and navigation bar*/ 
+
+/* Here starts css for profile */
+
+
+.profile{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+.containerProfile{
+  box-shadow: 0 4px 10px 4px;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0.5,0,0.7)), url(../images/festivalimg7.jpg);       
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 12px 20px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  }
+
+.containerProfile:hover {
+	box-shadow: 0px 0px 40px 16px rgba(153,178,178);
+}
+
+.left-content img{
+  border-radius: 50%;
+  max-width: 60%;
+}
+
+.right-content{
+  margin-top: 5px;
+    font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;    
+  margin-right: 10px;
+  color: ghostwhite;
+}
+
+.greeting{
+  background: #99B2B2;
+  color: white;
+  padding: 6px 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  user-select: none;
+  position: relative;
+}
+
+.greeting:before{
+  content: '';
+  width:0;
+  height:0;
+  border: 6px solid;
+  position: absolute;
+  top: 100%;
+  left:0;
+  border-color: transparent;
+  border-top-color: #99B2B2;
+  border-left-color: #99B2B2;
+}
+
+.my-name{
+  font-weight: 200;  
+  margin-bottom: 0;
+}
+
+.my-name span{
+  font-weight: 400;
+}
+
+.my-website a{
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(15,49,82);
+}
+
+.detail-infor{
+  display: flex;
+  margin-top: 1rem;
+}
+
+.labels{
+  font-weight: 600;
+  margin-right: 2rem;
+}
+
+.bottom-content{
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #99B2B2;
+  width: 100%;
+  padding: 7px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #6e9987;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;     
+  margin: 70px auto;
+  padding: 20px;
+  background: #99B2B2;
+  border-radius: 5px;
+  text-align: center;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #6e9987;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+ text-align: center;
+}
+
+#makeDeposit{
+  background: #99B2B2;
+  font-size: 1em;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif; 
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+    outline: none;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+
+/* Here ends css for deposit money */
+
+
+/*Here starts css for footer*/
+#footerButtom{
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;    
+  text-align: center;
+  background-color: #6e9987;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  z-index: 0;;
+    position: fixed;
+}
+/*Here ends css for footer*/
