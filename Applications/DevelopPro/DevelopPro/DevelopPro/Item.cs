@@ -22,7 +22,7 @@ namespace DevelopPro
 
         public int LoanId { get { return this.loanId; } }
         public string LoanName { get { return this.loanName; } }
-        public decimal Deposit { get { return this.deposit; } }
+        public decimal Deposit { get { return this.deposit; } set { deposit = value; } }
         public int Stock { get { return this.stock; } }
         public int Quantity { get { return this.quantity; } }
         public DateTime StartDate { get { return this.startDate; } }

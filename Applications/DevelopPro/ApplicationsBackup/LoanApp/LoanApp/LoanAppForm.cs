@@ -135,7 +135,7 @@ namespace LoanApp
             if (!CheckForm(pd))
             {
                 pd.Show();
-            }
+            }           
         }
 
 
@@ -148,6 +148,7 @@ namespace LoanApp
             panelReturn.Show();
             panelInventory.Hide();
             panelReturn.Dock = DockStyle.Fill;
+            rfid.Tag += TagAdd;
         }
         private void btnInventory_Click(object sender, EventArgs e)
         {
@@ -202,23 +203,23 @@ namespace LoanApp
 
         private void btnRefund_Click(object sender, EventArgs e)
         {
-            //Item temp = (Item)dGVReturn.SelectedRows;
-            //db.RefundBorrowedItem(temp, chipNr);
-            dGVReturn.Rows.Clear();
-            List<Item> lp = db.GetBorrowedProducts(chipNr);
-            foreach (var item in lp)
-            {
-                dGVReturn.Rows.Add(item);
-            }
+            bool damaged = false;
+            Item temp = null;
+            if(rBUnDamaged.Checked == true) { damaged = false; }
+            else if(rBDamaged.Checked == true) { damaged = true; }
+            temp = ((Item)dGVReturn.CurrentRow.Cells);
+            db.RefundBorrowedItem(temp, chipNr, tBReturnStatus.Text, damaged);
+            
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            dGVReturn.Rows.Clear();
-            List<Item> temp = db.GetBorrowedProducts(chipNr);
-            foreach (var item in temp)
+            if (chipNr != "")
             {
-                dGVReturn.Rows.Add(item);
+                foreach (var item in db.GetBorrowedProducts(chipNr))
+                {
+                    dGVReturn.Rows.Add(item.LoanId.ToString(), item.LoanName, item.StartDate.ToString(), item.Deposit.ToString());
+                }
             }
         }
 
@@ -305,7 +306,7 @@ namespace LoanApp
 
         private void pbLightIn_Click(object sender, EventArgs e)
         {
-            inventory = db.GetProduct("Flashlight");
+            inventory = db.GetProduct("Touch Light");
 
             pbLightIn.BorderStyle = BorderStyle.Fixed3D;
             pBcameraIn.BorderStyle = BorderStyle.None;
@@ -346,5 +347,16 @@ namespace LoanApp
             lBDamage.Visible = false;
         }
 
+        private void btnScanRFID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dGVReturn_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lbQuestion.Visible = true;
+            rBDamaged.Visible = true;
+            rBUnDamaged.Visible = true;
+        }
     }
 }

@@ -421,6 +421,7 @@
             this.btnScanRFID.TabIndex = 25;
             this.btnScanRFID.Text = "Scan RFID";
             this.btnScanRFID.UseVisualStyleBackColor = false;
+            this.btnScanRFID.Click += new System.EventHandler(this.btnScanRFID_Click);
             // 
             // label7
             // 
@@ -482,6 +483,7 @@
             this.dGVReturn.RowHeadersWidth = 40;
             this.dGVReturn.Size = new System.Drawing.Size(656, 188);
             this.dGVReturn.TabIndex = 23;
+            this.dGVReturn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVReturn_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

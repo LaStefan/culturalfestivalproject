@@ -569,7 +569,6 @@ namespace DevelopPro
 
      public List<Item> GetBorrowedProducts(string rfid)
         {
-            conn.Open();
             try
             {
                 conn.Open();
@@ -597,21 +596,27 @@ namespace DevelopPro
             return null;
         }
         
-        public void RefundBorrowedItem(Item p, string rfid)
+        public void RefundBorrowedItem(Item p, string rfid, string description, bool damaged)
         {
             try
             {
+                Customer c = GetCustomer(rfid);
                 conn.Open();
                 string sql = "UPDATE `loan` SET `Stock`= Stock + 1 WHERE LoanId = '" + item.LoanId + "';";
                 MySqlCommand msc = new MySqlCommand(sql, conn);
                 MySqlDataReader mdr = msc.ExecuteReader();
                 mdr.Close();
-                string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" + item.Deposit + "' WHERE TagId = '" + rfid + "';";
-                MySqlCommand msc1 = new MySqlCommand(sql1, conn);
-                MySqlDataReader mdr1 = msc1.ExecuteReader();
-                mdr1.Close();
+                if (damaged == false)
+                {
+                    item.Deposit *= 0.25;
+                    string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" + item.Deposit + "' WHERE TagId = '" + rfid + "';";
+                    MySqlCommand msc1 = new MySqlCommand(sql1, conn);
+                    MySqlDataReader mdr1 = msc1.ExecuteReader();
+                    mdr1.Close();
+                }
                 int customerId = FindCustomerId(rfid);
-                string sql2 = "DELETE FROM `loanitem` WHERE CustomerId = " + customerId + " AND LoanId = " + item.LoanId + ";";
+                string sql2 = "UPDATE `loanitem`" +
+                    " SET `ReturnDate`=sysdate(),`StateReturned`= '" + description + "' , WHERE CustomerId = " + c.Id + " AND LoanId = " + p.LoanId +";";
                 MySqlCommand msc2 = new MySqlCommand(sql2, conn);
                 MySqlDataReader mdr2 = msc2.ExecuteReader();
                 mdr2.Close();
