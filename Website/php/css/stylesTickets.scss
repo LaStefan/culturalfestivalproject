@@ -25,6 +25,14 @@ header .navbar-default .navbar-nav>li>a {
   font-size: 16px;
 
 }
+.whitetext {
+  color:white;
+}
+
+#successMessage {
+  display:none;
+}
+
 header .navbar-default .navbar-brand{
  margin-top: -15%;
 }
@@ -41,7 +49,7 @@ header .navbar-default .navbar-nav>li>a:hover{
 }
 
 #loginM .bottom{
-    background-color:t;
+    //background-color:t;
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
@@ -311,7 +319,7 @@ a:hover {
     width: 150px;
     height: 30px;
     background-color: transparent;
-    border: 2px solid 0px 0px 40px 16px rgba(153,178,178);
+   // border: 2px solid 0px 0px 40px 16px rgba(153,178,178);
     color: white;
     font-size: 10px;
     font-weight: bold;
@@ -784,7 +792,7 @@ a:hover {
 }
 
 #progressAcc li.active:before,  #progressAcc li.active:after{
-	background: @secondary-color;
+	//background: @secondary-color;
 	color: white;
 }
 

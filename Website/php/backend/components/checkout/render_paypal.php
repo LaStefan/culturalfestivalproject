@@ -53,7 +53,7 @@ if (!empty($_SESSION['cart'])) {
             $html .= "<li class=\"paypal__cart-item\" id='paypal_item_nr". $key ."'>
                             <span class=\"paypal__index\">" . $cartItem['quantity'] . " x</span>
                             <span class=\"paypal__item-name\">" . $ticketName . "</span>
-                            <span class=\"paypal__item-price\">" . $ticketPrice * $cartItem['quantity'] . "</span>
+                            <span class=\"paypal__item-price\">&euro;" . $ticketPrice * $cartItem['quantity'] . "</span>
                             <button class=\"removeCartItem\" onclick='removeCartItem(" . $key . ")'>Remove</button>
                         </li>";
 
@@ -64,7 +64,7 @@ if (!empty($_SESSION['cart'])) {
             $html .= "<li class=\"paypal__cart-item\" id='paypal_item_nr" . $key . "'>
                             <span class=\"paypal__index\">1 x</span>
                             <span class=\"paypal__item-name\">" . "Campingspot nr " . $cartItem['cpId'] . "</span>
-                            <span class=\"paypal__item-price\">" . $cartItem['cpPrice'] . "</span>
+                            <span class=\"paypal__item-price\">&euro;" . $cartItem['cpPrice'] . "</span>
                             <button class=\"removeCartItem\" onclick='removeCartItem(\"" . $key . "\")'>Remove</button>
                         </li>";
 
@@ -83,7 +83,7 @@ if (!empty($_SESSION['cart'])) {
 $html .= "
 <li class=\"paypal__cart-item\" id='totalPrice'>
                             <span class=\"paypal__item-name\">TotalPrice</span>
-                            <span id=\"totalPriceField\" class=\"paypal__item-price\">" . (!empty($totalprice) ? $totalprice : 0 ). "</span>
+                            <span id=\"totalPriceField\" class=\"paypal__item-price\">&euro;" . (!empty($totalprice) ? $totalprice : 0 ). "</span>
                         </li>
 
 </ul>

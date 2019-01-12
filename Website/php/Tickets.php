@@ -5,7 +5,7 @@
 <html>
 <head>
 
-    <link rel="stylesheet" href="css/stylesTickets.css">
+    <link rel="stylesheet" href="css/stylesTickets.scss">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
@@ -14,6 +14,8 @@
     <script type="text/javascript" src="js/checkout.js"></script>
     <script type="text/javascript" src="js/RegisterPeople.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+
+
 
     <title>TICKETS</title>
 
@@ -34,14 +36,13 @@
             </div>
             <div id="navbar" href="#0" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a id="n1" href="Home.html">About</a></li>
-                    <li><a id="n2" href="Home.html#2">Countries</a></li>
-                    <li><a id="n3" href="Home.html#3">Location</a></li>
-                    <li><a id="n4" href="Home.html#4">Program</a></li>
+                    <li><a id="n1" href="Home.php">About</a></li>
+                    <li><a id="n2" href="Home.php#2">Countries</a></li>
+                    <li><a id="n3" href="Home.php#3">Location</a></li>
+                    <li><a id="n4" href="Home.php#4">Program</a></li>
                     <li><a href="Tickets.php">Tickets</a></li>
                     <li class="dropdown">
-                        <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Log
-                            In<span class="caret"></span></a>
+                        <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Account<span class="caret"></span></a>
                         <ul id="loginM" class="dropdown-menu">
 
                             <?php if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true): ?>
@@ -132,11 +133,11 @@
                 <div class="reserveTickets">
                     <div class="reserveForm">
                         <div class="form-group">
-                            <input class="formControl pick-date-one" type="date" id="dateOne" required>
+                            <input class="formControl pick-date-one" type="date" id="dateOne" min="2019-01-18" max="2019-01-20" required>
                             <span class="form-label">Date</span>
                         </div>
                         <div class="form-group pick-date-two">
-                            <input class="formControl" type="date" id="dateTwo" required>
+                            <input type="date" class="formControl" min="2019-01-18" max="2019-01-20" id="dateTwo"  required>
                             <span class="form-label">Second Date</span>
                         </div>
                         <div class="form-group">
@@ -157,7 +158,7 @@
 
                 </div>
 
-                <div class='successMessage'>
+                <div class='whitetext' id="successMessage">
                     <p>Tickets successfully added to cart</p>
                 </div>
 
@@ -335,6 +336,25 @@
             </div>
         </figure>
 
+        <!-- Panel 7 -->
+        <figure id="Panels">
+            <div class="whitetext">
+
+                <h4>Reservation Details</h4><br>
+                <p><?php
+                    // echo 'Hello '.$_SESSION['firstnameofguest'].',';
+                    ?></p><br>
+                <p>Thank you for showing interest in our festival.</p><br>
+                <p>We have just sent you an email with details about how to make a reservation. </p><br>
+                <p>An event account has been created for you with the login details to manage your information, you will
+                    find the details included in your mail.
+                <p>Please check your email </p><br><br>
+
+                <p>Looking Forward to welcoming you to the European Cultural Event.</p><br><br>
+
+                <p>Thanks....</p>
+            </div>
+        </figure>
 
     </div>
 </section>

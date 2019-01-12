@@ -8,50 +8,77 @@ function Agree() {
 }
 
 function Disagree() {
-    console.log(41)
     this.check = false;
 }
 
-$(".nextMain").click(function(){
-	if(animating) return false;
-	animating = true;
-	current_fs = $(this).parent();
-	next_fs = $(this).parent().next();
 
-	$("#progress li").eq($("figure").index(next_fs)).addClass("active");
+$(".nextMain").click(function(){
+
+    if(animating) return false;
+    animating = true;
+    current_fs = $(this).parent();
+    next_fs = $(this).parent().next();
+
+    $("#progress li").eq($("figure").index(next_fs)).addClass("active");
 
     if(check == true){
-	next_fs.show(); 
+        next_fs.show();
     }
     else {
         current_fs = $(this).parent();
         next_fs = $(this).parent().next().next();
         next_fs.show();
-        	$("#progress li").eq($("figure").index(next_fs)).addClass("active");
-
+        $("#progress li").eq($("figure").index(next_fs)).addClass("active");
     }
+
     check = true;
-	current_fs.animate({opacity: 0}, {
-		step: function(now, mx) {
-			scale = 1 - (1 - now) * 0.2;
-			left = (now * 50)+"%";
-			opacity = 1 - now;
-			current_fs.css({
-        'transform': 'scale('+scale+')',
-        'position': 'absolute'
-      });
-			next_fs.css({'left': left, 'opacity': opacity});
-		}, 
-		duration: 2, 
-		complete: function(){
-			current_fs.hide();
-			animating = false;
-		}, 
-		easing: 'easeInOutBack'
-	});
+    current_fs.animate({opacity: 0}, {
+        step: function(now, mx) {
+            scale = 1 - (1 - now) * 0.2;
+            left = (now * 50)+"%";
+            opacity = 1 - now;
+            current_fs.css({
+                'transform': 'scale('+scale+')',
+                'position': 'absolute'
+            });
+            next_fs.css({'left': left, 'opacity': opacity});
+        },
+        duration: 2,
+        complete: function(){
+            current_fs.hide();
+            animating = false;
+        },
+        easing: 'easeInOutBack'
+    });
+
 });
 
 
+$("#nextOne").click(function(){
+
+    $.ajax({
+        type:"GET",
+        url: 'backend/components/checkout/get_total_tickets.php',
+        success: function(response) {
+
+			if(response === "false") {
+			    alert("Please select a ticket.");
+                window.location.replace("./Tickets.php");
+			} else {
+
+                $.ajax({
+                    type:"GET",
+                    url: 'backend/components/checkout/camping_spot_necessary.php',
+                    success: function(response) {
+                        if (response === "false"){
+
+                        }
+                    }
+                });
+            }
+        }
+    });
+});
 
 $(".previousMain").click(function(){
 	if(animating) return false;
@@ -82,4 +109,4 @@ $(".previousMain").click(function(){
 
 $(".submit").click(function(){
 	return false;
-})
+});

@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 
+
+
     // after the next button is clicked, render the paypalpanel
     $(".nextMain").click(function() {
         $.ajax({
@@ -49,7 +51,7 @@ $( document ).ready(function() {
                          url:'backend/components/checkout/save_session_to_cart.php',
                          complete: function() {
                              $('.reserveTickets').hide();
-                             $('.successMessage').show();
+                             $('#successMessage').show();
                          }
                      });
 

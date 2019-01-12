@@ -5,7 +5,7 @@
 <html>
 <head>
     
-<link rel="stylesheet" href="css/styles.css">    
+<link rel="stylesheet" href="css/styles.scss">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">   
@@ -38,7 +38,7 @@
         <li><a id="n5" href="#4">Location</a></li>   
         <li><a href="Tickets.php">Tickets</a></li>
         <li class="dropdown">
-          <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Log In<span class="caret"></span></a>
+          <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Account<span class="caret"></span></a>
 			<ul id="loginM" class="dropdown-menu">
 
                 <?php if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true): ?>

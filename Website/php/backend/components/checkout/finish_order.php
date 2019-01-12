@@ -16,6 +16,8 @@ if (validatePayment()){
 
     $groupSize = count($persons);
 
+    echo $groupSize; die();
+
     $i = 1;
 
     // save all persons to DB as new customers
@@ -38,7 +40,9 @@ if (validatePayment()){
                 $_SESSION['cart']['totalTickets'] -= 1;
             }
 
-            unset($_SESSION['cart'][$key]);
+            if ($_SESSION['cart'][$key]['quantity'] <= 1) {
+                unset($_SESSION['cart'][$key]);
+            }
 
             break;
         }
@@ -48,7 +52,7 @@ if (validatePayment()){
         };
 
         // TODO: choose ticket type per customer
-        $sql = "INSERT INTO customer (FirstName, LastName, Email, Password, CampingSiteId, TicketType) VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO customer (FirstName, LastName, Email, Password, CampingSiteId, TicketType, Balance) VALUES (?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->execute([
             $person['firstName'],
@@ -57,10 +61,10 @@ if (validatePayment()){
             $person['password'],
             $campingSiteId,
             $ticketType,
+            0
         ]);
 
         unset($campingSiteId, $ticketType);
-
         $i++;
     }
 
@@ -68,5 +72,7 @@ if (validatePayment()){
     unset($_SESSION['persons']);
 
     print(json_encode(true));
+
+
 }
 

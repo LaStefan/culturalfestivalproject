@@ -5,7 +5,7 @@
  * Date: 26/03/2018
  * Time: 15:47
  */
-// database Connection variables
+ //database Connection variables
 //define('HOST', 'studmysql01.fhict.local'); // Database host name ex. localhost
 //define('USER', 'dbi401148'); // Database user. ex. root ( if your on local server)
 //define('PASSWORD', '123456789'); // user password  (if password is not set for user then keep it empty )

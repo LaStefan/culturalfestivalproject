@@ -10,7 +10,7 @@ function ShowIt(el) {
         tickettype = 1;
         ticketPrice = 59;
 
-        $('.successMessage').hide();
+        $('#successMessage').hide();
         $('.reserveTickets').show();
         $('.pick-date-two').hide();
 
@@ -19,7 +19,7 @@ function ShowIt(el) {
         tickettype = 2;
         ticketPrice = 109;
 
-        $('.successMessage').hide();
+        $('#successMessage').hide();
         $('.reserveTickets').show();
         $('.pick-date-two').show();
 
@@ -28,7 +28,7 @@ function ShowIt(el) {
         tickettype = 3;
         ticketPrice = 159;
 
-        $('.successMessage').hide();
+        $('#successMessage').hide();
         $('.reserveTickets').show();
         $('.pick-date-two').show();
 
