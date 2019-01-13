@@ -52,21 +52,6 @@
             this.pbCamera = new System.Windows.Forms.PictureBox();
             this.pbPhone = new System.Windows.Forms.PictureBox();
             this.pbUSB = new System.Windows.Forms.PictureBox();
-            this.panelReturn = new System.Windows.Forms.Panel();
-            this.tBReturnStatus = new System.Windows.Forms.TextBox();
-            this.lBDamage = new System.Windows.Forms.Label();
-            this.rBDamaged = new System.Windows.Forms.RadioButton();
-            this.rBUnDamaged = new System.Windows.Forms.RadioButton();
-            this.lbQuestion = new System.Windows.Forms.Label();
-            this.btnScanRFID = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dGVReturn = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCheck = new System.Windows.Forms.Button();
-            this.btnRefund = new System.Windows.Forms.Button();
             this.panelInventory = new System.Windows.Forms.Panel();
             this.succAdded = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -78,7 +63,22 @@
             this.pBcameraIn = new System.Windows.Forms.PictureBox();
             this.pbPhoneIn = new System.Windows.Forms.PictureBox();
             this.pbChargerIn = new System.Windows.Forms.PictureBox();
+            this.panelReturn = new System.Windows.Forms.Panel();
+            this.btnReturnItem = new System.Windows.Forms.Button();
+            this.btnShowItems = new System.Windows.Forms.Button();
+            this.tBReturnStatus = new System.Windows.Forms.TextBox();
+            this.lBDamage = new System.Windows.Forms.Label();
+            this.rBDamaged = new System.Windows.Forms.RadioButton();
+            this.rBUnDamaged = new System.Windows.Forms.RadioButton();
+            this.lbQuestion = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dGVReturn = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelLoan = new System.Windows.Forms.Panel();
+            this.successfullyBorrowed = new System.Windows.Forms.Label();
             this.btnChekout = new System.Windows.Forms.Button();
             this.productDataGV = new System.Windows.Forms.DataGridView();
             this.productID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,6 +99,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbSuccReturned = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlanckets)).BeginInit();
@@ -107,8 +108,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUSB)).BeginInit();
-            this.panelReturn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVReturn)).BeginInit();
             this.panelInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUPInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlanketIn)).BeginInit();
@@ -117,6 +116,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBcameraIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoneIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbChargerIn)).BeginInit();
+            this.panelReturn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVReturn)).BeginInit();
             this.panelLoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGV)).BeginInit();
             this.panel2.SuspendLayout();
@@ -237,7 +238,7 @@
             this.panelItem.Controls.Add(this.pbCamera);
             this.panelItem.Controls.Add(this.pbPhone);
             this.panelItem.Controls.Add(this.pbUSB);
-            this.panelItem.Location = new System.Drawing.Point(167, 51);
+            this.panelItem.Location = new System.Drawing.Point(166, 51);
             this.panelItem.Margin = new System.Windows.Forms.Padding(4);
             this.panelItem.Name = "panelItem";
             this.panelItem.Size = new System.Drawing.Size(924, 465);
@@ -328,210 +329,6 @@
             this.toolTip1.SetToolTip(this.pbUSB, "Charger");
             this.pbUSB.Click += new System.EventHandler(this.pbUSB_Click);
             // 
-            // panelReturn
-            // 
-            this.panelReturn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelReturn.Controls.Add(this.tBReturnStatus);
-            this.panelReturn.Controls.Add(this.lBDamage);
-            this.panelReturn.Controls.Add(this.rBDamaged);
-            this.panelReturn.Controls.Add(this.rBUnDamaged);
-            this.panelReturn.Controls.Add(this.lbQuestion);
-            this.panelReturn.Controls.Add(this.btnScanRFID);
-            this.panelReturn.Controls.Add(this.label7);
-            this.panelReturn.Controls.Add(this.dGVReturn);
-            this.panelReturn.Controls.Add(this.btnCheck);
-            this.panelReturn.Controls.Add(this.btnRefund);
-            this.panelReturn.Location = new System.Drawing.Point(167, 57);
-            this.panelReturn.Margin = new System.Windows.Forms.Padding(4);
-            this.panelReturn.Name = "panelReturn";
-            this.panelReturn.Size = new System.Drawing.Size(933, 468);
-            this.panelReturn.TabIndex = 20;
-            this.panelReturn.Visible = false;
-            // 
-            // tBReturnStatus
-            // 
-            this.tBReturnStatus.Location = new System.Drawing.Point(331, 363);
-            this.tBReturnStatus.Multiline = true;
-            this.tBReturnStatus.Name = "tBReturnStatus";
-            this.tBReturnStatus.Size = new System.Drawing.Size(270, 78);
-            this.tBReturnStatus.TabIndex = 27;
-            this.tBReturnStatus.Visible = false;
-            // 
-            // lBDamage
-            // 
-            this.lBDamage.AutoSize = true;
-            this.lBDamage.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBDamage.Location = new System.Drawing.Point(371, 338);
-            this.lBDamage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lBDamage.Name = "lBDamage";
-            this.lBDamage.Size = new System.Drawing.Size(186, 38);
-            this.lBDamage.TabIndex = 30;
-            this.lBDamage.Text = "Describe the damage here\r\n\r\n";
-            this.lBDamage.Visible = false;
-            // 
-            // rBDamaged
-            // 
-            this.rBDamaged.AutoSize = true;
-            this.rBDamaged.Location = new System.Drawing.Point(481, 299);
-            this.rBDamaged.Name = "rBDamaged";
-            this.rBDamaged.Size = new System.Drawing.Size(90, 21);
-            this.rBDamaged.TabIndex = 29;
-            this.rBDamaged.TabStop = true;
-            this.rBDamaged.Text = "Damaged";
-            this.rBDamaged.UseVisualStyleBackColor = true;
-            this.rBDamaged.Visible = false;
-            this.rBDamaged.CheckedChanged += new System.EventHandler(this.rBDamaged_CheckedChanged);
-            // 
-            // rBUnDamaged
-            // 
-            this.rBUnDamaged.AutoSize = true;
-            this.rBUnDamaged.Location = new System.Drawing.Point(358, 299);
-            this.rBUnDamaged.Name = "rBUnDamaged";
-            this.rBUnDamaged.Size = new System.Drawing.Size(106, 21);
-            this.rBUnDamaged.TabIndex = 28;
-            this.rBUnDamaged.TabStop = true;
-            this.rBUnDamaged.Text = "Undamaged";
-            this.rBUnDamaged.UseVisualStyleBackColor = true;
-            this.rBUnDamaged.Visible = false;
-            this.rBUnDamaged.CheckedChanged += new System.EventHandler(this.rBUnDamaged_CheckedChanged);
-            // 
-            // lbQuestion
-            // 
-            this.lbQuestion.AutoSize = true;
-            this.lbQuestion.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuestion.Location = new System.Drawing.Point(257, 265);
-            this.lbQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbQuestion.Name = "lbQuestion";
-            this.lbQuestion.Size = new System.Drawing.Size(408, 19);
-            this.lbQuestion.TabIndex = 26;
-            this.lbQuestion.Text = "WHAT IS THE STATE OF THE RETURNED ITEM?";
-            this.lbQuestion.Visible = false;
-            // 
-            // btnScanRFID
-            // 
-            this.btnScanRFID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.btnScanRFID.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnScanRFID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnScanRFID.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScanRFID.ForeColor = System.Drawing.Color.White;
-            this.btnScanRFID.Location = new System.Drawing.Point(52, 404);
-            this.btnScanRFID.Margin = new System.Windows.Forms.Padding(4);
-            this.btnScanRFID.Name = "btnScanRFID";
-            this.btnScanRFID.Size = new System.Drawing.Size(122, 47);
-            this.btnScanRFID.TabIndex = 25;
-            this.btnScanRFID.Text = "Scan RFID";
-            this.btnScanRFID.UseVisualStyleBackColor = false;
-            this.btnScanRFID.Click += new System.EventHandler(this.btnScanRFID_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(39, 23);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 19);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "RETURN AN ITEM";
-            // 
-            // dGVReturn
-            // 
-            this.dGVReturn.AllowUserToAddRows = false;
-            this.dGVReturn.AllowUserToDeleteRows = false;
-            this.dGVReturn.AllowUserToResizeColumns = false;
-            this.dGVReturn.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.dGVReturn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dGVReturn.BackgroundColor = System.Drawing.Color.White;
-            this.dGVReturn.CausesValidation = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVReturn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dGVReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVReturn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dGVReturn.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVReturn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dGVReturn.Location = new System.Drawing.Point(137, 56);
-            this.dGVReturn.Margin = new System.Windows.Forms.Padding(4);
-            this.dGVReturn.Name = "dGVReturn";
-            this.dGVReturn.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVReturn.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dGVReturn.RowHeadersWidth = 40;
-            this.dGVReturn.Size = new System.Drawing.Size(656, 188);
-            this.dGVReturn.TabIndex = 23;
-            this.dGVReturn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVReturn_CellClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ProductID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Start Date";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Deposit";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(60, 369);
-            this.btnCheck.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(100, 28);
-            this.btnCheck.TabIndex = 22;
-            this.btnCheck.Text = "Check";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
-            // 
-            // btnRefund
-            // 
-            this.btnRefund.Location = new System.Drawing.Point(792, 348);
-            this.btnRefund.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefund.Name = "btnRefund";
-            this.btnRefund.Size = new System.Drawing.Size(100, 28);
-            this.btnRefund.TabIndex = 21;
-            this.btnRefund.Text = "Refund";
-            this.btnRefund.UseVisualStyleBackColor = true;
-            this.btnRefund.Click += new System.EventHandler(this.btnRefund_Click);
-            // 
             // panelInventory
             // 
             this.panelInventory.Controls.Add(this.succAdded);
@@ -544,7 +341,7 @@
             this.panelInventory.Controls.Add(this.pBcameraIn);
             this.panelInventory.Controls.Add(this.pbPhoneIn);
             this.panelInventory.Controls.Add(this.pbChargerIn);
-            this.panelInventory.Location = new System.Drawing.Point(167, 49);
+            this.panelInventory.Location = new System.Drawing.Point(10, 19);
             this.panelInventory.Margin = new System.Windows.Forms.Padding(4);
             this.panelInventory.Name = "panelInventory";
             this.panelInventory.Size = new System.Drawing.Size(927, 464);
@@ -683,8 +480,211 @@
             this.toolTip1.SetToolTip(this.pbChargerIn, "Charger");
             this.pbChargerIn.Click += new System.EventHandler(this.pbChargerIn_Click);
             // 
+            // panelReturn
+            // 
+            this.panelReturn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelReturn.Controls.Add(this.lbSuccReturned);
+            this.panelReturn.Controls.Add(this.btnReturnItem);
+            this.panelReturn.Controls.Add(this.btnShowItems);
+            this.panelReturn.Controls.Add(this.tBReturnStatus);
+            this.panelReturn.Controls.Add(this.lBDamage);
+            this.panelReturn.Controls.Add(this.rBDamaged);
+            this.panelReturn.Controls.Add(this.rBUnDamaged);
+            this.panelReturn.Controls.Add(this.lbQuestion);
+            this.panelReturn.Controls.Add(this.label7);
+            this.panelReturn.Controls.Add(this.dGVReturn);
+            this.panelReturn.Location = new System.Drawing.Point(166, 51);
+            this.panelReturn.Margin = new System.Windows.Forms.Padding(4);
+            this.panelReturn.Name = "panelReturn";
+            this.panelReturn.Size = new System.Drawing.Size(939, 477);
+            this.panelReturn.TabIndex = 20;
+            this.panelReturn.Visible = false;
+            // 
+            // btnReturnItem
+            // 
+            this.btnReturnItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.btnReturnItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReturnItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReturnItem.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturnItem.ForeColor = System.Drawing.Color.White;
+            this.btnReturnItem.Location = new System.Drawing.Point(801, 403);
+            this.btnReturnItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturnItem.Name = "btnReturnItem";
+            this.btnReturnItem.Size = new System.Drawing.Size(91, 51);
+            this.btnReturnItem.TabIndex = 32;
+            this.btnReturnItem.Text = "Return";
+            this.btnReturnItem.UseVisualStyleBackColor = false;
+            this.btnReturnItem.Click += new System.EventHandler(this.btnReturnItem_Click);
+            // 
+            // btnShowItems
+            // 
+            this.btnShowItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.btnShowItems.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowItems.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowItems.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowItems.ForeColor = System.Drawing.Color.White;
+            this.btnShowItems.Location = new System.Drawing.Point(43, 403);
+            this.btnShowItems.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShowItems.Name = "btnShowItems";
+            this.btnShowItems.Size = new System.Drawing.Size(142, 51);
+            this.btnShowItems.TabIndex = 31;
+            this.btnShowItems.Text = "Show borrowed items";
+            this.btnShowItems.UseVisualStyleBackColor = false;
+            this.btnShowItems.Click += new System.EventHandler(this.btnShowItems_Click);
+            // 
+            // tBReturnStatus
+            // 
+            this.tBReturnStatus.Location = new System.Drawing.Point(331, 363);
+            this.tBReturnStatus.Multiline = true;
+            this.tBReturnStatus.Name = "tBReturnStatus";
+            this.tBReturnStatus.Size = new System.Drawing.Size(270, 78);
+            this.tBReturnStatus.TabIndex = 27;
+            this.tBReturnStatus.Visible = false;
+            // 
+            // lBDamage
+            // 
+            this.lBDamage.AutoSize = true;
+            this.lBDamage.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBDamage.Location = new System.Drawing.Point(371, 338);
+            this.lBDamage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lBDamage.Name = "lBDamage";
+            this.lBDamage.Size = new System.Drawing.Size(186, 38);
+            this.lBDamage.TabIndex = 30;
+            this.lBDamage.Text = "Describe the damage here\r\n\r\n";
+            this.lBDamage.Visible = false;
+            // 
+            // rBDamaged
+            // 
+            this.rBDamaged.AutoSize = true;
+            this.rBDamaged.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBDamaged.Location = new System.Drawing.Point(481, 299);
+            this.rBDamaged.Name = "rBDamaged";
+            this.rBDamaged.Size = new System.Drawing.Size(90, 21);
+            this.rBDamaged.TabIndex = 29;
+            this.rBDamaged.TabStop = true;
+            this.rBDamaged.Text = "Damaged";
+            this.rBDamaged.UseVisualStyleBackColor = true;
+            this.rBDamaged.Visible = false;
+            this.rBDamaged.CheckedChanged += new System.EventHandler(this.rBDamaged_CheckedChanged);
+            // 
+            // rBUnDamaged
+            // 
+            this.rBUnDamaged.AutoSize = true;
+            this.rBUnDamaged.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBUnDamaged.Location = new System.Drawing.Point(358, 299);
+            this.rBUnDamaged.Name = "rBUnDamaged";
+            this.rBUnDamaged.Size = new System.Drawing.Size(106, 21);
+            this.rBUnDamaged.TabIndex = 28;
+            this.rBUnDamaged.TabStop = true;
+            this.rBUnDamaged.Text = "Undamaged";
+            this.rBUnDamaged.UseVisualStyleBackColor = true;
+            this.rBUnDamaged.Visible = false;
+            this.rBUnDamaged.CheckedChanged += new System.EventHandler(this.rBUnDamaged_CheckedChanged);
+            // 
+            // lbQuestion
+            // 
+            this.lbQuestion.AutoSize = true;
+            this.lbQuestion.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuestion.Location = new System.Drawing.Point(257, 265);
+            this.lbQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbQuestion.Name = "lbQuestion";
+            this.lbQuestion.Size = new System.Drawing.Size(408, 19);
+            this.lbQuestion.TabIndex = 26;
+            this.lbQuestion.Text = "WHAT IS THE STATE OF THE RETURNED ITEM?";
+            this.lbQuestion.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(39, 23);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(157, 19);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "RETURN AN ITEM";
+            // 
+            // dGVReturn
+            // 
+            this.dGVReturn.AllowUserToAddRows = false;
+            this.dGVReturn.AllowUserToDeleteRows = false;
+            this.dGVReturn.AllowUserToResizeColumns = false;
+            this.dGVReturn.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.dGVReturn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dGVReturn.BackgroundColor = System.Drawing.Color.White;
+            this.dGVReturn.CausesValidation = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVReturn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dGVReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVReturn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dGVReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVReturn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dGVReturn.Location = new System.Drawing.Point(137, 56);
+            this.dGVReturn.Margin = new System.Windows.Forms.Padding(4);
+            this.dGVReturn.Name = "dGVReturn";
+            this.dGVReturn.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVReturn.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dGVReturn.RowHeadersWidth = 40;
+            this.dGVReturn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGVReturn.Size = new System.Drawing.Size(678, 188);
+            this.dGVReturn.TabIndex = 23;
+            this.dGVReturn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVReturn_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ProductID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Start Date";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Deposit";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
             // panelLoan
             // 
+            this.panelLoan.Controls.Add(this.panelInventory);
+            this.panelLoan.Controls.Add(this.successfullyBorrowed);
             this.panelLoan.Controls.Add(this.btnChekout);
             this.panelLoan.Controls.Add(this.productDataGV);
             this.panelLoan.Controls.Add(this.btnClear);
@@ -696,6 +696,19 @@
             this.panelLoan.Size = new System.Drawing.Size(847, 473);
             this.panelLoan.TabIndex = 6;
             this.panelLoan.Visible = false;
+            // 
+            // successfullyBorrowed
+            // 
+            this.successfullyBorrowed.AutoSize = true;
+            this.successfullyBorrowed.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.successfullyBorrowed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.successfullyBorrowed.Location = new System.Drawing.Point(344, 19);
+            this.successfullyBorrowed.Name = "successfullyBorrowed";
+            this.successfullyBorrowed.Size = new System.Drawing.Size(188, 23);
+            this.successfullyBorrowed.TabIndex = 20;
+            this.successfullyBorrowed.Text = "Successfully borrowed!\r\n";
+            this.successfullyBorrowed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.successfullyBorrowed.Visible = false;
             // 
             // btnChekout
             // 
@@ -720,7 +733,7 @@
             this.productDataGV.AllowUserToResizeColumns = false;
             this.productDataGV.AllowUserToResizeRows = false;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.productDataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.productDataGV.BackgroundColor = System.Drawing.Color.White;
             this.productDataGV.CausesValidation = false;
@@ -741,7 +754,7 @@
             this.productDataGV.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -946,6 +959,19 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // lbSuccReturned
+            // 
+            this.lbSuccReturned.AutoSize = true;
+            this.lbSuccReturned.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSuccReturned.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbSuccReturned.Location = new System.Drawing.Point(379, 29);
+            this.lbSuccReturned.Name = "lbSuccReturned";
+            this.lbSuccReturned.Size = new System.Drawing.Size(180, 23);
+            this.lbSuccReturned.TabIndex = 33;
+            this.lbSuccReturned.Text = "Successfully returned!\r\n";
+            this.lbSuccReturned.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbSuccReturned.Visible = false;
+            // 
             // LoanAppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -953,10 +979,9 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1104, 530);
             this.Controls.Add(this.panelReturn);
-            this.Controls.Add(this.panelInventory);
-            this.Controls.Add(this.panelItem);
             this.Controls.Add(this.panelLoan);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panelItem);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -977,9 +1002,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUSB)).EndInit();
-            this.panelReturn.ResumeLayout(false);
-            this.panelReturn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVReturn)).EndInit();
             this.panelInventory.ResumeLayout(false);
             this.panelInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUPInventory)).EndInit();
@@ -989,6 +1011,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBcameraIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoneIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbChargerIn)).EndInit();
+            this.panelReturn.ResumeLayout(false);
+            this.panelReturn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVReturn)).EndInit();
             this.panelLoan.ResumeLayout(false);
             this.panelLoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGV)).EndInit();
@@ -1036,8 +1061,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelReturn;
         private System.Windows.Forms.Panel panelInventory;
-        private System.Windows.Forms.Button btnRefund;
-        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn productID;
         private System.Windows.Forms.DataGridViewTextBoxColumn productName;
         private System.Windows.Forms.DataGridViewTextBoxColumn productQty;
@@ -1063,7 +1086,10 @@
         private System.Windows.Forms.RadioButton rBDamaged;
         private System.Windows.Forms.RadioButton rBUnDamaged;
         private System.Windows.Forms.Label lBDamage;
-        private System.Windows.Forms.Button btnScanRFID;
+        private System.Windows.Forms.Label successfullyBorrowed;
+        private System.Windows.Forms.Button btnReturnItem;
+        private System.Windows.Forms.Button btnShowItems;
+        private System.Windows.Forms.Label lbSuccReturned;
     }
 }
 

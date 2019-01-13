@@ -64,6 +64,7 @@ namespace LoanApp
             productDataGV.Rows.Clear();
             productDataGV.Refresh();
             productDataGV.DataSource = null;
+            successfullyBorrowed.Visible = false;
             foreach (Item p in db.listOfItems)
             {
                 productDataGV.Rows.Add(p.LoanId.ToString(), p.LoanName, DateTime.Now, "€" + p.Deposit.ToString());
@@ -193,7 +194,6 @@ namespace LoanApp
             foreach (DataGridViewRow row in productDataGV.SelectedRows)
             {
                 productDataGV.Rows.RemoveAt(row.Index);
-                //int productId = (int)productDataGV.Rows[row.Index].Cells[0].Value;
                 var product = db.listOfItems.FirstOrDefault();
                 if (product != null)
                     db.listOfItems.Remove(product);
@@ -201,40 +201,20 @@ namespace LoanApp
             }
         }
 
-        private void btnRefund_Click(object sender, EventArgs e)
-        {
-            bool damaged = false;
-            Item temp = null;
-            if(rBUnDamaged.Checked == true) { damaged = false; }
-            else if(rBDamaged.Checked == true) { damaged = true; }
-            temp = ((Item)dGVReturn.CurrentRow.Cells);
-            db.RefundBorrowedItem(temp, chipNr, tBReturnStatus.Text, damaged);
-            
-        }
-
-        private void btnCheck_Click(object sender, EventArgs e)
-        {
-            if (chipNr != "")
-            {
-                foreach (var item in db.GetBorrowedProducts(chipNr))
-                {
-                    dGVReturn.Rows.Add(item.LoanId.ToString(), item.LoanName, item.StartDate.ToString(), item.Deposit.ToString());
-                }
-            }
-        }
-
         private void btnChekout_Click(object sender, EventArgs e)
         {
             if (chipNr != "")
             {
-                db.LoanItem(db.listOfItems, chipNr);
+                bool temp = false;
+                db.LoanItem(db.listOfItems, chipNr,ref temp);
                 productDataGV.Rows.Clear();
                 db.listOfItems.Clear();
                 chipNr = "";
+                successfullyBorrowed.Visible = temp;
             }
             else
             {
-                MessageBox.Show("Please first scan rfid tag");
+                MessageBox.Show("Please first scan RFID tag");
             }
         }
 
@@ -347,16 +327,42 @@ namespace LoanApp
             lBDamage.Visible = false;
         }
 
-        private void btnScanRFID_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dGVReturn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lbQuestion.Visible = true;
             rBDamaged.Visible = true;
             rBUnDamaged.Visible = true;
+        }
+
+        private void btnReturnItem_Click(object sender, EventArgs e)
+        {
+            bool damaged = false;
+            Item temp = null;
+            if (rBUnDamaged.Checked == true) { damaged = false; }
+            else if (rBDamaged.Checked == true) { damaged = true; }
+            //temp = ((Item)dGVReturn.SelectedRows[0].Cells[1].Value);
+            //Int32 rowToDelete = this.dGVReturn.Rows.GetFirstRow(DataGridViewElementStates.Selected);
+
+            Item item = (Item)dGVReturn.CurrentRow.DataBoundItem;
+
+            //string loanID = dGVReturn.SelectedRows[0].Cells[0].ToString();
+
+            db.RefundBorrowedItem(temp, chipNr, tBReturnStatus.Text, damaged);
+        }
+
+        private void btnShowItems_Click(object sender, EventArgs e)
+        {
+            if (chipNr != "")
+            {
+                foreach (var item in db.GetBorrowedProducts(chipNr))
+                {
+                   dGVReturn.Rows.Add( db.GetBorrowedProducts(chipNr).ToArray());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please first scan RFID tag!");
+            }
         }
     }
 }

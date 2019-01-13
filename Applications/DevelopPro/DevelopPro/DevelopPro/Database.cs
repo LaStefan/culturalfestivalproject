@@ -503,63 +503,81 @@ namespace DevelopPro
             return 0;
         }
 
-        public void LoanItem(List<Item> listOfProd, string rfid)
+        public void LoanItem(List<Item> listOfProd, string rfid, ref bool randomname)
         {
             decimal total = 0;
             bool sent = false;
             try
-            {   int temp = FindCustomerId(rfid);
-                conn.Open();
+            {
+                int temp = FindCustomerId(rfid);
+
                 foreach (Item p in listOfProd)
                 {
-                    string sql = "INSERT INTO `loanitem`(`LoanItemId`, `BorrowDate`, `ReturnDate`, `StateReturned`, `CustomerId`, `LoanId`) " +
-                        "VALUES (null,sysdate(),null,null," + temp + " ," + p.LoanId + ")";
-                    MySqlCommand msc = new MySqlCommand(sql, conn);
-                    int res = msc.ExecuteNonQuery();
-                    conn.Close();
-                    string sql2 = "SELECT Balance from customer where TagId = '" + rfid + "'";
-                    MySqlCommand msc2 = new MySqlCommand(sql2, conn);
                     conn.Open();
-                    MySqlDataReader mdr2 = msc2.ExecuteReader();
-
-                    if (mdr2.Read())
-                    {
-                        decimal balance = mdr2.GetDecimal("Balance");
-                        mdr2.Close();
-                        foreach (Item item in listOfItems)
+                    string sqll = "SELECT COUNT(*) as total from loanitem where CustomerId = " + temp + " and LoanId = " + p.LoanId;
+                    MySqlCommand mdr = new MySqlCommand(sqll, conn);
+                    MySqlDataReader md = mdr.ExecuteReader();
+                    if(md.Read()) { 
+                    int reslt = md.GetInt32("total");
+                    conn.Close();
+                        if (reslt >= 1)
                         {
-                            total += item.Deposit;
-                        }
-                        if (balance >= total)
-                        {
-                            string updateBalance = "UPDATE `customer` SET `Balance`= Balance - '" + p.Deposit + "' WHERE TagId = '" + rfid + "'";
-                            MySqlCommand msc3 = new MySqlCommand(updateBalance, conn);
-
-
-                            int result = msc3.ExecuteNonQuery();
-                            conn.Close();
-                            string sql1 = "UPDATE `loan` SET `Stock`= Stock - 1 WHERE LoanId = " + p.LoanId + "";
-                            MySqlCommand msc1 = new MySqlCommand(sql1, conn);
-                            conn.Open();
-
-                            int resultschanged = msc1.ExecuteNonQuery();
-                            conn.Close();
-
+                            MessageBox.Show("Sorry, this item is already borrowed!");
                         }
                         else
                         {
-                            if (sent == false)
+                            conn.Open();
+                            string sql = "INSERT INTO `loanitem`(`LoanItemId`, `BorrowDate`, `ReturnDate`, `StateReturned`, `CustomerId`, `LoanId`) " +
+                                "VALUES (null,sysdate(),null,null," + temp + " ," + p.LoanId + ")";
+                            MySqlCommand msc = new MySqlCommand(sql, conn);
+                            int res = msc.ExecuteNonQuery();
+                            conn.Close();
+                            string sql2 = "SELECT Balance from customer where TagId = '" + rfid + "'";
+                            MySqlCommand msc2 = new MySqlCommand(sql2, conn);
+                            conn.Open();
+                            MySqlDataReader mdr2 = msc2.ExecuteReader();
+
+                            if (mdr2.Read())
                             {
-                                MessageBox.Show("The customer does not have enough balance!");
+                                decimal balance = mdr2.GetDecimal("Balance");
+                                mdr2.Close();
+                                foreach (Item item in listOfItems)
+                                {
+                                    total += item.Deposit;
+                                }
+                                if (balance >= total)
+                                {
+                                    string updateBalance = "UPDATE `customer` SET `Balance`= Balance - '" + p.Deposit + "' WHERE TagId = '" + rfid + "'";
+                                    MySqlCommand msc3 = new MySqlCommand(updateBalance, conn);
+
+
+                                    int result = msc3.ExecuteNonQuery();
+                                    conn.Close();
+                                    string sql1 = "UPDATE `loan` SET `Stock`= Stock - 1 WHERE LoanId = " + p.LoanId + "";
+                                    MySqlCommand msc1 = new MySqlCommand(sql1, conn);
+                                    conn.Open();
+
+                                    int resultschanged = msc1.ExecuteNonQuery();
+                                    conn.Close();
+                                    randomname = true;
+
+                                }
+                                else
+                                {
+                                    if (sent == false)
+                                    {
+                                        MessageBox.Show("The customer does not have enough balance!");
+                                    }
+                                    sent = true;
+                                }
                             }
-                            sent = true;
                         }
                     }
                 }
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-                
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -608,7 +626,7 @@ namespace DevelopPro
                 mdr.Close();
                 if (damaged == false)
                 {
-                    item.Deposit *= 0.25;
+                    item.Deposit *= (int)0.25;
                     string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" + item.Deposit + "' WHERE TagId = '" + rfid + "';";
                     MySqlCommand msc1 = new MySqlCommand(sql1, conn);
                     MySqlDataReader mdr1 = msc1.ExecuteReader();
