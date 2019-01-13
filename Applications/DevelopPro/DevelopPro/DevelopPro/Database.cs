@@ -105,6 +105,68 @@ namespace DevelopPro
             }
             return false;
         }
+        
+        public bool CheckIfItemIsBorrowed(int id)
+        { 
+            String sql = "SELECT ReturnDate FROM loanitem WHERE CustomerId=@customer";
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            command.Parameters.AddWithValue("@customer", id);
+            List<String> temp = new List<String>();
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    String t= Convert.ToString(reader["ReturnDate"]);
+                    temp.Add(t);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            foreach (String s in temp)
+            {
+                if (s==null || s==""||s=="NULL"||s=="null")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public int GetIdWithTag(String tag)
+        { int Id=0;
+            String sql = "SELECT CustomerId FROM customer WHERE TagId=@tag";
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            command.Parameters.AddWithValue("@tag", tag);
+            
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["CustomerId"]);
+                    Id = id;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return Id;
+        }
         public bool CheckedInOrNot(String tag)
         {
             String sql = "SELECT Status FROM customer WHERE TagId=@tag";

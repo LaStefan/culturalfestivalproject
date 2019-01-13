@@ -49,10 +49,12 @@ namespace CheckInOutCamping
         {
             try
             {
-               // String statusIn = "Checked";
+                // String statusIn = "Checked";
                 //String statusOut = "Not checked";
+                int id = myData.GetIdWithTag(e.Tag);
                 bool checkedin = myData.CheckedInOrNot(e.Tag);
                 bool checkTag = myData.CheckIfAssigned(e.Tag);
+                bool checkItem = myData.CheckIfItemIsBorrowed(id);
                 if (rbCheckin.Checked)
                 {
                     if (checkTag == true)
@@ -105,14 +107,24 @@ namespace CheckInOutCamping
                     {
                         if (checkedin == true)
                         {
-                            myData.CheckOut(e.Tag);
+                            if (checkItem==false)
+                            {
+                                myData.CheckOut(e.Tag);
 
-                            lbShow.Items.Clear();
-                            //MessageBox.Show("This person has a ticket!");
-                            lbShow.BackColor = Color.Red;
-                            lbShow.Items.Add("Checked OUT");
-                            lbShow.Items.Add("Thank you for visiting us, see you soon!");
-                            //lbShow.Items.Add(e.Tag);
+                                lbShow.Items.Clear();
+                                //MessageBox.Show("This person has a ticket!");
+                                lbShow.BackColor = Color.Green;
+                                lbShow.Items.Add("Checked OUT");
+                                lbShow.Items.Add("Thank you for visiting us, see you soon!");
+                                //lbShow.Items.Add(e.Tag);
+                            }
+                        else
+                            {
+                                lbShow.Items.Clear();
+                                lbShow.BackColor = Color.Yellow;
+                                lbShow.Items.Add("Please return the items you borrowed!");
+                            }
+
                         }
                         else
                         {
