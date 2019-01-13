@@ -26,27 +26,27 @@ namespace LoanApp
             try { 
             if (this.prod.LoanName == "Mobile Phone")
             {
-                picShow.Image = Image.FromFile("../Images/phone.png");
-            }
+                picShow.Image = Image.FromFile("images/phone.png");
+                }
                 else if (this.prod.LoanName == "Camera")
                 {
-                    picShow.Image = Image.FromFile("../Images/camera.jpg");
+                    picShow.Image = Image.FromFile("images/camera.jpg");
                 }
                 else if (this.prod.LoanName == "Touch Light")
                 {
-                    picShow.Image = Image.FromFile("../Images/light.png");
+                    picShow.Image = Image.FromFile("images/light.png");
                 }
                 else if (this.prod.LoanName == "Charger")
                 {
-                    picShow.Image = Image.FromFile("../Images/charger.png");
+                    picShow.Image = Image.FromFile("images/charger.png");
                 }
                 else if (this.prod.LoanName == "Blanket")
                 {
-                    picShow.Image = Image.FromFile("../Images/blanket.jpg");
+                    picShow.Image = Image.FromFile("images/blanket.jpg");
                 }
                 else if (this.prod.LoanName == "Mattress")
                 {
-                    picShow.Image = Image.FromFile("../Images/mattress.jpg");
+                    picShow.Image = Image.FromFile("images/mattress.jpg");
                 }
             }
             catch (System.IO.FileNotFoundException)

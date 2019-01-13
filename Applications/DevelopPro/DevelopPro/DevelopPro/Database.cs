@@ -547,11 +547,11 @@ namespace DevelopPro
                 string sql = "SELECT CustomerId FROM customer WHERE TagId = '" + rfid + "'";
                 MySqlCommand mysqlcommand = new MySqlCommand(sql, conn);
                 MySqlDataReader mdr = mysqlcommand.ExecuteReader();
-                if (mdr.Read())
+                while (mdr.Read())
                 {
                     temp = mdr.GetInt32("customerId");
                 }
-                mdr.Close();
+                //mdr.Close();
                 return temp;
             }
             catch (MySqlException sql)
@@ -565,7 +565,7 @@ namespace DevelopPro
             return 0;
         }
 
-        public void LoanItem(List<Item> listOfProd, string rfid, ref bool succBorrowed)
+        public void LoanItem(List<Item> listOfProd, string rfid, ref bool randomname)
         {
             decimal total = 0;
             bool sent = false;
@@ -579,23 +579,22 @@ namespace DevelopPro
                     string sqll = "SELECT COUNT(*) as total from loanitem where CustomerId = " + temp + " and LoanId = " + p.LoanId;
                     MySqlCommand mdr = new MySqlCommand(sqll, conn);
                     MySqlDataReader md = mdr.ExecuteReader();
-                    if(md.Read())
-                    { 
-                    int reslt = md.GetInt32("total");
-                    conn.Close();
-
+                    if (md.Read())
+                    {
+                        int reslt = md.GetInt32("total");
+                        conn.Close();
                         if (reslt >= 1)
                         {
-                            MessageBox.Show("Sorry, this item is already borrowed!");
+                            MessageBox.Show("Sorry " + p.LoanName + " is already borrowed!");
                         }
                         else
                         {
-                           
-                            //string sql = "INSERT INTO `loanitem`(`LoanItemId`, `BorrowDate`, `ReturnDate`, `StateReturned`, `CustomerId`, `LoanId`) " +
-                            //    "VALUES (null,sysdate(),null,null," + temp + " ," + p.LoanId + ")";
-                            //MySqlCommand msc = new MySqlCommand(sql, conn);
-                            //int res = msc.ExecuteNonQuery();
-                            //conn.Close();
+                            conn.Open();
+                            string sql = "INSERT INTO `loanitem`(`LoanItemId`, `BorrowDate`, `ReturnDate`, `StateReturned`, `CustomerId`, `LoanId`) " +
+                                "VALUES (null,sysdate(),null,null," + temp + " ," + p.LoanId + ")";
+                            MySqlCommand msc = new MySqlCommand(sql, conn);
+                            int res = msc.ExecuteNonQuery();
+                            conn.Close();
                             string sql2 = "SELECT Balance from customer where TagId = '" + rfid + "'";
                             MySqlCommand msc2 = new MySqlCommand(sql2, conn);
                             conn.Open();
@@ -623,7 +622,7 @@ namespace DevelopPro
 
                                     int resultschanged = msc1.ExecuteNonQuery();
                                     conn.Close();
-                                    succBorrowed = true;
+                                    randomname = true;
 
                                 }
                                 else
@@ -632,9 +631,8 @@ namespace DevelopPro
                                     {
                                         MessageBox.Show("The customer does not have enough balance!");
                                     }
-                                   
+                                    sent = true;
                                 }
-                                sent = true;
                             }
                         }
                     }
@@ -650,7 +648,7 @@ namespace DevelopPro
             }
         }
 
-     public List<Item> GetBorrowedProducts(string rfid)
+        public List<Item> GetBorrowedProducts(string rfid)
         {
             try
             {
@@ -675,7 +673,10 @@ namespace DevelopPro
             {
                 MessageBox.Show("Something went wrong!");
             }
-            finally { conn.Close(); }
+            finally
+            {
+                conn.Close();
+            }
             return null;
         }
         
