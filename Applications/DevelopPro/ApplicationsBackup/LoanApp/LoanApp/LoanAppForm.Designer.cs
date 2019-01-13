@@ -64,6 +64,7 @@
             this.pbPhoneIn = new System.Windows.Forms.PictureBox();
             this.pbChargerIn = new System.Windows.Forms.PictureBox();
             this.panelReturn = new System.Windows.Forms.Panel();
+            this.lbSuccReturned = new System.Windows.Forms.Label();
             this.btnReturnItem = new System.Windows.Forms.Button();
             this.btnShowItems = new System.Windows.Forms.Button();
             this.tBReturnStatus = new System.Windows.Forms.TextBox();
@@ -99,7 +100,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbSuccReturned = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panelItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlanckets)).BeginInit();
@@ -483,6 +484,7 @@
             // panelReturn
             // 
             this.panelReturn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelReturn.Controls.Add(this.listBox1);
             this.panelReturn.Controls.Add(this.lbSuccReturned);
             this.panelReturn.Controls.Add(this.btnReturnItem);
             this.panelReturn.Controls.Add(this.btnShowItems);
@@ -498,7 +500,19 @@
             this.panelReturn.Name = "panelReturn";
             this.panelReturn.Size = new System.Drawing.Size(939, 477);
             this.panelReturn.TabIndex = 20;
-            this.panelReturn.Visible = false;
+            // 
+            // lbSuccReturned
+            // 
+            this.lbSuccReturned.AutoSize = true;
+            this.lbSuccReturned.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSuccReturned.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbSuccReturned.Location = new System.Drawing.Point(379, 29);
+            this.lbSuccReturned.Name = "lbSuccReturned";
+            this.lbSuccReturned.Size = new System.Drawing.Size(180, 23);
+            this.lbSuccReturned.TabIndex = 33;
+            this.lbSuccReturned.Text = "Successfully returned!\r\n";
+            this.lbSuccReturned.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbSuccReturned.Visible = false;
             // 
             // btnReturnItem
             // 
@@ -539,7 +553,6 @@
             this.tBReturnStatus.Name = "tBReturnStatus";
             this.tBReturnStatus.Size = new System.Drawing.Size(270, 78);
             this.tBReturnStatus.TabIndex = 27;
-            this.tBReturnStatus.Visible = false;
             // 
             // lBDamage
             // 
@@ -551,7 +564,6 @@
             this.lBDamage.Size = new System.Drawing.Size(186, 38);
             this.lBDamage.TabIndex = 30;
             this.lBDamage.Text = "Describe the damage here\r\n\r\n";
-            this.lBDamage.Visible = false;
             // 
             // rBDamaged
             // 
@@ -564,7 +576,6 @@
             this.rBDamaged.TabStop = true;
             this.rBDamaged.Text = "Damaged";
             this.rBDamaged.UseVisualStyleBackColor = true;
-            this.rBDamaged.Visible = false;
             this.rBDamaged.CheckedChanged += new System.EventHandler(this.rBDamaged_CheckedChanged);
             // 
             // rBUnDamaged
@@ -578,7 +589,6 @@
             this.rBUnDamaged.TabStop = true;
             this.rBUnDamaged.Text = "Undamaged";
             this.rBUnDamaged.UseVisualStyleBackColor = true;
-            this.rBUnDamaged.Visible = false;
             this.rBUnDamaged.CheckedChanged += new System.EventHandler(this.rBUnDamaged_CheckedChanged);
             // 
             // lbQuestion
@@ -591,7 +601,6 @@
             this.lbQuestion.Size = new System.Drawing.Size(408, 19);
             this.lbQuestion.TabIndex = 26;
             this.lbQuestion.Text = "WHAT IS THE STATE OF THE RETURNED ITEM?";
-            this.lbQuestion.Visible = false;
             // 
             // label7
             // 
@@ -652,7 +661,7 @@
             this.dGVReturn.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dGVReturn.RowHeadersWidth = 40;
             this.dGVReturn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVReturn.Size = new System.Drawing.Size(678, 188);
+            this.dGVReturn.Size = new System.Drawing.Size(678, 64);
             this.dGVReturn.TabIndex = 23;
             this.dGVReturn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVReturn_CellClick);
             // 
@@ -959,18 +968,14 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // lbSuccReturned
+            // listBox1
             // 
-            this.lbSuccReturned.AutoSize = true;
-            this.lbSuccReturned.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSuccReturned.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbSuccReturned.Location = new System.Drawing.Point(379, 29);
-            this.lbSuccReturned.Name = "lbSuccReturned";
-            this.lbSuccReturned.Size = new System.Drawing.Size(180, 23);
-            this.lbSuccReturned.TabIndex = 33;
-            this.lbSuccReturned.Text = "Successfully returned!\r\n";
-            this.lbSuccReturned.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbSuccReturned.Visible = false;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(137, 155);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(678, 84);
+            this.listBox1.TabIndex = 34;
             // 
             // LoanAppForm
             // 
@@ -1090,6 +1095,7 @@
         private System.Windows.Forms.Button btnReturnItem;
         private System.Windows.Forms.Button btnShowItems;
         private System.Windows.Forms.Label lbSuccReturned;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

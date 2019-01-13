@@ -679,7 +679,7 @@ namespace DevelopPro
                 foreach (Item p in listOfProd)
                 {
                     conn.Open();
-                    string sqll = "SELECT COUNT(*) as total from loanitem where CustomerId = " + temp + " and LoanId = " + p.LoanId;
+                    string sqll = "SELECT COUNT(*) as total from loanitem where CustomerId = " + temp + " and LoanId = " + p.LoanId + " AND ReturnDate IS NULL";
                     MySqlCommand mdr = new MySqlCommand(sqll, conn);
                     MySqlDataReader md = mdr.ExecuteReader();
                     if (md.Read())
@@ -692,12 +692,6 @@ namespace DevelopPro
                         }
                         else
                         {
-                            conn.Open();
-                            string sql = "INSERT INTO `loanitem`(`LoanItemId`, `BorrowDate`, `ReturnDate`, `StateReturned`, `CustomerId`, `LoanId`) " +
-                                "VALUES (null,sysdate(),null,null," + temp + " ," + p.LoanId + ")";
-                            MySqlCommand msc = new MySqlCommand(sql, conn);
-                            int res = msc.ExecuteNonQuery();
-                            conn.Close();
                             string sql2 = "SELECT Balance from customer where TagId = '" + rfid + "'";
                             MySqlCommand msc2 = new MySqlCommand(sql2, conn);
                             conn.Open();
@@ -726,7 +720,12 @@ namespace DevelopPro
                                     int resultschanged = msc1.ExecuteNonQuery();
                                     conn.Close();
                                     randomname = true;
-
+                                    conn.Open();
+                                    string sql = "INSERT INTO `loanitem`(`LoanItemId`, `BorrowDate`, `ReturnDate`, `StateReturned`, `CustomerId`, `LoanId`) " +
+                                "VALUES (null,sysdate(),null,null," + temp + " ," + p.LoanId + ")";
+                                    MySqlCommand msc = new MySqlCommand(sql, conn);
+                                    int res = msc.ExecuteNonQuery();
+                                    conn.Close();
                                 }
                                 else
                                 {
@@ -758,7 +757,7 @@ namespace DevelopPro
                 conn.Open();
                 List<Item> listOfBorrowed = new List<Item>();
                 string sql = "SELECT lo.* FROM loanitem l JOIN customer c ON(l.CustomerId = c.CustomerId)" +
-                    " JOIN loan lo ON(l.LoanId = lo.LoanId) WHERE c.TagId = '" + rfid + "'";
+                    " JOIN loan lo ON(l.LoanId = lo.LoanId) WHERE c.TagId = '" + rfid + "' AND l.ReturnDate IS NULL";
                 MySqlCommand msc = new MySqlCommand(sql, conn);
                 MySqlDataReader mdr = msc.ExecuteReader();
                 while (mdr.Read())
@@ -789,24 +788,33 @@ namespace DevelopPro
             {
                 Customer c = GetCustomer(rfid);
                 conn.Open();
-                string sql = "UPDATE `loan` SET `Stock`= Stock + 1 WHERE LoanId = '" + item.LoanId + "';";
+                string sql = "UPDATE `loan` SET `Stock`= Stock + 1 WHERE LoanId = '" + p.LoanId + "';";
                 MySqlCommand msc = new MySqlCommand(sql, conn);
                 MySqlDataReader mdr = msc.ExecuteReader();
                 mdr.Close();
                 if (damaged == false)
                 {
-                    item.Deposit *= (int)0.25;
-                    string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" + item.Deposit + "' WHERE TagId = '" + rfid + "';";
+                    var tempmoney = p.Deposit * (decimal)0.25;
+                    p.Deposit *= (decimal)0.75;
+                    string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" + p.Deposit + "' WHERE TagId = '" + rfid + "';";
                     MySqlCommand msc1 = new MySqlCommand(sql1, conn);
                     MySqlDataReader mdr1 = msc1.ExecuteReader();
                     mdr1.Close();
+                    
+                    string sqll2 = "UPDATE `loanitem`" +
+                        " SET `ReturnDate`=sysdate(),`StateReturned`= 'Good condition', ChargedMoney = " + tempmoney  + " WHERE CustomerId = " + c.Id + " AND LoanId = " + p.LoanId + ";";
+                    MySqlCommand msccc1 = new MySqlCommand(sqll2, conn);
+                    msccc1.ExecuteNonQuery();
+                    conn.Close();
                 }
-                int customerId = FindCustomerId(rfid);
-                string sql2 = "UPDATE `loanitem`" +
-                    " SET `ReturnDate`=sysdate(),`StateReturned`= '" + description + "' , WHERE CustomerId = " + c.Id + " AND LoanId = " + p.LoanId +";";
-                MySqlCommand msc2 = new MySqlCommand(sql2, conn);
-                MySqlDataReader mdr2 = msc2.ExecuteReader();
-                mdr2.Close();
+                else
+                {
+                    string sql2 = "UPDATE `loanitem`" +
+                        " SET `ReturnDate`=sysdate(),`StateReturned`= '" + description + "', ChargedMoney = " + p.Deposit + " WHERE CustomerId = " + c.Id + " AND LoanId = " + p.LoanId + ";";
+                    MySqlCommand msc2 = new MySqlCommand(sql2, conn);
+                    MySqlDataReader mdr2 = msc2.ExecuteReader();
+                    mdr2.Close();
+                }
             }
             catch (MySqlException sql)
             {

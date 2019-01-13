@@ -337,26 +337,29 @@ namespace LoanApp
         private void btnReturnItem_Click(object sender, EventArgs e)
         {
             bool damaged = false;
-            Item temp = null;
             if (rBUnDamaged.Checked == true) { damaged = false; }
             else if (rBDamaged.Checked == true) { damaged = true; }
             //temp = ((Item)dGVReturn.SelectedRows[0].Cells[1].Value);
             //Int32 rowToDelete = this.dGVReturn.Rows.GetFirstRow(DataGridViewElementStates.Selected);
 
-            Item item = (Item)dGVReturn.CurrentRow.DataBoundItem;
+            Item tempItem = listBox1.SelectedItem as Item;
+
+            //Item itemItem = (Item)dGVReturn.CurrentRow.DataBoundItem;
 
             //string loanID = dGVReturn.SelectedRows[0].Cells[0].ToString();
 
-            db.RefundBorrowedItem(temp, chipNr, tBReturnStatus.Text, damaged);
+            db.RefundBorrowedItem(tempItem, chipNr, tBReturnStatus.Text, damaged);
         }
 
         private void btnShowItems_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             if (chipNr != "")
             {
                 foreach (var item in db.GetBorrowedProducts(chipNr))
                 {
-                   dGVReturn.Rows.Add( db.GetBorrowedProducts(chipNr).ToArray());
+                    //dGVReturn.Rows.Add(item);
+                    listBox1.Items.Add(item);
                 }
             }
             else
