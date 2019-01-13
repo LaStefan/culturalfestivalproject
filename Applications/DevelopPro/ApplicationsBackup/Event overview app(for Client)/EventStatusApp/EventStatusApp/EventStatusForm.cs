@@ -22,6 +22,7 @@ namespace EventStatusApp
         public EventStatusForm()
         {
             InitializeComponent();
+            
             try
             {
                 myRFIDReader = new RFID();
@@ -42,15 +43,13 @@ namespace EventStatusApp
             lbOverview.Items.Clear();
             lbOverview.Items.Add(DateTime.Now);
             lbOverview.Items.Add("");
-            lbOverview.Items.Add("Total number of visitors: "+nr.ToString());
-            lbOverview.Items.Add("currently inside the event: " + nrinside.ToString());
+            lbOverview.Items.Add("Total number of customers: "+nr.ToString());
+            lbOverview.Items.Add("currently checked in: " + nrinside.ToString());
         }
 
         private void btnCurrentStatus_Click(object sender, EventArgs e)
         {
-            myRFIDReader.Open();
-            String person = myData.GetInfo(Convert.ToString(myRFIDReader.GetLastTag()));
-            lbOverview.Items.Add(person);
+          
         }
 
         private void btnVisitor_Click(object sender, EventArgs e)
@@ -82,6 +81,19 @@ namespace EventStatusApp
             {
                 lbOverview.Items.Add("CampingSite Id: " + c.CampingId + ", Free or Not: " + c.Status);
             }
+        }
+
+        private void btnMoneySpent_Click(object sender, EventArgs e)
+        {
+            decimal MoneyPerShop = myData.MoneyGainedPerShop();
+            decimal MoneyPerLoan = myData.MoneyGainedPerLoan();
+
+            lbOverview.Items.Clear();
+            lbOverview.Items.Add(DateTime.Now);
+            lbOverview.Items.Add("");
+            lbOverview.Items.Add("Total amount earned in shop: $" + MoneyPerShop);
+            lbOverview.Items.Add("Total amount earned in loan shop: $" + MoneyPerLoan);
+
         }
     }
 }

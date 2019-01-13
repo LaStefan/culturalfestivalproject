@@ -22,12 +22,16 @@ namespace shopApp
        Product myProduct;
         decimal totalPrice=0;
         Shop myShop;
+        Database myData;
         List<Customer> customers;
+        List<Product> products;
+        
         
         public ShopAppForm()
         {
             InitializeComponent();
             myShop = new Shop();
+            myData = new Database();
             try
             {
                 myRFIDReader = new RFID();
@@ -45,6 +49,8 @@ namespace shopApp
             panelFood.Visible = false;
             panelPay.Visible = false;
             customers = myShop.GetCustomers();
+            products = new List<Product>();
+            
         }
         /// <summary>
         /// 
@@ -103,6 +109,7 @@ namespace shopApp
             panelDrinks.Visible = true;
             panelPay.Visible = true;
             panelPay.Dock = DockStyle.Fill;
+            label3.Text = "";
         }
 
        
@@ -468,13 +475,15 @@ namespace shopApp
                         myShop.MyData.ChangeBalance(e.Tag, totalPrice, c.Balance);
                         c.Balance -= totalPrice;
                         //MessageBox.Show("Thank you for the purchase." +"Come again!");
-                            
+                        int id=myData.GetIdWithTag(e.Tag);
+                        myData.RegisterAmountPayedInShop(totalPrice,id);
                         myRFIDReader.Close();
                         textBox1.Clear();
                         productDataGV.Enabled = true;
                         lbRfidCode.Text = "";
                         totalPrice = 0;
                         productDataGV.Rows.Clear();
+                        label3.Text = "Purchase successfull!";
 
                     }
                     else
@@ -494,7 +503,9 @@ namespace shopApp
                 productDataGV.Rows.Add(myProduct.ProductName, myProduct.Stock.ToString(), myProduct.ProductPrice.ToString(), pq.quantity);
                 decimal price = myProduct.ProductPrice * pq.quantity;
                 totalPrice += price;
+                //myProduct.Stock = myProduct.Stock - (int)pq.quantity;
                 textBox1.Text = Convert.ToString(totalPrice);
+                //products.Add(myProduct);
             }       
            pq.FormClosed -= new FormClosedEventHandler(productForm_FormClosed);
         }
@@ -525,13 +536,20 @@ namespace shopApp
         private void btnClear_Click(object sender, EventArgs e)
         {
             productDataGV.Rows.Clear();
+            textBox1.Text = "";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if(productDataGV.CurrentRow.Selected)
             {
+                decimal firstColumn = Convert.ToDecimal(productDataGV.Rows[productDataGV.CurrentRow.Index].Cells[3].Value.ToString());
+                decimal secondColumn = Convert.ToDecimal(productDataGV.Rows[productDataGV.CurrentRow.Index].Cells[2].Value.ToString());
+                totalPrice = totalPrice - (secondColumn * firstColumn);
                 productDataGV.Rows.RemoveAt(productDataGV.CurrentRow.Index);
+
+
+                textBox1.Text = Convert.ToString(totalPrice);
             }
         }
 
@@ -540,9 +558,12 @@ namespace shopApp
             try
             {
                 myRFIDReader.Open();
+                //myData.RegisterAmountPayedInShop(totalPrice);
                 textBox1.Text = Convert.ToString(totalPrice);
+                label3.Text = "";
                 lbRfidCode.Text = "Please scan your bracelet for successfull purchase!";
                 productDataGV.Enabled = false;
+               
             }
             catch (PhidgetException)
             {

@@ -105,7 +105,110 @@ namespace DevelopPro
             }
             return false;
         }
-        
+        public void ChangeStock(int stock)
+        {
+            try
+            {
+                string sql = "UPDATE product SET Stock=@stock";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                //command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@stock", stock);
+
+
+                int update;
+                conn.Open();
+                update = command.ExecuteNonQuery();
+            }
+            catch (MySqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+        public decimal MoneyGainedPerLoan()
+        {
+            decimal Total = 0;
+            String sql = "SELECT ChargedMoney FROM loanitem";
+            MySqlCommand command = new MySqlCommand(sql, conn);
+
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    decimal money = Convert.ToDecimal(reader["ChargedMoney"]);
+                    Total += money;
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return Total;
+        }
+        public decimal MoneyGainedPerShop()
+        {
+            decimal Total = 0;
+            String sql = "SELECT TotalPrice FROM orderstore";
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    decimal money = Convert.ToDecimal(reader["TotalPrice"]);
+                    Total += money;
+                    
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return Total;
+        }
+        public void RegisterAmountPayedInShop(decimal totalPrice,int id)
+        {
+            
+            try
+            {
+                string sql = "INSERT INTO orderstore(TotalPrice,CustomeId) VALUES(@totalPrice,@id)";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@totalPrice", totalPrice);
+
+
+                int update;
+                conn.Open();
+                update = command.ExecuteNonQuery();
+            }
+            catch (MySqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public bool CheckIfItemIsBorrowed(int id)
         { 
             String sql = "SELECT ReturnDate FROM loanitem WHERE CustomerId=@customer";

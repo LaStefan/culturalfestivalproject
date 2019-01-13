@@ -15,7 +15,7 @@ namespace shopApp
     {
         Database myData;
         List<Product> products;
-
+        
        
         public Shop()
         {
@@ -81,6 +81,6 @@ namespace shopApp
         {
             return myData.GetCustomers();
         }
-
+       
     }
 }
