@@ -38,20 +38,19 @@
             this.rbCheckin = new System.Windows.Forms.RadioButton();
             this.rbCheckOut = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbShow
             // 
-            this.lbShow.Font = new System.Drawing.Font("Arial Nova Cond", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShow.FormattingEnabled = true;
-            this.lbShow.ItemHeight = 18;
-            this.lbShow.Location = new System.Drawing.Point(29, 107);
+            this.lbShow.ItemHeight = 20;
+            this.lbShow.Location = new System.Drawing.Point(39, 132);
+            this.lbShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbShow.Name = "lbShow";
-            this.lbShow.Size = new System.Drawing.Size(280, 238);
+            this.lbShow.Size = new System.Drawing.Size(413, 284);
             this.lbShow.TabIndex = 3;
             // 
             // panel1
@@ -61,16 +60,18 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(668, 43);
+            this.panel1.Size = new System.Drawing.Size(891, 53);
             this.panel1.TabIndex = 7;
             // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(638, 9);
+            this.btnClose.Location = new System.Drawing.Point(836, 8);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(18, 22);
+            this.btnClose.Size = new System.Drawing.Size(42, 38);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "x";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -80,18 +81,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(172, 9);
+            this.label1.Location = new System.Drawing.Point(229, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 23);
+            this.label1.Size = new System.Drawing.Size(270, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Check-IN Check-OUT \r\n";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(381, 101);
+            this.pictureBox1.Location = new System.Drawing.Point(508, 124);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(257, 257);
+            this.pictureBox1.Size = new System.Drawing.Size(343, 316);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -100,9 +103,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 86);
+            this.label2.Location = new System.Drawing.Point(35, 106);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 18);
+            this.label2.Size = new System.Drawing.Size(48, 23);
             this.label2.TabIndex = 9;
             this.label2.Text = "RFID";
             // 
@@ -110,9 +114,10 @@
             // 
             this.rbCheckin.AutoSize = true;
             this.rbCheckin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCheckin.Location = new System.Drawing.Point(381, 64);
+            this.rbCheckin.Location = new System.Drawing.Point(508, 79);
+            this.rbCheckin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbCheckin.Name = "rbCheckin";
-            this.rbCheckin.Size = new System.Drawing.Size(96, 23);
+            this.rbCheckin.Size = new System.Drawing.Size(121, 27);
             this.rbCheckin.TabIndex = 10;
             this.rbCheckin.TabStop = true;
             this.rbCheckin.Text = "Check In";
@@ -122,9 +127,10 @@
             // 
             this.rbCheckOut.AutoSize = true;
             this.rbCheckOut.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCheckOut.Location = new System.Drawing.Point(529, 64);
+            this.rbCheckOut.Location = new System.Drawing.Point(705, 79);
+            this.rbCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbCheckOut.Name = "rbCheckOut";
-            this.rbCheckOut.Size = new System.Drawing.Size(109, 23);
+            this.rbCheckOut.Size = new System.Drawing.Size(138, 27);
             this.rbCheckOut.TabIndex = 11;
             this.rbCheckOut.TabStop = true;
             this.rbCheckOut.Text = "Check Out";
@@ -132,26 +138,18 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(0, 384);
+            this.panel2.Location = new System.Drawing.Point(0, 473);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(668, 24);
+            this.panel2.Size = new System.Drawing.Size(891, 30);
             this.panel2.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(557, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "All rights reserved...";
             // 
             // CheckInOutApp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 406);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(891, 500);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.rbCheckOut);
             this.Controls.Add(this.rbCheckin);
@@ -160,14 +158,13 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbShow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CheckInOutApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check-IN/OUT Camping App";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,7 +179,6 @@
         private System.Windows.Forms.RadioButton rbCheckin;
         private System.Windows.Forms.RadioButton rbCheckOut;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClose;
     }
 }

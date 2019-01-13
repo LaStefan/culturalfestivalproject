@@ -35,7 +35,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbShow = new System.Windows.Forms.ListBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.lbRFID = new System.Windows.Forms.Label();
@@ -44,16 +43,15 @@
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(624, 60);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(600, 61);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 304);
+            this.pictureBox1.Size = new System.Drawing.Size(300, 304);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -65,7 +63,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(924, 53);
             this.panel1.TabIndex = 9;
@@ -73,10 +71,10 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(884, 15);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(876, 11);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(24, 27);
+            this.btnClose.Size = new System.Drawing.Size(35, 34);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "x";
             this.toolTip1.SetToolTip(this.btnClose, "Close");
@@ -96,22 +94,11 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 457);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(924, 27);
             this.panel2.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(788, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "All rights reserved";
             // 
             // lbShow
             // 
@@ -119,7 +106,7 @@
             this.lbShow.FormattingEnabled = true;
             this.lbShow.ItemHeight = 25;
             this.lbShow.Location = new System.Drawing.Point(56, 234);
-            this.lbShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbShow.Margin = new System.Windows.Forms.Padding(4);
             this.lbShow.Name = "lbShow";
             this.lbShow.Size = new System.Drawing.Size(469, 154);
             this.lbShow.TabIndex = 13;
@@ -140,7 +127,7 @@
             // 
             this.tbTicketNr.Enabled = false;
             this.tbTicketNr.Location = new System.Drawing.Point(197, 132);
-            this.tbTicketNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTicketNr.Margin = new System.Windows.Forms.Padding(4);
             this.tbTicketNr.Name = "tbTicketNr";
             this.tbTicketNr.Size = new System.Drawing.Size(227, 22);
             this.tbTicketNr.TabIndex = 16;
@@ -162,7 +149,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(216, 74);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 34);
             this.button1.TabIndex = 19;
@@ -185,7 +172,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AssignRFIDApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check-IN/OUT Scanner";
@@ -193,8 +180,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,7 +190,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbShow;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ToolTip toolTip1;

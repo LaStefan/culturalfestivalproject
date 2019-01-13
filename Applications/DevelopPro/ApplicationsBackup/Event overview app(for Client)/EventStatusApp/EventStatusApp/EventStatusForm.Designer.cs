@@ -50,10 +50,11 @@
             this.lbOverview.BackColor = System.Drawing.Color.White;
             this.lbOverview.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOverview.FormattingEnabled = true;
-            this.lbOverview.ItemHeight = 21;
-            this.lbOverview.Location = new System.Drawing.Point(292, 90);
+            this.lbOverview.ItemHeight = 27;
+            this.lbOverview.Location = new System.Drawing.Point(389, 111);
+            this.lbOverview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbOverview.Name = "lbOverview";
-            this.lbOverview.Size = new System.Drawing.Size(381, 361);
+            this.lbOverview.Size = new System.Drawing.Size(507, 436);
             this.lbOverview.TabIndex = 0;
             // 
             // CHECK
@@ -64,9 +65,11 @@
             this.CHECK.Controls.Add(this.btnTotalVisitors);
             this.CHECK.Controls.Add(this.btnMoneySpent);
             this.CHECK.Controls.Add(this.btnCurrentStatus);
-            this.CHECK.Location = new System.Drawing.Point(12, 72);
+            this.CHECK.Location = new System.Drawing.Point(13, 135);
+            this.CHECK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CHECK.Name = "CHECK";
-            this.CHECK.Size = new System.Drawing.Size(274, 386);
+            this.CHECK.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CHECK.Size = new System.Drawing.Size(353, 398);
             this.CHECK.TabIndex = 1;
             this.CHECK.TabStop = false;
             this.CHECK.Text = "CHECK";
@@ -77,9 +80,10 @@
             this.btnCamp.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCamp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCamp.Location = new System.Drawing.Point(60, 262);
+            this.btnCamp.Location = new System.Drawing.Point(80, 322);
+            this.btnCamp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCamp.Name = "btnCamp";
-            this.btnCamp.Size = new System.Drawing.Size(161, 56);
+            this.btnCamp.Size = new System.Drawing.Size(215, 69);
             this.btnCamp.TabIndex = 5;
             this.btnCamp.Text = "Camping Status";
             this.btnCamp.UseVisualStyleBackColor = false;
@@ -91,9 +95,10 @@
             this.btnBalance.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBalance.Location = new System.Drawing.Point(60, 141);
+            this.btnBalance.Location = new System.Drawing.Point(80, 174);
+            this.btnBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBalance.Name = "btnBalance";
-            this.btnBalance.Size = new System.Drawing.Size(161, 56);
+            this.btnBalance.Size = new System.Drawing.Size(215, 69);
             this.btnBalance.TabIndex = 3;
             this.btnBalance.Text = "Total Balance of Visitors";
             this.btnBalance.UseVisualStyleBackColor = false;
@@ -105,9 +110,10 @@
             this.btnTotalVisitors.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnTotalVisitors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTotalVisitors.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotalVisitors.Location = new System.Drawing.Point(60, 82);
+            this.btnTotalVisitors.Location = new System.Drawing.Point(80, 101);
+            this.btnTotalVisitors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTotalVisitors.Name = "btnTotalVisitors";
-            this.btnTotalVisitors.Size = new System.Drawing.Size(161, 56);
+            this.btnTotalVisitors.Size = new System.Drawing.Size(215, 69);
             this.btnTotalVisitors.TabIndex = 2;
             this.btnTotalVisitors.Text = "Total Visitors\r\n";
             this.btnTotalVisitors.UseVisualStyleBackColor = false;
@@ -119,9 +125,10 @@
             this.btnMoneySpent.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnMoneySpent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoneySpent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMoneySpent.Location = new System.Drawing.Point(60, 200);
+            this.btnMoneySpent.Location = new System.Drawing.Point(80, 246);
+            this.btnMoneySpent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMoneySpent.Name = "btnMoneySpent";
-            this.btnMoneySpent.Size = new System.Drawing.Size(161, 56);
+            this.btnMoneySpent.Size = new System.Drawing.Size(215, 69);
             this.btnMoneySpent.TabIndex = 1;
             this.btnMoneySpent.Text = "Total Spent Money";
             this.btnMoneySpent.UseVisualStyleBackColor = false;
@@ -132,9 +139,10 @@
             this.btnCurrentStatus.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCurrentStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCurrentStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCurrentStatus.Location = new System.Drawing.Point(60, 23);
+            this.btnCurrentStatus.Location = new System.Drawing.Point(80, 28);
+            this.btnCurrentStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCurrentStatus.Name = "btnCurrentStatus";
-            this.btnCurrentStatus.Size = new System.Drawing.Size(161, 56);
+            this.btnCurrentStatus.Size = new System.Drawing.Size(215, 69);
             this.btnCurrentStatus.TabIndex = 0;
             this.btnCurrentStatus.Text = "CurrentStatusOverall";
             this.btnCurrentStatus.UseVisualStyleBackColor = false;
@@ -147,19 +155,21 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(676, 41);
+            this.panel1.Size = new System.Drawing.Size(901, 50);
             this.panel1.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(551, 3);
+            this.button1.Location = new System.Drawing.Point(852, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 29);
+            this.button1.Size = new System.Drawing.Size(36, 36);
             this.button1.TabIndex = 6;
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = false;
@@ -169,34 +179,37 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(193, 9);
+            this.label1.Location = new System.Drawing.Point(257, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 25);
+            this.label1.Size = new System.Drawing.Size(333, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Event Status Application";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(581, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(92, 89);
+            this.pictureBox1.Size = new System.Drawing.Size(123, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // EventStatusForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(676, 467);
+            this.ClientSize = new System.Drawing.Size(901, 575);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CHECK);
             this.Controls.Add(this.lbOverview);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EventStatusForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventStatusApplication";
