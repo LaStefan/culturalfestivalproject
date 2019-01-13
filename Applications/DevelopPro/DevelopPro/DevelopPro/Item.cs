@@ -46,7 +46,7 @@ namespace DevelopPro
 
         public override string ToString()
         {
-            return (this.loanId + " " + this.loanName + this.startDate.ToString() + this.deposit.ToString()).ToString();
+            return (this.loanId.ToString() + " " + this.loanName + this.startDate.ToString() + this.deposit.ToString());
         }       
     }
 }
