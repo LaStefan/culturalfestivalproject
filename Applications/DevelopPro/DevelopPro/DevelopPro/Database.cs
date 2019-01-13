@@ -565,7 +565,7 @@ namespace DevelopPro
             return 0;
         }
 
-        public void LoanItem(List<Item> listOfProd, string rfid, ref bool randomname)
+        public void LoanItem(List<Item> listOfProd, string rfid, ref bool succBorrowed)
         {
             decimal total = 0;
             bool sent = false;
@@ -579,21 +579,23 @@ namespace DevelopPro
                     string sqll = "SELECT COUNT(*) as total from loanitem where CustomerId = " + temp + " and LoanId = " + p.LoanId;
                     MySqlCommand mdr = new MySqlCommand(sqll, conn);
                     MySqlDataReader md = mdr.ExecuteReader();
-                    if(md.Read()) { 
+                    if(md.Read())
+                    { 
                     int reslt = md.GetInt32("total");
                     conn.Close();
+
                         if (reslt >= 1)
                         {
                             MessageBox.Show("Sorry, this item is already borrowed!");
                         }
                         else
                         {
-                            conn.Open();
-                            string sql = "INSERT INTO `loanitem`(`LoanItemId`, `BorrowDate`, `ReturnDate`, `StateReturned`, `CustomerId`, `LoanId`) " +
-                                "VALUES (null,sysdate(),null,null," + temp + " ," + p.LoanId + ")";
-                            MySqlCommand msc = new MySqlCommand(sql, conn);
-                            int res = msc.ExecuteNonQuery();
-                            conn.Close();
+                           
+                            //string sql = "INSERT INTO `loanitem`(`LoanItemId`, `BorrowDate`, `ReturnDate`, `StateReturned`, `CustomerId`, `LoanId`) " +
+                            //    "VALUES (null,sysdate(),null,null," + temp + " ," + p.LoanId + ")";
+                            //MySqlCommand msc = new MySqlCommand(sql, conn);
+                            //int res = msc.ExecuteNonQuery();
+                            //conn.Close();
                             string sql2 = "SELECT Balance from customer where TagId = '" + rfid + "'";
                             MySqlCommand msc2 = new MySqlCommand(sql2, conn);
                             conn.Open();
@@ -621,7 +623,7 @@ namespace DevelopPro
 
                                     int resultschanged = msc1.ExecuteNonQuery();
                                     conn.Close();
-                                    randomname = true;
+                                    succBorrowed = true;
 
                                 }
                                 else
@@ -630,8 +632,9 @@ namespace DevelopPro
                                     {
                                         MessageBox.Show("The customer does not have enough balance!");
                                     }
-                                    sent = true;
+                                   
                                 }
+                                sent = true;
                             }
                         }
                     }
