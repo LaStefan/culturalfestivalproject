@@ -1,10 +1,12 @@
 <?php
 session_start();
 if (empty($_SESSION['loggedIn'])) {
-    header("Location: ./Home.php");
+    header("Location: ./index.php");
 }
-?>
 
+$userDetails = require("backend/components/account/get_user_details.php");
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +18,7 @@ if (empty($_SESSION['loggedIn'])) {
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <script type="text/javascript" src="js/Account_js.js"></script>
 
     <title>PROFILE</title>
 
@@ -37,10 +39,10 @@ if (empty($_SESSION['loggedIn'])) {
             </div>
             <div id="navbar" href="#0" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a id="n1" href="Home.php">About</a></li>
-                    <li><a id="n2" href="Home.php#2">Countries</a></li>
-                    <li><a id="n3" href="Home.php#3">Location</a></li>
-                    <li><a id="n4" href="Home.php#4">Program</a></li>
+                    <li><a id="n1" href="index.php">About</a></li>
+                    <li><a id="n2" href="index.php#2">Countries</a></li>
+                    <li><a id="n3" href="index.php#3">Location</a></li>
+                    <li><a id="n4" href="index.php#4">Program</a></li>
                     <li><a href="Tickets.php">Tickets</a></li>
                     <li class="dropdown">
                         <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown"
@@ -114,28 +116,26 @@ if (empty($_SESSION['loggedIn'])) {
         <div class="right-content">
             <span class="greeting">Hello</span>
             <h3 class="my-name">
-                <span>Display the name of the person</span>
+                <span><?php echo $userDetails[0]['FirstName'] . ' ' . $userDetails[0]['LastName']?></span>
             </h3>
             <br>
             <div class="detail-infor">
-                <div class="labels">
-                    <p>NAME:</p>
-                    <br>
-                    <p>MY TICKETS:</p>
-                    <br>
-                    <p>CAMPINGSITE:</p>
-                    <br>
-                    <p>BALANCE:</p>
-                </div>
-                <div class="infor">
-                    <p>Nadya Cheperkova</p>
-                    <br>
-                    <p>Ticket Type One</p>
-                    <br>
-                    <p>Spot 8</p>
-                    <br>
-                    <p>€1234</p>
-                </div>
+
+                <table cellpadding="10">
+                    <tr>
+                        <td class="profileTableCell"><p>MY TICKETS:</p></td>
+                        <td class="profileTableCell"><p id="userTickettype"><?php echo $userDetails[0]['TicketType'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <td class="profileTableCell"><p>CAMPINGSITE:</p></td>
+                        <td class="profileTableCell"><p id="userCampingspot">Spot <?php echo $userDetails[0]['CampingSiteId'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <td class="profileTableCell"><p>BALANCE:</p></td>
+                        <td class="profileTableCell"><p id="userBalance">&euro; <?php echo $userDetails[0]['Balance'] ?></p></td>
+                    </tr>
+                </table>
+
             </div>
         </div>
         <br>
@@ -144,13 +144,13 @@ if (empty($_SESSION['loggedIn'])) {
             <a class="button" href="#popup1">Deposit money</a>
         </div>
 
-        <form id="makeDepositForm" name="makeDeposit" action="">
+        <form id="makeDepositForm" name="makeDeposit" method="post" action="backend/components/account/add_deposit.php">
             <div id="popup1" class="overlay">
                 <div class="popup">
                     <h3>Fill the amount of money that you want to deposit</h3>
                     <a class="close" href="#">&times;</a>
                     <div class="content">
-                        &euro;&nbsp;<input name="money"/>
+                        &euro;&nbsp;<input type="number" name="money" />
                         <p><br></p>
                         <p>
                             <input type="submit" name="submit" id="makeDeposit" value="Make your deposit" />

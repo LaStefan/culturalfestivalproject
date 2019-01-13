@@ -2,7 +2,7 @@
 
 session_start();
 
-require __DIR__ . '/../db/db.php';
+require_once __DIR__ . '/../db/db.php';
 
 login($_POST['email'], $_POST['password']);
 

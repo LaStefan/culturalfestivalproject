@@ -306,6 +306,7 @@ header .navbar-default .navbar-nav>li>a:hover{
     outline: none;
 }
 
+
 @media screen and (max-width: 700px){
   .box{
     width: 70%;
@@ -315,6 +316,9 @@ header .navbar-default .navbar-nav>li>a:hover{
   }
 }
 
+.profileTableCell {
+  padding: 10px;
+}
 
 /* Here ends css for deposit money */
 

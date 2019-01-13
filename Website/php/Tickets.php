@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <link rel="stylesheet" href="css/stylesTickets.scss">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
@@ -14,11 +13,7 @@
     <script type="text/javascript" src="js/checkout.js"></script>
     <script type="text/javascript" src="js/RegisterPeople.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
-
-
-
     <title>TICKETS</title>
-
 </head>
 <header>
     <nav class="navbar navbar-default">
@@ -36,10 +31,10 @@
             </div>
             <div id="navbar" href="#0" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a id="n1" href="Home.php">About</a></li>
-                    <li><a id="n2" href="Home.php#2">Countries</a></li>
-                    <li><a id="n3" href="Home.php#3">Location</a></li>
-                    <li><a id="n4" href="Home.php#4">Program</a></li>
+                    <li><a id="n1" href="index.php">About</a></li>
+                    <li><a id="n2" href="index.php#2">Countries</a></li>
+                    <li><a id="n3" href="index.php#3">Location</a></li>
+                    <li><a id="n4" href="index.php#4">Program</a></li>
                     <li><a href="Tickets.php">Tickets</a></li>
                     <li class="dropdown">
                         <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Account<span class="caret"></span></a>
@@ -175,7 +170,6 @@
 
         <!-- Panel 3 -->
         <figure id="Panels">
-            <input type="button" name="previous" class="previousMain" value="Previous"/>
             <input type="button" name="next" class="nextMain" id="nextThree" value="Next"/>
             <div class="campingSite">
                 <div id="TicketRe">
@@ -253,13 +247,11 @@
                 </div>
             </div>
 
-            <input type="button" name="previous" class="previousMain" value="Previous"/>
             <input type="button" name="next" class="nextMain" id="nextFour" value="Confirm"/>
         </figure>
 
         <!-- Panel 5 -->
         <figure id="Panels">
-            <input type="button" name="previous" class="previousMain" value="Previous"/>
             <input type="button" name="next" class="nextMain" id="nextFive" value="Next"/>
 
             <form name="registerUsers" method="post" action="backend/components/account/register_people.php" id="registerPeople">
@@ -292,7 +284,6 @@
 
         <!-- Panel 6 -->
         <figure id="Panels">
-            <input type="button" name="previous" class="previousMain" value="Previous"/>
             <input type="button" name="next" class="nextMain" id="nextSix" value="Pay and register"/>
             <div id="TicketRe">
                 <div class="formRe">
@@ -330,7 +321,6 @@
 
                         </div>
                     </div>
-
 
                 </div>
             </div>

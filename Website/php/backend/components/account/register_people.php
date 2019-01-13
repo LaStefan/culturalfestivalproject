@@ -2,7 +2,7 @@
 
 session_start();
 
-require("../db/db.php");
+require_once("../db/db.php");
 
 $conn = DB();
 
@@ -35,6 +35,39 @@ foreach ($_POST as $key => $value) {
 
 $_SESSION['persons'] = $persons;
 
-print(
-    json_encode(true)
+$html = "<h2 class=\"whitetext\">Personal details:</h2><div><table class='whitetext registration-details'><br />";
+
+foreach ($persons as $person){
+    $html .= "
+
+    <tr>
+        <td>Firstname: </td>
+        <td>" . $person['firstName'] . "</td>
+    </tr>
+    <tr>
+        <td>Lastname: </td>
+        <td>" . $person['lastName'] . "</td>
+    </tr>
+    <tr>
+        <td>Email: </td>
+        <td>" . $person['email'] . "</td>
+    </tr>
+    <tr>
+        <td>Password: </td>
+        <td>" . $person['password'] . "</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>";
+}
+
+$html .= "</table></div>";
+
+?>
+
+
+<?php
+
+print (
+    $html
 );

@@ -29,8 +29,19 @@ header .navbar-default .navbar-nav>li>a {
   color:white;
 }
 
+.registration-details{
+  width:50%;
+  color:white;
+  float:left;
+}
+
 #successMessage {
   display:none;
+}
+
+
+.regLabel {
+  font-size:16px;
 }
 
 header .navbar-default .navbar-brand{

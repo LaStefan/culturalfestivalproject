@@ -86,6 +86,31 @@ $(".previous").click(function(){
 	});
 });
 
+$(document).ready(function(){
+
+    $("#makeDepositForm").on("submit", function (e) {
+
+        console.log("form was submitted");
+
+        e.preventDefault();
+
+        $.ajax({
+            url: $(this).attr('action'),
+            type: "POST",
+            data: $(this).serialize(),
+            success: function (data) {
+                window.location.replace('./Profile.php');
+            },
+            error: function (jXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+
+});
+
+
+
 $(".submit").click(function(){
 	return false;
 })

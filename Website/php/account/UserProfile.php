@@ -1,6 +1,6 @@
 <?php
 
-    require(__DIR__ . '/../backend/components/orders/order_helper.php');
+    require_once(__DIR__ . '/../backend/components/orders/order_helper.php');
 
     $orders = getOrdersForCustomer($_SESSION['customerId']);
 

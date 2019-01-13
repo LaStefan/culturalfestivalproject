@@ -2,20 +2,25 @@
 
 session_start();
 
+require("./ticketHelper.php");
+
+$ticketTypes = getTicketTypes();
+
                         $html = "
 
                             <fieldset id=\"FormAcc\">
                                 <h2 class=\"accTitle\">Create an account</h2>
+                                <h3 class='accTitle'>Tickettype ". $ticketTypes[0] ."</h3>
                                 <div class=\"top-row\">
                                     <div class=\"field-wrap\">
-                                        <label id=\"Accountlabel\">
+                                        <label class='regLabel'>
                                             First Name<span class=\"req\">*</span>
                                         </label>
                                         <input name=\"firstName1\" class=\"Accountinput\" type=\"text\" required autocomplete=\"off\"/>
                                     </div>
 
                                     <div class=\"field-wrap\">
-                                        <label id=\"Accountlabel\">
+                                        <label class='regLabel'>
                                             Last Name<span class=\"req\">*</span>
                                         </label>
                                         <input name=\"lastName1\" class=\"Accountinput\" type=\"text\" required autocomplete=\"off\"/>
@@ -23,14 +28,14 @@ session_start();
                                 </div>
 
                                 <div class=\"field-wrap\">
-                                    <label id=\"Accountlabel\">
+                                    <label class='regLabel'>
                                         Email Address<span class=\"req\">*</span>
                                     </label>
                                     <input name=\"email1\" class=\"Accountinput\" type=\"email\" required autocomplete=\"off\"/>
                                 </div>
 
                                 <div class=\"field-wrap\">
-                                    <label id=\"Accountlabel\">
+                                    <label class='regLabel'>
                                         Set a password<span class=\"req\">*</span>
                                     </label>
                                     <input name=\"password1\" class=\"Accountinput\" type=\"password\" required autocomplete=\"off\"/>
@@ -60,16 +65,17 @@ for ($i = 0; $i <= (int) $_SESSION['cart']['totalTickets'] - 2; $i++){
 
     $html .= "<fieldset id=\"FormAcc\">
             <h2 class=\"accTitle\">Person " . $personNumber . "</h2>
+            <h3 class='accTitle'>Tickettype ". $ticketTypes[$i + 1] ."</h3>
             <div class=\"top-row\">
                 <div class=\"field-wrap\">
-                    <label id=\"Accountlabel\">
+                    <label  class='regLabel'>
                         First Name<span class=\"req\">*</span>
                     </label>
                     <input name=\"firstName".$personNumber."\" class=\"Accountinput\" type=\"text\" required autocomplete=\"off\"/>
                 </div>
 
                 <div class=\"field-wrap\">
-                    <label id=\"Accountlabel\">
+                    <label  class='regLabel'>
                         Last Name<span class=\"req\">*</span>
                     </label>
                     <input name=\"lastName".$personNumber."\" class=\"Accountinput\" type=\"text\" required autocomplete=\"off\"/>
@@ -77,14 +83,14 @@ for ($i = 0; $i <= (int) $_SESSION['cart']['totalTickets'] - 2; $i++){
             </div>
 
             <div class=\"field-wrap\">
-                <label id=\"Accountlabel\">
+                <label  class='regLabel'>
                     Email Address<span class=\"req\">*</span>
                 </label>
                 <input name=\"email".$personNumber."\" class=\"Accountinput\" type=\"email\" required autocomplete=\"off\"/>
             </div>
 
             <div class=\"field-wrap\">
-                <label id=\"Accountlabel\">
+                <label class='regLabel'>
                     Set a password<span class=\"req\">*</span>
                 </label>
                 <input name=\"password".$personNumber."\" class=\"Accountinput\" type=\"password\" required autocomplete=\"off\"/>
@@ -93,7 +99,7 @@ for ($i = 0; $i <= (int) $_SESSION['cart']['totalTickets'] - 2; $i++){
     if ($i == (int) $_SESSION['cart']['totalTickets'] - 2){
 
         // submit button on last loop
-        $html .= "<input type=\"submit\" id=\"nextBt\" name=\"submit\" class=\"next submitRegistration action-button\"
+        $html .= "<input type=\"submit\" id=\"nextBt\" name=\"submit\" class=\"next nextMain submitRegistration action-button\"
                    value=\"Confirm\"/>
                      <input type=\"button\" id=\"previousBt\" name=\"previous\" class=\"previous action-button\"
                    value=\"Previous\"/>
