@@ -30,7 +30,8 @@ namespace Reservation
             int campId = 0;
             string campType = "";
             string status;
-            string sql = "SELECT CampingSiteId, CampingType,Status FROM campingsite";
+            int price = 0;
+            string sql = "SELECT CampingSiteId, CampingType,Status,Price FROM campingsite";
             MySqlCommand command = new MySqlCommand(sql, connectionToDB);
 
             try
@@ -43,8 +44,8 @@ namespace Reservation
                     campId = Convert.ToInt32(reader["CampingSiteId"]);
                     campType = Convert.ToString(reader["CampingType"]);
                     status = Convert.ToString(reader["Status"]);
-
-                    campingSites.Add(new CampingSite(campId, campType, status));
+                    price = Convert.ToInt32(reader["Price"]);
+                    campingSites.Add(new CampingSite(campId, campType, status, price));
                 }
 
             }

@@ -13,6 +13,7 @@ namespace Reservation
         private string startDate;
         private string endDate;
         private string status;
+        private int price;
 
         public int CampingId
         {
@@ -44,11 +45,18 @@ namespace Reservation
             set { status = value; }
         }
 
-        public CampingSite(int campingId, string campingType, string status)
+        public int Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+
+        public CampingSite(int campingId, string campingType, string status, int price)
         {
             this.campingId = campingId;
             this.campingType = campingType;
             this.status = status;
+            this.price = price;
         }
 
         public CampingSite(int campingId, string campingType, string startDate, string endDate, string status)
