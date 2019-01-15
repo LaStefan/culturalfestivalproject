@@ -125,6 +125,7 @@ $loanItems = require_once("backend/components/account/get_loan_items.php");
 
                 <?php foreach ($loanItems as $loanItem): ?>
 
+
                     <div>
                         <table cellpadding="10">
                             <tr>

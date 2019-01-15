@@ -32,7 +32,9 @@ foreach ($loanItems as &$loanItem) {
     $productName = $stmt->fetchColumn();
 
     $loanItem['productName'] = $productName;
+
 }
+unset($loanItem);
 
 return $loanItems;
 
