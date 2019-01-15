@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanAppForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
@@ -233,7 +233,7 @@
             this.panelItem.Controls.Add(this.pbCamera);
             this.panelItem.Controls.Add(this.pbPhone);
             this.panelItem.Controls.Add(this.pbUSB);
-            this.panelItem.Location = new System.Drawing.Point(166, 51);
+            this.panelItem.Location = new System.Drawing.Point(167, 53);
             this.panelItem.Margin = new System.Windows.Forms.Padding(4);
             this.panelItem.Name = "panelItem";
             this.panelItem.Size = new System.Drawing.Size(924, 465);
@@ -336,10 +336,10 @@
             this.panelInventory.Controls.Add(this.pBcameraIn);
             this.panelInventory.Controls.Add(this.pbPhoneIn);
             this.panelInventory.Controls.Add(this.pbChargerIn);
-            this.panelInventory.Location = new System.Drawing.Point(10, 19);
+            this.panelInventory.Location = new System.Drawing.Point(167, 52);
             this.panelInventory.Margin = new System.Windows.Forms.Padding(4);
             this.panelInventory.Name = "panelInventory";
-            this.panelInventory.Size = new System.Drawing.Size(927, 464);
+            this.panelInventory.Size = new System.Drawing.Size(933, 470);
             this.panelInventory.TabIndex = 21;
             this.panelInventory.Visible = false;
             // 
@@ -488,10 +488,10 @@
             this.panelReturn.Controls.Add(this.rBUnDamaged);
             this.panelReturn.Controls.Add(this.lbQuestion);
             this.panelReturn.Controls.Add(this.label7);
-            this.panelReturn.Location = new System.Drawing.Point(166, 51);
+            this.panelReturn.Location = new System.Drawing.Point(262, 181);
             this.panelReturn.Margin = new System.Windows.Forms.Padding(4);
             this.panelReturn.Name = "panelReturn";
-            this.panelReturn.Size = new System.Drawing.Size(934, 479);
+            this.panelReturn.Size = new System.Drawing.Size(829, 340);
             this.panelReturn.TabIndex = 20;
             // 
             // listVReturn
@@ -502,9 +502,9 @@
             this.startDate,
             this.Deposit});
             this.listVReturn.FullRowSelect = true;
-            this.listVReturn.Location = new System.Drawing.Point(114, 97);
+            this.listVReturn.Location = new System.Drawing.Point(114, 59);
             this.listVReturn.Name = "listVReturn";
-            this.listVReturn.Size = new System.Drawing.Size(678, 97);
+            this.listVReturn.Size = new System.Drawing.Size(678, 187);
             this.listVReturn.TabIndex = 36;
             this.listVReturn.UseCompatibleStateImageBehavior = false;
             this.listVReturn.View = System.Windows.Forms.View.Details;
@@ -649,14 +649,13 @@
             // 
             // panelLoan
             // 
-            this.panelLoan.Controls.Add(this.panelInventory);
             this.panelLoan.Controls.Add(this.successfullyBorrowed);
             this.panelLoan.Controls.Add(this.btnChekout);
             this.panelLoan.Controls.Add(this.productDataGV);
             this.panelLoan.Controls.Add(this.btnClear);
             this.panelLoan.Controls.Add(this.btnRemove);
             this.panelLoan.Controls.Add(this.lbRFID);
-            this.panelLoan.Location = new System.Drawing.Point(167, 53);
+            this.panelLoan.Location = new System.Drawing.Point(171, 53);
             this.panelLoan.Margin = new System.Windows.Forms.Padding(4);
             this.panelLoan.Name = "panelLoan";
             this.panelLoan.Size = new System.Drawing.Size(847, 473);
@@ -698,19 +697,19 @@
             this.productDataGV.AllowUserToDeleteRows = false;
             this.productDataGV.AllowUserToResizeColumns = false;
             this.productDataGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.productDataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.productDataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.productDataGV.BackgroundColor = System.Drawing.Color.White;
             this.productDataGV.CausesValidation = false;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productDataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productDataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.productDataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productDataGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productID,
@@ -718,26 +717,26 @@
             this.productQty,
             this.productPrice});
             this.productDataGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productDataGV.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.productDataGV.DefaultCellStyle = dataGridViewCellStyle35;
             this.productDataGV.Location = new System.Drawing.Point(126, 54);
             this.productDataGV.Margin = new System.Windows.Forms.Padding(4);
             this.productDataGV.Name = "productDataGV";
             this.productDataGV.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productDataGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productDataGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.productDataGV.RowHeadersWidth = 40;
             this.productDataGV.Size = new System.Drawing.Size(656, 355);
             this.productDataGV.TabIndex = 18;
@@ -931,6 +930,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1104, 530);
+            this.Controls.Add(this.panelInventory);
             this.Controls.Add(this.panelReturn);
             this.Controls.Add(this.panelLoan);
             this.Controls.Add(this.panel4);
@@ -947,7 +947,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoanAppForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.LoanAppForm_Load);
             this.panel1.ResumeLayout(false);
             this.panelItem.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlanckets)).EndInit();

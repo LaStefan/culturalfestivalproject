@@ -701,11 +701,8 @@ namespace DevelopPro
                             {
                                 decimal balance = mdr2.GetDecimal("Balance");
                                 mdr2.Close();
-                                foreach (Item item in listOfItems)
-                                {
-                                    total += item.Deposit;
-                                }
-                                if (balance >= total)
+                                total += p.Deposit;
+                                if (balance >= p.Deposit)
                                 {
                                     string updateBalance = "UPDATE `customer` SET `Balance`= Balance - '" + p.Deposit + "' WHERE TagId = '" + rfid + "'";
                                     MySqlCommand msc3 = new MySqlCommand(updateBalance, conn);

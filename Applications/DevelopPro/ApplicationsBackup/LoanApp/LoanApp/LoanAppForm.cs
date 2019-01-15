@@ -30,12 +30,7 @@ namespace LoanApp
             sideBar.Top = btnHome.Top;
             listVReturn.HideSelection = false;
             rfid.Open();
-        }
-
-        private void LoanAppForm_Load(object sender, EventArgs e)
-        {
-
-
+            panelReturn.Visible = false;
         }
 
         private void AddToListView(Item item)
@@ -400,7 +395,7 @@ namespace LoanApp
 
         private void btnShowItems_Click(object sender, EventArgs e)
         {
-            lbSuccReturned.Visible = false;
+            //lbSuccReturned.Visible = false;
 
             listVReturn.Items.Clear();
             if (chipNr != "")
@@ -419,6 +414,7 @@ namespace LoanApp
             rBDamaged.Visible = true;
             rBUnDamaged.Visible = true;
             lbSuccReturned.Visible = false;
+            
         }
     }
 }
