@@ -241,7 +241,7 @@
           <div class="day-header"><strong>MONDAY</strong></div>
           <div class="day-content">
             <div class="event red">
-                <span class="title">Event Name</span>
+                <span class="title">GERMANY</span>
                 <footer>
                   <span><strong>Music</strong></span>
                   <span>10:00</span>
@@ -250,42 +250,42 @@
              <div class="event green" style="background-color: #6e9987;">
                 <span class="title">BULGARIA</span>
                 <footer>
-                  <span>4 Assets</span>
+                  <span>Dance show</span>
                   <span>12:00</span>
                 </footer>
             </div>  
             <div class="event grey">
-                <span class="title">Event Name</span>
+                <span class="title">GREECE</span>
                 <footer>
-                  <span>3 Assets</span>
+                  <span>Cultural clothes</span>
                   <span>14:00</span>
                 </footer>
             </div>
               <div class="event red">
-                <span class="title">Event Name</span>
+                <span class="title">SWEDEN</span>
                 <footer>
-                  <span>3 Assets</span>
+                  <span>Magic</span>
                   <span>16:00</span>
                 </footer>
             </div>
               <div class="event green" style="background-color: #6e9987;">
-                <span class="title">Event Name</span>
+                <span class="title">SPAIN</span>
                 <footer>
-                  <span>3 Assets</span>
+                  <span>Food show</span>
                   <span>18:00</span>
                 </footer>
             </div>
             <div class="event grey">
-                <span class="title">Event Name</span>
+                <span class="title">BELGIUM</span>
                 <footer>
-                  <span>Prop1</span>
+                  <span>Cultural music</span>
                   <span>20:00</span>
                 </footer>
             </div>
             <div class="event red">
                 <span class="title">NETHERLANDS</span>
                 <footer>
-                  <span>Prop1</span>
+                  <span>Cultural drinks</span>
                   <span>22:00</span>
                 </footer>
             </div>
@@ -297,49 +297,49 @@
             <div class="event red">
                 <span class="title">SERBIA</span>
                 <footer>
-                  <span><strong>Music</strong></span>
+                  <span><strong>Music show</strong></span>
                   <span>10:00</span>
                 </footer>
             </div>
              <div class="event green" style="background-color: #6e9987;">
                 <span class="title">BULGARIA</span>
                 <footer>
-                  <span>4 Assets</span>
+                  <span>Dance show</span>
                   <span>12:00</span>
                 </footer>
             </div>  
             <div class="event grey">
-                <span class="title">Event Name</span>
+                <span class="title">FRANCE</span>
                 <footer>
-                  <span>3 Assets</span>
+                  <span>Magic</span>
                   <span>14:00</span>
                 </footer>
             </div>
               <div class="event red">
                 <span class="title">NETHERLANDS</span>
                 <footer>
-                  <span>3 Assets</span>
+                  <span>Food show</span>
                   <span>16:00</span>
                 </footer>
             </div>
               <div class="event green" style="background-color: #6e9987;">
-                <span class="title">Event Name</span>
+                <span class="title">GERMANY</span>
                 <footer>
-                  <span>3 Assets</span>
+                  <span>Cultural drinks</span>
                   <span>18:00</span>
                 </footer>
             </div>
             <div class="event grey">
-                <span class="title">Event Name</span>
+                <span class="title">SPAIN</span>
                 <footer>
-                  <span>Prop1</span>
+                  <span>Open theater</span>
                   <span>20:00</span>
                 </footer>
             </div>
             <div class="event red">
-                <span class="title">Event Name</span>
+                <span class="title">BELGIUM</span>
                 <footer>
-                  <span>Prop1</span>
+                  <span>Hip Hop dance</span>
                   <span>22:00</span>
                 </footer>
             </div>
@@ -349,51 +349,51 @@
           <div class="day-header"><strong>WEDNESDAY</strong></div>
           <div class="day-content">
             <div class="event red">
-                <span class="title">Event Name</span>
+                <span class="title">GREECE</span>
                 <footer>
-                  <span><strong>Music</strong></span>
+                  <span><strong>Music show</strong></span>
                   <span>10:00</span>
                 </footer>
             </div>
              <div class="event green" style="background-color: #6e9987;">
                 <span class="title">BULGARIA</span>
                 <footer>
-                  <span>4 Assets</span>
+                  <span>Cultural clother</span>
                   <span>12:00</span>
                 </footer>
             </div>  
             <div class="event grey">
-                <span class="title">Event Name</span>
+                <span class="title">NETHERLANDS</span>
                 <footer>
-                  <span>3 Assets</span>
+                  <span>Hip Hop dance</span>
                   <span>14:00</span>
                 </footer>
             </div>
               <div class="event red">
-                <span class="title">Event Name</span>
+                <span class="title">SPAIN</span>
                 <footer>
-                  <span>3 Assets</span>
+                  <span>Food show</span>
                   <span>16:00</span>
                 </footer>
             </div>
               <div class="event green" style="background-color: #6e9987;">
-                <span class="title">Event Name</span>
+                <span class="title">FRANCE</span>
                 <footer>
-                  <span>3 Assets</span>
+                  <span>Dance show</span>
                   <span>18:00</span>
                 </footer>
             </div>
             <div class="event grey">
-                <span class="title">Event Name</span>
+                <span class="title">GERMANY</span>
                 <footer>
-                  <span>Prop1</span>
+                  <span>Magic</span>
                   <span>20:00</span>
                 </footer>
             </div>
             <div class="event red">
-                <span class="title">Event Name</span>
+                <span class="title">SERBIA</span>
                 <footer>
-                  <span>Prop1</span>
+                  <span>Drinks show</span>
                   <span>22:00</span>
                 </footer>
             </div>
