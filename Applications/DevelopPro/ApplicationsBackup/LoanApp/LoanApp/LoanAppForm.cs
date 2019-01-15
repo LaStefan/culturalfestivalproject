@@ -368,44 +368,58 @@ namespace LoanApp
             {
                 damaged = true;
             }
-
-            //Item tempItem = lbReturn.SelectedItem as Item;
-            int index = listVReturn.SelectedIndices[0];
-            List<Item> items;
-            Item selectedItem = null;
-            if (index >= 0)
+            if (rBDamaged.Checked || rBUnDamaged.Checked)
             {
-                items = db.GetBorrowedProducts(chipNr);
-                selectedItem = items[index];
+                //Item tempItem = lbReturn.SelectedItem as Item;
+                int index = listVReturn.SelectedIndices[0];
+                List<Item> items;
+                Item selectedItem = null;
+                if (index >= 0)
+                {
+                    items = db.GetBorrowedProducts(chipNr);
+                    selectedItem = items[index];
+                }
+
+                lbQuestion.Visible = false;
+                rBDamaged.Visible = false;
+                rBUnDamaged.Visible = false;
+                tBReturnStatus.Visible = false;
+                lBDamage.Visible = false;
+
+                db.RefundBorrowedItem(selectedItem, chipNr, tBReturnStatus.Text, damaged);
+                lbSuccReturned.Visible = true;
+                this.tBReturnStatus.Clear();
+                ShowInListView();
             }
-
-            lbQuestion.Visible = false;
-            rBDamaged.Visible = false;
-            rBUnDamaged.Visible = false;
-            tBReturnStatus.Visible = false;
-            lBDamage.Visible = false;
-
-            db.RefundBorrowedItem(selectedItem, chipNr, tBReturnStatus.Text, damaged);
-            lbSuccReturned.Visible = true;
-            this.tBReturnStatus.Clear();
-            ShowInListView();
-
+            else
+            {
+                MessageBox.Show("Please specify the return state of this item!");
+            }
 
         }
 
         private void btnShowItems_Click(object sender, EventArgs e)
         {
-            //lbSuccReturned.Visible = false;
-
+            lbSuccReturned.Visible = false;
+           
+            
             listVReturn.Items.Clear();
             if (chipNr != "")
             {
-                ShowInListView();
+                if (db.GetBorrowedProducts(chipNr).Count >= 1)
+                {
+                    ShowInListView();
+                }
+                else
+                {
+                    MessageBox.Show("There are no items to return!");
+                }
             }
             else
             {
                 MessageBox.Show("Please first scan RFID tag!");
             }
+
         }
 
         private void listVReturn_SelectedIndexChanged(object sender, EventArgs e)
