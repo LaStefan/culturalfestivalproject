@@ -28,6 +28,7 @@ namespace LoanApp
             InitializeComponent();
             sideBar.Height = btnHome.Height;
             sideBar.Top = btnHome.Top;
+            listVReturn.HideSelection = false;
             rfid.Open();
         }
 
@@ -372,11 +373,6 @@ namespace LoanApp
             {
                 damaged = true;
             }
-            //Item tempItem = ((Item)dGVReturn.SelectedRows[0].Cells[1].Value);
-            //Int32 rowToDelete = this.dGVReturn.Rows.GetFirstRow(DataGridViewElementStates.Selected);
-            //Item tempItem = dGVReturn.CurrentRow.DataBoundItem as Item;
-            //MessageBox.Show(tempItem.LoanName);
-
 
             //Item tempItem = lbReturn.SelectedItem as Item;
             int index = listVReturn.SelectedIndices[0];
@@ -387,7 +383,13 @@ namespace LoanApp
                 items = db.GetBorrowedProducts(chipNr);
                 selectedItem = items[index];
             }
-            //MessageBox.Show(selectedItem.LoanName);
+
+            lbQuestion.Visible = false;
+            rBDamaged.Visible = false;
+            rBUnDamaged.Visible = false;
+            tBReturnStatus.Visible = false;
+            lBDamage.Visible = false;
+
             db.RefundBorrowedItem(selectedItem, chipNr, tBReturnStatus.Text, damaged);
             lbSuccReturned.Visible = true;
             this.tBReturnStatus.Clear();
@@ -398,7 +400,8 @@ namespace LoanApp
 
         private void btnShowItems_Click(object sender, EventArgs e)
         {
-     
+            lbSuccReturned.Visible = false;
+
             listVReturn.Items.Clear();
             if (chipNr != "")
             {
@@ -410,5 +413,12 @@ namespace LoanApp
             }
         }
 
+        private void listVReturn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbQuestion.Visible = true;
+            rBDamaged.Visible = true;
+            rBUnDamaged.Visible = true;
+            lbSuccReturned.Visible = false;
+        }
     }
 }

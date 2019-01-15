@@ -29,33 +29,33 @@ namespace EventStatusApp
             
             labels = new List<Label>();
 
-            labels.Add(label2);
-            labels.Add(label3);
-            labels.Add(label4);
-            labels.Add(label5);
-            labels.Add(label6);
-            labels.Add(label7);
-            labels.Add(label8);
-            labels.Add(label9);
-            labels.Add(label10);
-            labels.Add(label11);
-            labels.Add(label12);
-            labels.Add(label13);
+            labels.Add(lb2);
+            labels.Add(lb6);
+            labels.Add(lb10);
+            labels.Add(lb13);
+            labels.Add(lb3);
+            labels.Add(lb7);
+            labels.Add(lb4);
+            labels.Add(lb9);
+            labels.Add(lb11);
+            labels.Add(lb5);
+            labels.Add(lb8);
+            labels.Add(lb12);
 
             dic = new Dictionary<int, Label>();
 
-            dic.Add(1, label2);
-            dic.Add(2, label3);
-            dic.Add(3, label4);
-            dic.Add(4, label5);
-            dic.Add(5, label6);
-            dic.Add(6, label7);
-            dic.Add(7, label8);
-            dic.Add(8, label9);
-            dic.Add(9, label10);
-            dic.Add(10, label11);
-            dic.Add(11, label12);
-            dic.Add(12, label13);
+            dic.Add(1, lb2);
+            dic.Add(2, lb3);
+            dic.Add(3, lb4);
+            dic.Add(4, lb5);
+            dic.Add(5, lb6);
+            dic.Add(6, lb7);
+            dic.Add(7, lb8);
+            dic.Add(8, lb9);
+            dic.Add(9, lb10);
+            dic.Add(10, lb11);
+            dic.Add(11, lb12);
+            dic.Add(12, lb13);
 
             HideLables();
             try
