@@ -630,8 +630,8 @@ namespace DevelopPro
                                     {
                                         MessageBox.Show("The customer does not have enough balance!");
                                     }
-                                    sent = true;
                                 }
+                                sent = true;
                             }
                         }
                     }
@@ -691,7 +691,7 @@ namespace DevelopPro
                 mdr.Close();
                 if (damaged == false)
                 {
-                    var tempmoney = p.Deposit * (decimal)0.25;
+                    decimal tempmoney = p.Deposit * (decimal)0.25;
                     p.Deposit *= (decimal)0.75;
                     string sql1 = "UPDATE `customer` SET `Balance`= Balance + '" + p.Deposit + "' WHERE TagId = '" + rfid + "';";
                     MySqlCommand msc1 = new MySqlCommand(sql1, conn);

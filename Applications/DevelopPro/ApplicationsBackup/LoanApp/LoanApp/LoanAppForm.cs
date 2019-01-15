@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevelopPro;
 using Phidget22.Events;
 using Phidget22;
-
+using System.Collections;
 
 namespace LoanApp
 {
@@ -30,6 +30,32 @@ namespace LoanApp
             sideBar.Top = btnHome.Top;
             rfid.Open();
         }
+
+        private void LoanAppForm_Load(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void AddToListView(Item item)
+        {
+            // Define the list items
+            string[] row = {item.LoanId.ToString(), item.LoanName, item.StartDate.ToString(), item.Deposit.ToString()};
+            ListViewItem lvi = new ListViewItem(row);
+            // Add the list items to the ListView
+            listVReturn.Items.Add(lvi);
+        }
+
+        private void ShowInListView()
+        {
+            listVReturn.Items.Clear();
+            List<Item> items = db.GetBorrowedProducts(chipNr);
+            foreach (var item in items)
+            {
+                AddToListView(item);
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -227,7 +253,7 @@ namespace LoanApp
             pbPhoneIn.BorderStyle = BorderStyle.None;
             pbBlanketIn.BorderStyle = BorderStyle.None;
             pbmattressIn.BorderStyle = BorderStyle.None;
-            pbLightIn.BorderStyle = BorderStyle.None;
+            pbLightIn.BorderStyle = BorderStyle.None; 
             succAdded.Visible = false;
         }
 
@@ -337,35 +363,52 @@ namespace LoanApp
         private void btnReturnItem_Click(object sender, EventArgs e)
         {
             bool damaged = false;
-            if (rBUnDamaged.Checked == true) { damaged = false; }
-            else if (rBDamaged.Checked == true) { damaged = true; }
-            //temp = ((Item)dGVReturn.SelectedRows[0].Cells[1].Value);
+
+            if (rBUnDamaged.Checked == true)
+            {
+                damaged = false;
+            }
+            else if (rBDamaged.Checked == true)
+            {
+                damaged = true;
+            }
+            //Item tempItem = ((Item)dGVReturn.SelectedRows[0].Cells[1].Value);
             //Int32 rowToDelete = this.dGVReturn.Rows.GetFirstRow(DataGridViewElementStates.Selected);
+            //Item tempItem = dGVReturn.CurrentRow.DataBoundItem as Item;
+            //MessageBox.Show(tempItem.LoanName);
 
-            Item tempItem = listBox1.SelectedItem as Item;
 
-            //Item itemItem = (Item)dGVReturn.CurrentRow.DataBoundItem;
+            //Item tempItem = lbReturn.SelectedItem as Item;
+            int index = listVReturn.SelectedIndices[0];
+            List<Item> items;
+            Item selectedItem = null;
+            if (index >= 0)
+            {
+                items = db.GetBorrowedProducts(chipNr);
+                selectedItem = items[index];
+            }
+            //MessageBox.Show(selectedItem.LoanName);
+            db.RefundBorrowedItem(selectedItem, chipNr, tBReturnStatus.Text, damaged);
+            lbSuccReturned.Visible = true;
+            this.tBReturnStatus.Clear();
+            ShowInListView();
 
-            //string loanID = dGVReturn.SelectedRows[0].Cells[0].ToString();
 
-            db.RefundBorrowedItem(tempItem, chipNr, tBReturnStatus.Text, damaged);
         }
 
         private void btnShowItems_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
+     
+            listVReturn.Items.Clear();
             if (chipNr != "")
             {
-                foreach (var item in db.GetBorrowedProducts(chipNr))
-                {
-                    //dGVReturn.Rows.Add(item);
-                    listBox1.Items.Add(item);
-                }
+                ShowInListView();
             }
             else
             {
                 MessageBox.Show("Please first scan RFID tag!");
             }
         }
+
     }
 }
