@@ -22,8 +22,7 @@ namespace Reservation
         Dictionary<int, RadioButton> dic;
         Dictionary<int, Customer> customerDic;
         List<CheckBox> checkBoxes;
-        
-        string tagId;
+        public string tagId;
         int count = 1;
 
         public CampReservationForm()
@@ -162,7 +161,7 @@ namespace Reservation
             lbshowCus.Items.Add("Ticket Type: " + customer.TicketType);
             lbshowCus.Items.Add("Status: " + customer.Status);
             lbshowCus.Items.Add("CampingSite Id: " + customer.CampId);
-            //tagId = e.Tag;
+            lbshowCus.Items.Add("");
             tagId = customer.TagId;
             customerDic.Add(count, customer);
             count++;
@@ -171,6 +170,15 @@ namespace Reservation
         private void Reader_TagLost(object sender, RFIDTagLostEventArgs e)
         {
             
+        }
+
+        private bool CheckForm(Form form)
+        {
+            form = Application.OpenForms[form.Text];
+            if (form != null)
+                return true;
+            else
+                return false;
         }
 
         private string GetDate()
@@ -194,11 +202,11 @@ namespace Reservation
             }
             else
                 return null;
-        }
+        }     
 
         private void btnPay_Click_1(object sender, EventArgs e)
         {
-          
+               
             foreach (RadioButton b in rbuttons)
             {
                 if (b.Checked)
@@ -214,19 +222,19 @@ namespace Reservation
                                 if (GetDate() != null)
                                 {
                                     if (UpdateBalance() >= 0)
-                                    {
+                                    {                                      
                                         Customer firstCustomer = GetFirstCustomer();
                                         List<Customer> temp = GetRestCustomers();
                                         dbConnect.ReserveCamp(id, GetDate());
                                         dbConnect.UpdateCampIdAndBalanceByTagId(id, firstCustomer.TagId, UpdateBalance());
-                                        foreach(Customer cus in temp)
+                                        foreach (Customer cus in temp)
                                         {
                                             dbConnect.UpdateCampIdByTagId(id, cus.TagId);
                                         }
                                         b.BackColor = Color.Red;
                                         lbShow.Items.Add("You have successfully registered Campingsite " + c.CampingId);
                                         lbShow.Items.Add("Camping maximum for " + c.CampingType);
-                                        lbShow.Items.Add(GetDate());
+                                        lbShow.Items.Add(GetDate());                                      
                                     }
                                     else
                                     {
@@ -246,7 +254,7 @@ namespace Reservation
                         else
                         {
                             lbShow.Items.Add("Wrong! The reservation failed!");
-                            lbShow.Items.Add("Please check the Date and Plot!");
+                            lbShow.Items.Add("You have already reserved a campingsite!");
                         }
                     }
                     else
@@ -290,6 +298,7 @@ namespace Reservation
         private void btClear2_Click(object sender, EventArgs e)
         {
             lbshowCus.Items.Clear();
+            customerDic.Clear();
         }
     }
 }

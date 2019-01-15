@@ -29,3 +29,7 @@ This project meets the following requirements
 # PhP MyAdmin database connection
  * username: dbi401148
  * password: 123456789
+ 
+# The Website
+  * Our website is hosted on the hera server 
+  * http://i379652.hera.fhict.nl/prop/

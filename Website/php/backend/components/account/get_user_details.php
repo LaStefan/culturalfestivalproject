@@ -1,9 +1,11 @@
 <?php
 
+require_once(__DIR__ . "/../db/db.php");
+
 $customerId = $_SESSION['customerId'];
 
 $stmt = DB()->prepare("
-    SELECT `FirstName`, `LastName`, `Email`, `Balance`, `CampingSiteId`, `TicketType`
+    SELECT `CustomerId`, `FirstName`, `LastName`, `Email`, `Balance`, `CampingSiteId`, `TicketType`
     FROM `customer`
     WHERE `CustomerId` = :customerId    
 ");

@@ -36,6 +36,7 @@ namespace CampCheckInOut
 
         private void Reader_Tag(object sender, RFIDTagEventArgs e)
         {
+            lbShow.Items.Clear();
             if (rbCheckin.Checked)
             {
                 if (dbConnector.CheckCustomerCamp(e.Tag))

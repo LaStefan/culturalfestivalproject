@@ -11,13 +11,14 @@ function Disagree() {
     this.check = false;
 }
 
-
 $(".nextMain").click(function(){
 
     if(animating) return false;
     animating = true;
     current_fs = $(this).parent();
     next_fs = $(this).parent().next();
+
+
 
     $("#progress li").eq($("figure").index(next_fs)).addClass("active");
 
@@ -70,7 +71,40 @@ $("#nextOne").click(function(){
                     type:"GET",
                     url: 'backend/components/checkout/camping_spot_necessary.php',
                     success: function(response) {
-                        if (response === "false"){
+
+                        if (response == "false"){
+
+                            if(animating) return false;
+                            animating = true;
+
+                            current_fs = $("#nextOne").parent();
+                            next_fs = $("#nextOne").parent().next().next().next();
+
+                            $("#messageBox").hide();
+
+                            next_fs.show();
+                            $("#progress li").eq($("figure").index(next_fs)).addClass("active");
+
+
+                            check = true;
+                            current_fs.animate({opacity: 0}, {
+                                step: function(now, mx) {
+                                    scale = 1 - (1 - now) * 0.2;
+                                    left = (now * 50)+"%";
+                                    opacity = 1 - now;
+                                    current_fs.css({
+                                        'transform': 'scale('+scale+')',
+                                        'position': 'absolute'
+                                    });
+                                    next_fs.css({'left': left, 'opacity': opacity});
+                                },
+                                duration: 2,
+                                complete: function(){
+                                    current_fs.hide();
+                                    animating = false;
+                                },
+                                easing: 'easeInOutBack'
+                            });
 
                         }
                     }

@@ -4,7 +4,9 @@ if (empty($_SESSION['loggedIn'])) {
     header("Location: ./index.php");
 }
 
-$userDetails = require("backend/components/account/get_user_details.php");
+$userDetails = require_once("backend/components/account/get_user_details.php");
+$loanItems = require_once("backend/components/account/get_loan_items.php");
+
 
 ?>
 
@@ -127,6 +129,10 @@ $userDetails = require("backend/components/account/get_user_details.php");
                         <td class="profileTableCell"><p id="userTickettype"><?php echo $userDetails[0]['TicketType'] ?></p></td>
                     </tr>
                     <tr>
+                        <td class="profileTableCell"><p>TICKET ID:</p></td>
+                        <td class="profileTableCell"><p id="userTickettype"><?php echo $userDetails[0]['CustomerId'] ?></p></td>
+                    </tr>
+                    <tr>
                         <td class="profileTableCell"><p>CAMPINGSITE:</p></td>
                         <td class="profileTableCell"><p id="userCampingspot">Spot <?php echo $userDetails[0]['CampingSiteId'] ?></p></td>
                     </tr>
@@ -136,13 +142,46 @@ $userDetails = require("backend/components/account/get_user_details.php");
                     </tr>
                 </table>
 
+                <br>
+
+                <?php if (!empty($loanItems)): ?>
+
+                    <?php foreach($loanItems as $loanItem): ?>
+
+                        <div>
+                            <table cellpadding="10">
+                                <tr>
+                                    <td>ITEMNAME:</td>
+                                    <td><?php echo $loanItem['productName']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>BORROWDATE:</td>
+                                    <td><?php echo $loanItem['BorrowDate']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>RETURNDATE:</td>
+                                    <td><?php  echo $loanItem['ReturnDate']; ?></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    <?php endforeach; ?>
+
+                <?php endif; ?>
+
+
+
+
             </div>
         </div>
         <br>
+
         <div class="bottom-content">
 
             <a class="button" href="#popup1">Deposit money</a>
         </div>
+
+
 
         <form id="makeDepositForm" name="makeDeposit" method="post" action="backend/components/account/add_deposit.php">
             <div id="popup1" class="overlay">
@@ -159,6 +198,8 @@ $userDetails = require("backend/components/account/get_user_details.php");
                     </div>
                 </div>
         </form>
+
+
 
 
     </div>

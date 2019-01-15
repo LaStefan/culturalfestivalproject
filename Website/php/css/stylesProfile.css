@@ -120,6 +120,7 @@ header .navbar-default .navbar-nav>li>a:hover{
   justify-content: center;
   align-items: center;
   font-size: 17px;
+  color:white;
 }
 .containerProfile{
   box-shadow: 0 4px 10px 4px;
@@ -190,6 +191,7 @@ header .navbar-default .navbar-nav>li>a:hover{
 .detail-infor{
   display: flex;
   margin-top: 1rem;
+  color:white;
 }
 
 .labels{
@@ -318,6 +320,7 @@ header .navbar-default .navbar-nav>li>a:hover{
 
 .profileTableCell {
   padding: 10px;
+  color:white;
 }
 
 /* Here ends css for deposit money */

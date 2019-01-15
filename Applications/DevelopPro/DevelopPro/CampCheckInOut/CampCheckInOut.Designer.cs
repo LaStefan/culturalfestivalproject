@@ -82,9 +82,9 @@
             this.lbShow.ForeColor = System.Drawing.SystemColors.Window;
             this.lbShow.FormattingEnabled = true;
             this.lbShow.ItemHeight = 16;
-            this.lbShow.Location = new System.Drawing.Point(22, 130);
+            this.lbShow.Location = new System.Drawing.Point(23, 201);
             this.lbShow.Name = "lbShow";
-            this.lbShow.Size = new System.Drawing.Size(348, 228);
+            this.lbShow.Size = new System.Drawing.Size(347, 148);
             this.lbShow.TabIndex = 14;
             // 
             // panel2
@@ -108,7 +108,7 @@
             // 
             this.rbCheckOut.AutoSize = true;
             this.rbCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCheckOut.Location = new System.Drawing.Point(545, 69);
+            this.rbCheckOut.Location = new System.Drawing.Point(214, 110);
             this.rbCheckOut.Name = "rbCheckOut";
             this.rbCheckOut.Size = new System.Drawing.Size(111, 24);
             this.rbCheckOut.TabIndex = 19;
@@ -120,7 +120,7 @@
             // 
             this.rbCheckin.AutoSize = true;
             this.rbCheckin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCheckin.Location = new System.Drawing.Point(376, 69);
+            this.rbCheckin.Location = new System.Drawing.Point(43, 110);
             this.rbCheckin.Name = "rbCheckin";
             this.rbCheckin.Size = new System.Drawing.Size(98, 24);
             this.rbCheckin.TabIndex = 18;
@@ -132,7 +132,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 87);
+            this.label2.Location = new System.Drawing.Point(20, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 18);
             this.label2.TabIndex = 17;
