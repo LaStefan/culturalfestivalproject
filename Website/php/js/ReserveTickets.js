@@ -12,6 +12,7 @@ function ShowIt(el) {
 
         $('#successMessage').hide();
         $('.reserveTickets').show();
+        $('.pick-date-one').show();
         $('.pick-date-two').hide();
 
     } else if (ticketDiv.attr('id') === "TicketTwo") {
@@ -21,6 +22,7 @@ function ShowIt(el) {
 
         $('#successMessage').hide();
         $('.reserveTickets').show();
+        $('.pick-date-one').show();
         $('.pick-date-two').show();
 
     } else if (ticketDiv.attr('id') === "TicketThree") {
@@ -30,7 +32,8 @@ function ShowIt(el) {
 
         $('#successMessage').hide();
         $('.reserveTickets').show();
-        $('.pick-date-two').show();
+        $('.pick-date-two').hide();
+        $('.pick-date-one').hide();
 
     }
 

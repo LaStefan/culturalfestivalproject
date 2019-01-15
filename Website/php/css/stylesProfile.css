@@ -54,6 +54,13 @@ header .navbar-default .navbar-nav>li>a:hover{
 #loginM .formLI {
     margin-bottom: 10px;
 }
+.content .depositemoney {
+	color:black !important;
+}
+
+.content input {
+	color:black !important;
+}
 
 #inputLI{
   display: block;

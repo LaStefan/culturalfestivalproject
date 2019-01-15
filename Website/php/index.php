@@ -72,11 +72,23 @@
                     </li>
 
                 <?php else: ?>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form name="logoutCustomer" action="profile.php" method="get">
+                                    <div class="formLI">
+                                        <button class="buttonLI">My Profile</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
 
                     <li>
                         <div class="row">
                             <div class="col-md-12">
-                                <form name="logoutCustomer" action="backend/components/account/logout.php" method="post">
+                                <form name="logoutCustomer" action="backend/components/account/logout.php"
+                                      method="post">
                                     <div class="formLI">
                                         <button class="buttonLI">Log out</button>
                                     </div>
@@ -84,6 +96,7 @@
                             </div>
                         </div>
                     </li>
+
 
                 <?php endif ?>
 

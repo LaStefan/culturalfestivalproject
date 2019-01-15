@@ -9,6 +9,7 @@ require_once(__DIR__ . "/../db/db.php");
 $stmt = DB()->prepare("
     SELECT * FROM loanitem
     WHERE `customerId` = :customerId
+      AND `ReturnDate` is null
 ");
 
 $stmt->execute([

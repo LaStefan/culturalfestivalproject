@@ -18,49 +18,56 @@ $( document ).ready(function() {
 
         var dateOne = $("#dateOne").val();
         var dateTwo = $("#dateTwo").val();
-        var quantity = $(".ticket-quantity").val();
+        var quantity = Number($(".ticket-quantity").val());
 
-        var json = {
-            dateOne: dateOne,
-            dateTwo: dateTwo,
-            quantity: quantity
-        };
+        if (quantity > 0){
 
-        $.ajax({
-            type: "POST",
-            data: {
+            var json = {
+                dateOne: dateOne,
+                dateTwo: dateTwo,
                 quantity: quantity
-            },
-            dataType: "JSON",
-            url: "backend/components/checkout/can_add_ticket.php",
-            success: function(response) {
+            };
 
-                 if (response === true) {
+            $.ajax({
+                type: "POST",
+                data: {
+                    quantity: quantity
+                },
+                dataType: "JSON",
+                url: "backend/components/checkout/can_add_ticket.php",
+                success: function(response) {
 
-                     $.ajax({
-                         type:"POST",
-                         dataType:"JSON",
-                         data:json,
-                         url:'backend/components/session/set_session_variable.php',
-                         complete: function() {
-                         }
-                     });
+                    if (response === true) {
 
-                     $.ajax({
-                         type:"GET",
-                         url:'backend/components/checkout/save_session_to_cart.php',
-                         complete: function() {
-                             $('.reserveTickets').hide();
-                             $('#successMessage').show();
-                         }
-                     });
+                        $.ajax({
+                            type:"POST",
+                            dataType:"JSON",
+                            data:json,
+                            url:'backend/components/session/set_session_variable.php',
+                            complete: function() {
+                            }
+                        });
 
-                 } else {
-                     alert("You're only allowed to order up to 6 tickets, sorry!");
-                 }
+                        $.ajax({
+                            type:"GET",
+                            url:'backend/components/checkout/save_session_to_cart.php',
+                            complete: function() {
+                                $('.reserveTickets').hide();
+                                $('#successMessage').show();
+                            }
+                        });
 
-            }
-        });
+                    } else {
+                        alert("You're only allowed to order up to 6 tickets, sorry!");
+                    }
+
+                }
+            });
+        } else {
+
+            alert("Select at least one ticket");
+
+        }
     });
 
     // when a camping button is pressed, save it to the cart

@@ -114,11 +114,35 @@ $loanItems = require_once("backend/components/account/get_loan_items.php");
     <div class="containerProfile">
         <div class="left-content">
             <img src="images/profile.png" style="display: flex;">
+
+            <table cellpadding="10">
+                <tr>
+                    <td style="padding:5px; font-family: 'Open Sans', sans-serif;
+                                               font-family: 'Montserrat', sans-serif;   "><u>LOAN ITEMS:</u></td>
+                </tr>
+            </table>
+            <?php if (!empty($loanItems)): ?>
+
+                <?php foreach ($loanItems as $loanItem): ?>
+
+                    <div>
+                        <table cellpadding="10">
+                            <tr>
+                                <td style="padding:5px; font-family: 'Open Sans', sans-serif;
+                                         font-family: 'Montserrat', sans-serif;   "><?php echo $loanItem['productName']; ?></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                <?php endforeach; ?>
+
+            <?php endif; ?>
+            <br><br>
         </div>
         <div class="right-content">
             <span class="greeting">Hello</span>
             <h3 class="my-name">
-                <span><?php echo $userDetails[0]['FirstName'] . ' ' . $userDetails[0]['LastName']?></span>
+                <span><?php echo $userDetails[0]['FirstName'] . ' ' . $userDetails[0]['LastName'] ?></span>
             </h3>
             <br>
             <div class="detail-infor">
@@ -126,50 +150,27 @@ $loanItems = require_once("backend/components/account/get_loan_items.php");
                 <table cellpadding="10">
                     <tr>
                         <td class="profileTableCell"><p>MY TICKETS:</p></td>
-                        <td class="profileTableCell"><p id="userTickettype"><?php echo $userDetails[0]['TicketType'] ?></p></td>
+                        <td class="profileTableCell"><p
+                                    id="userTickettype"><?php echo $userDetails[0]['TicketType'] ?></p></td>
                     </tr>
                     <tr>
                         <td class="profileTableCell"><p>TICKET ID:</p></td>
-                        <td class="profileTableCell"><p id="userTickettype"><?php echo $userDetails[0]['CustomerId'] ?></p></td>
+                        <td class="profileTableCell"><p
+                                    id="userTickettype"><?php echo $userDetails[0]['CustomerId'] ?></p></td>
                     </tr>
                     <tr>
                         <td class="profileTableCell"><p>CAMPINGSITE:</p></td>
-                        <td class="profileTableCell"><p id="userCampingspot">Spot <?php echo $userDetails[0]['CampingSiteId'] ?></p></td>
+                        <td class="profileTableCell"><p id="userCampingspot">
+                                Spot <?php echo $userDetails[0]['CampingSiteId'] ?></p></td>
                     </tr>
                     <tr>
                         <td class="profileTableCell"><p>BALANCE:</p></td>
-                        <td class="profileTableCell"><p id="userBalance">&euro; <?php echo $userDetails[0]['Balance'] ?></p></td>
+                        <td class="profileTableCell"><p id="userBalance">
+                                &euro; <?php echo $userDetails[0]['Balance'] ?></p></td>
                     </tr>
                 </table>
 
                 <br>
-
-                <?php if (!empty($loanItems)): ?>
-
-                    <?php foreach($loanItems as $loanItem): ?>
-
-                        <div>
-                            <table cellpadding="10">
-                                <tr>
-                                    <td>ITEMNAME:</td>
-                                    <td><?php echo $loanItem['productName']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td>BORROWDATE:</td>
-                                    <td><?php echo $loanItem['BorrowDate']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td>RETURNDATE:</td>
-                                    <td><?php  echo $loanItem['ReturnDate']; ?></td>
-                                </tr>
-                            </table>
-                        </div>
-
-                    <?php endforeach; ?>
-
-                <?php endif; ?>
-
-
 
 
             </div>
@@ -182,26 +183,23 @@ $loanItems = require_once("backend/components/account/get_loan_items.php");
         </div>
 
 
-
         <form id="makeDepositForm" name="makeDeposit" method="post" action="backend/components/account/add_deposit.php">
             <div id="popup1" class="overlay">
                 <div class="popup">
                     <h3>Fill the amount of money that you want to deposit</h3>
                     <a class="close" href="#">&times;</a>
                     <div class="content">
-                        &euro;&nbsp;<input type="number" name="money" />
+                        &euro;&nbsp;<input style="color:black;" type="number" name="money"/>
                         <p><br></p>
                         <p>
-                            <input type="submit" name="submit" id="makeDeposit" value="Make your deposit" />
+                            <input type="submit" name="submit" id="makeDeposit" value="Make your deposit"/>
                         </p>
                         <p><br></p>
                     </div>
                 </div>
+            </div>
+
         </form>
-
-
-
-
     </div>
 </div>
 

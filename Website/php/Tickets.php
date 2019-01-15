@@ -31,10 +31,10 @@
             </div>
             <div id="navbar" href="#0" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a id="n1" href="index.php">About</a></li>
-                    <li><a id="n2" href="index.php#2">Countries</a></li>
-                    <li><a id="n3" href="index.php#3">Location</a></li>
-                    <li><a id="n4" href="index.php#4">Program</a></li>
+                    <li><a id="n1" href="Home.php">About</a></li>
+                    <li><a id="n2" href="Home.php#2">Countries</a></li>
+                    <li><a id="n3" href="Home.php#3">Location</a></li>
+                    <li><a id="n4" href="Home.php#4">Program</a></li>
                     <li><a href="Tickets.php">Tickets</a></li>
                     <li class="dropdown">
                         <a href="#logIn" class="dropdown-toggle" data-toggle="dropdown" style="color:#6e9987;">Account<span class="caret"></span></a>
@@ -75,7 +75,20 @@
                                 <li>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <form name="logoutCustomer" action="backend/components/account/logout.php" method="post">
+                                            <form name="logoutCustomer" action="profile.php" method="get">
+                                                <div class="formLI">
+                                                    <button class="buttonLI">My Profile</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form name="logoutCustomer" action="backend/components/account/logout.php"
+                                                  method="post">
                                                 <div class="formLI">
                                                     <button class="buttonLI">Log out</button>
                                                 </div>
