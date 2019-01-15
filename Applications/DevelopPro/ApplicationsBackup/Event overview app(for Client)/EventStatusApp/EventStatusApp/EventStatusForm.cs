@@ -87,11 +87,32 @@ namespace EventStatusApp
 
         private void btnCurrentStatus_Click(object sender, EventArgs e)
         {
-          
+            decimal MoneyPerShop = myData.MoneyGainedPerShop();
+            decimal MoneyPerLoan = myData.MoneyGainedPerLoan();
+            decimal MoneyForTickets = myData.MoneyGainedForTickets();
+            decimal TOTAL = MoneyForTickets + MoneyPerLoan + MoneyPerShop;
+            int nr = myData.GetVisitorNumber();
+            decimal balance = myData.GetTotalBalance();
+            int nrinside = myData.GetVisitorNumberInsideEvent();
+            lbOverview.Show();
+            pbMap.Hide();
+            HideLables();
+             lbOverview.Items.Clear();
+            lbOverview.Items.Add(DateTime.Now);
+            lbOverview.Items.Add("");
+            lbOverview.Items.Add("Total money earned so far: $" + TOTAL);
+            lbOverview.Items.Add("");
+            lbOverview.Items.Add("Total balance of all visitors: $" + balance);
+            lbOverview.Items.Add("");
+            lbOverview.Items.Add("Total number of customers: " + nr.ToString());
+            lbOverview.Items.Add("checked in: " + nrinside.ToString());
+
+
         }
 
         private void btnVisitor_Click(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -157,6 +178,9 @@ namespace EventStatusApp
         {
             decimal MoneyPerShop = myData.MoneyGainedPerShop();
             decimal MoneyPerLoan = myData.MoneyGainedPerLoan();
+            decimal MoneyForTickets = myData.MoneyGainedForTickets();
+            decimal TOTAL = MoneyForTickets + MoneyPerLoan + MoneyPerShop;
+           
             lbOverview.Show();
             pbMap.Hide();
             HideLables();
@@ -165,6 +189,10 @@ namespace EventStatusApp
             lbOverview.Items.Add("");
             lbOverview.Items.Add("Total amount earned in shop: $" + MoneyPerShop);
             lbOverview.Items.Add("Total amount earned in loan shop: $" + MoneyPerLoan);
+            lbOverview.Items.Add("Total amount earned for the tickets: $" + MoneyForTickets);
+            lbOverview.Items.Add("");
+            lbOverview.Items.Add("TOTAL: $" + TOTAL);
+
 
         }
     }

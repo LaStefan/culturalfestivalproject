@@ -128,6 +128,55 @@ namespace DevelopPro
                 conn.Close();
             }
 
+            
+        }
+       
+        public decimal MoneyGainedForTickets()
+        {
+            decimal Total = 0;
+            decimal oneday = 59;
+            decimal twoday = 109;
+            decimal threeday = 159;
+            String sql = "SELECT TicketType FROM customer";
+            List<String> ticket = new List<String>();
+            MySqlCommand command = new MySqlCommand(sql, conn);
+
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string tickets = Convert.ToString(reader["TicketType"]);
+                    ticket.Add(tickets);
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            foreach(String s in ticket)
+            {
+                if(s=="One Day Ticket"||s=="one day ticket")
+                {
+                    Total += oneday;
+                }
+                else if(s=="Two Day Ticket"|| s=="two days ticket")
+                {
+                    Total += twoday;
+                }
+                else
+                {
+                    Total += threeday;
+                }
+            }
+            return Total;
         }
         public decimal MoneyGainedPerLoan()
         {
