@@ -99,6 +99,7 @@ $( document ).ready(function() {
             type:"GET",
             url:'backend/components/checkout/save_session_to_cart.php',
             complete: function() {
+                $("[id^=cb]").css('background-color', 'green');
                 $("#cb" + buttonId).css('background-color', 'red');
             }
         });
