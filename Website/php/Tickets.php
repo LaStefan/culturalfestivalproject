@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <script type='text/javascript' src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/checkout.js"></script>
+    <script type="text/javascript" src="js/campingSites.js"></script>
     <script type="text/javascript" src="js/RegisterPeople.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
     <title>TICKETS</title>
@@ -297,7 +298,7 @@
 
         <!-- Panel 6 -->
         <figure id="Panels">
-            <input type="button" name="next" class="nextMain" id="nextSix" value="Pay and register"/>
+            <input type="button" name="next" id="nextSix" value="Pay and register"/>
             <div id="TicketRe">
                 <div class="formRe">
                     <div class="paymentMain">
@@ -323,9 +324,9 @@
                                             <option value="visa">VISA</option>
                                         </select>
                                     </div>
-                                    <input class="Accountinput" type="text" placeholder="Credit Card Number">
-                                    <input class="Accountinput" type="text" placeholder="MM/YYYY">
-                                    <input class="Accountinput" type="text" placeholder="Card Validation Number">
+                                    <input class="Accountinput" type="text" id="creditCardNumber" placeholder="Credit Card Number" required>
+                                    <input class="Accountinput" type="text" id="expirationDate" placeholder="MM/YYYY" required>
+                                    <input class="Accountinput" type="text" id="cardValidationNumber" placeholder="Card Validation Number" required>
                                 </div>
                             </div>
                             <div class="proccess">
@@ -348,14 +349,14 @@
                     // echo 'Hello '.$_SESSION['firstnameofguest'].',';
                     ?></p><br>
                 <p>Thank you for showing interest in our festival.</p><br>
-                <p>We have just sent you an email with details about how to make a reservation. </p><br>
-                <p>An event account has been created for you with the login details to manage your information, you will
+                <br>
+                <p>We have just sent you an email with your ticket details. You can also find these details when you Log in your account </p><br>
+                <p>An event account has been created for you with your login details to manage your information, you will
                     find the details included in your mail.
-                <p>Please check your email </p><br><br>
+                <>Please check your email. </p><br><br>
 
                 <p>Looking Forward to welcoming you to the European Cultural Event.</p><br><br>
-
-                <p>Thanks....</p>
+                <p>Thank you!</p>
             </div>
         </figure>
 

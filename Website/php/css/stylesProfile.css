@@ -289,7 +289,7 @@ header .navbar-default .navbar-nav>li>a:hover{
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: #000;
 }
 .popup .close:hover {
   color: #6e9987;

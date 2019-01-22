@@ -1,7 +1,5 @@
 $( document ).ready(function() {
 
-
-
     // after the next button is clicked, render the paypalpanel
     $(".nextMain").click(function() {
         $.ajax({
@@ -72,6 +70,12 @@ $( document ).ready(function() {
 
     // when a camping button is pressed, save it to the cart
     $('.campingButton').click(function() {
+
+        if ($(this).hasClass("spot-unavailable")) {
+            alert("This campingsite is already reserved");
+            return;
+        }
+
         var buttonId = $(this).attr('id').replace('cb', '');
         var cpPrice;
         var ticketType = "cp" + buttonId;
@@ -106,8 +110,10 @@ $( document ).ready(function() {
             type:"GET",
             url:'backend/components/checkout/save_session_to_cart.php',
             complete: function() {
-                $("[id^=cb]").css('background-color', 'green');
-                $("#cb" + buttonId).css('background-color', 'red');
+                if($("[id^=cb]").hasClass('my-campingspot')){
+                    $("[id^=cb]").removeClass('my-campingspot');
+                }
+                $("#cb" + buttonId).addClass('my-campingspot');
             }
         });
 
@@ -137,15 +143,51 @@ $( document ).ready(function() {
             data:"stringData"
         };
 
-        $.ajax({
-            url:"backend/components/checkout/finish_order.php",
-            data: json,
-            type:"POST",
-            success: function(response){
+        if($("#creditCardNumber").val() !== "" && $("#expirationDate").val() !== "" && $("#cardValidationNumber").val() !== "") {
 
-            }
-        });
+            $.ajax({
+                url:"backend/components/checkout/finish_order.php",
+                data: json,
+                type:"POST",
+                success: function(response){
+                }
+            });
 
+            animating = true;
+
+            current_fs = $(this).parent();
+            next_fs = $(this).parent().next();
+
+            $("#messageBox").hide();
+
+            next_fs.show();
+
+            $("#progress li").eq($("figure").index(next_fs)).addClass("active");
+
+            check = true;
+            current_fs.animate({opacity: 0}, {
+                step: function(now, mx) {
+                    scale = 1 - (1 - now) * 0.2;
+                    left = (now * 50)+"%";
+                    opacity = 1 - now;
+                    current_fs.css({
+                        'transform': 'scale('+scale+')',
+                        'position': 'absolute'
+                    });
+                    next_fs.css({'left': left, 'opacity': opacity});
+                },
+                duration: 2,
+                complete: function(){
+                    animating = false;
+                },
+                easing: 'easeInOutBack'
+            });
+
+        } else {
+
+            alert("Please provide your valid credit card credentials ");
+
+        }
 
     });
 });

@@ -172,17 +172,14 @@ $loanItems = require_once("backend/components/account/get_loan_items.php");
                 </table>
 
                 <br>
-
-
             </div>
         </div>
         <br>
 
         <div class="bottom-content">
-
             <a class="button" href="#popup1">Deposit money</a>
+            <a class="button" href="#popup2">Refund</a>
         </div>
-
 
         <form id="makeDepositForm" name="makeDeposit" method="post" action="backend/components/account/add_deposit.php">
             <div id="popup1" class="overlay">
@@ -199,8 +196,23 @@ $loanItems = require_once("backend/components/account/get_loan_items.php");
                     </div>
                 </div>
             </div>
-
         </form>
+
+        <form id="refundForm" name="requestRefund" method="post" action="backend/components/account/request_refund.php">
+            <div id="popup2" class="overlay">
+                <div class="popup">
+                    <h3>Are you sure you want a refund? 80% of the paid amount will be refunded to your account and your account will be deleted.</h3>
+                    <a class="close" href="#">&times;</a>
+                    <div class="content">
+                        <p>
+                            <input type="submit" name="submit" id="makeDeposit" value="Refund"/>
+                        </p>
+                        <p><br></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
     </div>
 </div>
 

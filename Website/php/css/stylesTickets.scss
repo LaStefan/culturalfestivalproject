@@ -29,6 +29,11 @@ header .navbar-default .navbar-nav>li>a {
   color:white;
 }
 
+.campingButton.my-campingspot {
+  background-color:blue;
+}
+
+
 .registration-details{
   width:50%;
   color:white;
@@ -196,6 +201,23 @@ a:hover {
 
 /*buttons*/
 .nextMain{
+  border: 0;
+  outline: none;
+  font-size: 10px;
+  border-radius: 10px;
+  float: right;
+  padding: 10px 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #6e9987;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+#nextSix{
   border: 0;
   outline: none;
   font-size: 10px;

@@ -9,9 +9,13 @@ if (empty($_SESSION['cart'])){
     ];
 }
 
-// save tickets to cart
-if (!empty($_SESSION['tickettype']) && !empty($_SESSION['dateOne']) && !empty($_SESSION['quantity'])){
+echo 'test1';
 
+// save tickets to cart
+if (!empty($_SESSION['tickettype']) && !empty($_SESSION['quantity'])){
+
+
+    echo 'test2';
 
     foreach ($_SESSION['cart'] as $key => &$cartItem) {
         // check if already there is a tickettype in the cart to add the quantity to it
@@ -65,6 +69,8 @@ if (!empty($_SESSION['tickettype']) && !empty($_SESSION['dateOne']) && !empty($_
     unset($_SESSION['dateTwo']);
 }
 
+echo 'test3';
+
 // save camping reservations to cart
 if (!empty($_SESSION['buttonId'] && !empty($_SESSION['cpPrice']))) {
     $_SESSION['cart']['cp']['cpId'] = (int) $_SESSION['buttonId'];
@@ -73,4 +79,6 @@ if (!empty($_SESSION['buttonId'] && !empty($_SESSION['cpPrice']))) {
     unset($_SESSION['buttonId']);
     unset($_SESSION['cpPrice']);
 }
+
+echo 'test4';
 

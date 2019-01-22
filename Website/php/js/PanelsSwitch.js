@@ -18,8 +18,6 @@ $(".nextMain").click(function(){
     current_fs = $(this).parent();
     next_fs = $(this).parent().next();
 
-
-
     $("#progress li").eq($("figure").index(next_fs)).addClass("active");
 
     if(check == true){

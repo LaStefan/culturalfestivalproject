@@ -90,8 +90,6 @@ $(document).ready(function(){
 
     $("#makeDepositForm").on("submit", function (e) {
 
-        console.log("form was submitted");
-
         e.preventDefault();
 
         $.ajax({
@@ -106,6 +104,25 @@ $(document).ready(function(){
             }
         });
     });
+
+    $("#refundForm").on("submit", function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            url: $(this).attr('action'),
+            type: "POST",
+            data: $(this).serialize(),
+            success: function (data) {
+                window.location.replace('./index.php');
+            },
+            error: function (jXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+
+
 
 });
 

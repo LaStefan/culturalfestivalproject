@@ -85,6 +85,16 @@ if (validatePayment()){
         $stmt->execute();
         $lastId = $stmt->fetchColumn();
 
+        //change status from campsite when people registered
+        $stmt = $conn->prepare("UPDATE `campingsite` SET `Status` = 1 WHERE `CampingSiteId` = :campingSiteId");
+        $stmt->execute([
+            ':campingSiteId' => $campingSiteId
+        ]);
+        $stmt = $conn->prepare("UPDATE `customer` SET `CampingSiteStatus` = 1 WHERE `CampingSiteId` = :campingSiteId");
+        $stmt->execute([
+            ':campingSiteId' => $campingSiteId
+        ]);
+
 
         $lastIds = [];
         for ($i = 0; $i < $groupSize; $i++){
