@@ -128,7 +128,7 @@ namespace shopApp
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void picBalls_Click(object sender, EventArgs e)
@@ -513,13 +513,7 @@ namespace shopApp
 
         private void picWhiteWine_Click(object sender, EventArgs e)
         {
-            foreach (Product p in myShop.GetProducts())
-            {
-                if (p.ProductName == "White Wine")
-                {
-                    ShowProductForm(picWhiteWine, p.ProductName, p.ProductPrice);
-                }
-            }
+
         }
 
         private void picFish_Click(object sender, EventArgs e)

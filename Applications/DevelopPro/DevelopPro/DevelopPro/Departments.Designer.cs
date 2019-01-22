@@ -52,9 +52,8 @@
             this.panel1.Controls.Add(this.button7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 59);
+            this.panel1.Size = new System.Drawing.Size(600, 48);
             this.panel1.TabIndex = 7;
             // 
             // lbLogin
@@ -62,9 +61,10 @@
             this.lbLogin.AutoSize = true;
             this.lbLogin.Font = new System.Drawing.Font("Baskerville Old Face", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbLogin.Location = new System.Drawing.Point(264, 15);
+            this.lbLogin.Location = new System.Drawing.Point(198, 12);
+            this.lbLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(261, 108);
+            this.lbLogin.Size = new System.Drawing.Size(213, 88);
             this.lbLogin.TabIndex = 3;
             this.lbLogin.Text = "Please select a department\r\n\r\n\r\n\r\n";
             this.lbLogin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -72,10 +72,9 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(748, 13);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(561, 11);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(39, 33);
+            this.button7.Size = new System.Drawing.Size(29, 27);
             this.button7.TabIndex = 2;
             this.button7.Text = "x";
             this.button7.UseVisualStyleBackColor = true;
@@ -84,92 +83,107 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(269, 156);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(202, 127);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 219);
+            this.pictureBox1.Size = new System.Drawing.Size(188, 178);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
             // assignRFID
             // 
-            this.assignRFID.Location = new System.Drawing.Point(68, 87);
+            this.assignRFID.Location = new System.Drawing.Point(51, 71);
+            this.assignRFID.Margin = new System.Windows.Forms.Padding(2);
             this.assignRFID.Name = "assignRFID";
-            this.assignRFID.Size = new System.Drawing.Size(155, 80);
+            this.assignRFID.Size = new System.Drawing.Size(116, 65);
             this.assignRFID.TabIndex = 9;
             this.assignRFID.Text = "AssignRFID";
             this.assignRFID.UseVisualStyleBackColor = true;
+            this.assignRFID.Click += new System.EventHandler(this.assignRFID_Click);
             // 
             // btnLoan
             // 
-            this.btnLoan.Location = new System.Drawing.Point(578, 87);
+            this.btnLoan.Location = new System.Drawing.Point(434, 71);
+            this.btnLoan.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoan.Name = "btnLoan";
-            this.btnLoan.Size = new System.Drawing.Size(155, 80);
+            this.btnLoan.Size = new System.Drawing.Size(116, 65);
             this.btnLoan.TabIndex = 10;
             this.btnLoan.Text = "Loan\r\n";
             this.btnLoan.UseVisualStyleBackColor = true;
+            this.btnLoan.Click += new System.EventHandler(this.btnLoan_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(578, 200);
+            this.button1.Location = new System.Drawing.Point(434, 162);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 80);
+            this.button1.Size = new System.Drawing.Size(116, 65);
             this.button1.TabIndex = 11;
             this.button1.Text = "Shop ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkInOut
             // 
-            this.checkInOut.Location = new System.Drawing.Point(68, 200);
+            this.checkInOut.Location = new System.Drawing.Point(51, 162);
+            this.checkInOut.Margin = new System.Windows.Forms.Padding(2);
             this.checkInOut.Name = "checkInOut";
-            this.checkInOut.Size = new System.Drawing.Size(155, 80);
+            this.checkInOut.Size = new System.Drawing.Size(116, 65);
             this.checkInOut.TabIndex = 12;
             this.checkInOut.Text = "Check In/Out";
             this.checkInOut.UseVisualStyleBackColor = true;
+            this.checkInOut.Click += new System.EventHandler(this.checkInOut_Click);
             // 
             // campingReserve
             // 
-            this.campingReserve.Location = new System.Drawing.Point(68, 430);
+            this.campingReserve.Location = new System.Drawing.Point(51, 349);
+            this.campingReserve.Margin = new System.Windows.Forms.Padding(2);
             this.campingReserve.Name = "campingReserve";
-            this.campingReserve.Size = new System.Drawing.Size(155, 80);
+            this.campingReserve.Size = new System.Drawing.Size(116, 65);
             this.campingReserve.TabIndex = 13;
             this.campingReserve.Text = "Camping Reservation";
             this.campingReserve.UseVisualStyleBackColor = true;
+            this.campingReserve.Click += new System.EventHandler(this.campingReserve_Click);
             // 
             // campingInOut
             // 
-            this.campingInOut.Location = new System.Drawing.Point(68, 315);
+            this.campingInOut.Location = new System.Drawing.Point(51, 256);
+            this.campingInOut.Margin = new System.Windows.Forms.Padding(2);
             this.campingInOut.Name = "campingInOut";
-            this.campingInOut.Size = new System.Drawing.Size(155, 80);
+            this.campingInOut.Size = new System.Drawing.Size(116, 65);
             this.campingInOut.TabIndex = 14;
             this.campingInOut.Text = "Camping Check In/Out";
             this.campingInOut.UseVisualStyleBackColor = true;
+            this.campingInOut.Click += new System.EventHandler(this.campingInOut_Click);
             // 
             // log
             // 
-            this.log.Location = new System.Drawing.Point(578, 315);
+            this.log.Location = new System.Drawing.Point(434, 256);
+            this.log.Margin = new System.Windows.Forms.Padding(2);
             this.log.Name = "log";
-            this.log.Size = new System.Drawing.Size(155, 80);
+            this.log.Size = new System.Drawing.Size(116, 65);
             this.log.TabIndex = 15;
             this.log.Text = "Log";
             this.log.UseVisualStyleBackColor = true;
+            this.log.Click += new System.EventHandler(this.log_Click);
             // 
             // eventStatus
             // 
-            this.eventStatus.Location = new System.Drawing.Point(578, 430);
+            this.eventStatus.Location = new System.Drawing.Point(434, 349);
+            this.eventStatus.Margin = new System.Windows.Forms.Padding(2);
             this.eventStatus.Name = "eventStatus";
-            this.eventStatus.Size = new System.Drawing.Size(155, 80);
+            this.eventStatus.Size = new System.Drawing.Size(116, 65);
             this.eventStatus.TabIndex = 16;
             this.eventStatus.Text = "Event Status";
             this.eventStatus.UseVisualStyleBackColor = true;
+            this.eventStatus.Click += new System.EventHandler(this.eventStatus_Click);
             // 
             // Departments
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 531);
+            this.ClientSize = new System.Drawing.Size(600, 431);
             this.Controls.Add(this.eventStatus);
             this.Controls.Add(this.log);
             this.Controls.Add(this.campingInOut);
@@ -181,6 +195,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Departments";
             this.Text = "Departments";
             this.panel1.ResumeLayout(false);

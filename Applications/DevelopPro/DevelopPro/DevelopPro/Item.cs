@@ -18,7 +18,7 @@ namespace DevelopPro
         private decimal deposit;
         private int stock;
         private int quantity;
-        private DateTime startDate;
+        private DateTime startDate = DateTime.Now;
 
         public int LoanId { get { return this.loanId; } }
         public string LoanName { get { return this.loanName; } }

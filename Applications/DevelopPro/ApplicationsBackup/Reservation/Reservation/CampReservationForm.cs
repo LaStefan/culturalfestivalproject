@@ -74,7 +74,7 @@ namespace Reservation
                 RFID reader = new RFID();
                 reader.Tag += Reader_Tag;
                 reader.TagLost += Reader_TagLost;
-                reader.Open(5000);
+                reader.Open();
             }
             catch (Exception e)
             {

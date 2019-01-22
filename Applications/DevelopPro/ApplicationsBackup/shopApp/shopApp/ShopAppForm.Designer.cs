@@ -46,6 +46,7 @@
             this.panelFood = new System.Windows.Forms.Panel();
             this.panelDrinks = new System.Windows.Forms.Panel();
             this.panelPay = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.lbRfidCode = new System.Windows.Forms.Label();
             this.productDataGV = new System.Windows.Forms.DataGridView();
             this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +90,6 @@
             this.picBalls = new System.Windows.Forms.PictureBox();
             this.picHam = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -344,6 +344,16 @@
             this.panelPay.Name = "panelPay";
             this.panelPay.Size = new System.Drawing.Size(761, 399);
             this.panelPay.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Lime;
+            this.label3.Location = new System.Drawing.Point(217, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.TabIndex = 13;
             // 
             // lbRfidCode
             // 
@@ -814,16 +824,6 @@
             this.picHam.TabStop = false;
             this.toolTip1.SetToolTip(this.picHam, "Burgers");
             this.picHam.Click += new System.EventHandler(this.picHam_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(217, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 16);
-            this.label3.TabIndex = 13;
             // 
             // ShopAppForm
             // 

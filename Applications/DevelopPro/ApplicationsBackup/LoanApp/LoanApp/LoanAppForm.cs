@@ -11,6 +11,7 @@ using DevelopPro;
 using Phidget22.Events;
 using Phidget22;
 using System.Collections;
+using System.Diagnostics;
 
 namespace LoanApp
 {
@@ -104,7 +105,11 @@ namespace LoanApp
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Process.Start(@"..\..\..\..\..\DevelopPro\DevelopPro\bin\Debug\DevelopPro.exe");
+            //Departments dep = new Departments();
+            //dep.Show();
+            this.Close();
+
         }
 
         private void pbPhone_Click(object sender, EventArgs e)
@@ -429,6 +434,11 @@ namespace LoanApp
             rBUnDamaged.Visible = true;
             lbSuccReturned.Visible = false;
             
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
