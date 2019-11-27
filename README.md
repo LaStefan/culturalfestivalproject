@@ -26,9 +26,6 @@ This project meets the following requirements
 * An application for the client that shows the event overview.
 * A database supporting all the applications and the website.
 
-# PhP MyAdmin database connection
- * username: dbi401148
- * password: 123456789
  
 # The Website
   * Our website is hosted on the hera server 
